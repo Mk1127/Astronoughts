@@ -6,6 +6,9 @@ public class CharController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 4f;
 
+    public Rigidbody rb;
+    public bool playerIsOnGround = true;
+
     Vector3 forward, right;
 
     void Start()
@@ -14,12 +17,19 @@ public class CharController : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         if (Input.anyKey)
         Move();
+
+        if(Input.GetButtonDown("Jump") && playerIsOnGround)
+        {
+            rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+            playerIsOnGround = false;
+        }
     }
 
     void Move()
@@ -33,5 +43,13 @@ public class CharController : MonoBehaviour
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            playerIsOnGround = true;
+        }
     }
 }
