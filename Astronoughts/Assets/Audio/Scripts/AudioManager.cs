@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     #region Variables
     public static AudioManager instance;
     public AudioFile[] audioFiles;
+    public Button settings;
     public Slider musicVolume;
     public Slider effectsVolume;
     public AudioMixer audioMixer;
@@ -45,6 +46,10 @@ public class AudioManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void OnSettingsClick()
+    {
     }
 
     public void SetMusicVolume()
