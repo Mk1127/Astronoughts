@@ -16,7 +16,13 @@ public class AudioManager : MonoBehaviour
     #region Variables
     public static AudioManager instance;
     public AudioFile[] audioFiles;
+    public AudioSource source;
     public Button settings;
+    public Animator sliderAnimator;
+    //public Animator startAnimator;
+    public bool Open;
+    public bool isHidden;
+    public bool isStarted;
     public Slider musicVolume;
     public Slider effectsVolume;
     public AudioMixer audioMixer;
@@ -25,6 +31,9 @@ public class AudioManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        sliderAnimator.SetBool("Open",false);
+
+        isHidden = true;
         if(instance == null)
         {
             instance = this;
@@ -33,23 +42,28 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //        DontDestroyOnLoad(gameObject);
-        foreach(var s in audioFiles)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.audioClip;
-            s.source.volume = s.volume;
-            s.source.loop = s.isLooping;
-            if(s.playOnAwake)
-            {
-                s.source.Play();
-            }
-        }
+        // DontDestroyOnLoad(gameObject);
 
+        instance.GetComponent<AudioSource>().Play();
+        instance.source.volume = 1;
+    }
+    void Start()
+    {
+        //startAnimator.SetBool("isStarted",true);
     }
 
     public void OnSettingsClick()
     {
+        if(isHidden == true)
+        {
+            sliderAnimator.SetBool("Open",true);
+            isHidden = false;
+        }
+        else
+        {
+            sliderAnimator.SetBool("Open",false);
+            isHidden = true;
+        }
     }
 
     public void SetMusicVolume()
@@ -59,7 +73,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetEffectsVolume()
     {
-        audioMixer.SetFloat("SFX",Mathf.Log10(effectsVolume.value) * 20);
+        audioMixer.SetFloat("SFx",Mathf.Log10(effectsVolume.value) * 20);
     }
 
 }
