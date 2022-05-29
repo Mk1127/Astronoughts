@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamPivot_Rotation : MonoBehaviour
 {
     bool canRotate = true;
+    [SerializeField] float degreesToRotate;
 
     // Update is called once per frame
     void Update()
@@ -13,7 +14,7 @@ public class CamPivot_Rotation : MonoBehaviour
         {
             if (canRotate)
             {
-                StartCoroutine(RotateCam(new Vector3(0, 1, 0), 90, 0.5f));
+                StartCoroutine(RotateCam(new Vector3(0, 1, 0), degreesToRotate, 0.5f));
             }
         }
 
@@ -21,7 +22,7 @@ public class CamPivot_Rotation : MonoBehaviour
         {
             if (canRotate)
             {
-                StartCoroutine(RotateCam(new Vector3(0, 1, 0), -90, 0.5f));
+                StartCoroutine(RotateCam(new Vector3(0, 1, 0), -degreesToRotate, 0.5f));
             }
         }
     }
