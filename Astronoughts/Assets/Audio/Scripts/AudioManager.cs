@@ -18,11 +18,12 @@ public class AudioManager : MonoBehaviour
     public AudioFile[] audioFiles;
     public AudioSource source;
     public Button settings;
+
     public Animator sliderAnimator;
-    //public Animator startAnimator;
     public bool Open;
     public bool isHidden;
     public bool isStarted;
+
     public Slider musicVolume;
     public Slider effectsVolume;
     public AudioMixer audioMixer;
@@ -42,14 +43,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        // DontDestroyOnLoad(gameObject);
 
         instance.GetComponent<AudioSource>().Play();
         instance.source.volume = 1f;
     }
     void Start()
     {
-        //startAnimator.SetBool("isStarted",true);
     }
 
     public void OnSettingsClick()
