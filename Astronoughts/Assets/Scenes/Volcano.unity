@@ -2006,7 +2006,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1892927207}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 1
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1892927207}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetEffectsVolume
         m_Mode: 1
@@ -2978,12 +2978,12 @@ AudioSource:
   m_GameObject: {fileID: 1892927205}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7799805437955351295, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
+  OutputAudioMixerGroup: {fileID: -6223811021391088451, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6533b033cf9e3c643825d7e6c2b519f1, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
