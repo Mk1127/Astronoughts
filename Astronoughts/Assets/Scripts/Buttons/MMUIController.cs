@@ -70,7 +70,7 @@ public class MMUIController : MonoBehaviour
         // This button was clicked.
         Debug.Log("You clicked the start button");
         // run the animation
-        startAnimator.SetBool("isPlaying", false);
+        panelAnimator.SetBool("isPlaying", false);
         SceneManager.LoadScene("Hub");
     }
 
