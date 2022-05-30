@@ -28,10 +28,6 @@ public class UITextTypewriter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    public void OnInstructionsClick()
-    {
         //Get the text component of text field
         txt = GetComponent<Text>()!;
         textMeshTxt = GetComponent<TMP_Text>()!;
@@ -54,7 +50,6 @@ public class UITextTypewriter : MonoBehaviour
             StartCoroutine("TextMeshTypewriter");
         }
     }
-
 
     IEnumerator TextTypewriter()
     {

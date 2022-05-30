@@ -89,7 +89,7 @@ public class MMUIController : MonoBehaviour
         if(scene == "Splash")
         {
             // run the animation
-            startAnimator.SetBool("isPlaying",false);
+            panelAnimator.SetBool("isPlaying",false);
             SceneManager.LoadScene("Menu");
         }
         else if(scene == "Menu")
