@@ -24,8 +24,10 @@ public class AudioManager : MonoBehaviour
     public bool isHidden;
     public bool isStarted;
 
-    public Slider musicVolume;
-    public Slider effectsVolume;
+    public float musicVolume;
+    public float sfxVolume;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
     public AudioMixer audioMixer;
     #endregion
 
@@ -44,11 +46,21 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        instance.GetComponent<AudioSource>().Play();
         instance.source.volume = 1f;
+        instance.GetComponent<AudioSource>().Play();
     }
+
+
     void Start()
     {
+        audioMixer.GetFloat("Music", out musicVolume);
+        audioMixer.GetFloat("SFx",out sfxVolume);
+
+        musicVolume = musicVolumeSlider.GetComponent<Slider>().value;
+        sfxVolume =  sfxVolumeSlider.GetComponent<Slider>().value;
+
+        Debug.Log("Current Music Volume : " + musicVolume);
+        Debug.Log("Current Sound Volume : " + sfxVolume);
     }
 
     public void OnSettingsClick()
@@ -65,14 +77,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetMusicVolume()
+    public void SetMusicVolume(float musicVolume)
     {
-        audioMixer.SetFloat("Music",Mathf.Log10(musicVolume.value) * 20);
+        audioMixer.SetFloat("Music", musicVolume);
+        //audioMixer.GetFloat("Music",out musicVolume);
+        Debug.Log("Current Music Volume : " + musicVolume);
     }
 
-    public void SetEffectsVolume()
+    public void SetEffectsVolume(float sfxVolume)
     {
-        audioMixer.SetFloat("SFx",Mathf.Log10(effectsVolume.value) * 20);
+        audioMixer.SetFloat("SFx", sfxVolume);
+        //audioMixer.GetFloat("SFx",out musicVolume);
+        Debug.Log("Current Sound Volume : " + sfxVolume);
     }
 
 }

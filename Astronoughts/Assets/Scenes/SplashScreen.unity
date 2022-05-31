@@ -657,17 +657,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1845151645}
   m_HandleRect: {fileID: 946703058}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -20
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 9.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 513482426}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetEffectsVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1308,7 +1308,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7799805437955351295, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a95a9583079bd0b4d932089c1f0b3fbf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 81b1611a2ac00fd40b34ebba1cc68f11, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1408,26 +1408,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFiles:
   - audioName: ThusSpake
-    audioClip: {fileID: 8300000, guid: a95a9583079bd0b4d932089c1f0b3fbf, type: 3}
-    volume: 0
+    audioClip: {fileID: 8300000, guid: 81b1611a2ac00fd40b34ebba1cc68f11, type: 3}
+    volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 1
   - audioName: EnTant
     audioClip: {fileID: 8300000, guid: debbdf523362b3844888d78346be2bcc, type: 3}
-    volume: 0.5
+    volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
   - audioName: Blue
     audioClip: {fileID: 8300000, guid: cc00ea4c98019a848a038b4bf230d699, type: 3}
-    volume: 0.5
+    volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
   - audioName: Click
     audioClip: {fileID: 8300000, guid: 323aeaf87f36db040bf2a855aa7085de, type: 3}
-    volume: 0.75
+    volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
@@ -1437,8 +1437,10 @@ MonoBehaviour:
   Open: 0
   isHidden: 1
   isStarted: 0
-  musicVolume: {fileID: 1016553085}
-  effectsVolume: {fileID: 175198182}
+  musicVolume: 5
+  sfxVolume: 5
+  musicVolumeSlider: {fileID: 1016553085}
+  sfxVolumeSlider: {fileID: 175198182}
   audioMixer: {fileID: 24100000, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
 --- !u!1 &530989216
 GameObject:
@@ -2514,17 +2516,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1325873783}
   m_HandleRect: {fileID: 1274919090}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -20
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 9.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 513482426}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

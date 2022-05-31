@@ -449,7 +449,7 @@ MonoBehaviour:
   mainButtonPanel: {fileID: 2046692986}
   startButton: {fileID: 924162819}
   creditsButton: {fileID: 221313368}
-  controlsButton: {fileID: 0}
+  controlsButton: {fileID: 1065825850}
   helpButton: {fileID: 2144911010}
   quitButton: {fileID: 2094432946}
   text: {fileID: 306843456}
@@ -765,17 +765,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1845151645}
   m_HandleRect: {fileID: 946703058}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -20
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 513482426}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetEffectsVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1685,7 +1685,7 @@ MonoBehaviour:
     playOnAwake: 0
   - audioName: Click
     audioClip: {fileID: 8300000, guid: 323aeaf87f36db040bf2a855aa7085de, type: 3}
-    volume: 0.75
+    volume: 0.5
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
@@ -1695,8 +1695,10 @@ MonoBehaviour:
   Open: 0
   isHidden: 1
   isStarted: 0
-  musicVolume: {fileID: 1016553085}
-  effectsVolume: {fileID: 175198182}
+  musicVolume: 5
+  sfxVolume: 5
+  musicVolumeSlider: {fileID: 1016553085}
+  sfxVolumeSlider: {fileID: 175198182}
   audioMixer: {fileID: 24100000, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
 --- !u!1 &530989216
 GameObject:
@@ -2088,7 +2090,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2800,17 +2802,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1325873783}
   m_HandleRect: {fileID: 1274919090}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -20
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 513482426}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
