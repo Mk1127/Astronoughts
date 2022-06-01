@@ -23,6 +23,8 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] bool isGRounded = false;
 
+    float startSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class Player_Movement : MonoBehaviour
         {
             mover = GetComponent<CharacterController>();
         }
+
+        startSpeed = speed;
     }
 
     // Update is called once per frame
@@ -103,12 +107,12 @@ public class Player_Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Jump Pressed");
-                speed = 4;
+                speed = startSpeed * 0.8f;
                 velocity.y = jumpSpeed;
             }
             else
             {
-                speed = 5;
+                speed = startSpeed;
             }
         }
     }
