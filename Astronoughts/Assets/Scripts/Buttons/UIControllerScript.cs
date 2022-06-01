@@ -16,20 +16,18 @@ public class UIControllerScript : MonoBehaviour
     #region Variables
     private bool overlayHidden;
     private bool statusHidden;
-    private bool settingsHidden;
     private bool convoHidden;
     private bool allHidden;
 
     public GameObject overlay;
     public GameObject statusPanel;
-    public GameObject settingsPanel;
     public GameObject convoPanel;
     public GameObject[] allPanels;
 
     public Button startButton;
     public Button overlayButton;
     public Button inventoryButton;
-    public Button settingsPanelButton;
+    public Button statusPanelButton;
     public Button quitButton;
 
     public Animator startAnimator;
@@ -43,21 +41,12 @@ public class UIControllerScript : MonoBehaviour
     {
         overlayHidden = false;
         statusHidden = false;
-        settingsHidden = false;
         //convoHidden = true;
         //allHidden = false;
 
         overlay.SetActive(true);
         statusPanel.SetActive(true);
-        settingsPanel.SetActive(true);
         convoPanel.SetActive(false);
-
-        startButton.enabled = true;
-        startButton.gameObject.SetActive(true);
-        inventoryButton.enabled = true;
-        inventoryButton.gameObject.SetActive(true);
-        overlayButton.enabled = true;
-        overlayButton.gameObject.SetActive(true);
     }
 
     public void OnRestartClicked()
@@ -82,12 +71,16 @@ public class UIControllerScript : MonoBehaviour
         if(overlayHidden == false)
         {
             overlay.SetActive(false);
+            statusPanel.SetActive(false);
             overlayHidden = true;
+            statusHidden = true;
         }
         else
         {
             overlay.SetActive(true);
+            statusPanel.SetActive(true);
             overlayHidden = false;
+            statusHidden = false;
         }
     }
 
@@ -106,18 +99,4 @@ public class UIControllerScript : MonoBehaviour
         }
     }
 
-    public void OnSettingsButtonClick()
-    {
-        Debug.Log("You clicked the settings button");
-        if(settingsHidden == false)
-        {
-            settingsPanel.SetActive(false);
-            settingsHidden = true;
-        }
-        else
-        {
-            settingsPanel.SetActive(true);
-            settingsHidden = false;
-        }
-    }
 }
