@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sequence_Door : MonoBehaviour
 {
     [SerializeField] Transform door;
+    [SerializeField] float lowerDoorBy;
     [SerializeField] List<Sequence_Totem> totemList = new List<Sequence_Totem>();
     [SerializeField] List<string> answer = new List<string>();
 
@@ -64,7 +65,7 @@ public class Sequence_Door : MonoBehaviour
 
     IEnumerator LowerDoor()
     {
-        for (float i = 0; i < 3; i += 0.1f)
+        for (float i = 0; i < lowerDoorBy; i += 0.1f)
         {
             door.position -= new Vector3(0, 0.1f, 0);
             yield return new WaitForSeconds(0.1f);
