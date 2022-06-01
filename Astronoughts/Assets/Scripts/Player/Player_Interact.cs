@@ -7,6 +7,8 @@ public class Player_Interact : MonoBehaviour
     [SerializeField] float rayDistance;
     [SerializeField] Player_Rotation playerRot;
 
+    public bool isHidden;
+
     private void Start()
     {
         /*if(playerRot == null)
@@ -53,6 +55,22 @@ public class Player_Interact : MonoBehaviour
                     hit.collider.gameObject.GetComponent<Sequence_Totem>().ToggleTotem();
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Grass")
+        {
+            isHidden = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Grass")
+        {
+            isHidden = false;
         }
     }
 }
