@@ -42,9 +42,4 @@ public class Buttons : MonoBehaviour
         controlsMenu.SetActive(false);
         instructionsMenu.SetActive(true);
     }
-
-    public void OnQuitButtonClick()
-    {
-        Application.Quit();
-    }
 }
