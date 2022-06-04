@@ -3,18 +3,18 @@ using System.Collections;
 using System.Diagnostics;
 public enum ItemType
 {
-    ARMOR, CLOTHING, CONSUMEABLE, POTION, WEAPON
+    JETPACK, ENGINE, SOLAR, POTION, WEAPON
 };
 
 public class Item : MonoBehaviour
 {
-    // The item's type
+    // Type of item
     public ItemType type;
 
-    // The path to the neutral sprite
+    // The unclicked sprite
     public Sprite spriteNeutral;
 
-    // The path to the highlighted sprite
+    // The clicked sprite
     public Sprite spriteHighlighted;
 
     // The maximum amount of stacks
@@ -25,20 +25,20 @@ public class Item : MonoBehaviour
     {
         switch(type)
         {
-            case ItemType.ARMOR:
-                UnityEngine.Debug.Log("I destroyed some armor.");
+            case ItemType.JETPACK:
+                UnityEngine.Debug.Log("I collected my jetpack.");
                 break;
-            case ItemType.CLOTHING:
-                UnityEngine.Debug.Log("I destroyed some clothing.");
+            case ItemType.ENGINE:
+                UnityEngine.Debug.Log("I collected the engine.");
                 break;
-            case ItemType.CONSUMEABLE:
-                UnityEngine.Debug.Log("I just consumed some food.");
+            case ItemType.SOLAR:
+                UnityEngine.Debug.Log("I collected the solar panels.");
                 break;
             case ItemType.POTION:
                 UnityEngine.Debug.Log("I just drank a potion.");
                 break;
             case ItemType.WEAPON:
-                UnityEngine.Debug.Log("I destroyed a weapon.");
+                UnityEngine.Debug.Log("I collected a weapon.");
                 break;
         }
     }
