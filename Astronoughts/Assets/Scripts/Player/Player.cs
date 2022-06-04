@@ -7,15 +7,13 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using static System.Net.Mime.MediaTypeNames;
-using System.Diagnostics;
 
-public class Player_InventoryController : MonoBehaviour
+public class Player : MonoBehaviour
 {
     #region Variables
-    private static Player instance;
+    public static Player instance;
 
-    public static Player_InventoryController Pic;
+    public static Player Pic;
     private Animator anim;
 
     private int currentHealth;
@@ -52,7 +50,7 @@ public class Player_InventoryController : MonoBehaviour
     // A reference to the chest (to be added)
     // private Inventory chest;
 
-    public ItemScript[] items = new ItemScript[10];
+    public Item[] items = new Item[10];
  
     public Rigidbody rb;
     #endregion
@@ -87,7 +85,6 @@ public class Player_InventoryController : MonoBehaviour
     void Awake()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        rend = GameObject.FindGameObjectWithTag("Player").GetComponent<MeshRenderer>();
     }
 
     // Start is called before the first frame update
@@ -98,7 +95,7 @@ public class Player_InventoryController : MonoBehaviour
         endScreen.gameObject.SetActive(false);
         currentHealth = maxHealth;
 
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -146,7 +143,7 @@ public class Player_InventoryController : MonoBehaviour
 
     // Handles the player's collision with inventory items
     // <param name="other"></param>
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Enemy")
         {
@@ -164,8 +161,8 @@ public class Player_InventoryController : MonoBehaviour
         {
             print("Collided with " + other.gameObject.name);
             other.gameObject.GetComponent<AudioSource>().Play();
-            outputText.text = "I picked up my " other.gameObject.name;
-            other.SetEnabled = false;
+            outputText.text = "I picked up my " + other.gameObject.name;
+            other.gameObject.SetActive(false);
         }
     }
 
