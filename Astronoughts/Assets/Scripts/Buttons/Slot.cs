@@ -26,7 +26,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
 
     private bool held = false;
     public UnityEvent onClick = new UnityEvent();
+
     public UnityEvent onLongPress = new UnityEvent();
+
+
 
     // Indicates if the slot is empty
     public bool IsEmpty
@@ -63,6 +66,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
 
     void Start()
     {
+ 
         //Instantiates the items stack
         Items = new Stack<Item>();
 

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     #region Variables
     public static Player instance;
 
-    public static Player Ps;
+    public static Player Pic;
     private Animator anim;
 
     private int currentHealth;
@@ -23,17 +23,8 @@ public class Player : MonoBehaviour
     public GameObject player;
 
     // Shows the player what he needs to do
-    [SerializeField] private Text coinText;
-    [SerializeField] private Text convoText;
-
-    [SerializeField] private Text INTText;
-    [SerializeField] private Text STRText;
-    [SerializeField] private Text STAText;
-    [SerializeField] private Text AGIText;
-    [SerializeField] private Text healthValueText;
-    [SerializeField] private Text healthText;
-
-    [SerializeField] private Text[] statsText;
+    public Text helperText;
+    public Text statsText;
 
     public int baseIntellect;
     public int baseAgility;
@@ -46,14 +37,20 @@ public class Player : MonoBehaviour
     private int stamina;
     private int coins;
 
+    [SerializeField]
+    private Text coinText;
+
+    public Text outputText;
+    public Text healthText;
+
     public Button inventoryButton;
     public Inventory inventory;
-    //public Inventory charPanel;
+    public Inventory charPanel;
 
     // A reference to the chest (to be added)
     // private Inventory chest;
 
-    public Item[] items = new Item[6];
+    public Item[] items = new Item[10];
  
     public Rigidbody rb;
     #endregion
@@ -95,7 +92,7 @@ public class Player : MonoBehaviour
     {
         Coins = 0;
         //SetStats(0,0,0,0);
-        //endScreen.gameObject.SetActive(false);
+        endScreen.gameObject.SetActive(false);
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody>();
@@ -131,7 +128,7 @@ public class Player : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            convoText.text = "You Died!";
+            outputText.text = "You Died!";
             PlayerDie();
         }
     }
@@ -158,13 +155,13 @@ public class Player : MonoBehaviour
         {
             print("Collided with " + other.gameObject.name);
             other.gameObject.GetComponent<AudioSource>().Play();
-            convoText.text = "It's my friend!";
+            outputText.text = "It's my friend!";
         }
         if(other.tag == "Item") //If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
-            //other.gameObject.GetComponent<AudioSource>().Play();
-            convoText.text = "I picked up my " + other.gameObject.name;
+            other.gameObject.GetComponent<AudioSource>().Play();
+            outputText.text = "I picked up my " + other.gameObject.name;
             other.gameObject.SetActive(false);
         }
     }

@@ -3,10 +3,7 @@ guid: 23637b3bd0692864faa98c9c0d0e4fbe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - stackText: {instanceID: 0}
-  - slotEmpty: {fileID: -482124364, guid: 39b745427a0c09248afb4afa1543644c, type: 3}
-  - slotHighlight: {fileID: 1979551033, guid: 39b745427a0c09248afb4afa1543644c, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
