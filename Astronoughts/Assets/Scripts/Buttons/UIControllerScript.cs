@@ -46,7 +46,7 @@ public class UIControllerScript : MonoBehaviour
 
         overlay.SetActive(true);
         statusPanel.SetActive(true);
-        convoPanel.SetActive(false);
+        convoPanel.SetActive(true);
     }
 
     public void OnRestartClicked()
