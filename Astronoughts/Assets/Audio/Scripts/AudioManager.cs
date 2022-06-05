@@ -45,7 +45,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         instance.source.volume = 1f;
         instance.GetComponent<AudioSource>().Play();
     }
@@ -79,16 +78,22 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float musicVolume)
     {
-        audioMixer.SetFloat("Music", musicVolume);
-        //audioMixer.GetFloat("Music",out musicVolume);
-        Debug.Log("Current Music Volume : " + musicVolume);
+        if(isHidden == false)
+        {
+            audioMixer.SetFloat("Music",musicVolume);
+            //audioMixer.GetFloat("Music",out musicVolume);
+            Debug.Log("Current Music Volume : " + musicVolume);
+        }
     }
 
     public void SetEffectsVolume(float sfxVolume)
     {
-        audioMixer.SetFloat("SFx", sfxVolume);
-        //audioMixer.GetFloat("SFx",out musicVolume);
-        Debug.Log("Current Sound Volume : " + sfxVolume);
+        if(isHidden == false)
+        {
+            audioMixer.SetFloat("SFx",sfxVolume);
+            //audioMixer.GetFloat("SFx",out musicVolume);
+            Debug.Log("Current Sound Volume : " + sfxVolume);
+        }
     }
 
 }

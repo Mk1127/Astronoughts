@@ -17,70 +17,52 @@ public class Inventory : MonoBehaviour
     // The width and height of the inventory
     protected float inventoryWidth, inventoryHeight;
 
-    // The number of slots
+    // The number of slots & rows, their size, and offset to top & left 
     public int slots;
-
-    // The number of rows
     public int rows;
-
-    // The left and top slots padding
+    public float slotSize;
     public float slotPaddingLeft, slotPaddingTop;
 
-    // The size of each slot
-    public float slotSize;
-
-    // slots prefab
-    public GameObject slotPrefab;
-
-    // background of inventory
+    // background of inventory, slots, and slots qualities
     public Image invImage;
-
     private Image slotImage;
-
     private Image[] slotImages;
 
     // Offset used to move the hovering object away from the mouse 
     protected float hoverYOffset;
 
     // variables for moving items to and from slots
+    // static
     private static Slot from, to;
-
-    public GameObject iconPrefab;
-
     private static GameObject hoverObject;
-
     private static int emptySlots;
 
+    // structural objects
     public EventSystem eventSystem;
-
     public Canvas canvas;
-
     public CanvasGroup canvasGroup;
 
+    // gameObjects (inventory prefabs to generate)
+    public GameObject iconPrefab;
+    public GameObject slotPrefab;
+    public Button inventoryButton;
+
+    // function-related variables
     private bool fadingIn;
-
     private bool fadingOut;
-
     private bool hidden;
 
     public float fadeTime;
-
     public float iA;
-
-    public Button inventoryButton;
-
-
     #endregion
 
     #region Collections
-
-    // A list of all the slots in the inventory
+    // a list for all of the inventory's slots
     private List<GameObject> allSlots;
-
     #endregion
 
     #region Properties
-    // Property for accessing the number of empty slots
+    // Property to let us access the number of empty slots
     public static int EmptySlots
     {
         get
@@ -92,7 +74,6 @@ public class Inventory : MonoBehaviour
             emptySlots = value;
         }
     }
-
     #endregion
 
 
@@ -100,7 +81,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         //Creates the inventory layout
-        CreateLayout();
+        MakeLayout();
 
         Image[] slotImages = GetSlots();
         invImage.color = new Color(1,1,1,0);
@@ -166,7 +147,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void CreateLayout()
+    public void MakeLayout()
     {
         //Instantiate "allSlot" list
         allSlots = new List<GameObject>();
@@ -223,34 +204,36 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
     /// Add an item to the inventory
     /// <param name="item">The item to add</param>
     /// <returns></returns>
+    /// </summary>
     public bool AddItem(Item item)
     {
-        if(item.maxSize == 1) //If the item isn't stackable
+        if(item.maxSize == 1) // If the item isn't stackable
         {
-            //Places the item at an empty slot
+            // Places the item on an empty slot
             PlaceEmpty(item);
             return true;
         }
-        else //If the item is stackable 
+        else // If the item is stackable 
         {
-            foreach(GameObject slot in allSlots) //Runs through all slots in the inventory
+            foreach(GameObject slot in allSlots) // Runs through all slots in the inventory
             {
-                Slot tmp = slot.GetComponent<Slot>(); //Creates a reference to the slot
+                Slot tmp = slot.GetComponent<Slot>(); // Creates a reference to the slot
 
-                if(!tmp.IsEmpty) //If the item isn't empty
+                if(!tmp.IsEmpty) // If the item isn't empty
                 {
-                    //Checks if the om the slot is the same type as the item we want to pick up
+                    // Checks if the om the slot is the same type as the item we want to pick up
                     if(tmp.CurrentItem.type == item.type && tmp.IsAvailable)
                     {
-                        tmp.AddItem(item); //Adds the item to the inventory
+                        tmp.AddItem(item); // Adds the item to the inventory
                         return true;
                     }
                 }
             }
-            if(emptySlots > 0) //Places the item on an empty slots
+            if(emptySlots > 0) // Places the item on an empty slots
             {
                 return PlaceEmpty(item);
             }
@@ -259,19 +242,21 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    /// <summary>
     /// Put item in empty slot
     /// <param name="item"></param>
     /// <returns></returns>
+    /// </summary>
     private bool PlaceEmpty(Item item)
     {
-        if(emptySlots > 0) //If we have at least one empty slot
+        if(emptySlots > 0) // If we have at least one empty slot
         {
-            foreach(GameObject slot in allSlots) //Run through all of the slots
+            foreach(GameObject slot in allSlots) // Run through all of the slots
             {
-                Slot tmp = slot.GetComponent<Slot>(); //Create a reference to the slot 
-                if(tmp.IsEmpty) //If the slot is empty
+                Slot tmp = slot.GetComponent<Slot>(); // Create a reference to the slot 
+                if(tmp.IsEmpty) // If the slot is empty
                 {
-                    tmp.AddItem(item); //Add item
+                    tmp.AddItem(item); // Add item
                     return true;
                 }
             }
@@ -279,45 +264,47 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    /// <summary>
     /// Move an item to another slot in the inventory
     /// <param name="clicked"></param>
+    /// </summary>
     public void MoveItem(GameObject clicked)
     {
         if(from == null)
         {
-            if(!clicked.GetComponent<Slot>().IsEmpty) //The slot we clicked isn't empty
+            if(!clicked.GetComponent<Slot>().IsEmpty) // The slot we clicked isn't empty
             {
-                from = clicked.GetComponent<Slot>(); //The slot we're emoving from
-                from.GetComponent<Image>().color = Color.gray; //Set the "from" slot's color to gray (its the "from" slot)
+                from = clicked.GetComponent<Slot>(); // The slot we're emoving from
+                from.GetComponent<Image>().color = Color.gray; // Set the "from" slot's color to gray (its the "from" slot)
 
                 hoverObject = (GameObject)Instantiate(iconPrefab);
-                hoverObject.GetComponent<Image>().sprite = clicked.GetComponent<Image>().sprite; //Sets the sprite on the hover object so that it reflects the object we are moving
-                hoverObject.name = "Hover"; //Sets the name of the hover object
+                hoverObject.GetComponent<Image>().sprite = clicked.GetComponent<Image>().sprite; // Sets the sprite on the hover object so that it reflects the object we are moving
+                hoverObject.name = "Hover"; // Sets the name of the hover object
 
-                //Creates references to the transforms
+                // Creates references to the transforms
                 RectTransform hoverTransform = hoverObject.GetComponent<RectTransform>();
                 RectTransform clickedTransform = clicked.GetComponent<RectTransform>();
 
-                //Sets the size of the hoverobject so that it has the same size as the clicked object
+                // Sets the size of the hoverobject so that it has the same size as the clicked object
                 hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,clickedTransform.sizeDelta.x);
                 hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,clickedTransform.sizeDelta.y);
 
-                //Sets the hoverobject's parent as the canvas, so that it is visible in the game
+                // Sets the hoverobject's parent as the canvas, so that it is visible in the game
                 hoverObject.transform.SetParent(GameObject.Find("Canvas").transform,true);
 
-                //Sets the local scale to make usre that it has the correct size
+                // Sets the local scale to make usre that it has the correct size
                 hoverObject.transform.localScale = clicked.gameObject.transform.localScale;
 
-                //hoverObject.transform.GetChild(0).GetComponent<Text>().text = movingSlot.Items.Count > 1 ? movingSlot.Items.Count.ToString() : string.Empty;
+                // hoverObject.transform.GetChild(0).GetComponent<Text>().text = movingSlot.Items.Count > 1 ? movingSlot.Items.Count.ToString() : string.Empty;
             }
         }
-        else if(to == null) //Select the slot we are moving to
+        else if(to == null) // Select the slot we are moving to
         {
-            to = clicked.GetComponent<Slot>(); //Set the "to" object
+            to = clicked.GetComponent<Slot>(); // Set the "to" object
             Destroy(GameObject.Find("Hover"));
         }
         
-        if(to != null && from != null) //If both "to" and "from" are null we're done moving items. 
+        if(to != null && from != null) // If both "to" and "from" are null we're done moving items. 
         {
             Stack<Item> tmpTo = new Stack<Item>(to.Items);
             to.AddItems(from.Items);
@@ -330,7 +317,7 @@ public class Inventory : MonoBehaviour
             {
                 from.AddItems(tmpTo);
             }
-            //Reset all values
+            // Reset all values
             from.GetComponent<Image>().color = Color.white;
             to = null;
             from = null;
@@ -339,13 +326,13 @@ public class Inventory : MonoBehaviour
     }
     private IEnumerator FadeOut()
     {
-        if(!fadingOut) //Checks if we are already fading out
+        if(!fadingOut) // Checks if we are already fading out
         {
-            //Sets the current state
+            // Sets the current state
             fadingOut = true;
             fadingIn = false;
 
-            //Makes sure that we are not fading out the at same time
+            // Makes sure that we are not fading out the at same time
             StopCoroutine("FadeIn");
 
 
@@ -361,42 +348,26 @@ public class Inventory : MonoBehaviour
                 yield return null;
             }
 
-            //Sets the values for fading
-            // float startAlpha = canvasGroup.alpha;
-
-            //float rate = 1.0f / fadeTime; //Calculates the rate, so that we can fade over x number of seconds
-
-            // float progress = 0.0f; //Progresses over the set time
-
-            //while(progress < 1.0) //Progresses over the set time
-            //{
-            //    slotImage.color = Mathf.Lerp(startAlpha,0,progress);  //Lerps from the start alpha to 0 to make the inventory invisible
-            //
-            //    progress += rate * Time.deltaTime; //Adds to the progress so that we will get close to out goal
-            //
-            //     yield return null;
-            // }
-
-            //Sets the end condition to make sure we are 100% invisible
-            //slotImage.alpha = 0;
+            // Sets the end condition to make sure we are 100% invisible
+            // slotImage.alpha = 0;
             invImage.color = new Color(1,1,1,0);
 
-            //Sets the status
+            // Sets the status
             fadingOut = false;
-            //instantClose = false;
+            // instantClose = false;
 
         }
     }
 
     private IEnumerator FadeIn()
     {
-        if(!fadingIn) //Is it already fading out?
+        if(!fadingIn) // Is it already fading out?
         {
-            //Set the current state
+            // Set the current state
             fadingOut = false;
             fadingIn = true;
 
-            //Make sure that we are not fading out
+            // Make sure that we are not fading out
             StopCoroutine("FadeOut");
 
             // loop over 1 second
@@ -409,33 +380,14 @@ public class Inventory : MonoBehaviour
                     slotImage.color = new Color(1,1,1,iA);
                 }
 
-                //if(instantClose)
-                // {
-                //     break;
-                // }
                 yield return null;
             }
 
-            //float startAlpha = slotImage.alpha; //Set the start alpha value
-
-            //float rate = 1.0f / fadeTime; //Calculate the rate, so that we can fade over x amount of seconds
-
-            //float progress = 0.0f; //Reset the progress
-
-            //while(progress < 1.0) //Progress over the set time
-            //{
-            //    slotImage.alpha = Mathf.Lerp(startAlpha,1,progress); //Lerp from the start alpha to one to make the inventory visible
-            //
-            //    progress += rate * Time.deltaTime; //Add to the progress so that we will get close to out goal
-            //
-            //    yield return null;
-            //}
-
-            //Set the end condition to make sure we are 100% visible
-            //slotImage.alpha = 1;
+            // Set the end condition to make sure we are 100% visible
+            // slotImage.alpha = 1;
             invImage.color = new Color(1,1,1,1);
 
-            //Set the status
+            // Set the status
             fadingIn = false;
         }
     }
