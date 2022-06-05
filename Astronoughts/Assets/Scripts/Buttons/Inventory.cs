@@ -10,7 +10,6 @@ using UnityEngine.EventSystems;
 public class Inventory : MonoBehaviour
 {
     #region Variables
-
     // A reference to the inventorys RectTransform
     protected RectTransform inventoryRect;
 
@@ -34,9 +33,7 @@ public class Inventory : MonoBehaviour
 
     // background of inventory
     public Image invImage;
-
     private Image slotImage;
-
     private Image[] slotImages;
 
     // Offset used to move the hovering object away from the mouse 
@@ -44,32 +41,18 @@ public class Inventory : MonoBehaviour
 
     // variables for moving items to and from slots
     private static Slot from, to;
-
     public GameObject iconPrefab;
-
     private static GameObject hoverObject;
-
     private static int emptySlots;
-
     public EventSystem eventSystem;
-
     public Canvas canvas;
-
     public CanvasGroup canvasGroup;
-
     private bool fadingIn;
-
     private bool fadingOut;
-
     private bool hidden;
-
     public float fadeTime;
-
     public float iA;
-
     public Button inventoryButton;
-
-
     #endregion
 
     #region Collections

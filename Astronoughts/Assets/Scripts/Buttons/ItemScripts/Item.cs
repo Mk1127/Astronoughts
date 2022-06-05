@@ -26,19 +26,19 @@ public class Item : MonoBehaviour
         switch(type)
         {
             case ItemType.JETPACK:
-                UnityEngine.Debug.Log("I collected my jetpack.");
+                UnityEngine.Debug.Log("I used my jetpack.");
                 break;
             case ItemType.ENGINE:
-                UnityEngine.Debug.Log("I collected the engine.");
+                UnityEngine.Debug.Log("I used the engine.");
                 break;
             case ItemType.SOLAR:
-                UnityEngine.Debug.Log("I collected the solar panels.");
+                UnityEngine.Debug.Log("I used the solar panels.");
                 break;
             case ItemType.POTION:
                 UnityEngine.Debug.Log("I just drank a potion.");
                 break;
             case ItemType.WEAPON:
-                UnityEngine.Debug.Log("I collected a weapon.");
+                UnityEngine.Debug.Log("I used a weapon.");
                 break;
         }
     }

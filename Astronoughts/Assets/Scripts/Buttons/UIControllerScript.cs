@@ -41,12 +41,12 @@ public class UIControllerScript : MonoBehaviour
     {
         overlayHidden = false;
         statusHidden = false;
-        //convoHidden = true;
+        convoHidden = false;
         //allHidden = false;
 
         overlay.SetActive(true);
         statusPanel.SetActive(true);
-        convoPanel.SetActive(false);
+        convoPanel.SetActive(true);
     }
 
     public void OnRestartClicked()

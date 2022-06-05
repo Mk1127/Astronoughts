@@ -119,12 +119,12 @@ TextureImporter:
       name: slots&selected_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 218
-        width: 132
+        x: 178
+        y: 634
+        width: 135
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: slots&selected_1
       rect:
         serializedVersion: 2
-        x: 317
-        y: 216
-        width: 132
+        x: 316
+        y: 632
+        width: 137
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: slots&selected_2
       rect:
         serializedVersion: 2
-        x: 455
-        y: 214
-        width: 132
+        x: 457
+        y: 630
+        width: 135
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: slots&selected_3
       rect:
         serializedVersion: 2
-        x: 593
-        y: 212
-        width: 132
+        x: 595
+        y: 628
+        width: 133
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: slots&selected_4
       rect:
         serializedVersion: 2
-        x: 731
-        y: 210
-        width: 132
+        x: 733
+        y: 626
+        width: 133
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: slots&selected_5
       rect:
         serializedVersion: 2
-        x: 869
-        y: 208
-        width: 132
+        x: 872
+        y: 624
+        width: 134
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: slots&selected_6
       rect:
         serializedVersion: 2
-        x: 1007
-        y: 208
+        x: 1009
+        y: 624
         width: 132
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: slots&selected_7
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 208
-        width: 132
+        x: 1145
+        y: 624
+        width: 133
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,12 +287,12 @@ TextureImporter:
       name: slots&selected_8
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 206
+        x: 1283
+        y: 622
         width: 132
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,12 +308,12 @@ TextureImporter:
       name: slots&selected_9
       rect:
         serializedVersion: 2
-        x: 1417
-        y: 206
+        x: 1419
+        y: 622
         width: 132
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,6 +321,636 @@ TextureImporter:
       bones: []
       spriteID: 047d276a4f1b0a54ca0443735c747cba
       internalID: -1449929939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 496
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb489624bb339754baa5897665f26022
+      internalID: 10629500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 494
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5e4ce3c4b98bc46b4835675ed8e051
+      internalID: 1365601452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_12
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 492
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121a19672c1d99e4f8f03bb3d9f6cfca
+      internalID: -1159705695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_13
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 490
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfde77955c9fcdb479cdd5690754e3b9
+      internalID: -151402614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_14
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 489
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf53853cf0ff08f409f7ab80cf8902ff
+      internalID: 199757047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_15
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 486
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5e1e9f277167f4dbe0793607a0c02c
+      internalID: -1697171769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_16
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 486
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2981591339760745b65b233e5c155ab
+      internalID: -2029414880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_17
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 486
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43152103c0d9a0f4f867dce73f2d6a8c
+      internalID: -1661454808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_18
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 484
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255e684586fdad148999ded449e2fead
+      internalID: -952057266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_19
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 484
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62e9153c66dce94ba09b13c76648b43
+      internalID: 739906520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_20
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 358
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b20f46a09baa54d9deac27d695f270
+      internalID: -1158044278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_21
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 356
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d895ead2fe41b648a0e2511da451fe8
+      internalID: 968608391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_22
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 354
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb188a961919cc14c88d77784ab2db39
+      internalID: -1671904522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_23
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 352
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1c0ed3e64d7ea47a53d8b0ca94d23e
+      internalID: -1000704937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_24
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 350
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e16baf42ddb17498e4c3461cd43f7f
+      internalID: -298362925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_25
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 348
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e222bac31d7f8364d97bf2f57803293e
+      internalID: -1563362423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_26
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 348
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4cf7162a2328248ba91bb28bff20e6
+      internalID: -2099060328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_27
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 348
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c72d67635e8fd4192011e865e24ba5
+      internalID: 1005883871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_28
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 346
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97516079fd88a442a2223a9092935eb
+      internalID: 226234509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_29
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 346
+        width: 135
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cea3fa7324bbe4cb0f3ac5162de644
+      internalID: -1067653150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_30
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 218
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14adb165d8df52c4fa21f16871f831cf
+      internalID: -482124364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_31
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 216
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10c544ebafaf4641b92f3b7db4860c2
+      internalID: 1979551033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_32
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 214
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa2d0a9beec839439867c6197679ed1
+      internalID: 1526980782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_33
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 212
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2943ea5d009756b4fb2a62bf547d4241
+      internalID: 1862193404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_34
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 210
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64840aba3fd81c6459d55cbae1a82160
+      internalID: -1081008446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_35
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 208
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d37a579fbb610443b6fdd2622b613aa
+      internalID: 1514152175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_36
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 208
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb4f63cb923e2e4a9484910654271fa
+      internalID: 885978085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_37
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 208
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ca8cae9f7f1b940996b7e70852205c
+      internalID: -256851421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_38
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 206
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530b94f83d924484a89f72a5259009b5
+      internalID: 1750503778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slots&selected_39
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 206
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8725ef97962266642abdfff6ff01fced
+      internalID: 902771820
       vertices: []
       indices: 
       edges: []
@@ -337,15 +967,45 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       slots&selected_0: 1661606116
+      slots&selected_13: -151402614
+      slots&selected_31: 1979551033
+      slots&selected_14: 199757047
+      slots&selected_29: -1067653150
       slots&selected_3: -32597270
+      slots&selected_27: 1005883871
+      slots&selected_32: 1526980782
+      slots&selected_39: 902771820
       slots&selected_8: -1121055555
+      slots&selected_33: 1862193404
+      slots&selected_35: 1514152175
+      slots&selected_11: 1365601452
+      slots&selected_37: -256851421
       slots&selected_5: 426258754
+      slots&selected_15: -1697171769
+      slots&selected_36: 885978085
+      slots&selected_34: -1081008446
+      slots&selected_25: -1563362423
       slots&selected_9: -1449929939
+      slots&selected_24: -298362925
+      slots&selected_22: -1671904522
       slots&selected_7: -1647058545
       slots&selected_1: -1957000698
+      slots&selected_17: -1661454808
+      slots&selected_28: 226234509
+      slots&selected_10: 10629500
+      slots&selected_23: -1000704937
       slots&selected_4: 1020799240
+      slots&selected_21: 968608391
+      slots&selected_18: -952057266
       slots&selected_2: -1036432959
+      slots&selected_38: 1750503778
+      slots&selected_20: -1158044278
+      slots&selected_19: 739906520
       slots&selected_6: 58401453
+      slots&selected_30: -482124364
+      slots&selected_26: -2099060328
+      slots&selected_16: -2029414880
+      slots&selected_12: -1159705695
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
