@@ -1,9 +1,3 @@
-//////////////////////////////////////////////////////
-//Assignment/Lab/Project: Final Project
-//Name: Julian Davis
-//Section: (2022SU.SGD.289)
-//Instructor: Amber Johnson
-//////////////////////////////////////////////////////
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,6 +43,7 @@ public class UIControllerScript : MonoBehaviour
         convoPanel.SetActive(true);
     }
 
+    #region Functions
     public void OnRestartClicked()
     {
         // This button was clicked.
@@ -98,5 +93,6 @@ public class UIControllerScript : MonoBehaviour
             statusHidden = false;
         }
     }
+    #endregion
 
 }

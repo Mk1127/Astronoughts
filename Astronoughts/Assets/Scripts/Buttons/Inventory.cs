@@ -118,6 +118,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    #region Functions
     public Image[] GetSlots()
     {
         // Get the slot objects
@@ -149,66 +150,51 @@ public class Inventory : MonoBehaviour
 
     public void MakeLayout()
     {
-        //Instantiate "allSlot" list
+        // Instantiate "allSlot" list
         allSlots = new List<GameObject>();
 
-        //Calculate hoverYOffset: 1% of slot size
-        hoverYOffset = slotSize * 0.1f;
-
-        //Store the number of empty slots
+        // Store the number of empty slots
         emptySlots = slots;
 
-        //Calculate inventory width
-        inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft);
-
-        //Calculate inventory height
-        inventoryHeight = rows * (slotSize + slotPaddingTop);
-
-        //Create a reference to the inventory's RectTransform
+        // Create a reference to the inventory's RectTransform
         inventoryRect = GetComponent<RectTransform>();
 
-        //Set the inventory's width and height
+        // Set hoverYOffset: 1% of slot size, set inventory height and width
+        hoverYOffset = slotSize * 0.1f;
+        inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft);
+        inventoryHeight = rows * (slotSize + slotPaddingTop);
         inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,inventoryWidth + slotPaddingLeft);
         inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,inventoryHeight + slotPaddingTop);
 
-        //Calculate the number of columns
+        // How many columns?
         int columns = slots / rows;
 
         for(int y = 0;y < rows;y++) //Runs through the rows
         {
             for(int x = 0;x < columns;x++) //Runs through the columns
             {
-                //Instantiates the slot and creates a reference to it
+                // Instantiates the slot and creates a reference
                 GameObject newSlot = (GameObject)Instantiate(slotPrefab);
 
-                //Makes a reference to the rect transform
-                RectTransform slotRect = newSlot.GetComponent<RectTransform>();
-
-                //Sets the slots name
+                // Set Slotname
                 newSlot.name = "Slot";
 
                 //Sets the canvas as the parent of the slots, so that it will be visible on the screen
                 newSlot.transform.SetParent(this.transform.parent);
 
-                //Sets the slots position
+                // Creates rect transform, sets position and size
+                RectTransform slotRect = newSlot.GetComponent<RectTransform>();
                 slotRect.localPosition = inventoryRect.localPosition + new Vector3(slotPaddingLeft * (x + 1) + (slotSize * x),-slotPaddingTop * (y + 1) - (slotSize * y));
-
-                //Sets the size of the slot
                 slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,slotSize * canvas.scaleFactor);
                 slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotSize * canvas.scaleFactor);
                 newSlot.transform.SetParent(this.transform);
 
-                //Adds the new slots to the slot list
+                // Adds to allSlots
                 allSlots.Add(newSlot);
             }
         }
     }
 
-    /// <summary>
-    /// Add an item to the inventory
-    /// <param name="item">The item to add</param>
-    /// <returns></returns>
-    /// </summary>
     public bool AddItem(Item item)
     {
         if(item.maxSize == 1) // If the item isn't stackable
@@ -242,11 +228,6 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    /// <summary>
-    /// Put item in empty slot
-    /// <param name="item"></param>
-    /// <returns></returns>
-    /// </summary>
     private bool PlaceEmpty(Item item)
     {
         if(emptySlots > 0) // If we have at least one empty slot
@@ -264,10 +245,6 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    /// <summary>
-    /// Move an item to another slot in the inventory
-    /// <param name="clicked"></param>
-    /// </summary>
     public void MoveItem(GameObject clicked)
     {
         if(from == null)
@@ -324,6 +301,7 @@ public class Inventory : MonoBehaviour
 
         }
     }
+    
     private IEnumerator FadeOut()
     {
         if(!fadingOut) // Checks if we are already fading out
@@ -392,5 +370,5 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
+    #endregion
 }

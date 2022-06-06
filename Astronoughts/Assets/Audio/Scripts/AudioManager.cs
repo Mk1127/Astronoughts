@@ -1,10 +1,4 @@
-﻿//////////////////////////////////////////////////////
-//Assignment/Lab/Project: Final Project
-//Name: Julian Davis
-//Section: (2022SU.SGD.289)
-//Instructor: Amber Johnson
-//////////////////////////////////////////////////////
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,6 +56,7 @@ public class AudioManager : MonoBehaviour
         Debug.Log("Current Sound Volume : " + sfxVolume);
     }
 
+    #region Functions
     public void OnSettingsClick()
     {
         if(isHidden == true)
@@ -95,5 +90,6 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Current Sound Volume : " + sfxVolume);
         }
     }
+    #endregion
 
 }

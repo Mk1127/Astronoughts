@@ -6,26 +6,26 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-
 public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
+    #region Variables
     private Stack<Item> items;
 
-    // The amount of items to pickup (stack text)
+    // The number of items to pickup (stack text)
     public Text stackText;
 
     // The slot's various sprite images
     public Sprite slotEmpty;
     public Sprite slotHighlight;
-    public Sprite slotBright;
 
     [SerializeField]
-    [Tooltip("length of press needed to trigger a long press")]
     private float holdTime = 1f;
     private bool held = false;
     public UnityEvent onClick = new UnityEvent();
     public UnityEvent onLongPress = new UnityEvent();
+    #endregion
 
+    #region Properties
     // Indicates if the slot is empty
     public bool IsEmpty
     {
@@ -35,7 +35,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         }
     }
 
-    // Indicates if the slot is avaialble for stacking more items
+    // Indicates if the slot is available for stacking more items
     public bool IsAvailable
     {
         get
@@ -58,6 +58,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         get => items;
         set => items = value;
     }
+    #endregion
 
     void Start()
     {
@@ -82,10 +83,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         textRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotRect.sizeDelta.y);
     }
 
-    /// <summary>
-    /// Adds a single item to the inventory
-    /// <param name="item">The item to add</param>
-    /// </summary>
+    void Update()
+    {
+    }
+
+    #region Functions
     public void AddItem(Item item)
     {
         if(IsEmpty) // if the slot is empty
@@ -100,10 +102,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         ChangeSprite(item.spriteNeutral,item.spriteHighlighted); // Changes the sprite so that it reflects the item the slot is occupied by
     }
 
-    /// <summary>
-    /// Adds a stack of items to the slot
-    /// <param name="items">The stack of items to add</param>
-    /// </summary>
     public void AddItems(Stack<Item> items)
     {
         if(IsEmpty) // if the slot is empty
@@ -115,17 +113,15 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         ChangeSprite(CurrentItem.spriteNeutral,CurrentItem.spriteHighlighted); //Changes the sprite so that it reflects the item the slot is occupied by
     }
 
-    private void ChangeSprite(Sprite neutral,Sprite highlight)
+    private void ChangeSprite(Sprite neutral, Sprite highlight)
     {
-        // Sets the genericsprite
+        // Sets the generic sprite
         GetComponent<Image>().sprite = neutral;
 
-        //Creates a spriteState, so that we can change the sprites of the different states
+        // creating and setting dfferent states for the Sprites
         SpriteState st = new SpriteState();
         st.highlightedSprite = highlight;
         st.pressedSprite = neutral;
-
-        //Sets the sprite state
         GetComponent<Button>().spriteState = st;
     }
 
@@ -135,12 +131,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         if(!IsEmpty)
         {
             Items.Pop().Use();
-            stackText.text = Items.Count > 1 ? Items.Count.ToString() : string.Empty; //Writes the correct stack number 
+            stackText.text = Items.Count > 1 ? Items.Count.ToString() : string.Empty; // edit stack number 
 
-            if(IsEmpty) //Checks if we just removed the last item from the inventory
+            if(IsEmpty) // Is the item removed the last one?
             {
-                ChangeSprite(slotEmpty,slotHighlight); //Changes the sprite to empty if the slot is empty
-                Inventory.EmptySlots++; //Adds 1 to the amount of empty slots
+                ChangeSprite(slotEmpty,slotHighlight); // if it is, change icon
+                Inventory.EmptySlots++; // Add 1 to the number of empty slots
             }
 
         }
@@ -150,13 +146,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
     // Clears the slot
     public void ClearSlot()
     {
-        //Clears all items on the slot
+        // Clears slot of all items, changes sprite & text
         items.Clear();
-
-        //Changes the sprite to empty
         ChangeSprite(slotEmpty,slotHighlight);
-
-        //Clears the text
         stackText.text = string.Empty;
 
         if(transform.parent != null)
@@ -165,10 +157,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         }
     }
 
-    /// <summary>
-    /// Handles OnPointer events
-    /// <param name="eventData"></param>
-    /// </summary>
+    // Functions to control mouse button use
     public void OnPointerClick(PointerEventData eventData)
     {
         if(eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("Hover"))
@@ -200,5 +189,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         held = true;
         onLongPress.Invoke();
     }
+    #endregion
 
 }

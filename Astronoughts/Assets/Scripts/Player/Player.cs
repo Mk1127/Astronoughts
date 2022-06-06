@@ -24,34 +24,16 @@ public class Player : MonoBehaviour
 
     // Shows the player what he needs to do
     public Text convoText;
-    public Text intText;
-    public Text strText;
-    public Text staText;
-    public Text agiText;
     public Text[] allText;
-
-    public int baseIntellect;
-    public int baseAgility;
-    public int baseStrength;
-    public int baseStamina;
-
-    private int intellect;
-    private int agility;
-    private int strength;
-    private int stamina;
-    private int coins;
+    private int components;
 
     [SerializeField]
-    private Text coinText;
+    private Text componentsText;
     public Text healthValueText;
     public Text healthText;
 
     public Button inventoryButton;
     public Inventory inventory;
-    // public Inventory charPanel;
-
-    // A reference to the chest (to be added)
-    // private Inventory chest;
 
     public Item[] items = new Item[3];
  
@@ -59,16 +41,16 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Properties
-    public int Coins
+    public int Components
     {
         get
         {
-            return coins;
+            return components;
         }
         set
         {
-            coinText.text = "Coins: " + value;
-            coins = value;
+            componentsText.text = "Components: " + value;
+            components = value;
         }
     }
 
@@ -93,36 +75,15 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Coins = 0;
-        //SetStats(0,0,0,0);
+        components = 0;
+        componentsText.text = "Components: " + components;
         endScreen.gameObject.SetActive(false);
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.E))
-        //{
-        //    if(chest != null)
-        //    {
-        //        if(chest.canvasGroup.alpha == 0 || chest.canvasGroup.alpha == 1)
-        //        {
-        //            chest.Open();
-        //       }
-        //    }
-        // }
-        // if(Input.GetKeyDown(KeyCode.C))
-        // {
-        //     if(charPanel != null)
-        //     {
-        //         charPanel.Open();
-        //     }
-        // }
-    }
-
+    #region Functions
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -144,29 +105,31 @@ public class Player : MonoBehaviour
         endScreen.gameObject.SetActive(true);
     }
 
-    // Handles the player's collision with inventory items
-    // <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Enemy")
         {
             print("Collided with " + other.gameObject.name);
-            other.gameObject.GetComponent<AudioSource>().Play();
+            //other.gameObject.GetComponent<AudioSource>().Play();
         }
 
         if(other.gameObject.tag == "Friend")
         {
             print("Collided with " + other.gameObject.name);
-            other.gameObject.GetComponent<AudioSource>().Play();
+            //other.gameObject.GetComponent<AudioSource>().Play();
             convoText.text = "It's my friend!";
         }
-        if(other.tag == "Item") //If we collide with an item that we can pick up
+        if(other.tag == "Item") // If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
+            inventory.AddItem(other.GetComponent<Item>());
             convoText.text = "I picked up my " + other.gameObject.name;
+            components++;
+            componentsText.text = "Components: " + components;
             other.gameObject.SetActive(false);
         }
     }
+    #endregion
 
 }
