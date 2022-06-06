@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
 
     // structural objects
     public EventSystem eventSystem;
-    public Canvas canvas;
+    public Canvas UI;
     public CanvasGroup canvasGroup;
 
     // gameObjects (inventory prefabs to generate)
@@ -110,10 +110,10 @@ public class Inventory : MonoBehaviour
             if(hoverObject != null)
             {
                 Vector2 position;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,Input.mousePosition,canvas.worldCamera,out position);
-                hoverObject.transform.position = canvas.transform.TransformPoint(position);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(UI.transform as RectTransform,Input.mousePosition,UI.worldCamera,out position);
+                hoverObject.transform.position = UI.transform.TransformPoint(position);
                 position.Set(position.x,position.y - hoverYOffset);
-                hoverObject.transform.position = canvas.transform.TransformPoint(position);
+                hoverObject.transform.position = UI.transform.TransformPoint(position);
             }
         }
     }
@@ -185,8 +185,8 @@ public class Inventory : MonoBehaviour
                 // Creates rect transform, sets position and size
                 RectTransform slotRect = newSlot.GetComponent<RectTransform>();
                 slotRect.localPosition = inventoryRect.localPosition + new Vector3(slotPaddingLeft * (x + 1) + (slotSize * x),-slotPaddingTop * (y + 1) - (slotSize * y));
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,slotSize * canvas.scaleFactor);
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotSize * canvas.scaleFactor);
+                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,slotSize * UI.scaleFactor);
+                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotSize * UI.scaleFactor);
                 newSlot.transform.SetParent(this.transform);
 
                 // Adds to allSlots
@@ -267,7 +267,7 @@ public class Inventory : MonoBehaviour
                 hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,clickedTransform.sizeDelta.y);
 
                 // Sets the hoverobject's parent as the canvas, so that it is visible in the game
-                hoverObject.transform.SetParent(GameObject.Find("Canvas").transform,true);
+                hoverObject.transform.SetParent(GameObject.Find("UI").transform,true);
 
                 // Sets the local scale to make usre that it has the correct size
                 hoverObject.transform.localScale = clicked.gameObject.transform.localScale;

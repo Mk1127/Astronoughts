@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Text componentsText;
-    public Text healthValueText;
     public Text healthText;
 
     public Button inventoryButton;
