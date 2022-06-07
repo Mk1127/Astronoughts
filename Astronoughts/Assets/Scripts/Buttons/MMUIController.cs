@@ -36,7 +36,7 @@ public class MMUIController : MonoBehaviour
         panelAnimator.SetBool("isPlaying",true);
         if(scene == "Splash")
         {
-            text.text = "Skip";
+            text.text = "Next";
             mainMenu.SetActive(false);
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(true);

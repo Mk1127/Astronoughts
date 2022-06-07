@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private int currentHealth;
     public int maxHealth = 100;
 
-    public GameObject endScreen;
+    //public GameObject endScreen;
     public GameObject player;
 
     // Shows the player what he needs to do
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     {
         components = 0;
         componentsText.text = "Components: " + components;
-        endScreen.gameObject.SetActive(false);
+        //endScreen.gameObject.SetActive(false);
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody>();
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         Debug.Log("Player died!");
 
         //anim.SetBool("isDead",true);
-        endScreen.gameObject.SetActive(true);
+        SceneManager.LoadScene("GameOver");
     }
 
     private void OnTriggerEnter(Collider other)
