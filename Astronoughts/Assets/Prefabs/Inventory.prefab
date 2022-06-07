@@ -99,7 +99,7 @@ MonoBehaviour:
   UI: {fileID: 0}
   canvasGroup: {fileID: 0}
   iconPrefab: {fileID: 6819180497512616429, guid: 4176e9004c8102c4b98585d6201387a5, type: 3}
-  slotPrefab: {fileID: 0}
+  slotPrefab: {fileID: 8768998649352334855, guid: 34577a65706760b4ca6fd6df7ea99737, type: 3}
   inventoryButton: {fileID: 0}
   fadeTime: 2
   iA: 0
