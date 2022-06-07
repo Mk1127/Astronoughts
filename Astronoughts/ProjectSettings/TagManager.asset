@@ -11,6 +11,8 @@ TagManager:
   - Item
   - Checkpoint
   - Enemy
+  - Cave
+  - Block
   layers:
   - Default
   - TransparentFX

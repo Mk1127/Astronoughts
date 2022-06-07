@@ -41,7 +41,7 @@ public class Player_Interact : MonoBehaviour
 
             Debug.Log(hit.collider.tag);
 
-            if (hit.collider.tag == "Castable")
+            if (hit.collider.tag == "Block")
             {
                 Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
                 Debug.DrawRay(transform.position, forward, Color.red);
@@ -77,6 +77,11 @@ public class Player_Interact : MonoBehaviour
                     hit.collider.gameObject.GetComponent<Sequence_Totem>().ToggleTotem();
                 }
             }
+
+            if(hit.collider.tag == "Lever")
+            {
+
+            }
         }
         else
         {
@@ -104,11 +109,6 @@ public class Player_Interact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Checkpoint")
-        {
-            lastCheckpoint = other.transform.position;
-        }
-
         if (other.tag == "Enemy")
         {
             gameObject.GetComponent<CharacterController>().enabled = false;
@@ -127,6 +127,11 @@ public class Player_Interact : MonoBehaviour
         if(other.tag == "Grass")
         {
             isHidden = false;
+        }
+
+        if (other.tag == "Checkpoint")
+        {
+            lastCheckpoint = other.transform.position;
         }
     }
 }
