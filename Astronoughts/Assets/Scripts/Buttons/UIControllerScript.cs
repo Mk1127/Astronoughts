@@ -18,6 +18,7 @@ public class UIControllerScript : MonoBehaviour
     public GameObject overlay;
     public GameObject statusPanel;
     public GameObject convoPanel;
+    //public GameObject winPanel;
     public GameObject[] allPanels;
 
     public Button startButton;

@@ -8,7 +8,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Player : MonoBehaviour
+public class Player:MonoBehaviour
 {
     #region Variables
     public static Player instance;
@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
     public Inventory inventory;
 
     public Item[] items = new Item[3];
- 
+
+    public bool didWin;
     public Rigidbody rb;
     #endregion
 
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        didWin = false;
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
@@ -83,6 +85,17 @@ public class Player : MonoBehaviour
     }
 
     #region Functions
+
+    public void CheckWin()
+    {
+        if(components == 5)
+        {
+            convoText.text = "You've collected all the ship parts!";
+            didWin = true;
+            StartCoroutine(Wait());
+            SceneManager.LoadScene("GameOver");
+        }
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -99,7 +112,7 @@ public class Player : MonoBehaviour
     void PlayerDie()
     {
         Debug.Log("Player died!");
-
+        StartCoroutine(Wait());
         //anim.SetBool("isDead",true);
         SceneManager.LoadScene("GameOver");
     }
@@ -109,6 +122,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             print("Collided with " + other.gameObject.name);
+            TakeDamage(25);
             //other.gameObject.GetComponent<AudioSource>().Play();
         }
 
@@ -130,5 +144,8 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
-
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3);
+    }
 }

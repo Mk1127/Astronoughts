@@ -1,9 +1,3 @@
-//////////////////////////////////////////////////////
-//Assignment/Lab/Project: Final Project
-//Name: Julian Davis
-//Section: (2022SU.SGD.289)
-//Instructor: Amber Johnson
-//////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
