@@ -13,24 +13,28 @@ public class Enemy_StateMachine : MonoBehaviour
         patrol.enabled = true;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.transform.tag == "Player")
         {
             if (!collision.gameObject.GetComponent<Player_Interact>().isHidden)
             {
-                follow.enabled = true;
-                patrol.enabled = false;
+                ToggleFollow(true, false);
             }
+            else
+            {
+                ToggleFollow(false, true);
+            }
+        }
+        else
+        {
+            ToggleFollow(false, true);
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    public void ToggleFollow(bool toggleFollow, bool togglePatrol)
     {
-        if (collision.transform.tag == "Player")
-        {
-            follow.enabled = false;
-            patrol.enabled = true;
-        }
+        follow.enabled = toggleFollow;
+        patrol.enabled = togglePatrol;
     }
 }

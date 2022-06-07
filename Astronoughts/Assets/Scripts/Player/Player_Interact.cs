@@ -6,6 +6,8 @@ public class Player_Interact : MonoBehaviour
 {
     [SerializeField] float rayDistance;
     [SerializeField] Player_Rotation playerRot;
+    [SerializeField] InteractionText interactionText;
+    [SerializeField] Vector3 lastCheckpoint;
 
     public bool isHidden;
 
@@ -20,6 +22,14 @@ public class Player_Interact : MonoBehaviour
         {
             playerRot.enabled = true;
         }*/
+
+        if(interactionText == null)
+        {
+            if(GameObject.Find("InteractionText"))
+            {
+                interactionText = GameObject.Find("InteractionText").GetComponent<InteractionText>();
+            }
+        }
 
     }
     // Update is called once per frame
@@ -39,30 +49,76 @@ public class Player_Interact : MonoBehaviour
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.transform.parent = gameObject.transform;
-                    //playerRot.enabled = false;
+                    
+                    if(interactionText != null)
+                    {
+                        interactionText.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
                     hit.collider.gameObject.transform.parent = null;
-                    //playerRot.enabled = true;
+
+                    if (interactionText != null)
+                    {
+                        interactionText.gameObject.SetActive(true);
+                        interactionText.lookAt = hit.transform;
+                    }
                 }
             }
 
             if (hit.collider.tag == "Totem")
             {
+                interactionText.gameObject.SetActive(true);
+                interactionText.lookAt = hit.transform;
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.GetComponent<Sequence_Totem>().ToggleTotem();
                 }
             }
         }
+        else
+        {
+            if (interactionText.gameObject.activeSelf == true)
+            {
+                interactionText.gameObject.SetActive(false);
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            gameObject.transform.position = lastCheckpoint;
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Grass")
+        {
+            isHidden = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Grass")
+        if (other.tag == "Checkpoint")
         {
-            isHidden = true;
+            lastCheckpoint = other.transform.position;
+        }
+
+        if (other.tag == "Enemy")
+        {
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            gameObject.transform.position = lastCheckpoint;
+            gameObject.GetComponent<CharacterController>().enabled = true;
+
+            if(other.transform.childCount > 0)
+            {
+                other.gameObject.GetComponentInChildren<Enemy_StateMachine>().ToggleFollow(false, true);
+            }
         }
     }
 
