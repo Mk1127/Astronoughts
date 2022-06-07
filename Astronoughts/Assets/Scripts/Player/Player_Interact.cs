@@ -72,7 +72,7 @@ public class Player_Interact : MonoBehaviour
                 interactionText.gameObject.SetActive(true);
                 interactionText.lookAt = hit.transform;
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.GetComponent<Sequence_Totem>().ToggleTotem();
                 }
@@ -80,7 +80,13 @@ public class Player_Interact : MonoBehaviour
 
             if(hit.collider.tag == "Lever")
             {
+                interactionText.gameObject.SetActive(true);
+                interactionText.lookAt = hit.transform;
 
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    hit.collider.gameObject.GetComponent<Lever>().LowerDoor();
+                }
             }
         }
         else

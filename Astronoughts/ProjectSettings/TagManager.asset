@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - Cave
   - Block
+  - Lever
   layers:
   - Default
   - TransparentFX
