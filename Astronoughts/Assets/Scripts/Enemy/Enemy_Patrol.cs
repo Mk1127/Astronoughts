@@ -21,8 +21,6 @@ public class Enemy_Patrol : MonoBehaviour
         playing = true;
         startPos = transform.position;
 
-        Debug.Log(checkpoints[checkpointIndex]);
-
         if (checkpoints.Count > 0)
         {
             nextCheckPoint = startPos + checkpoints[checkpointIndex];
@@ -34,7 +32,7 @@ public class Enemy_Patrol : MonoBehaviour
     {
         SelectCheckpoint();
         MoveToCheckpoint();
-        DebugLogs();
+        //DebugLogs();
     }
 
     private void SelectCheckpoint()

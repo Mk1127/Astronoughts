@@ -1,9 +1,3 @@
-//////////////////////////////////////////////////////
-//Assignment/Lab/Project: Final Project
-//Name: Julian Davis
-//Section: (2022SU.SGD.289)
-//Instructor: Amber Johnson
-//////////////////////////////////////////////////////
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +12,8 @@ public class UIControllerScript : MonoBehaviour
     private bool statusHidden;
     private bool convoHidden;
     private bool allHidden;
+
+    public string Scene;
 
     public GameObject overlay;
     public GameObject statusPanel;
@@ -46,9 +42,10 @@ public class UIControllerScript : MonoBehaviour
 
         overlay.SetActive(true);
         statusPanel.SetActive(true);
-        convoPanel.SetActive(false);
+        convoPanel.SetActive(true);
     }
 
+    #region Functions
     public void OnRestartClicked()
     {
         // This button was clicked.
@@ -98,5 +95,6 @@ public class UIControllerScript : MonoBehaviour
             statusHidden = false;
         }
     }
+    #endregion
 
 }

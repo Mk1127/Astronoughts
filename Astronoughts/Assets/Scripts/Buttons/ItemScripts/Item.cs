@@ -1,44 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Diagnostics;
 public enum ItemType
 {
-    JETPACK, ENGINE, SOLAR, POTION, WEAPON
+    PART1, PART2, PART3, PART4, PART5
 };
 
 public class Item : MonoBehaviour
 {
-    // Type of item
     public ItemType type;
 
-    // The unclicked sprite
+    // Various Sprite Images to be used
     public Sprite spriteNeutral;
-
-    // The clicked sprite
     public Sprite spriteHighlighted;
 
     // The maximum amount of stacks
     public int maxSize;
 
-    // This function uses the item
-    public void Use()
+     public void Use()
     {
         switch(type)
         {
-            case ItemType.JETPACK:
-                UnityEngine.Debug.Log("I collected my jetpack.");
+            case ItemType.PART1:
+                UnityEngine.Debug.Log("I collected the 1st Component.");
                 break;
-            case ItemType.ENGINE:
-                UnityEngine.Debug.Log("I collected the engine.");
+            case ItemType.PART2:
+                UnityEngine.Debug.Log("I collected the 2nd Component.");
                 break;
-            case ItemType.SOLAR:
-                UnityEngine.Debug.Log("I collected the solar panels.");
+            case ItemType.PART3:
+                UnityEngine.Debug.Log("I collected 3rd Component.");
                 break;
-            case ItemType.POTION:
-                UnityEngine.Debug.Log("I just drank a potion.");
+            case ItemType.PART4:
+                UnityEngine.Debug.Log("I collected 4th Component.");
                 break;
-            case ItemType.WEAPON:
-                UnityEngine.Debug.Log("I collected a weapon.");
+            case ItemType.PART5:
+                UnityEngine.Debug.Log("I collected 5th Component.");
                 break;
         }
     }

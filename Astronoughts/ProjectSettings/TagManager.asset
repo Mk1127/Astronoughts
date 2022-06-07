@@ -8,6 +8,9 @@ TagManager:
   - Totem
   - Slot
   - Grass
+  - Item
+  - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
