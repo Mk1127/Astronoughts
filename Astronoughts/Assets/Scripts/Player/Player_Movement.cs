@@ -25,6 +25,10 @@ public class Player_Movement : MonoBehaviour
 
     float startSpeed;
 
+    [SerializeField] ParticleSystem ps;
+    [SerializeField] EmissionManager emissionManager;
+    [SerializeField] float fadeTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +106,7 @@ public class Player_Movement : MonoBehaviour
 
     void Jump()
     {
+
         if (isGRounded)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -109,6 +114,7 @@ public class Player_Movement : MonoBehaviour
                 Debug.Log("Jump Pressed");
                 speed = startSpeed * 0.8f;
                 velocity.y = jumpSpeed;
+                StartCoroutine(SparksFade());
             }
             else
             {
@@ -120,5 +126,13 @@ public class Player_Movement : MonoBehaviour
     void MoveCharacter()
     {
         mover.Move(velocity * Time.deltaTime);
+    }
+
+    IEnumerator SparksFade()
+    {
+        var em = ps.emission;
+        em.enabled = true;
+        yield return new WaitForSeconds(fadeTime);
+        em.enabled = false;
     }
 }
