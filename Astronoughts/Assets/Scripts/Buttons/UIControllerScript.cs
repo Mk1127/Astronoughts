@@ -13,6 +13,8 @@ public class UIControllerScript : MonoBehaviour
     private bool convoHidden;
     private bool allHidden;
 
+    public string Scene;
+
     public GameObject overlay;
     public GameObject statusPanel;
     public GameObject convoPanel;
