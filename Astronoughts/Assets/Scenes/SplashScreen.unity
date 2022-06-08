@@ -1437,8 +1437,8 @@ MonoBehaviour:
   Open: 0
   isHidden: 1
   isStarted: 0
-  musicVolume: 5
-  sfxVolume: 5
+  musicVolume: 4
+  sfxVolume: 4
   musicVolumeSlider: {fileID: 1016553085}
   sfxVolumeSlider: {fileID: 175198182}
   audioMixer: {fileID: 24100000, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
