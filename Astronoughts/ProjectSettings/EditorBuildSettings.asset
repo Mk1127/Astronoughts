@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jungle.unity
     guid: cfaddbca24b12114d9b09bce8962c841
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Polar.unity
     guid: 5150eb25a41c3b4468cf4fa9c3c946d8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Volcano.unity
     guid: 4322967b3609f3942b47013d7f3f68cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOver.unity
     guid: 2bf151e76ef08f742a0fe4492b196cbd
   m_configObjects: {}
