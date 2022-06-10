@@ -91,9 +91,9 @@ public class Player:MonoBehaviour
         if(components == 5)
         {
             convoText.text = "You've collected all the ship parts!";
-            didWin = true;
-            StartCoroutine(Wait());
-            SceneManager.LoadScene("GameOver");
+            //didWin = true;
+            //StartCoroutine(Wait());
+            //SceneManager.LoadScene("GameOver");
         }
     }
     public void TakeDamage(int damage)

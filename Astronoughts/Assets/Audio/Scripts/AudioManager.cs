@@ -5,11 +5,19 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+using static System.Net.Mime.MediaTypeNames;
+
+//[RequireComponent(typeof(AudioSource))]
+[System.Serializable]
+
 public class AudioManager : MonoBehaviour
 {
     #region Variables
     public static AudioManager instance;
     public AudioFile[] audioFiles;
+    public Texture playTexture;
+    public Texture muteTexture;
+
     public AudioSource source;
     public Button settings;
 
@@ -38,7 +46,12 @@ public class AudioManager : MonoBehaviour
         else if(instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+        //Persist this instance through level change.
+        DontDestroyOnLoad(gameObject);
+        source = gameObject.GetComponent<AudioSource>();
+
         instance.source.volume = 1f;
         instance.GetComponent<AudioSource>().Play();
     }
@@ -70,6 +83,25 @@ public class AudioManager : MonoBehaviour
             isHidden = true;
         }
     }
+    //OnGUI controls for players
+    void OnGUI()
+    {
+        source = gameObject.GetComponent<AudioSource>();
+        if(source.mute == false)
+        {
+            if(GUI.Button(new Rect(375,490,50,50),muteTexture))
+            {
+                gameObject.GetComponent<AudioSource>().mute = true;
+            }
+        }
+        else if(source.mute == true)
+        {
+            if(GUI.Button(new Rect(375,490,50,50),playTexture))
+            {
+                gameObject.GetComponent<AudioSource>().mute = false;
+            }
+        }
+    }
 
     public void SetMusicVolume(float musicVolume)
     {
@@ -90,6 +122,7 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Current Sound Volume : " + sfxVolume);
         }
     }
+
     #endregion
 
 }
