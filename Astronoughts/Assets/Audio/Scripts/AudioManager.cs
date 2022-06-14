@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         source = gameObject.GetComponent<AudioSource>();
 
-        instance.source.volume = 1f;
+        instance.source.volume = 0.15f;
         instance.GetComponent<AudioSource>().Play();
     }
 
