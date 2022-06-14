@@ -46,7 +46,7 @@ public class UIControllerScript : MonoBehaviour
         }
         else if(instance != this)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             return;
         }
         //Persist this instance through level change.
