@@ -39,7 +39,7 @@ public class UIControllerScript : MonoBehaviour
     void Start()
     {
         overlayHidden = false;
-        statusHidden = false;
+        statusHidden = true;
         viewHidden = true;
         //convoHidden = false;
         //allHidden = false;
@@ -74,45 +74,49 @@ public class UIControllerScript : MonoBehaviour
         {
             overlay.SetActive(false);
             statusPanel.SetActive(false);
+            viewPanel.SetActive(false);
             overlayHidden = true;
             statusHidden = true;
+            viewHidden = true;
         }
         else
         {
             overlay.SetActive(true);
             statusPanel.SetActive(true);
+            viewPanel.SetActive(true);
             overlayHidden = false;
             statusHidden = false;
+            viewHidden = false;
         }
     }
 
     public void OnCloseViewButtonClick()
     {
         Debug.Log("You clicked the close view button");
-        if(viewHidden == false)
-        {
-            viewPanel.SetActive(false);
-            viewHidden = true;
-        }
-        else
+        if(viewHidden == true)
         {
             viewPanel.SetActive(true);
             viewHidden = false;
+        }
+        else
+        {
+            viewPanel.SetActive(false);
+            viewHidden = true;
         }
     }
 
     public void OnStatusButtonClick()
     {
         Debug.Log("You clicked the status button");
-        if(statusHidden == false)
-        {
-            statusPanel.SetActive(false);
-            statusHidden = true;
-        }
-        else
+        if(statusHidden == true)
         {
             statusPanel.SetActive(true);
             statusHidden = false;
+        }
+        else
+        {
+            statusPanel.SetActive(false);
+            statusHidden = true;
         }
     }
     #endregion

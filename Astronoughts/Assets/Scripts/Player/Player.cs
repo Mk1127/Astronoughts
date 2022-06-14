@@ -143,9 +143,11 @@ public class Player:MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
-    #endregion
+
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(3);
     }
+    #endregion
+
 }
