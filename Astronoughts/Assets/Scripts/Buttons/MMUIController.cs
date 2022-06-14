@@ -59,6 +59,7 @@ public class MMUIController : MonoBehaviour
         }
     }
 
+    #region Functions
     public void OnStartButtonClick()
     {
         // This button was clicked.
@@ -111,5 +112,6 @@ public class MMUIController : MonoBehaviour
         Debug.Log("You clicked the quit button");
         Application.Quit();
     }
+    #endregion
 
 }

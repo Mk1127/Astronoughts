@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class UIControllerScript : MonoBehaviour
 {
     #region Variables
+    public static UIControllerScript instance;
+
     private bool overlayHidden;
     private bool statusHidden;
     //private bool convoHidden;
@@ -34,6 +36,22 @@ public class UIControllerScript : MonoBehaviour
     public bool isHidden;
     public bool isPlaying;
     #endregion
+
+    // Use this for initialization
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else if(instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        //Persist this instance through level change.
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
