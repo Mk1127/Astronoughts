@@ -10,7 +10,8 @@ public class UIControllerScript : MonoBehaviour
     #region Variables
     private bool overlayHidden;
     private bool statusHidden;
-    private bool convoHidden;
+    //private bool convoHidden;
+    private bool viewHidden;
     private bool allHidden;
 
     public string Scene;
@@ -18,13 +19,14 @@ public class UIControllerScript : MonoBehaviour
     public GameObject overlay;
     public GameObject statusPanel;
     public GameObject convoPanel;
-    //public GameObject winPanel;
+    public GameObject viewPanel;
     public GameObject[] allPanels;
 
     public Button startButton;
     public Button overlayButton;
     public Button inventoryButton;
     public Button statusPanelButton;
+    public Button viewPanelButton;
     public Button quitButton;
 
     public Animator startAnimator;
@@ -38,11 +40,13 @@ public class UIControllerScript : MonoBehaviour
     {
         overlayHidden = false;
         statusHidden = false;
-        //convoHidden = true;
+        viewHidden = true;
+        //convoHidden = false;
         //allHidden = false;
 
         overlay.SetActive(true);
-        statusPanel.SetActive(true);
+        statusPanel.SetActive(false);
+        viewPanel.SetActive(false);
         convoPanel.SetActive(true);
     }
 
@@ -79,6 +83,21 @@ public class UIControllerScript : MonoBehaviour
             statusPanel.SetActive(true);
             overlayHidden = false;
             statusHidden = false;
+        }
+    }
+
+    public void OnCloseViewButtonClick()
+    {
+        Debug.Log("You clicked the close view button");
+        if(viewHidden == false)
+        {
+            viewPanel.SetActive(false);
+            viewHidden = true;
+        }
+        else
+        {
+            viewPanel.SetActive(true);
+            viewHidden = false;
         }
     }
 

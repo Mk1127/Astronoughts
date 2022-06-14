@@ -105,16 +105,16 @@ public class Player:MonoBehaviour
         if(currentHealth <= 0)
         {
             convoText.text = "You Died!";
-            PlayerDie();
+            //PlayerDie();
         }
     }
 
     void PlayerDie()
     {
         Debug.Log("Player died!");
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
         //anim.SetBool("isDead",true);
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
     }
 
     private void OnTriggerEnter(Collider other)
