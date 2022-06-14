@@ -512,7 +512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &122004188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00031281, y: 0.001214}
+  m_AnchoredPosition: {x: -0.00031281, y: 0.0012130737}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122004189
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 9.5
+  m_Value: -7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -936,8 +936,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000025433728, y: -11.7721}
-  m_SizeDelta: {x: 636.0957, y: 241.7299}
+  m_AnchoredPosition: {x: 3.0289, y: -17.452106}
+  m_SizeDelta: {x: 766.337, y: 330.3221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458228960
 MonoBehaviour:
@@ -959,10 +959,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Everybody who did everything.
+  m_text: "(Listing Not Complete)\nBradley Meyer\r: Level Design (Jungle), Environmental
+    Modeling and Texturing, Plants Modeling and Texturing, Quality Assurance\n\rShawn
+    Gilroy\r: Character Concept Art, Character Modeling and Texturing, Character
+    Animatiom, Level Design (Volcano),  Environmental Modeling and Texturing (Volcano
+    and Polar), Quality Assurance\nEli Nossov\r: Documentation, Level Concept Art,
+    Level Design and Modeling (Jungle & Temple terrain), Major Props Design and Modeling
+    (Spaceship, Spaceship Components)\r\r, Enemy Movement Scripting, Quality Assurance\nMarcel
+    Valdez\r: Game Mechanics and Pivot Camera Programming, Puzzle Concepts, Layouts
+    and Scripting (Level 1 & Level 2). Quality Assurance\nCamilo (Malcolm) Coronado:
+    Enemy Modeling and Texturing, Level 3 Puzzle Concept, Layout, and Scripting (Level
+    3), UI Design, Quality Assurance\n\rJulian Davis\r: Documentation, 2d Illustration,
+    UI Design and Programming, Sprites and Sprite Animation, Music, Sound Effects,
+    and Quality Assurance"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -986,10 +998,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 42
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 32
   m_fontStyle: 1
@@ -998,7 +1010,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 20
+  m_lineSpacing: 81.6
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1014,15 +1026,15 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
+  m_horizontalMapping: 1
+  m_verticalMapping: 1
+  m_uvLineOffset: 2
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -1.5651398, z: 0, w: 0}
+  m_margin: {x: -1.5144043, y: -1.5651398, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1431,6 +1443,8 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
+  playTexture: {fileID: 0}
+  muteTexture: {fileID: 0}
   source: {fileID: 513482425}
   settings: {fileID: 558315641}
   sliderAnimator: {fileID: 938162941}
@@ -1477,7 +1491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000053406, y: -0.00026512}
+  m_AnchoredPosition: {x: -0.000053406, y: -0.00026512146}
   m_SizeDelta: {x: 800, y: 431.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530989218
@@ -1699,7 +1713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000053406, y: -0.0012741}
+  m_AnchoredPosition: {x: -0.000053406, y: -0.0012741089}
   m_SizeDelta: {x: 800, y: 431.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566274803
@@ -2519,7 +2533,7 @@ MonoBehaviour:
   m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 9.5
+  m_Value: -7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3495,10 +3509,10 @@ RectTransform:
   m_Father: {fileID: 1411897578}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.00043774}
-  m_SizeDelta: {x: 800, y: 431.69}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362426959
 MonoBehaviour:
