@@ -56,7 +56,7 @@ public class Player_Movement : MonoBehaviour
 
     void GetInputs()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         input = Vector2.ClampMagnitude(input, 2);
     }
 
@@ -74,16 +74,13 @@ public class Player_Movement : MonoBehaviour
     void CheckGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f))
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down * 0.5f, out hit, 0.2f))
         {
-            if(hit.transform != null)
-            {
-                isGRounded = true;
-            }
-            else
-            {
-                isGRounded = false;
-            }
+            isGRounded = true;
+        }
+        else
+        {
+            isGRounded = false;
         }
     }
 
