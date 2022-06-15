@@ -74,7 +74,7 @@ public class Player_Movement : MonoBehaviour
     void CheckGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down * 0.5f, out hit, 0.2f))
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f))
         {
             isGRounded = true;
         }
