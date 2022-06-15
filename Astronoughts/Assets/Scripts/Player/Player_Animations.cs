@@ -26,5 +26,9 @@ public class Player_Animations : MonoBehaviour
                 playerAnimator.Play("Idle");
             }
         }
+        else
+        {
+            playerAnimator.Play("Floating");
+        }
     }
 }
