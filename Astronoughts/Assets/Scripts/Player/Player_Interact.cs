@@ -96,13 +96,6 @@ public class Player_Interact : MonoBehaviour
                 interactionText.gameObject.SetActive(false);
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            gameObject.GetComponent<CharacterController>().enabled = false;
-            gameObject.transform.position = lastCheckpoint;
-            gameObject.GetComponent<CharacterController>().enabled = true;
-        }
     }
 
     private void OnTriggerStay(Collider other)
