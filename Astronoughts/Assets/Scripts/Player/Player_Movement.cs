@@ -21,7 +21,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float grav;
     [SerializeField] float jumpSpeed;
 
-    [SerializeField] bool isGRounded = false;
+    [SerializeField] public bool isGRounded = false;
 
     float startSpeed;
 
@@ -50,6 +50,8 @@ public class Player_Movement : MonoBehaviour
         Gravity(); // Calculates and sets gravity for the character
         Jump();
         MoveCharacter();
+
+        Debug.Log(isGRounded);
     }
 
     void GetInputs()
@@ -74,11 +76,14 @@ public class Player_Movement : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f))
         {
-            isGRounded = true;
-        }
-        else
-        {
-            isGRounded = false;
+            if(hit.transform != null)
+            {
+                isGRounded = true;
+            }
+            else
+            {
+                isGRounded = false;
+            }
         }
     }
 
