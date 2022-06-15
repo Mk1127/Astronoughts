@@ -13,10 +13,16 @@ public class CameraFollow : MonoBehaviour
 
     public CameraFollowType CameraType = CameraFollowType.Track;
     public Transform target;
+    public float X;
+    public float Y;
+    public float Z;
+    public float aX;
+    public float aY;
+    public float aZ;
 
     public float smoothSpeed = 0.125f;
-    public Vector3 offset;
-    public Vector3 angleOffset;
+    private Vector3 offset;
+    private Vector3 angleOffset;
     // smooth camera changes (pos & rot).
     public float damping = 1.0f;
 
@@ -32,30 +38,30 @@ public class CameraFollow : MonoBehaviour
         {
             case CameraFollowType.Track:
                 {
-                    offset = new Vector3(0.0f,2.0f,-2.5f);
-                    angleOffset = new Vector3(0.0f,0.0f,0.0f);
+                    offset = new Vector3(X,Y,Z);
+                    angleOffset = new Vector3(aX,aY,aZ);
                     Track();
                     break;
                 }
             case CameraFollowType.Follow:
                 {
-                    offset = new Vector3(0.0f,2.0f,-2.5f);
-                    angleOffset = new Vector3(0.0f,0.0f,0.0f);
+                    offset = new Vector3(X,Y,Z);
+                    angleOffset = new Vector3(aX,aY,aZ);
                     Follow();
                     break;
                 }
             case CameraFollowType.TrackRotation:
                 {
-                    offset = new Vector3(0.0f,2.0f,-2.5f);
-                    angleOffset = new Vector3(0.0f,0.0f,0.0f);
+                    offset = new Vector3(X,Y,Z);
+                    angleOffset = new Vector3(aX,aY,aZ);
                     // refactored to not allow rotational tracking.
                     Follow(true);
                     break;
                 }
             case CameraFollowType.IndependentRotation:
                 {
-                    offset = new Vector3(0.0f,2.0f,-2.5f);
-                    angleOffset = new Vector3(0.0f,0.0f,0.0f);
+                    offset = new Vector3(X,Y,Z);
+                    angleOffset = new Vector3(aX,aY,aZ);
                     // refactored to not allow rotational tracking.
                     RotateIndependently();
                     break;
