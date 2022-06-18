@@ -14,6 +14,7 @@ TagManager:
   - Cave
   - Block
   - Lever
+  - Danger
   layers:
   - Default
   - TransparentFX
