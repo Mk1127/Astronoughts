@@ -102,15 +102,18 @@ public class MMUIController : MonoBehaviour
         if(scene == "Credits")
         {
             Debug.Log("You clicked the back button");
-            panelIndex--;
-            SwitchPanel();
+            Debug.Log(panelIndex);
 
             if(panelIndex == 0)
             {
-                panelIndex = 6;
                 creditsButton.interactable = false;
             }
-            creditsButton.interactable = true;
+            else
+            {
+                creditsButton.interactable = true;
+                panelIndex--;
+                SwitchPanel();
+            }
         }
         else
         {
@@ -133,13 +136,18 @@ public class MMUIController : MonoBehaviour
         else if(scene == "Credits")
         {
             Debug.Log("You clicked the next button");
-            panelIndex++;
-            SwitchPanel();
+
+            Debug.Log(panelIndex);
 
             if(panelIndex == creditsPanels.Length - 1)
             {
-                panelIndex = 0;
                 helpButton.interactable = false;
+            }
+            else
+            {
+                helpButton.interactable = true;
+                panelIndex++;
+                SwitchPanel();
             }
         }
         else
