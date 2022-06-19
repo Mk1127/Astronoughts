@@ -10,6 +10,7 @@ public class UITextTypewriter : MonoBehaviour
     Text txt;
     TMP_Text textMeshTxt;
     string writtenTxt;
+    public string[] writtenTxts;
     public Button instructions;
 
     //Serialize the settings
@@ -43,6 +44,10 @@ public class UITextTypewriter : MonoBehaviour
 
             StartCoroutine("TextMeshTypewriter");
         }
+    }
+    private void Update()
+    {
+    
     }
 
     IEnumerator TextTypewriter()

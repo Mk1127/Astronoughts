@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
+using Extensions;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,16 +16,22 @@ public class MMUIController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject controlsMenu;
     public GameObject instructionsMenu;
-    public GameObject creditsMenu;
+    //public GameObject creditsMenu;
 
+    [SerializeField] GameObject[] creditsPanels;
     public GameObject mainButtonPanel;
+
     public Button startButton;
     public Button creditsButton;
     public Button controlsButton;
     public Button helpButton;
     public Button quitButton;
 
+    int panelIndex = 0;
+
     public Text text;
+    public Text text2;
+    public Text text3;
 
     public Animator startAnimator;
     public Animator panelAnimator;
@@ -37,10 +46,11 @@ public class MMUIController : MonoBehaviour
         if(scene == "Splash")
         {
             text.text = "Next";
+            text2.text = "Credits";
+            text3.text = "Controls";
             mainMenu.SetActive(false);
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(true);
-            creditsMenu.SetActive(false);
 
             startButton.enabled = false;
             startButton.gameObject.SetActive(false);
@@ -52,10 +62,28 @@ public class MMUIController : MonoBehaviour
         else if(scene == "Menu")
         {
             text.text = "Help";
+            text2.text = "Credits";
+            text3.text = "Controls";
             mainMenu.SetActive(true);
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(false);
-            creditsMenu.SetActive(false);
+        }
+        else if(scene == "Credits")
+        {
+            text.text = "Next";
+            text2.text = "Back";
+            text3.text = "Return";
+
+            helpButton.enabled = true;
+            helpButton.gameObject.SetActive(true);
+            creditsButton.enabled = true;
+            creditsButton.interactable = true;
+            creditsButton.gameObject.SetActive(true);
+            controlsButton.enabled = true;
+            controlsButton.interactable = true;
+            controlsButton.gameObject.SetActive(true);
+
+            SwitchPanel();
         }
     }
 
@@ -71,46 +99,89 @@ public class MMUIController : MonoBehaviour
 
     public void OnCreditsButtonClick()
     {
-        Debug.Log("You clicked the credits button");
-        creditsMenu.SetActive(true);
-        mainMenu.SetActive(false);
-        controlsMenu.SetActive(false);
-        instructionsMenu.SetActive(false);
+        if(scene == "Credits")
+        {
+            Debug.Log("You clicked the back button");
+            panelIndex--;
+            SwitchPanel();
+
+            if(panelIndex == 0)
+            {
+                panelIndex = 6;
+                creditsButton.interactable = false;
+            }
+            creditsButton.interactable = true;
+        }
+        else
+        {
+            Debug.Log("You clicked the credits button");
+            // run the animation
+            panelAnimator.SetBool("isPlaying",false);
+            SceneManager.LoadScene("Credits");
+        }
     }
 
     public void OnHelpButtonClick()
     {
-        Debug.Log("You clicked the skip button");
         if(scene == "Splash")
         {
+            Debug.Log("You clicked the skip button");
             // run the animation
             panelAnimator.SetBool("isPlaying",false);
             SceneManager.LoadScene("Menu");
         }
-        else if(scene == "Menu")
+        else if(scene == "Credits")
+        {
+            Debug.Log("You clicked the next button");
+            panelIndex++;
+            SwitchPanel();
+
+            if(panelIndex == creditsPanels.Length - 1)
+            {
+                panelIndex = 0;
+                helpButton.interactable = false;
+            }
+        }
+        else
         {
             Debug.Log("You clicked the help button");
             text.text = "Help";
             instructionsMenu.SetActive(true);
             mainMenu.SetActive(false);
             controlsMenu.SetActive(false);
-            creditsMenu.SetActive(false);
+            //creditsMenu.SetActive(false);
         }
     }
 
     public void OnControlsButtonClick()
     {
-        Debug.Log("You clicked the controls button");
-        mainMenu.SetActive(false);
-        controlsMenu.SetActive(true);
-        instructionsMenu.SetActive(false);
-        creditsMenu.SetActive(false);
+        if(scene == "Credits")
+        {
+            Debug.Log("You clicked the return button");
+            // run the animation
+            panelAnimator.SetBool("isPlaying",false);
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+            Debug.Log("You clicked the controls button");
+            mainMenu.SetActive(false);
+            controlsMenu.SetActive(true);
+            instructionsMenu.SetActive(false);
+            //creditsMenu.SetActive(false);
+        }
     }
 
     public void OnQuitButtonClick()
     {
         Debug.Log("You clicked the quit button");
         Application.Quit();
+    }
+
+    void SwitchPanel()
+    {
+        GameObjectExt.SetAllActive(creditsPanels,false);
+        creditsPanels[panelIndex].SetActive(true);
     }
     #endregion
 
