@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000009906042, y: 0}
-  m_SizeDelta: {x: 433.549, y: 68.1358}
+  m_AnchoredPosition: {x: 0.0010147, y: 0}
+  m_SizeDelta: {x: 800, y: 68.1358}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &71553461
 MonoBehaviour:
@@ -374,8 +374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2808, y: -18.8567}
-  m_SizeDelta: {x: 694.6456, y: 286.0098}
+  m_AnchoredPosition: {x: 0.0010376, y: -34.068}
+  m_SizeDelta: {x: 800, y: 538.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91777218
 MonoBehaviour:
@@ -397,11 +397,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your peaceful research mission was disrupted when your ship was damaged
-    in a solar storm and forced to crash-land. Now, alone, you must find each of
-    your lost teammates in a dangerous, foreign land, braving the alien wilderness
-    to save your comrades. Are you prepared for the challenge with only your wits
-    to help you? Only time will tell...
+  m_text: 'Your peaceful research mission was disrupted when your ship was damaged
+    in a solar storm and forced to crash-land.
+
+    Now, alone, you must find each
+    of your lost teammates in a dangerous, foreign land, braving the alien wilderness
+    to save your comrades.
+
+    Are you prepared for the challenge with only your
+    wits to help you?
+
+    Only time will tell...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -429,20 +435,20 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 24
-  m_fontSizeBase: 42
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 14
   m_fontSizeMax: 24
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 30
+  m_lineSpacing: 80
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 40
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -464,7 +470,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.0176392, y: -0.3153992, z: -0.8385621, w: -10.752914}
+  m_margin: {x: 40, y: 40, z: 40, w: -0.06098934}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -531,10 +537,10 @@ RectTransform:
   m_Father: {fileID: 1411897578}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00031281, y: 22.499008}
-  m_SizeDelta: {x: 800, y: 643.11}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 0, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122004189
 MonoBehaviour:
