@@ -41,8 +41,6 @@ public class MMUIController : MonoBehaviour
 
     void Start()
     {
-        isPlaying = true;
-        panelAnimator.SetBool("isPlaying",true);
         if(scene == "Splash")
         {
             text.text = "Next";
@@ -61,6 +59,8 @@ public class MMUIController : MonoBehaviour
         }
         else if(scene == "Menu")
         {
+            isPlaying = true;
+            panelAnimator.SetBool("isPlaying",true);
             text.text = "Help";
             text2.text = "Credits";
             text3.text = "Controls";
@@ -102,8 +102,6 @@ public class MMUIController : MonoBehaviour
         if(scene == "Credits")
         {
             Debug.Log("You clicked the back button");
-            Debug.Log(panelIndex);
-
             if(panelIndex == 0)
             {
                 creditsButton.interactable = false;
@@ -118,8 +116,6 @@ public class MMUIController : MonoBehaviour
         else
         {
             Debug.Log("You clicked the credits button");
-            // run the animation
-            panelAnimator.SetBool("isPlaying",false);
             SceneManager.LoadScene("Credits");
         }
     }
@@ -129,15 +125,11 @@ public class MMUIController : MonoBehaviour
         if(scene == "Splash")
         {
             Debug.Log("You clicked the skip button");
-            // run the animation
-            panelAnimator.SetBool("isPlaying",false);
             SceneManager.LoadScene("Menu");
         }
         else if(scene == "Credits")
         {
             Debug.Log("You clicked the next button");
-
-            Debug.Log(panelIndex);
 
             if(panelIndex == creditsPanels.Length - 1)
             {
@@ -157,7 +149,6 @@ public class MMUIController : MonoBehaviour
             instructionsMenu.SetActive(true);
             mainMenu.SetActive(false);
             controlsMenu.SetActive(false);
-            //creditsMenu.SetActive(false);
         }
     }
 
@@ -166,8 +157,6 @@ public class MMUIController : MonoBehaviour
         if(scene == "Credits")
         {
             Debug.Log("You clicked the return button");
-            // run the animation
-            panelAnimator.SetBool("isPlaying",false);
             SceneManager.LoadScene("Menu");
         }
         else
@@ -176,7 +165,6 @@ public class MMUIController : MonoBehaviour
             mainMenu.SetActive(false);
             controlsMenu.SetActive(true);
             instructionsMenu.SetActive(false);
-            //creditsMenu.SetActive(false);
         }
     }
 
