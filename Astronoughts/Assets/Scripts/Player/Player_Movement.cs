@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    [SerializeField] Transform cam;
-    [SerializeField] CharacterController mover;
-
     Vector3 camF;
     Vector3 camR;
 
@@ -16,18 +13,27 @@ public class Player_Movement : MonoBehaviour
     Vector3 velocityXZ;
     Vector3 velocity;
 
+
+
+    [Header("Movement")]
+    [SerializeField] Transform cam;
+    [SerializeField] CharacterController mover;
     [SerializeField] float speed;
     [SerializeField] float accel;
     [SerializeField] float grav;
     [SerializeField] float jumpSpeed;
 
-    [SerializeField] public bool isGRounded = false;
-
     float startSpeed;
 
+    [Header("Hover")]
     [SerializeField] ParticleSystem ps;
     [SerializeField] EmissionManager emissionManager;
     [SerializeField] float fadeTime;
+    [SerializeField] float thrustGauge = 100;
+    bool hovering = false;
+
+    [Header("Detection")]
+    [SerializeField] public bool isGrounded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +54,8 @@ public class Player_Movement : MonoBehaviour
         CheckGround(); //Self explanatory
         CalcMovement(); //Does all calculations for movement, doesn't move the character
         Gravity(); // Calculates and sets gravity for the character
-        Jump();
+        Hover();
         MoveCharacter();
-
-        Debug.Log(isGRounded);
     }
 
     void GetInputs()
@@ -74,13 +78,14 @@ public class Player_Movement : MonoBehaviour
     void CheckGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f))
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.275f))
         {
-            isGRounded = true;
+            isGrounded = true;
+            hovering = false;
         }
         else
         {
-            isGRounded = false;
+            isGrounded = false;
         }
     }
 
@@ -88,39 +93,59 @@ public class Player_Movement : MonoBehaviour
     {
         velocityXZ = velocity;
         velocityXZ.y = 0;
+        if (isGrounded)
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = startSpeed * 1.33f;
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                speed = startSpeed;
+            }
+
+        }
         velocityXZ = Vector3.Lerp(velocity, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
     }
 
     void Gravity()
     {
-        if (isGRounded)
+        if (!hovering)
         {
-            velocity.y = -0.5f;
-        }
-        else
-        {
-            velocity.y -= grav * Time.deltaTime;
-        }
-
-        velocity.y = Mathf.Clamp(velocity.y, -10, 10);
-    }
-
-    void Jump()
-    {
-
-        if (isGRounded)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isGrounded)
             {
-                Debug.Log("Jump Pressed");
-                speed = startSpeed * 0.8f;
-                velocity.y = jumpSpeed;
-                StartCoroutine(SparksFade());
+                velocity.y = -0.5f;
             }
             else
             {
-                speed = startSpeed;
+                velocity.y -= grav * Time.deltaTime;
+            }
+
+            velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+        }
+        else
+        {
+            velocity.y = 0.0f;
+        }
+    }
+
+    void Hover()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!hovering)
+            {
+                if (thrustGauge > 0)
+                {
+                    hovering = true;
+                    StartCoroutine(LiftPlayer());
+                }
+            }
+            else
+            {
+                hovering = false;
             }
         }
     }
@@ -130,11 +155,86 @@ public class Player_Movement : MonoBehaviour
         mover.Move(velocity * Time.deltaTime);
     }
 
+    IEnumerator DrainThrusters()
+    {
+        speed = startSpeed / 1.5f;
+        while (thrustGauge > 0)
+        {
+            Debug.Log("Thrusters: Draining");
+            thrustGauge -= Time.deltaTime * 15;
+            thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
+            yield return null;
+
+            if (!hovering)
+            {
+                StartCoroutine(RefillThrusters());
+                yield break;
+            }
+        }
+
+        Debug.Log("Thrusters: Empty");
+        hovering = false;
+        StartCoroutine(RefillThrusters());
+    }
+
+    IEnumerator RefillThrusters()
+    {
+        speed = startSpeed;
+        if (thrustGauge == 0)
+        {
+            yield return new WaitForSeconds(3.0f);
+        }
+
+        while (thrustGauge < 100)
+        {
+            Debug.Log("Thrusters: Refilling");
+            thrustGauge += Time.deltaTime * 10;
+            thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
+            yield return null;
+
+            if (hovering)
+            {
+                StartCoroutine(DrainThrusters());
+                yield break;
+            }
+        }
+
+        Debug.Log("Thrusters: Full");
+
+    }
+
+    IEnumerator LiftPlayer()
+    {
+        mover.enabled = false;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Vector3 newposition = transform.position + Vector3.up;
+            transform.position = Vector3.MoveTowards(transform.position, newposition, 0.1f);
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        StartCoroutine(DrainThrusters());
+        StartCoroutine(SparksFade());
+        hovering = true;
+        mover.enabled = true;
+    }
+
     IEnumerator SparksFade()
     {
         var em = ps.emission;
-        em.enabled = true;
+        /*em.enabled = true;
         yield return new WaitForSeconds(fadeTime);
+        em.enabled = false;*/
+
+        em.enabled = true;
+
+        while (hovering)
+        {
+            yield return null;
+        }
+
         em.enabled = false;
     }
 }

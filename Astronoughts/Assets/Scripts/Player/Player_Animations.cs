@@ -15,7 +15,7 @@ public class Player_Animations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerMovement.isGRounded)
+        if(playerMovement.isGrounded)
         {
             if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
