@@ -186,9 +186,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -196,6 +204,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 28316264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &45355960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1323857634}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &111567085
 PrefabInstance:
@@ -260,9 +273,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -270,6 +291,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 111567085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &121279440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 891846047}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &219447758
 GameObject:
@@ -379,7 +405,7 @@ GameObject:
   - component: {fileID: 291461171}
   m_Layer: 0
   m_Name: Lava
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,6 +489,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &307648961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 111567085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &307648962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307648961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &359621337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 602599825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &447867160
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,9 +612,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -637,6 +694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (1)
@@ -652,6 +713,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 602599825}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &602599827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359621337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1001 &623128810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,9 +789,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -836,8 +918,8 @@ GameObject:
   - component: {fileID: 637611275}
   - component: {fileID: 637611274}
   m_Layer: 0
-  m_Name: Plane (1)
-  m_TagString: Untagged
+  m_Name: Finish
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,6 +1100,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640625605}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &650395461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1389060128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &686274861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1202,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686274861}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &689661803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1255128113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &786579378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,9 +1316,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1234,6 +1334,24 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 891846047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &891846049
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121279440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &900691700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 937750279}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &937750279
 PrefabInstance:
@@ -1298,9 +1416,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1309,6 +1435,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 937750279}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &937750281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900691700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &957297761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1097092886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &981489912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1602355901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &986438798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 28316264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &986438799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986438798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1001 &1014889124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,9 +1539,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1544,6 +1719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (13)
@@ -1559,6 +1738,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1097092886}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1097092888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957297761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &1240222997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 623128810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1240222998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240222997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1001 &1255128113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1622,9 +1832,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1633,6 +1851,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1255128113}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1255128115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689661803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1 &1297769620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,9 +2122,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1965,13 +2204,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (7)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -1980,6 +2223,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1323857634}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1323857636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45355960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1001 &1389060128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,9 +2299,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -2054,6 +2318,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1389060128}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1389060130
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650395461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1 &1397633431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2428,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397633431}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1419125961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1708286076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1602355901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2214,13 +2496,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (10)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -2229,6 +2515,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1602355901}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1602355903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981489912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1001 &1708286076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2292,13 +2591,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_Name
       value: RockPlatform (4)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Danger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
@@ -2307,6 +2610,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
   m_PrefabInstance: {fileID: 1708286076}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1708286078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419125961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
 --- !u!1 &1828802757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,6 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  playerIsOnGround: 1
 --- !u!135 &1828802759
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2532,3 +2849,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969133497}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1990054960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1305568341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1990054961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990054960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &2062340085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 1014889124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2062340086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062340085}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}
+--- !u!1 &2143394771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d2de4daa0dfa34d9eedc5988a5165a, type: 3}
+  m_PrefabInstance: {fileID: 525120009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2143394772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143394771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04013288, y: 0.007650316, z: 0.03816863}
+  m_Center: {x: 0, y: -0.00146108, z: 9.313226e-10}

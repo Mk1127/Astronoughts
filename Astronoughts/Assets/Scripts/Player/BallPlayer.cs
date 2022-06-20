@@ -7,6 +7,7 @@ public class BallPlayer : MonoBehaviour
     public float speed;
 
     private Rigidbody rb;
+    public bool playerIsOnGround = true;
 
     void Start()
     {
@@ -22,5 +23,23 @@ public class BallPlayer : MonoBehaviour
 
         rb.AddForce (movement * speed);
 
+        if (Input.GetButtonDown("Jump") && playerIsOnGround)
+        {
+            rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+            playerIsOnGround = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            playerIsOnGround = true;
+        }
+
+        if (collision.gameObject.tag == "Danger")
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }
