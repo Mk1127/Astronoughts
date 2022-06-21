@@ -21,45 +21,30 @@ namespace Extensions
 
     }
 
-    /* Functions for GameObjects */
+    // Object Stuff    
+    // Methods for instantiating a gameObject
+
     public static class GameObjectExt
     {
-        /* Generate(Vector3 position, GameObject gameObject)
-         * Creates a specified gameObject at
-         * specified 3D coordinates.
-         * REUSABLE
-        */
         public static GameObject Generate(Vector3 position,GameObject gameObject)
         {
             return Object.Instantiate(gameObject,position,Quaternion.identity);
         }
 
-        /* Generate(float xCoord, float yCoord, float zCoord, GameObject gameObject)
-         * Creates a specified gameObject at
-         * specified 3D coordinates.
-         * REUSABLE
-        */
         public static GameObject Generate(float xCoord,float yCoord,float zCoord,GameObject gameObject)
         {
             Vector3 position = new Vector3(xCoord,yCoord,zCoord);
             return Object.Instantiate(gameObject,position,Quaternion.identity);
         }
 
-        /* Generate(float xCoord, float zCoord, GameObject gameObject)
-         * Creates a specified gameObject at
-         * specified 2D coordinates.
-         * REUSABLE OVERLOAD
-        */
         public static GameObject Generate(float xCoord,float zCoord,GameObject gameObject)
         {
             Vector3 position = new Vector3(xCoord,0,zCoord);
             return Object.Instantiate(gameObject,position,Quaternion.identity);
         }
 
-        /* ToggleVisibility(GameObject[] objectArray, bool state)
-         * Changes all gambeObjects in objectArray to state.
-         * REUSABLE
-        */
+        // Methods for making an array of gameObjects visible
+
         public static void ToggleAllVisibility(GameObject[] objectArray,bool state)
         {
             foreach(GameObject objects in objectArray)
@@ -68,10 +53,8 @@ namespace Extensions
             }
         }
 
-        /* ToggleVisibility(Transform gameObject, bool state)
-         * Changes gambeObject and all children of gambeObject to state.
-         * REUSABLE Overload
-        */
+        // Methods for making a gameObject and its children visible
+
         public static void ToggleAllVisibility(Transform gameObject,bool state)
         {
             for(int i = 0;i < gameObject.childCount;i++)
@@ -88,11 +71,8 @@ namespace Extensions
             }
         }
 
-        /* bool DoesTagExist(string tag)
-         * Checks if a tag exist in scene.
-         * returns true if so, false if not.
-         * REUSABLE
-        */
+        // Methods for finding items with specified tag
+
         public static bool DoesTagExist(string tag)
         {
             bool exist = false;
@@ -104,11 +84,8 @@ namespace Extensions
             return exist;
         }
 
-        /* bool DoesNameExist(string name)
-         * Checks if a GameObject with name exist in scene.
-         * returns true if so, false if not.
-         * REUSABLE
-        */
+        // Methods for finding items with specified name
+
         public static bool DoesNameExist(string name)
         {
             bool exist = false;
@@ -120,10 +97,8 @@ namespace Extensions
             return exist;
         }
 
-        /* SetAllActive(GameObject[] objectArray, bool state)
-         * Sets all GameObjects in objectArray to state.
-         * REUSABLE
-        */
+        // Methods for making an array of gameObjects active
+
         public static void SetAllActive(GameObject[] objectArray,bool state)
         {
             foreach(GameObject objects in objectArray)
@@ -134,13 +109,10 @@ namespace Extensions
 
     }
 
-    /* Functions for Player Classes */
+    //Player Stuff
     public static class PlayerExt
     {
-        /* PlayerMovement(Vector3 movement, float speed, Rigidbody rigidbody)
-		 * 2D movement.
-		 * REUSABLE
-		*/
+    // Player 3d movement
         public static void PlayerMovement(Vector3 movement,float speed,Rigidbody rigidbody)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
@@ -150,10 +122,7 @@ namespace Extensions
             rigidbody.AddForce(movement * speed);
         }
 
-        /* PlayerMovement(Vector3 movement, float speed, Rigidbody rigidbody)
-		 * 2D movement.
-		 * REUSABLE
-		*/
+        // Player 2d movement
         public static void PlayerRotation(Vector3 rotation,float speed,Rigidbody rigidbody)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
@@ -163,42 +132,35 @@ namespace Extensions
 
     }
 
-    /* Functions for Time */
+    // Time stuff
     public static class TimeExt
     {
-        /* ToSS(float hours, float minutes, float seconds)
-		 * Takes HH, MM, SS and returns in SS.
-		 * REUSABLE
-		*/
-        public static float ToSS(float hours,float minutes,float seconds)
+        // HH:MM:SS converted to seconds (SS)
+
+        public static float ToSeconds(float hours,float minutes,float seconds)
         {
             float timer = seconds + (minutes * 60) + (hours * 3600);
             return timer;
         }
 
-        /* ToSS(float minutes, float seconds)
-         * Takes MM, SS and returns in SS.
-         * REUSABLE OVERLOAD
-        */
-        public static float ToSS(float minutes,float seconds)
+        // MM:SS converted to seconds (SS)
+
+        public static float ToSeconds(float minutes,float seconds)
         {
             float timer = seconds + (minutes * 60);
             return timer;
         }
 
-        /* GameTimer(float gameTime)
-         * Recurrsive timer.
-         * REUSABLE
-        */
-        public static float GameTimer(float gameTime)
+        // A game timer
+        public static float Timer(float timer)
         {
             float seconds, minutes;
 
-            gameTime += Time.deltaTime;
-            minutes = Mathf.Floor(gameTime / 60);
-            seconds = gameTime % 60;
+            timer += Time.deltaTime;
+            minutes = Mathf.Floor(timer / 60);
+            seconds = timer % 60;
             //return minutes.ToString("00") + ":" + seconds.ToString("00.00");
-            return gameTime;
+            return timer;
         }
 
         /* float Timer(float time, int speed)
