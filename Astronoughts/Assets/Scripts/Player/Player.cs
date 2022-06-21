@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections;
+using UnityEngine.Audio;
 using System.Collections.Generic;
 
 public class Player:MonoBehaviour
@@ -16,8 +17,8 @@ public class Player:MonoBehaviour
     public static Player Ps;
     private Animator anim;
 
-    private int currentHealth;
-    public int maxHealth = 100;
+    private int currentFuel;
+    public int maxFuel = 100;
 
     //public GameObject endScreen;
     public GameObject player;
@@ -34,18 +35,23 @@ public class Player:MonoBehaviour
     [SerializeField]
     private Text crewText;
     [SerializeField]
-    private Text healthText;
+    private Text fuelText;
     //[SerializeField]
     //private Text shipText;
+
+    [SerializeField]
+    private AudioClip[] clips;
+    [SerializeField]
+    private AudioSource prizeSource;
 
     public Button inventoryButton;
     public Inventory inventory;
 
     public Item[] items = new Item[3];
 
-    private bool allCrew;
-    private bool allParts;
-    private bool fixedShip;
+    //private bool allCrew;
+    //private bool allParts;
+    //private bool fixedShip;
     private bool didWin;
     public Rigidbody rb;
     #endregion
@@ -61,6 +67,18 @@ public class Player:MonoBehaviour
         {
             componentsText.text = "Components: " + value;
             components = value;
+        }
+    }
+    public int Crew
+    {
+        get
+        {
+            return crew;
+        }
+        set
+        {
+            crewText.text = "Crew: " + value;
+            crew = value;
         }
     }
 
@@ -79,9 +97,9 @@ public class Player:MonoBehaviour
 
     void Awake()
     {
-        allCrew = false;
-        allParts = false;
-        fixedShip = false;
+        //allCrew = false;
+        //allParts = false;
+        //fixedShip = false;
         didWin = false;
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
@@ -94,7 +112,7 @@ public class Player:MonoBehaviour
         //shipText.text = "Status: Broken";
         componentsText.text = "Components: " + components;
         crewText.text = "Crew: " + crew;
-        currentHealth = maxHealth;
+        currentFuel = maxFuel;
 
         rb = GetComponent<Rigidbody>();
     }
@@ -113,23 +131,23 @@ public class Player:MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthText.text = "Health: " + currentHealth;
+        currentFuel -= damage;
+        fuelText.text = "Fuel: " + currentFuel;
         //anim.SetTrigger("Hurt");
 
-        if(currentHealth <= 0)
+        if(currentFuel <= 0)
         {
-            convoText.text = "You Died!";
+            convoText.text = "You're stranded!";
             //PlayerDie();
         }
     }
 
-    void PlayerDie()
+    void PlayerFail()
     {
-        Debug.Log("Player died!");
-        //StartCoroutine(Wait());
-        //anim.SetBool("isDead",true);
-        //SceneManager.LoadScene("GameOver");
+        Debug.Log("Player is out of fuel!");
+        StartCoroutine(Wait());
+        //anim.SetBool("isStranded",true);
+        SceneManager.LoadScene("GameOver");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -150,13 +168,24 @@ public class Player:MonoBehaviour
         if(other.tag == "Item") // If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
-            //other.gameObject.GetComponent<AudioSource>().Play();
+            Grab();
             inventory.AddItem(other.GetComponent<Item>());
             convoText.text = "I picked up my " + other.gameObject.name;
             components++;
             componentsText.text = "Components: " + components;
             other.gameObject.SetActive(false);
         }
+    }
+
+    public void Grab()
+    {
+        AudioClip clip = GetRandomClip();
+        prizeSource.PlayOneShot(clip);
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        return clips[UnityEngine.Random.Range(0,clips.Length)];
     }
 
     IEnumerator Wait()
