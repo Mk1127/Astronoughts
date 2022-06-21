@@ -41,6 +41,7 @@ public class Player:MonoBehaviour
 
     [SerializeField]
     private AudioClip[] clips;
+    [SerializeField]
     private AudioSource prizeSource;
 
     public Button inventoryButton;
