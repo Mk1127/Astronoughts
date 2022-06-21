@@ -61,16 +61,17 @@ public class Player_Interact : MonoBehaviour
 
                     if (interactionText != null)
                     {
-                        interactionText.gameObject.SetActive(true);
                         interactionText.lookAt = hit.transform;
+                        interactionText.gameObject.SetActive(true);
                     }
                 }
             }
 
             if (hit.collider.tag == "Totem")
             {
-                interactionText.gameObject.SetActive(true);
                 interactionText.lookAt = hit.transform;
+                interactionText.gameObject.SetActive(true);
+                
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
@@ -80,8 +81,9 @@ public class Player_Interact : MonoBehaviour
 
             if(hit.collider.tag == "Lever")
             {
-                interactionText.gameObject.SetActive(true);
                 interactionText.lookAt = hit.transform;
+                interactionText.gameObject.SetActive(true);
+                
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
