@@ -102,7 +102,6 @@ public class Player:MonoBehaviour
         //fixedShip = false;
         didWin = false;
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        prizeSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
