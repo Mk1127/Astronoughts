@@ -26,17 +26,27 @@ public class Player:MonoBehaviour
     public Text convoText;
     public Text[] allText;
     private int components;
+    private int crew;
+    private int shipState;
 
     [SerializeField]
     private Text componentsText;
-    public Text healthText;
+    [SerializeField]
+    private Text crewText;
+    [SerializeField]
+    private Text healthText;
+    [SerializeField]
+    private Text shipText;
 
     public Button inventoryButton;
     public Inventory inventory;
 
     public Item[] items = new Item[3];
 
-    public bool didWin;
+    private bool allCrew;
+    private bool allParts;
+    private bool fixedShip;
+    private bool didWin;
     public Rigidbody rb;
     #endregion
 
@@ -69,6 +79,9 @@ public class Player:MonoBehaviour
 
     void Awake()
     {
+        allCrew = false;
+        allParts = false;
+        fixedShip = false;
         didWin = false;
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
@@ -77,8 +90,10 @@ public class Player:MonoBehaviour
     void Start()
     {
         components = 0;
+        crew = 0;
+        shipText.text = "Status: Broken";
         componentsText.text = "Components: " + components;
-        //endScreen.gameObject.SetActive(false);
+        crewText.text = "Crew: " + crew;
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody>();
@@ -88,12 +103,12 @@ public class Player:MonoBehaviour
 
     public void CheckWin()
     {
-        if(components == 5)
+        if(components == 5 && crew == 5)
         {
-            convoText.text = "You've collected all the ship parts!";
-            //didWin = true;
-            //StartCoroutine(Wait());
-            //SceneManager.LoadScene("GameOver");
+            convoText.text = "You've collected all the ship parts and rescued all of your crew!";
+            didWin = true;
+            StartCoroutine(Wait());
+            SceneManager.LoadScene("GameOver");
         }
     }
     public void TakeDamage(int damage)

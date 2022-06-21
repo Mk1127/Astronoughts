@@ -15,6 +15,11 @@ TagManager:
   - Block
   - Lever
   - Danger
+  - AudioSource
+  - Inventory
+  - ConvoText
+  - ComponentsText
+  - HealthText
   layers:
   - Default
   - TransparentFX
