@@ -6,7 +6,9 @@ public class Lever : MonoBehaviour
 {
     [SerializeField] Transform door;
     [SerializeField] float lowerDistance;
+    [SerializeField] public bool raise;
     [SerializeField] bool isLever;
+    bool isToggled;
 
     private void Start()
     {
@@ -20,12 +22,28 @@ public class Lever : MonoBehaviour
 
     public void LowerDoor()
     {
-        StartCoroutine(lowerDoor());
+        if(!raise ||!isLever && !isToggled)
+        {
+            StartCoroutine(lowerDoor());
+        }
+
+        if(isLever)
+        {
+            isToggled = true;
+        }
     }
 
     public void RaiseDoor()
     {
-        StartCoroutine(raiseDoor());
+        if(raise || !isLever && !isToggled)
+        {
+            StartCoroutine(raiseDoor());
+        }
+
+        if(isLever)
+        {
+            isToggled = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)

@@ -88,11 +88,18 @@ public class Player_Interact : MonoBehaviour
             {
                 interactionText.lookAt = hit.transform;
                 interactionText.gameObject.SetActive(true);
-                
 
+                Lever lever = hit.collider.gameObject.GetComponent<Lever>();
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    hit.collider.gameObject.GetComponent<Lever>().LowerDoor();
+                    if(lever.raise)
+                    {
+                        lever.RaiseDoor();
+                    }
+                    else
+                    {
+                        lever.LowerDoor();
+                    }
                 }
             }
         }

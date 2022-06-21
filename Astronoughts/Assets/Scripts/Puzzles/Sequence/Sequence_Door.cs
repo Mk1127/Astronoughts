@@ -25,7 +25,7 @@ public class Sequence_Door : MonoBehaviour
             Debug.Log(sequence.Count);
         }
 
-        if (sequence.Count == 3)
+        if (sequence.Count == answer.Count)
         {
             CheckAnswers();
         }
@@ -42,7 +42,7 @@ public class Sequence_Door : MonoBehaviour
             }
         }
 
-        if (correctCount != 3)
+        if (correctCount != answer.Count)
         {
             StartCoroutine(ResetTotems());
             sequence = new List<string>();
