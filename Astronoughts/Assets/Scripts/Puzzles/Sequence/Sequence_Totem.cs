@@ -6,12 +6,14 @@ public class Sequence_Totem : MonoBehaviour
 {
     [SerializeField] Color totemColor;
     [SerializeField] private bool toggled = false;
+    [SerializeField] GameObject flame;
 
     public void ToggleTotem()
     {
         if (!toggled)
         {
-            gameObject.GetComponent<MeshRenderer>().material.color = totemColor;
+            //gameObject.GetComponent<MeshRenderer>().material.color = totemColor;
+            flame.SetActive(true);
             GameObject parent = transform.parent.gameObject;
             parent.GetComponent<Sequence_Door>().addToSequence(this.name);
         }
@@ -21,7 +23,8 @@ public class Sequence_Totem : MonoBehaviour
 
     public void ResetTotem()
     {
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+        //gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+        flame.SetActive(false);
         toggled = false;
     }
 }

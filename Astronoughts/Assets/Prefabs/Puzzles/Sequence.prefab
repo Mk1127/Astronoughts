@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 414703879103151256}
+  lowerDoorBy: 0
   totemList:
   - {fileID: 414703880424924720}
   - {fileID: 414703880213900297}
