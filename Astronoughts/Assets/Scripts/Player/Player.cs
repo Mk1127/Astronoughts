@@ -27,7 +27,7 @@ public class Player:MonoBehaviour
     public Text[] allText;
     private int components;
     private int crew;
-    private int shipState;
+    //private int shipState;
 
     [SerializeField]
     private Text componentsText;
@@ -35,8 +35,8 @@ public class Player:MonoBehaviour
     private Text crewText;
     [SerializeField]
     private Text healthText;
-    [SerializeField]
-    private Text shipText;
+    //[SerializeField]
+    //private Text shipText;
 
     public Button inventoryButton;
     public Inventory inventory;
@@ -91,7 +91,7 @@ public class Player:MonoBehaviour
     {
         components = 0;
         crew = 0;
-        shipText.text = "Status: Broken";
+        //shipText.text = "Status: Broken";
         componentsText.text = "Components: " + components;
         crewText.text = "Crew: " + crew;
         currentHealth = maxHealth;
