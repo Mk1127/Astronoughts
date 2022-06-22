@@ -9,6 +9,9 @@ public class Lever : MonoBehaviour
     [SerializeField] public bool raise;
     [SerializeField] bool isLever;
     bool isToggled;
+    [SerializeField] MeshRenderer renderer;
+    [SerializeField] List<Material> materials = new List<Material>();
+    [SerializeField] Collider collider;
 
     private void Start()
     {
@@ -29,7 +32,10 @@ public class Lever : MonoBehaviour
 
         if(isLever)
         {
-            isToggled = true;
+            transform.tag = "Untagged";
+            collider.enabled = false;
+            renderer.material = materials[1];
+            collider.enabled = true;
         }
     }
 
@@ -42,7 +48,10 @@ public class Lever : MonoBehaviour
 
         if(isLever)
         {
-            isToggled = true;
+            transform.tag = "Untagged";
+            collider.enabled = false;
+            renderer.material = materials[1];
+            collider.enabled = true;
         }
     }
 
@@ -51,6 +60,7 @@ public class Lever : MonoBehaviour
         if (!isLever)
         {
             LowerDoor();
+            renderer.material = materials[1];
         }
     }
 
@@ -59,6 +69,7 @@ public class Lever : MonoBehaviour
         if (!isLever)
         {
             RaiseDoor();
+            renderer.material = materials[0];
         }
     }
 
