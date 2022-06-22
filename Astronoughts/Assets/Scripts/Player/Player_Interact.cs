@@ -26,7 +26,7 @@ public class Player_Interact : MonoBehaviour
         {
             playerRot.enabled = true;
         }*/
-        playerSource = GameObject.FindWithTag("AudioSource").GetComponent<AudioSource>();
+        //playerSource = GameObject.FindWithTag("AudioSource").GetComponent<AudioSource>();
 
         if(interactionText == null)
         {
@@ -117,11 +117,11 @@ public class Player_Interact : MonoBehaviour
         if (other.tag == "Grass")
         {
             isHidden = true;
-            playerSource.mute = false;
-            playerSource.volume = 0.1f;
-            GrassStep();
-            playerSource.loop = true;
-            convoText.text = "I think I'm hidden now.";
+            //playerSource.mute = false;
+            //playerSource.volume = 0.1f;
+            //GrassStep();
+            //playerSource.loop = true;
+            //convoText.text = "I think I'm hidden now.";
         }
     }
 
@@ -145,9 +145,9 @@ public class Player_Interact : MonoBehaviour
         if(other.tag == "Grass")
         {
             isHidden = false;
-            playerSource.loop = false;
-            playerSource.mute = true;
-            convoText.text = "";
+            //playerSource.loop = false;
+            //playerSource.mute = true;
+            //convoText.text = "";
         }
 
         if (other.tag == "Checkpoint")
