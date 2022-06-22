@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+using static System.Net.Mime.MediaTypeNames;
+
 //[RequireComponent(typeof(AudioSource))]
 [System.Serializable]
 
@@ -16,13 +18,15 @@ public class AudioManager : MonoBehaviour
     public Texture playTexture;
     public Texture muteTexture;
 
+    public string scene;
+
     public AudioSource source;
     public Button settings;
 
-    public Animator sliderAnimator;
-    public bool Open;
-    public bool isHidden;
-    public bool isStarted;
+    [SerializeField] private Animator sliderAnimator;
+    private bool Open;
+    private bool isHidden;
+    private bool isStarted;
 
     public float musicVolume;
     public float sfxVolume;
@@ -37,23 +41,29 @@ public class AudioManager : MonoBehaviour
         sliderAnimator.SetBool("Open",false);
 
         isHidden = true;
-        if(instance == null)
+        if(scene == "Menu")
         {
-            instance = this;
+            if(instance == null)
+            {
+                instance = this;
+            }
+            else if(instance != this)
+            {
+                //Destroy(gameObject);
+                return;
+            }
+            //Persist this instance through level change.
+            DontDestroyOnLoad(gameObject);
+            source = gameObject.GetComponent<AudioSource>();
+
+            instance.source.volume = 0.15f;
+            instance.GetComponent<AudioSource>().Play();
         }
-        else if(instance != this)
+        else
         {
-            Destroy(gameObject);
             return;
         }
-        //Persist this instance through level change.
-        DontDestroyOnLoad(gameObject);
-        source = gameObject.GetComponent<AudioSource>();
-
-        instance.source.volume = 0.15f;
-        instance.GetComponent<AudioSource>().Play();
     }
-
 
     void Start()
     {
@@ -87,14 +97,14 @@ public class AudioManager : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
         if(source.mute == false)
         {
-            if(GUI.Button(new Rect(10,10,25,25),muteTexture))
+            if(GUI.Button(new Rect(10,10,50,50),muteTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = true;
             }
         }
         else if(source.mute == true)
         {
-            if(GUI.Button(new Rect(10,10,25,25),playTexture))
+            if(GUI.Button(new Rect(10,10,50,50),playTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = false;
             }

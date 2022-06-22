@@ -1618,16 +1618,16 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  playTexture: {fileID: 0}
-  muteTexture: {fileID: 0}
+  playTexture: {fileID: 2800000, guid: 2a9ab91cea9234c43b2f3e41395419b1, type: 3}
+  muteTexture: {fileID: 2800000, guid: bc2d6daa74cc3434ab8194f1104124bc, type: 3}
   source: {fileID: 513482425}
   settings: {fileID: 558315641}
   sliderAnimator: {fileID: 938162941}
   Open: 0
   isHidden: 1
   isStarted: 0
-  musicVolume: 5
-  sfxVolume: 5
+  musicVolume: 2
+  sfxVolume: 2
   musicVolumeSlider: {fileID: 1016553085}
   sfxVolumeSlider: {fileID: 175198182}
   audioMixer: {fileID: 24100000, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
@@ -1737,7 +1737,7 @@ RectTransform:
   m_GameObject: {fileID: 558315639}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1205413772}
@@ -4976,7 +4976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1751294911
 RectTransform:
   m_ObjectHideFlags: 0
