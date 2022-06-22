@@ -40,7 +40,7 @@ public class UIControllerScript : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if(instance == null)
+        /*if(instance == null)
         {
             instance = this;
         }
@@ -50,22 +50,22 @@ public class UIControllerScript : MonoBehaviour
             return;
         }
         //Persist this instance through level change.
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        overlayHidden = false;
+        overlayHidden = true;
         statusHidden = true;
         viewHidden = true;
         //convoHidden = false;
         //allHidden = false;
 
-        overlay.SetActive(true);
+        overlay.SetActive(false);
         statusPanel.SetActive(false);
         viewPanel.SetActive(false);
-        convoPanel.SetActive(true);
+        convoPanel.SetActive(false);
     }
 
     #region Functions
@@ -100,8 +100,8 @@ public class UIControllerScript : MonoBehaviour
         else
         {
             overlay.SetActive(true);
-            statusPanel.SetActive(true);
-            viewPanel.SetActive(true);
+            statusPanel.SetActive(false);
+            viewPanel.SetActive(false);
             overlayHidden = false;
             statusHidden = false;
             viewHidden = false;

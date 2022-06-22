@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f3ed17273511e8f40b8a3c943dc25155, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 424f320c72abea5478dfdf7f0c428b99, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -123,6 +123,104 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &521021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521022}
+  - component: {fileID: 521025}
+  - component: {fileID: 521024}
+  - component: {fileID: 521023}
+  m_Layer: 0
+  m_Name: roof plane 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521021}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08000183, y: -6, z: -11.75}
+  m_LocalScale: {x: 2.8047, y: 1, z: 2.8446903}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651847318057}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &521023
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &521024
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521021}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &521025
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521021}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1098176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 222
@@ -444,8 +546,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5374251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.41, y: 1.5, z: 115.47}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 86.41, y: 1.75, z: 115.47}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1324191539}
@@ -478,8 +580,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &5374255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1383,6 +1485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 329
@@ -1879,6 +1985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2393,6 +2503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 111
@@ -3585,6 +3699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 236
@@ -3771,6 +3889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -4143,6 +4265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 128
@@ -5231,6 +5357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5541,6 +5671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -5665,6 +5799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 136
@@ -5975,6 +6113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 220
@@ -6088,6 +6230,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 150228370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &151457126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7961301234638673162, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  m_PrefabInstance: {fileID: 621166787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &151457128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151457126}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6cdd4fc2a0c5344a4aff7d23e5465d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 681312325}
+  playerAnimator: {fileID: 151457129}
+--- !u!95 &151457129
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151457126}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: a07c92eb7b0824944aced37e1d13ab25, type: 3}
+  m_Controller: {fileID: 9100000, guid: bb40fb38080db424aaddb7be5d01fd30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &153407957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7042,6 +7223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 228
@@ -8370,6 +8555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 212
@@ -8530,8 +8719,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &194904103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8590,8 +8779,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194904100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.81, y: 1.5, z: 100.91}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 90.175, y: 1.75, z: 108.308}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1324191539}
@@ -8670,6 +8859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 207
@@ -8732,6 +8925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 202
@@ -9104,6 +9301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 118
@@ -16372,6 +16573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -17000,6 +17205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -17190,7 +17399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &289852211
 Transform:
   m_ObjectHideFlags: 0
@@ -17490,8 +17699,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297616125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 104.25, y: 1.5, z: 147.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 104.25, y: 1.75, z: 147.51}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1324191539}
@@ -17524,8 +17733,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &297616129
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17835,6 +18044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -19156,6 +19369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 208
@@ -20429,6 +20646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 110
@@ -20923,6 +21144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 129
@@ -22009,6 +22234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 250
@@ -22325,12 +22554,10 @@ MonoBehaviour:
     playOnAwake: 0
   playTexture: {fileID: 2800000, guid: 2a9ab91cea9234c43b2f3e41395419b1, type: 3}
   muteTexture: {fileID: 2800000, guid: bc2d6daa74cc3434ab8194f1104124bc, type: 3}
+  scene: 
   source: {fileID: 414015451}
   settings: {fileID: 1618587481}
   sliderAnimator: {fileID: 190761528}
-  Open: 0
-  isHidden: 1
-  isStarted: 0
   musicVolume: 0
   sfxVolume: 0
   musicVolumeSlider: {fileID: 239329377}
@@ -22878,6 +23105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 95
@@ -26276,6 +26507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 295
@@ -26524,6 +26759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 268
@@ -27311,6 +27550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 297
@@ -27815,7 +28058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &548381143
 Transform:
   m_ObjectHideFlags: 0
@@ -28355,6 +28598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 240
@@ -28467,11 +28714,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 568614217}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &569185883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-  m_PrefabInstance: {fileID: 742735023}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &571838033
 PrefabInstance:
@@ -29600,6 +29842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -29837,6 +30083,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 597072068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &597930808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597930809}
+  - component: {fileID: 597930812}
+  - component: {fileID: 597930811}
+  - component: {fileID: 597930810}
+  m_Layer: 0
+  m_Name: roof plane 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597930809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597930808}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.08000183, y: 4.3, z: -1.9}
+  m_LocalScale: {x: 7.9861026, y: 1, z: 1.999974}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651847318057}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &597930810
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597930808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &597930811
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597930808}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &597930812
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597930808}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &598854701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30379,6 +30723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 116
@@ -30510,6 +30858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -30944,6 +31296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -31134,6 +31490,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3735671238078092746, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5979160297295422917, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.891
@@ -31188,7 +31548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.5
+      value: 84.1
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31196,7 +31556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.6
+      value: 89.2
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31234,7 +31594,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+    - {fileID: 3735671238078092746, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+    - {fileID: 8665203092417865009, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
 --- !u!4 &621166788 stripped
 Transform:
@@ -31917,6 +32280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -32103,6 +32470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 106
@@ -32661,6 +33032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 97
@@ -33403,34 +33778,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &681312325
+--- !u!114 &681312325 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7639409723924394976, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  m_PrefabInstance: {fileID: 621166787}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681312319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8324ad7ead844b547978cc4cda45146d, type: 3}
+  m_Script: {fileID: 11500000, guid: 008a1937208052244a7c2938a4370589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  player: {fileID: 681312319}
-  convoText: {fileID: 1083346171}
-  allText: []
-  componentsText: {fileID: 1331525833}
-  crewText: {fileID: 0}
-  healthText: {fileID: 724648211}
-  inventoryButton: {fileID: 731074220}
-  inventory: {fileID: 2135863826}
-  items:
-  - {fileID: 1109523038}
-  - {fileID: 736803765}
-  - {fileID: 1693354967}
-  - {fileID: 1034967488}
-  - {fileID: 1645311605}
-  rb: {fileID: 681312324}
 --- !u!1001 &683245986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33628,6 +33986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 221
@@ -34998,6 +35360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 120
@@ -36334,102 +36700,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 740611206}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &742735023
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 543450652946022705}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.22042866
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.199997
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 59.12
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7070799
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.006170542
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7070799
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.006170542
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 20b7b0ccc0e557248a8a394258c50fe7, type: 2}
-    - target: {fileID: 919132149155446097, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-      propertyPath: m_Name
-      value: bridge (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
---- !u!4 &742735024 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
-  m_PrefabInstance: {fileID: 742735023}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &742735027
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569185883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6990060088367560311, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
 --- !u!1001 &744675716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36565,6 +36835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 99
@@ -36751,6 +37025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -37557,6 +37835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 232
@@ -37841,6 +38123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -38941,6 +39227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 126
@@ -39636,7 +39926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &818545779
 Transform:
   m_ObjectHideFlags: 0
@@ -39645,7 +39935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818545778}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: -14.400002, y: 0.5, z: 11.400002}
+  m_LocalPosition: {x: -14.400002, y: 0.4999981, z: 11.400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39902,6 +40192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 149
@@ -40274,6 +40568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 191
@@ -41475,7 +41773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &850627939
 Transform:
   m_ObjectHideFlags: 0
@@ -42140,6 +42438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 125
@@ -42511,6 +42813,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 20e42f00b6ac8514a9668b803140d4d2, type: 2}
+    - target: {fileID: 159828980972308310, guid: b6d2d0446084094419ba73a18749e231, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6d2d0446084094419ba73a18749e231, type: 3}
       propertyPath: m_Name
       value: escapePod
@@ -43128,6 +43434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -43257,6 +43567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 235
@@ -43505,6 +43819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 301
@@ -43567,6 +43885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 298
@@ -44150,6 +44472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 223
@@ -44962,11 +45288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2795649384750329903, guid: 0506ebe7febc8f94495df554a8f5ae14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 2795649384750329903, guid: 0506ebe7febc8f94495df554a8f5ae14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 111.5
+      value: 113.7
       objectReference: {fileID: 0}
     - target: {fileID: 2795649384750329903, guid: 0506ebe7febc8f94495df554a8f5ae14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45018,6 +45344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -45853,6 +46183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 269
@@ -46456,6 +46790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -46853,6 +47191,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 972040822}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &972060448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972060449}
+  - component: {fileID: 972060452}
+  - component: {fileID: 972060451}
+  - component: {fileID: 972060450}
+  m_Layer: 0
+  m_Name: roof plane 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972060449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972060448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08000183, y: -6, z: 19.600006}
+  m_LocalScale: {x: 7.9861026, y: 1, z: 1.0271924}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651847318057}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &972060450
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972060448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &972060451
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972060448}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &972060452
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972060448}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &973616655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47427,6 +47863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -49398,6 +49838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 230
@@ -49699,6 +50143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 107
@@ -50106,6 +50554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -50354,6 +50806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 304
@@ -50681,6 +51137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -50929,6 +51389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -51754,6 +52218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 105
@@ -52020,6 +52488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 206
@@ -52489,6 +52961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 195
@@ -53081,6 +53557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -54062,6 +54542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 98
@@ -54124,6 +54608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -54248,6 +54736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -54372,6 +54864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 245
@@ -55246,6 +55742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -55468,6 +55968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -55530,6 +56034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 303
@@ -55730,6 +56238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -55792,6 +56304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 117
@@ -56580,6 +57096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 239
@@ -58011,6 +58531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 294
@@ -58135,6 +58659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -60230,6 +60758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -60354,6 +60886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -60540,6 +61076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 334
@@ -60840,7 +61380,7 @@ Transform:
   - {fileID: 5374252}
   - {fileID: 297616126}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326684111
 GameObject:
@@ -61601,6 +62141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -62177,7 +62721,7 @@ Transform:
   - {fileID: 1741752429}
   - {fileID: 887088675}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1352147866
 PrefabInstance:
@@ -62252,6 +62796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -63592,7 +64140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: -1.2537501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_LocalScale.y
@@ -63608,11 +64156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18399999
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.594997
+      value: 47.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63644,7 +64192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 79f12565529f8c845a63cad633183ae4, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -64347,6 +64895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -64409,6 +64961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 299
@@ -64737,6 +65293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -64985,6 +65545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 109
@@ -66286,6 +66850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 231
@@ -67646,6 +68214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -67708,6 +68280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -68273,6 +68849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -70163,7 +70743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1503411553
 Transform:
   m_ObjectHideFlags: 0
@@ -70201,7 +70781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1504739806
 Transform:
   m_ObjectHideFlags: 0
@@ -71706,6 +72286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -71954,6 +72538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 238
@@ -72400,6 +72988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 199
@@ -72462,6 +73054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -72896,6 +73492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -73020,6 +73620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 241
@@ -74672,7 +75276,7 @@ Transform:
   m_Children:
   - {fileID: 279279375}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1616716544
 PrefabInstance:
@@ -75093,6 +75697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 113
@@ -75217,6 +75825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 194
@@ -75527,6 +76139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 203
@@ -75702,6 +76318,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
   m_PrefabInstance: {fileID: 1631901386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1634481705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1634481706}
+  - component: {fileID: 1634481709}
+  - component: {fileID: 1634481708}
+  - component: {fileID: 1634481707}
+  m_Layer: 0
+  m_Name: roof plane 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1634481706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634481705}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08000183, y: -6, z: 4.2}
+  m_LocalScale: {x: 7.9861026, y: 1, z: 1.0271924}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651847318057}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1634481707
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634481705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1634481708
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634481705}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1634481709
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634481705}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1637581377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75775,6 +76489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 242
@@ -76200,6 +76918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 237
@@ -76758,6 +77480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 121
@@ -77832,7 +78558,7 @@ Transform:
   m_Children:
   - {fileID: 184719927}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1692560262
 PrefabInstance:
@@ -78477,7 +79203,7 @@ Transform:
   - {fileID: 5293320294350567952}
   - {fileID: 863502172}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1703955335
 PrefabInstance:
@@ -80175,6 +80901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 108
@@ -81043,6 +81773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 130
@@ -82323,6 +83057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -82675,7 +83413,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -84383,6 +85121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 290
@@ -85195,6 +85937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 119
@@ -86283,6 +87029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -86609,6 +87359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 138
@@ -86795,6 +87549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 205
@@ -87663,6 +88421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -88159,6 +88921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 196
@@ -88407,6 +89173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 210
@@ -88925,6 +89695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 127
@@ -89297,6 +90071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 96
@@ -89828,6 +90606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 291
@@ -90682,6 +91464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 147
@@ -90999,6 +91785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 204
@@ -91123,6 +91913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -91804,6 +92598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 213
@@ -91866,6 +92664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 302
@@ -92176,6 +92978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 93
@@ -92238,6 +93044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 227
@@ -93040,6 +93850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 229
@@ -93135,6 +93949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -93879,6 +94697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DenseGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 3343340794985393586, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3921743303999506161, guid: aed6175f674ad3e419a1f767462ffd7a, type: 3}
     - target: {fileID: 6677330152158494677, guid: 9876bd51a88f2684d900e11d28a56629, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -93964,7 +94786,7 @@ Transform:
   m_Children:
   - {fileID: 578542195}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2120806940
 MonoBehaviour:
@@ -95144,16 +95966,10 @@ MonoBehaviour:
   - {fileID: 414703880345657128}
   - {fileID: 414703880269370641}
   - {fileID: 414703880080583281}
-  - {fileID: 548381144}
-  - {fileID: 1504739807}
-  - {fileID: 818545780}
   answer:
   - 2
   - 3
   - 1
-  - 5
-  - 4
-  - 6
 --- !u!4 &414703879724830771
 Transform:
   m_ObjectHideFlags: 0
@@ -95174,7 +95990,7 @@ Transform:
   - {fileID: 1504739806}
   - {fileID: 818545779}
   m_Father: {fileID: 543450651847318057}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &414703879724830780
 GameObject:
@@ -95684,6 +96500,10 @@ Transform:
   - {fileID: 171307952834085842}
   - {fileID: 1260129495}
   - {fileID: 1146738909}
+  - {fileID: 521022}
+  - {fileID: 1634481706}
+  - {fileID: 972060449}
+  - {fileID: 597930809}
   - {fileID: 1702758977}
   - {fileID: 1349793996}
   - {fileID: 1691874305}
@@ -95727,7 +96547,6 @@ Transform:
   - {fileID: 6237654982924970062}
   - {fileID: 5808560275037212463}
   - {fileID: 1377862030}
-  - {fileID: 742735024}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

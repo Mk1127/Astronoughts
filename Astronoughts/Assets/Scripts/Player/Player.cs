@@ -159,13 +159,14 @@ public class Player:MonoBehaviour
             //other.gameObject.GetComponent<AudioSource>().Play();
         }
 
-        if(other.CompareTag("Friend"))
+        if (other.CompareTag("Friend"))
         {
             print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
             convoText.text = "It's my friend!";
         }
-        if(other.CompareTag("Item")) // If we collide with an item that we can pick up
+
+        if (other.CompareTag("Item")) // If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
             Grab();
