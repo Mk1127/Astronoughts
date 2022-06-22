@@ -26,10 +26,6 @@ public class Enemy_StateMachine : MonoBehaviour
                 ToggleFollow(false, true);
             }
         }
-        else
-        {
-            ToggleFollow(false, true);
-        }
     }
 
     public void ToggleFollow(bool toggleFollow, bool togglePatrol)
