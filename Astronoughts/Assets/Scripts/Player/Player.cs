@@ -49,8 +49,8 @@ public class Player:MonoBehaviour
 
     public Item[] items = new Item[3];
 
-    //private bool allCrew;
-    //private bool allParts;
+    private bool allCrew;
+    private bool allParts;
     //private bool fixedShip;
     private bool didWin;
     public Rigidbody rb;
@@ -97,8 +97,8 @@ public class Player:MonoBehaviour
 
     void Awake()
     {
-        //allCrew = false;
-        //allParts = false;
+        allCrew = false;
+        allParts = false;
         //fixedShip = false;
         didWin = false;
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -138,7 +138,7 @@ public class Player:MonoBehaviour
         if(currentFuel <= 0)
         {
             convoText.text = "You're stranded!";
-            //PlayerDie();
+            PlayerFail();
         }
     }
 
@@ -152,27 +152,27 @@ public class Player:MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if(other.CompareTag("Enemy"))
         {
             print("Collided with " + other.gameObject.name);
             TakeDamage(25);
             //other.gameObject.GetComponent<AudioSource>().Play();
         }
 
-        if(other.gameObject.tag == "Friend")
+        if(other.CompareTag("Friend"))
         {
             print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
             convoText.text = "It's my friend!";
         }
-        if(other.tag == "Item") // If we collide with an item that we can pick up
+        if(other.CompareTag("Item")) // If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
             Grab();
             inventory.AddItem(other.GetComponent<Item>());
             convoText.text = "I picked up my " + other.gameObject.name;
             components++;
-            componentsText.text = "Components: " + components;
+            componentsText.text = "Parts: " + components;
             other.gameObject.SetActive(false);
         }
     }

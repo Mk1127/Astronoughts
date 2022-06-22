@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     // background of inventory, slots, and slots qualities
     public Image invImage;
-    private Image slotImage;
+    private readonly Image slotImage;
     private Image[] slotImages;
 
     // Offset used to move the hovering object away from the mouse 
@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
     // function-related variables
     private bool fadingIn;
     private bool fadingOut;
-    private bool hidden;
+    private readonly bool hidden;
 
     public float fadeTime;
     public float iA;
@@ -109,8 +109,7 @@ public class Inventory : MonoBehaviour
             }
             if(hoverObject != null)
             {
-                Vector2 position;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(UI.transform as RectTransform,Input.mousePosition,UI.worldCamera,out position);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(UI.transform as RectTransform,Input.mousePosition,UI.worldCamera,out Vector2 position);
                 hoverObject.transform.position = UI.transform.TransformPoint(position);
                 position.Set(position.x,position.y - hoverYOffset);
                 hoverObject.transform.position = UI.transform.TransformPoint(position);
@@ -140,11 +139,11 @@ public class Inventory : MonoBehaviour
     {
         if(iA > 0)
         {
-            StartCoroutine("FadeOut"); //Close the inventory (Start Coroutines with a string so they can be manually stopped)
+            _ = StartCoroutine("FadeOut"); //Close the inventory (Start Coroutines with a string so they can be manually stopped)
         }
         else
         {
-            StartCoroutine("FadeIn"); // Open the inventory
+            _ = StartCoroutine("FadeIn"); // Open the inventory
         }
     }
 
@@ -270,7 +269,7 @@ public class Inventory : MonoBehaviour
                 hoverObject.transform.SetParent(GameObject.Find("UI").transform,true);
 
                 // Sets the local scale to make usre that it has the correct size
-                hoverObject.transform.localScale = clicked.gameObject.transform.localScale;
+                hoverObject.transform.localScale = clicked.transform.localScale;
 
                 // hoverObject.transform.GetChild(0).GetComponent<Text>().text = movingSlot.Items.Count > 1 ? movingSlot.Items.Count.ToString() : string.Empty;
             }
@@ -283,7 +282,7 @@ public class Inventory : MonoBehaviour
         
         if(to != null && from != null) // If both "to" and "from" are null we're done moving items. 
         {
-            Stack<Item> tmpTo = new Stack<Item>(to.Items);
+            Stack<Item> tmpTo = new(to.Items);
             to.AddItems(from.Items);
 
             if(tmpTo.Count == 0)
