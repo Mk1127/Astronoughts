@@ -20,6 +20,7 @@ public class EmissionManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             source.GetComponent<AudioSource>().Play();
+            ToggleSparks();
         }
     }
 
