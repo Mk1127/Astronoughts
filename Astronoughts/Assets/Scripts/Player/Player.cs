@@ -170,7 +170,7 @@ public class Player:MonoBehaviour
         {
             //print("Collided with " + other.gameObject.name);
             TakeDamage(25);
-            //other.gameObject.GetComponent<AudioSource>().Play();
+            other.gameObject.GetComponent<AudioSource>().Play();
         }
 
         if(other.tag == "Friend")
