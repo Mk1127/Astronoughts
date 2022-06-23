@@ -6,12 +6,21 @@ public class EmissionManager : MonoBehaviour
 {
     public bool sparksEnabled = true;
     public float duration = 5f;
+    public AudioSource source;
 
 
     // Start is called before the first frame update
     void Start()
     {
         sparksEnabled = true;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            source.GetComponent<AudioSource>().Play();
+        }
     }
 
     public void ToggleSparks()
