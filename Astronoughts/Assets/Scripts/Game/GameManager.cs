@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region Variables
-    public static GameManager gmInstance;
+    public static GameManager Instance;
     #endregion
     // Start is called before the first frame update
     void Awake()
     {
-        if(gmInstance == null)
+        if(Instance == null)
         {
-            gmInstance = this;
+            Instance = this;
         }
-        else if(gmInstance != this)
+        else if(Instance != this)
         {
             Destroy(gameObject);
             return;
