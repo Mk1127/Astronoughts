@@ -190,10 +190,11 @@ MonoBehaviour:
   accel: 11
   grav: 10
   jumpSpeed: 7
-  isGRounded: 0
   ps: {fileID: 8665203091269710584}
   emissionManager: {fileID: 8665203091269710586}
   fadeTime: 1
+  thrustGauge: 100
+  isGrounded: 0
 --- !u!114 &7639409723924394977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,22 +237,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324ad7ead844b547978cc4cda45146d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxFuel: 100
   player: {fileID: 7639409723924394978}
+  rb: {fileID: 8665203092450779288}
   convoText: {fileID: 0}
   allText: []
-  componentsText: {fileID: 0}
-  healthText: {fileID: 0}
+  fullSlot: {fileID: -633354186, guid: 39b745427a0c09248afb4afa1543644c, type: 3}
+  partsText: {fileID: 0}
+  crewText: {fileID: 0}
+  fuelText: {fileID: 0}
+  prizeClips: []
+  prizeSource: {fileID: 0}
+  grassClips: []
+  grassSource: {fileID: 0}
   inventoryButton: {fileID: 0}
   inventory: {fileID: 5549660352311257401, guid: 39a923444b489564faa2ce15fc90aff8, type: 3}
-  items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  didWin: 0
-  rb: {fileID: 8665203092450779288}
+  items: []
 --- !u!54 &8665203092450779288
 Rigidbody:
   m_ObjectHideFlags: 0

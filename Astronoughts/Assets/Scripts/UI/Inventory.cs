@@ -17,6 +17,9 @@ public class Inventory : MonoBehaviour
     // The width and height of the inventory
     protected float inventoryWidth, inventoryHeight;
 
+    // This indicates if the inventory is open or closed
+    private bool isOpen;
+
     // The number of slots & rows, their size, and offset to top & left 
     public int slots;
     public int rows;
@@ -32,10 +35,13 @@ public class Inventory : MonoBehaviour
     protected float hoverYOffset;
 
     // variables for moving items to and from slots
-    // static
-    private static Slot from, to;
-    private static GameObject hoverObject;
-    private static int emptySlots;
+    private Slot from;
+    private Slot to;
+    private Slot movingSlot;
+    private GameObject clicked;
+    private GameObject hoverObject;
+    [SerializeField]
+    private int emptySlots;
 
     // structural objects
     public EventSystem eventSystem;
@@ -43,6 +49,7 @@ public class Inventory : MonoBehaviour
     public CanvasGroup canvasGroup;
 
     // gameObjects (inventory prefabs to generate)
+    public GameObject itemPrefab;
     public GameObject iconPrefab;
     public GameObject slotPrefab;
     public Button inventoryButton;
@@ -50,7 +57,7 @@ public class Inventory : MonoBehaviour
     // function-related variables
     private bool fadingIn;
     private bool fadingOut;
-    private readonly bool hidden;
+    private bool hidden;
 
     public float fadeTime;
     public float iA;
@@ -62,8 +69,87 @@ public class Inventory : MonoBehaviour
     #endregion
 
     #region Properties
-    // Property to let us access the number of empty slots
-    public static int EmptySlots
+    // The slot we are moving from
+    public Slot From
+    {
+        get
+        {
+            return from;
+        }
+        set
+        {
+            from = value;
+        }
+    }
+
+
+    // The slot we are moving to
+    public Slot To
+    {
+        get
+        {
+            return to;
+        }
+        set
+        {
+            to = value;
+        }
+    }
+
+    // The clicked item
+    public GameObject Clicked
+    {
+        get
+        {
+            return clicked;
+        }
+        set
+        {
+            clicked = value;
+        }
+    }
+
+    // The slot that contains the items being moved
+    public Slot MovingSlot
+    {
+        get
+        {
+            return movingSlot;
+        }
+        set
+        {
+            movingSlot = value;
+        }
+    }
+
+    // The hover object
+    public GameObject HoverObject
+    {
+        get
+        {
+            return hoverObject;
+        }
+        set
+        {
+            hoverObject = value;
+        }
+    }
+
+    // Indicates if the inventory is open
+    public bool IsOpen
+    {
+        get
+        {
+            return isOpen;
+        }
+        set
+        {
+            isOpen = value;
+        }
+    }
+
+    // Property for accessing the number of empty slots
+    public int EmptySlots
     {
         get
         {
@@ -74,12 +160,23 @@ public class Inventory : MonoBehaviour
             emptySlots = value;
         }
     }
+
+    public bool FadingOut
+    {
+        get
+        {
+            return fadingOut;
+        }
+    }
+
     #endregion
 
 
     // Use this for initialization
     private void Start()
     {
+        isOpen = true;
+
         //Creates the inventory layout
         MakeLayout();
 
@@ -139,11 +236,11 @@ public class Inventory : MonoBehaviour
     {
         if(iA > 0)
         {
-            _ = StartCoroutine("FadeOut"); //Close the inventory (Start Coroutines with a string so they can be manually stopped)
+            StartCoroutine("FadeOut"); //Close the inventory (Start Coroutines with a string so they can be manually stopped)
         }
         else
         {
-            _ = StartCoroutine("FadeIn"); // Open the inventory
+            StartCoroutine("FadeIn"); // Open the inventory
         }
     }
 

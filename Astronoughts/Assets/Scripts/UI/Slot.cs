@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
@@ -31,7 +29,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
     {
         get
         {
-            return Items.Count == 0;
+            return items.Count == 0;
         }
     }
 
@@ -40,7 +38,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
     {
         get
         {
-            return CurrentItem.maxSize > Items.Count;
+            return CurrentItem.maxSize > items.Count;
         }
     }
 
@@ -49,22 +47,31 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
     {
         get
         {
-            return Items.Peek();
+            return items.Peek();
         }
     }
 
     public Stack<Item> Items
     {
-        get => items;
-        set => items = value;
+        get
+        {
+            return items;
+        }
+        set
+        {
+            items = value;
+        }
     }
     #endregion
 
-    void Start()
+    void Awake()
     {
         // Instantiates the items stack
         Items = new Stack<Item>();
+    }
 
+    void Start()
+    {
         // Creates a reference to the slot slot's recttransform
         RectTransform slotRect = GetComponent<RectTransform>();
 
@@ -83,16 +90,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
         textRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotRect.sizeDelta.y);
     }
 
-    void Update()
-    {
-    }
-
     #region Functions
     public void AddItem(Item item)
     {
         if(IsEmpty) // if the slot is empty
         {
-           Inventory.EmptySlots--; // Reduce the number of empty slots
+            transform.parent.GetComponent<Inventory>().EmptySlots--; // Reduce the number of empty slots
         }
         Items.Push(item); // Adds the item to the stack
         if(Items.Count > 1) // Checks if we have a stacked item
@@ -106,7 +109,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
     {
         if(IsEmpty) // if the slot is empty
         {
-            Inventory.EmptySlots--; // Reduce the number of empty slots
+            transform.parent.GetComponent<Inventory>().EmptySlots--; // Reduce the number of empty slots
         }
         this.Items = new Stack<Item>(items); // Adds the stack of items to the slot
         stackText.text = items.Count > 1 ? items.Count.ToString() : string.Empty; // Writes the correct stack number on the icon
@@ -136,11 +139,31 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
             if(IsEmpty) // Is the item removed the last one?
             {
                 ChangeSprite(slotEmpty,slotHighlight); // if it is, change icon
-                Inventory.EmptySlots++; // Add 1 to the number of empty slots
+                transform.parent.GetComponent<Inventory>().EmptySlots++; // Add 1 to the number of empty slots
             }
 
         }
 
+    }
+
+    // Removes the top item from the slot and returns it
+    /// <returns>The removed item</returns>
+    public Item RemoveItem()
+    {
+        if(!IsEmpty)
+        {
+            //Remove the item from the stack and stores it in a tmp variable
+            Item tmp = items.Pop();
+            //Makes sure that the correct number is shown on the slot
+            stackText.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+            if(IsEmpty)
+            {
+                ClearSlot();
+            }
+            //Returns the removed item
+            return tmp;
+        }
+        return null;
     }
 
     // Clears the slot
@@ -153,7 +176,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IP
 
         if(transform.parent != null)
         {
-            Inventory.EmptySlots++;
+            transform.parent.GetComponent<Inventory>().EmptySlots++;
         }
     }
 

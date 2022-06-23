@@ -9,9 +9,6 @@ public class Player_Interact : MonoBehaviour
     [SerializeField] Player_Rotation playerRot;
     [SerializeField] InteractionText interactionText;
     [SerializeField] Vector3 lastCheckpoint;
-    public Text convoText;
-    [SerializeField] AudioSource playerSource;
-    public AudioClip[] grassClips;
 
     public bool isHidden;
 
@@ -117,11 +114,6 @@ public class Player_Interact : MonoBehaviour
         if (other.tag == "Grass")
         {
             isHidden = true;
-            //playerSource.mute = false;
-            //playerSource.volume = 0.1f;
-            //GrassStep();
-            //playerSource.loop = true;
-            //convoText.text = "I think I'm hidden now.";
         }
     }
 
@@ -145,25 +137,11 @@ public class Player_Interact : MonoBehaviour
         if(other.tag == "Grass")
         {
             isHidden = false;
-            //playerSource.loop = false;
-            //playerSource.mute = true;
-            //convoText.text = "";
         }
 
         if (other.tag == "Checkpoint")
         {
             lastCheckpoint = other.transform.position;
         }
-    }
-
-    private void GrassStep()
-    {
-        AudioClip clip = GetRandomClip();
-        playerSource.PlayOneShot(clip);
-    }
-
-    private AudioClip GetRandomClip()
-    {
-        return grassClips[UnityEngine.Random.Range(0,grassClips.Length)];
     }
 }

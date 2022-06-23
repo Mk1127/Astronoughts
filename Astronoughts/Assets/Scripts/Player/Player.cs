@@ -1,13 +1,9 @@
-
-using System;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using TMPro;
 using System.Collections;
-using UnityEngine.Audio;
 using System.Collections.Generic;
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player:MonoBehaviour
 {
@@ -15,23 +11,25 @@ public class Player:MonoBehaviour
     public static Player instance;
 
     public static Player Ps;
-    private Animator anim;
+    //private Animator anim;
 
     private int currentFuel;
     public int maxFuel = 100;
 
-    //public GameObject endScreen;
     public GameObject player;
+    [SerializeField]
+    private Rigidbody rb;
 
     // Shows the player what he needs to do
     public Text convoText;
     public Text[] allText;
-    private int components;
+    public Sprite fullSlot;
+    private int parts;
     private int crew;
     //private int shipState;
 
     [SerializeField]
-    private Text componentsText;
+    private Text partsText;
     [SerializeField]
     private Text crewText;
     [SerializeField]
@@ -40,35 +38,40 @@ public class Player:MonoBehaviour
     //private Text shipText;
 
     [SerializeField]
-    private AudioClip[] clips;
+    private AudioClip[] prizeClips;
     [SerializeField]
     private AudioSource prizeSource;
+    [SerializeField]
+    private AudioClip[] grassClips;
+    [SerializeField]
+    private AudioSource grassSource;
 
     public Button inventoryButton;
-    public Inventory inventory;
+    [SerializeField]
+    private Inventory inventory;
 
-    public Item[] items = new Item[3];
+    public List<Item> items = new List<Item>();
 
     private bool allCrew;
     private bool allParts;
     //private bool fixedShip;
     private bool didWin;
-    public Rigidbody rb;
     #endregion
 
     #region Properties
-    public int Components
+    public int Parts
     {
         get
         {
-            return components;
+            return parts;
         }
         set
         {
-            componentsText.text = "Components: " + value;
-            components = value;
+            partsText.text = "Parts: " + value;
+            parts = value;
         }
     }
+
     public int Crew
     {
         get
@@ -93,6 +96,7 @@ public class Player:MonoBehaviour
             return instance;
         }
     }
+
     #endregion
 
     void Awake()
@@ -101,27 +105,25 @@ public class Player:MonoBehaviour
         allParts = false;
         //fixedShip = false;
         didWin = false;
-        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        //anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        components = 0;
+        parts = 0;
         crew = 0;
         //shipText.text = "Status: Broken";
-        componentsText.text = "Components: " + components;
+        partsText.text = "Parts: " + parts;
         crewText.text = "Crew: " + crew;
         currentFuel = maxFuel;
-
-        rb = GetComponent<Rigidbody>();
     }
 
     #region Functions
 
     public void CheckWin()
     {
-        if(components == 5 && crew == 5)
+        if(parts == 5 && crew == 5)
         {
             convoText.text = "You've collected all the ship parts and rescued all of your crew!";
             didWin = true;
@@ -150,43 +152,77 @@ public class Player:MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        if(other.tag == "Grass")
         {
-            print("Collided with " + other.gameObject.name);
+            grassSource.mute = false;
+            grassSource.volume = 0.1f;
+            GrassStep();
+            grassSource.loop = true;
+            convoText.text = "I think I'm hidden.";
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            //print("Collided with " + other.gameObject.name);
             TakeDamage(25);
             //other.gameObject.GetComponent<AudioSource>().Play();
         }
 
-        if (other.CompareTag("Friend"))
+        if(other.tag == "Friend")
         {
-            print("Collided with " + other.gameObject.name);
+            //print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
             convoText.text = "It's my friend!";
         }
 
-        if (other.CompareTag("Item")) // If we collide with an item that we can pick up
+        if(other.tag == "Item") // If we collide with an item that we can pick up
         {
             print("Collided with " + other.gameObject.name);
             Grab();
             inventory.AddItem(other.GetComponent<Item>());
             convoText.text = "I picked up my " + other.gameObject.name;
-            components++;
-            componentsText.text = "Parts: " + components;
+            parts++;
+            partsText.text = "Parts: " + parts;
             other.gameObject.SetActive(false);
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Grass")
+        {
+            grassSource.loop = false;
+            grassSource.mute = true;
+            convoText.text = "";
+        }
+
+    }
+
     public void Grab()
     {
-        AudioClip clip = GetRandomClip();
+        AudioClip clip = GetPrizeClip();
         prizeSource.PlayOneShot(clip);
     }
 
-    private AudioClip GetRandomClip()
+ 
+    public void GrassStep()
     {
-        return clips[UnityEngine.Random.Range(0,clips.Length)];
+        AudioClip clip = GetGrassClip();
+        grassSource.PlayOneShot(clip);
+    }
+
+    private AudioClip GetPrizeClip()
+    {
+        return prizeClips[UnityEngine.Random.Range(0,prizeClips.Length)];
+    }
+    private AudioClip GetGrassClip()
+    {
+        return grassClips[UnityEngine.Random.Range(0,grassClips.Length)];
     }
 
     IEnumerator Wait()

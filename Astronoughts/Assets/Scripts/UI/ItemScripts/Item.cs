@@ -21,19 +21,19 @@ public class Item : MonoBehaviour
         switch(type)
         {
             case ItemType.PART1:
-                UnityEngine.Debug.Log("I collected the 1st Component.");
+                UnityEngine.Debug.Log("I implemented the 1st Part.");
                 break;
             case ItemType.PART2:
-                UnityEngine.Debug.Log("I collected the 2nd Component.");
+                UnityEngine.Debug.Log("I implemented the 2nd Part.");
                 break;
             case ItemType.PART3:
-                UnityEngine.Debug.Log("I collected 3rd Component.");
+                UnityEngine.Debug.Log("I implemented the 3rd Part.");
                 break;
             case ItemType.PART4:
-                UnityEngine.Debug.Log("I collected 4th Component.");
+                UnityEngine.Debug.Log("I implemented the 4th Part.");
                 break;
             case ItemType.PART5:
-                UnityEngine.Debug.Log("I collected 5th Component.");
+                UnityEngine.Debug.Log("I implemented the 5th Part.");
                 break;
         }
     }
