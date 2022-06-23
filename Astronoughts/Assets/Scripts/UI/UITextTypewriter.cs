@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UITextTypewriter : MonoBehaviour
 {
@@ -19,10 +20,12 @@ public class UITextTypewriter : MonoBehaviour
     [SerializeField] float typingSpeed = 0.1f;
     [SerializeField] float delay = 0f;
     [SerializeField] bool delayCursor = false;
+    [SerializeField] private string splashScene;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(WaitForEnd());
         //Get the text component of text field
         txt = GetComponent<Text>()!;
         textMeshTxt = GetComponent<TMP_Text>()!;
@@ -44,10 +47,6 @@ public class UITextTypewriter : MonoBehaviour
 
             StartCoroutine("TextMeshTypewriter");
         }
-    }
-    private void Update()
-    {
-    
     }
 
     IEnumerator TextTypewriter()
@@ -92,5 +91,12 @@ public class UITextTypewriter : MonoBehaviour
             textMeshTxt.text = textMeshTxt.text.Substring(0,textMeshTxt.text.Length - cursor.Length);
         }
     }
+    IEnumerator WaitForEnd()
+    {
+        //yield on a new YieldInstruction that waits for 60 seconds.
+        yield return new WaitForSeconds(60f);
 
+        //After we have waited 60 seconds print the time again.
+        SceneManager.LoadScene(splashScene);
+    }
 }
