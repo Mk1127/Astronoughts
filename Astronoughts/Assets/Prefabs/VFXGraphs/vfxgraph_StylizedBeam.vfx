@@ -988,7 +988,7 @@ MonoBehaviour:
   m_OutputSlots: []
   m_Disabled: 0
   attribute: size
-  Composition: 0
+  Composition: 2
   Source: 0
   Random: 0
   channels: 6
