@@ -27,8 +27,8 @@ public class CameraFollow : MonoBehaviour
     public float damping = 1.0f;
 
     // Independent rot
-    public float rotationSpeed = 5.0f;
-    private float angleX = 0.0f;
+    public float rotationSpeed;
+    private float angleX;
     public float minPitch = -30.0f;
     public float maxPitch = 30.0f;
 

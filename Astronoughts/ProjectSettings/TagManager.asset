@@ -37,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Inventory
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2387823591
+    locked: 0
+  - name: Inventory
+    uniqueID: 1686881011
     locked: 0
