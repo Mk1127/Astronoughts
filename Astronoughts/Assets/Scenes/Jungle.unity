@@ -18700,7 +18700,6 @@ GameObject:
   m_Component:
   - component: {fileID: 319466354}
   - component: {fileID: 319466357}
-  - component: {fileID: 319466356}
   - component: {fileID: 319466355}
   m_Layer: 0
   m_Name: overCam
@@ -18749,14 +18748,6 @@ MonoBehaviour:
   rotationSpeed: 5
   minPitch: -30
   maxPitch: 30
---- !u!81 &319466356
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319466353}
-  m_Enabled: 1
 --- !u!20 &319466357
 Camera:
   m_ObjectHideFlags: 0
@@ -84089,7 +84080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1833151041}
   - component: {fileID: 1833151044}
-  - component: {fileID: 1833151043}
   - component: {fileID: 1833151042}
   m_Layer: 0
   m_Name: CloseCam
@@ -84138,14 +84128,6 @@ MonoBehaviour:
   rotationSpeed: 1
   minPitch: -30
   maxPitch: 30
---- !u!81 &1833151043
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833151040}
-  m_Enabled: 1
 --- !u!20 &1833151044
 Camera:
   m_ObjectHideFlags: 0

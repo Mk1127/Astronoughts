@@ -10,6 +10,7 @@ using UnityEngine.EventSystems;
 public class Inventory : MonoBehaviour
 {
     #region Variables
+    public static Inventory _instance;
 
     // A reference to the inventorys RectTransform
     protected RectTransform inventoryRect;
@@ -171,6 +172,18 @@ public class Inventory : MonoBehaviour
 
     #endregion
 
+    private void Awake()
+    {
+        if(_instance == null)
+        {
+            _instance = this;
+        }
+        else if(_instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     // Use this for initialization
     private void Start()
