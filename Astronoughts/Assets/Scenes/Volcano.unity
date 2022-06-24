@@ -695,6 +695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2180151965801544540, guid: de36fa1461af34743bd9f95ab69a362d, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0.7853981
+      objectReference: {fileID: 0}
     - target: {fileID: 2862271852251960690, guid: de36fa1461af34743bd9f95ab69a362d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1330,6 +1334,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c19cfab3cce2e4cbae409c6c3c2682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &183756757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 779662b94d33189478369962223468f3, type: 3}
+  m_PrefabInstance: {fileID: 546088835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &183756759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183756757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823649edd906a664791e2216f78c6195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrollX: 0.5
+  ScrollY: 0.5
 --- !u!1 &212368961
 GameObject:
   m_ObjectHideFlags: 0
@@ -12150,6 +12173,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1c9aa57f7f82f249bfa6b921d2333dc, type: 3}
+--- !u!1 &1417863109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4558295195043314502, guid: 779662b94d33189478369962223468f3, type: 3}
+  m_PrefabInstance: {fileID: 546088835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417863111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417863109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823649edd906a664791e2216f78c6195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrollX: 0
+  ScrollY: -0.02
 --- !u!1 &1437596811
 GameObject:
   m_ObjectHideFlags: 0
