@@ -41,7 +41,7 @@ public class MMUIController : MonoBehaviour
 
     void Start()
     {
-        if(scene == "Splash")
+        if(scene == "SplashScreen")
         {
             text.text = "Next";
             text2.text = "Credits";

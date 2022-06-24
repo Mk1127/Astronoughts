@@ -97,6 +97,6 @@ public class UITextTypewriter : MonoBehaviour
         yield return new WaitForSeconds(60f);
 
         //After we have waited 60 seconds print the time again.
-        SceneManager.LoadScene(splashScene);
+        SceneManager.LoadScene("Menu");
     }
 }
