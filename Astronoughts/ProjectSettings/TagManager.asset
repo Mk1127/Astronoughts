@@ -27,6 +27,7 @@ TagManager:
   - Item4
   - Item5
   - Geyser
+  - UI Manager
   layers:
   - Default
   - TransparentFX

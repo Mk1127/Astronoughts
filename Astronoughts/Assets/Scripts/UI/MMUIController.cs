@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using Extensions;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,7 +14,6 @@ public class MMUIController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject controlsMenu;
     public GameObject instructionsMenu;
-    //public GameObject creditsMenu;
 
     [SerializeField] GameObject[] creditsPanels;
     public GameObject mainButtonPanel;
