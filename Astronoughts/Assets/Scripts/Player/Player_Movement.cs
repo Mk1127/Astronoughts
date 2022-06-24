@@ -11,7 +11,8 @@ public class Player_Movement : MonoBehaviour
 
     Vector3 intent;
     Vector3 velocityXZ;
-    Vector3 velocity;
+    [HideInInspector] public Vector3 velocity;
+    [HideInInspector] public bool inGeyser = false;
 
 
 
@@ -21,7 +22,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float accel;
     [SerializeField] float grav;
-    [SerializeField] float jumpSpeed;
+    [HideInInspector] public float jumpSpeed;
 
     float startSpeed;
 
@@ -30,7 +31,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] EmissionManager emissionManager;
     [SerializeField] float fadeTime;
     [SerializeField] float thrustGauge = 100;
-    bool hovering = false;
+    [HideInInspector] public bool hovering = false;
 
     [Header("Detection")]
     [SerializeField] public bool isGrounded = false;
@@ -55,6 +56,7 @@ public class Player_Movement : MonoBehaviour
         CalcMovement(); //Does all calculations for movement, doesn't move the character
         Gravity(); // Calculates and sets gravity for the character
         Hover();
+        Jump();
         MoveCharacter();
     }
 
@@ -82,6 +84,11 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = true;
             hovering = false;
+
+            if (hit.collider.tag == "Geyser")
+            {
+                isGrounded = false;
+            }
         }
         else
         {
@@ -123,7 +130,7 @@ public class Player_Movement : MonoBehaviour
                 velocity.y -= grav * Time.deltaTime;
             }
 
-            velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+            velocity.y = Mathf.Clamp(velocity.y, -10, 50);
         }
         else
         {
@@ -137,16 +144,28 @@ public class Player_Movement : MonoBehaviour
         {
             if (!hovering)
             {
-                if (thrustGauge > 0)
+                if (isGrounded)
                 {
-                    hovering = true;
-                    StartCoroutine(LiftPlayer());
+                    if (thrustGauge > 0)
+                    {
+                        hovering = true;
+                        StartCoroutine(LiftPlayer());
+                    }
                 }
             }
             else
             {
                 hovering = false;
             }
+        }
+    }
+
+    public void Jump()
+    {
+        if (inGeyser)
+        {
+            velocity.y = jumpSpeed;
+            StartCoroutine(Geyser());
         }
     }
 
@@ -221,12 +240,24 @@ public class Player_Movement : MonoBehaviour
         mover.enabled = true;
     }
 
+    IEnumerator Geyser()
+    {
+        while (velocity.y < jumpSpeed)
+        {
+            velocity.y += 0.8f;
+            yield return null;
+        }
+        inGeyser = false;
+    }
+
+    public void OffGeyser()
+    {
+        inGeyser = false;
+    }
+
     IEnumerator SparksFade()
     {
         var em = ps.emission;
-        /*em.enabled = true;
-        yield return new WaitForSeconds(fadeTime);
-        em.enabled = false;*/
 
         em.enabled = true;
 

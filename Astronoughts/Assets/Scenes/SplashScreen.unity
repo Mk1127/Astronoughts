@@ -498,11 +498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   writtenTxts: []
   instructions: {fileID: 1095083855}
-  splashScene: Menu
   cursor: '|'
   typingSpeed: 0.1
   delay: 0
   delayCursor: 0
+  splashScene: 
 --- !u!1 &122004187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2006,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7799805437955351295, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 81b1611a2ac00fd40b34ebba1cc68f11, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9b0ce5774e7643b47a0e70b99198e7cb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2971,6 +2971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3055,6 +3056,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &719887990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,7 +3958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.53333336}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5232,7 +5253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c835bfdd903f4d498b12fbc6ba755e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Splash
+  scene: Splashscreen
   mainMenu: {fileID: 566274801}
   controlsMenu: {fileID: 530989216}
   instructionsMenu: {fileID: 122004187}
