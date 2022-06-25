@@ -3305,7 +3305,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 107014994}
         m_TargetAssemblyTypeName: MMUIController, Assembly-CSharp
-        m_MethodName: OnCreditsButtonClick
+        m_MethodName: OnHelpButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4985,7 +4985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: help
+  m_Text: back
 --- !u!222 &1592044514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5653,7 +5653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: credits
+  m_Text: next
 --- !u!222 &1772153680
 CanvasRenderer:
   m_ObjectHideFlags: 0
