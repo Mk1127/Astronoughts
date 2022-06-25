@@ -34,6 +34,7 @@ public class MMUIController : MonoBehaviour
     public Animator panelAnimator;
     public bool isHidden;
     public bool isPlaying;
+    private 
     #endregion
 
     void Start()
@@ -119,7 +120,7 @@ public class MMUIController : MonoBehaviour
 
     public void OnHelpButtonClick()
     {
-        if(scene == "Splash")
+        if(scene == "SplashScreen")
         {
             Debug.Log("You clicked the skip button");
             SceneManager.LoadScene("Menu");

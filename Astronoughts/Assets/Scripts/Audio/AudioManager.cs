@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
             }
             else if(instance != this)
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 return;
             }
             //Persist this instance through level change.
@@ -97,14 +97,14 @@ public class AudioManager : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
         if(source.mute == false)
         {
-            if(GUI.Button(new Rect(10,10,50,50),muteTexture))
+            if(GUI.Button(new Rect(25,10,75,75),muteTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = true;
             }
         }
         else if(source.mute == true)
         {
-            if(GUI.Button(new Rect(10,10,50,50),playTexture))
+            if(GUI.Button(new Rect(25,10,75,75),playTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = false;
             }

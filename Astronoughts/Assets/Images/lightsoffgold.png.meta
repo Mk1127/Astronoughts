@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbf4d686fb8637542a25f779a34a3800
+guid: 2a79c88f61d83f54596af75cbcfc9805
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lights_0
+      name: lightsoffgold_0
       rect:
         serializedVersion: 2
         x: 17
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5190995007f793a49a92efd31ad5c1c3
-      internalID: -1961637419
+      spriteID: 4b09f1ef97ea6184fb8bd62a9efb6cae
+      internalID: -789866713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_1
+      name: lightsoffgold_1
       rect:
         serializedVersion: 2
         x: 255
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80f3f20df95ceda4cb50cd4a255eb398
-      internalID: 1506794137
+      spriteID: eeefdef8f516f944a887e3de2644aa4f
+      internalID: 1307268945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_2
+      name: lightsoffgold_2
       rect:
         serializedVersion: 2
         x: 494
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f85f9f075f29f754bb4833801d1f43af
-      internalID: -691194096
+      spriteID: 7223c6a896232ef409ed744dc4ae53a0
+      internalID: -1817870210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_3
+      name: lightsoffgold_3
       rect:
         serializedVersion: 2
         x: 733
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9147cbdd3a5c54341953b6e0f1df25de
-      internalID: -571911892
+      spriteID: e8c60b3398a54364eb8d406272d766e9
+      internalID: 1619382670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_4
+      name: lightsoffgold_4
       rect:
         serializedVersion: 2
         x: 981
@@ -214,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a185818e5818241a43f0a596cd0a9c
-      internalID: 194902294
+      spriteID: abb8c434daed7bd42a75eda78bd50b20
+      internalID: 974168453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_5
+      name: lightsoffgold_5
       rect:
         serializedVersion: 2
         x: 18
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b9fbc1c19083ed438ef22d5b852d409
-      internalID: -139799755
+      spriteID: 1bf3c6da36e52974a81b87166100f927
+      internalID: -987881846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_6
+      name: lightsoffgold_6
       rect:
         serializedVersion: 2
         x: 257
@@ -256,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 645feb0c0ecdc5b45b7639781ee3f1d6
-      internalID: -1354434394
+      spriteID: f3dfdb8cdbee42540ae883c7d70e81e6
+      internalID: 1570008419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_7
+      name: lightsoffgold_7
       rect:
         serializedVersion: 2
         x: 494
@@ -277,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ce69a8b351107444b017ded8d6971c8
-      internalID: -616635340
+      spriteID: 090aec6cb7649784d8bccd0fe70317c6
+      internalID: -771948348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_8
+      name: lightsoffgold_8
       rect:
         serializedVersion: 2
         x: 734
@@ -298,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0019a45c94e74f24b92583561ec8dd09
-      internalID: -672013513
+      spriteID: e0e27ed88a49ecb4f86351b96931aca9
+      internalID: -75617437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lights_9
+      name: lightsoffgold_9
       rect:
         serializedVersion: 2
         x: 980
@@ -319,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 893b354f45fc50d44be675cbbb1af821
-      internalID: -2002295277
+      spriteID: 54c2c50a89613fc4882507720e32c924
+      internalID: -217696759
       vertices: []
       indices: 
       edges: []
@@ -328,7 +328,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ce72d6fb9eeb66b4e80d3f0252a8309f
+    spriteID: 8ca653acf200d024b8462b625d7f5a8e
     internalID: 0
     vertices: []
     indices: 
@@ -336,16 +336,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lights_3: -571911892
-      lights_8: -672013513
-      lights_1: 1506794137
-      lights_7: -616635340
-      lights_9: -2002295277
-      lights_0: -1961637419
-      lights_4: 194902294
-      lights_2: -691194096
-      lights_6: -1354434394
-      lights_5: -139799755
+      lightsoffgold_4: 974168453
+      lightsoffgold_6: 1570008419
+      lightsoffgold_2: -1817870210
+      lightsoffgold_8: -75617437
+      lightsoffgold_1: 1307268945
+      lightsoffgold_9: -217696759
+      lightsoffgold_5: -987881846
+      lightsoffgold_7: -771948348
+      lightsoffgold_0: -789866713
+      lightsoffgold_3: 1619382670
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
