@@ -27,7 +27,9 @@ TagManager:
   - Item4
   - Item5
   - Geyser
-  - UI Manager
+  - AudioController
+  - UIController
+  - ShipText
   layers:
   - Default
   - TransparentFX

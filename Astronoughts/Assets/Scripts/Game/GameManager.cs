@@ -9,26 +9,65 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
     
     // player statistics
-    public int playerFuel;
-    public int currentFuel;
-    public int crewNumber;
-    public int currentCrew;
-    public int partsToFind;
-    public int currentParts;
-    public int repairsCompleted;
+    [HideInInspector] public float playerFuel;
+    [HideInInspector] public float currentFuel;
+    [HideInInspector] public int crewNumber;
+    public int parts;
+    public int crew;
+    private string shipState;
+
 
     // inventory statistics
     public GameObject slot;
     public GameObject[] slotsToFill;
     public Image[] collectedParts;
-    public SortedList Parts;
+    public SortedList SortedParts;
  
     //game statistics
     public int sceneCounter;
     public string currentScene;
-    public string shipState;
 
+    //sources
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject UIController;
+    public Player playerScript;
+    public UIControllerScript UIScript;
+
+    //display
+    [SerializeField] public Text partsText;
+    [SerializeField] public Text crewText;
+    [SerializeField] public Text fuelText;
+    [SerializeField] public Text shipText;
     #endregion
+
+    #region Properties
+    public int Parts
+    {
+        get
+        {
+            return parts;
+        }
+        set
+        {
+            parts = value;
+            partsText.text = "Parts: " + value;
+        }
+    }
+
+    public int Crew
+    {
+        get
+        {
+            return crew;
+        }
+        set
+        {
+            crew = value;
+            crewText.text = "Crew: " + value;
+        }
+    }
+    #endregion
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -46,18 +85,32 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        playerFuel = 100;
-        currentFuel = 100;
-        crewNumber = 0;
-        currentCrew = 0;
-        partsToFind = 5;
-        currentParts = 0;
-        repairsCompleted = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
+        UIController = GameObject.FindGameObjectWithTag("UIController");
+        playerScript = player.GetComponent<Player>();
+        UIScript = UIController.GetComponent<UIControllerScript>();
 
         //game statistics
         sceneCounter = 0;
         currentScene = "";
-        shipState = "Incapacitated";
+
+    }
+
+    private void Update()
+    {
+
+    }
+
+    public void GatherStats()
+    {
+        parts = parts + playerScript.currentParts;
+        crew = crew + playerScript.currentCrew;
+        shipState = "My Ship is " + playerScript.currentShipState;
+        currentScene = UIScript.scene;
+
+        shipText.text = "My ship is " + shipState;
+        partsText.text = "Parts: " + parts;
+        crewText.text = "Crew: " + crew;
     }
 
 }

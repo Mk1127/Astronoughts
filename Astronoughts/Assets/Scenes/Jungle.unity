@@ -123,6 +123,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &390025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390026}
+  - component: {fileID: 390028}
+  - component: {fileID: 390027}
+  m_Layer: 5
+  m_Name: ShipText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &390026
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390025}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.1648092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1050310123}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -15}
+  m_SizeDelta: {x: 130.139, y: 17.322403}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &390027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 11
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: My ship is incapacitated
+--- !u!222 &390028
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390025}
+  m_CullTransparentMesh: 1
 --- !u!1 &521021
 GameObject:
   m_ObjectHideFlags: 0
@@ -23406,7 +23486,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6944, y: 17.9157}
+  m_SizeDelta: {x: 76.859, y: 17.9157}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &534307562
 CanvasRenderer:
@@ -27624,9 +27704,17 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 913070735}
+    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: script
       value: 
       objectReference: {fileID: 681312325}
+    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: UIScript
+      value: 
+      objectReference: {fileID: 2130404667}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: crewText
       value: 
@@ -27635,6 +27723,10 @@ PrefabInstance:
       propertyPath: fuelText
       value: 
       objectReference: {fileID: 724648211}
+    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: gmScript
+      value: 
+      objectReference: {fileID: 913070735}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: convoText
       value: 
@@ -27652,6 +27744,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1331525833}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: convoPanel
+      value: 
+      objectReference: {fileID: 850751388}
+    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: grassSource
       value: 
       objectReference: {fileID: 491785709}
@@ -27659,6 +27755,10 @@ PrefabInstance:
       propertyPath: prizeSource
       value: 
       objectReference: {fileID: 1475544862}
+    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: UIController
+      value: 
+      objectReference: {fileID: 2130404664}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: jetpackSource
       value: 
@@ -27744,6 +27844,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
   m_PrefabInstance: {fileID: 621166787}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &621166789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  m_PrefabInstance: {fileID: 621166787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681312319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8324ad7ead844b547978cc4cda45146d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &624439400 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8665203091269710586, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
@@ -32586,7 +32697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &736803763
 Transform:
   m_ObjectHideFlags: 0
@@ -41014,6 +41125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913070734}
+  - component: {fileID: 913070735}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -41036,6 +41148,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &913070735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913070733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b02d82bb15795439a9bf8a46016608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFuel: 0
+  currentFuel: 0
+  crewNumber: 0
+  parts: 0
+  crew: 0
+  slot: {fileID: 365008794}
+  slotsToFill: []
+  collectedParts: []
+  sceneCounter: 0
+  currentScene: Jungle
+  player: {fileID: 681312319}
+  UIController: {fileID: 2130404664}
+  playerScript: {fileID: 621166789}
+  UIScript: {fileID: 2130404667}
+  partsText: {fileID: 1331525833}
+  crewText: {fileID: 534307563}
+  fuelText: {fileID: 724648211}
+  shipText: {fileID: 0}
 --- !u!1001 &919110464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46495,7 +46637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1034967486
 Transform:
   m_ObjectHideFlags: 0
@@ -47477,13 +47619,14 @@ RectTransform:
   - {fileID: 1331525832}
   - {fileID: 534307561}
   - {fileID: 724648210}
+  - {fileID: 390026}
   m_Father: {fileID: 740176145}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 7.4001465, y: 48.2437}
-  m_SizeDelta: {x: 146.3627, y: 162.6892}
+  m_SizeDelta: {x: 146.3627, y: 190.9057}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1050310124
 MonoBehaviour:
@@ -58317,18 +58460,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331525831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.1648092}
+  m_LocalPosition: {x: 0, y: 0, z: -3.1648088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1050310123}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6944, y: 17.9157}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: 69.5032, y: 17.9157}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1331525833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73827,7 +73970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1645311603
 Transform:
   m_ObjectHideFlags: 0
@@ -75691,7 +75834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1693354965
 Transform:
   m_ObjectHideFlags: 0
@@ -92587,7 +92730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e37e1534243da4c9040e0d05050e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: Jungle
+  scene: 
   overlay: {fileID: 717565818}
   statusPanel: {fileID: 1050310122}
   convoPanel: {fileID: 850751388}

@@ -10,26 +10,26 @@ public class UIControllerScript : MonoBehaviour
     #region Variables
     public static UIControllerScript instance;
 
+    [SerializeField] public string scene;
+
     private bool overlayHidden;
     private bool statusHidden;
     private bool convoHidden;
     private bool viewHidden;
     private bool allHidden;
 
-    public string Scene;
+    [SerializeField] GameObject overlay;
+    [SerializeField] GameObject statusPanel;
+    [SerializeField] public GameObject convoPanel;
+    [SerializeField] GameObject viewPanel;
+    [SerializeField] GameObject[] allPanels;
 
-    public GameObject overlay;
-    public GameObject statusPanel;
-    public GameObject convoPanel;
-    public GameObject viewPanel;
-    public GameObject[] allPanels;
-
-    public Button startButton;
-    public Button overlayButton;
-    public Button inventoryButton;
-    public Button statusPanelButton;
-    public Button viewPanelButton;
-    public Button quitButton;
+    [SerializeField] Button startButton;
+    [SerializeField] Button overlayButton;
+    [SerializeField] Button inventoryButton;
+    [SerializeField] Button statusPanelButton;
+    [SerializeField] Button viewPanelButton;
+    [SerializeField] Button quitButton;
 
     public Animator startAnimator;
     public Animator panelAnimator;

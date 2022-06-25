@@ -1,58 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-using static Unity.VisualScripting.Member;
 
 public class Player:MonoBehaviour
 {
     #region Variables
     public static Player instance;
-
     public static Player Ps;
     //private Animator anim;
 
-    private float currentFuel;
+    [HideInInspector] public float currentFuel;
+    [HideInInspector] public int currentCrew;
+    [HideInInspector] public int currentParts;
+    [HideInInspector] public string currentShipState;
+
     private float maxFuel = 100f;
     public Player_Movement script;
+    public UIControllerScript UIScript;
+    public GameManager gmScript;
     public AudioSource jetpackSource;
 
-    public GameObject player;
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject UIController;
+    [SerializeField] public GameManager gm;
+    [SerializeField] public GameObject convoPanel;
     private Rigidbody rb;
 
     // Shows the player what he needs to do
     public Text convoText;
     public Text[] allText;
     public Sprite fullSlot;
-    private int parts;
-    private int crew;
-    //private int shipState;
 
-    [SerializeField]
-    private Text partsText;
-    [SerializeField]
-    private Text crewText;
-    [SerializeField]
-    private Text fuelText;
-    //[SerializeField]
-    //private Text shipText;
+    [SerializeField] private Text fuelText;
 
-    [SerializeField]
-    private AudioClip[] prizeClips;
-    [SerializeField]
-    private AudioSource prizeSource;
-    [SerializeField]
-    private AudioClip[] grassClips;
-    [SerializeField]
-    private AudioSource grassSource;
+    [SerializeField] private AudioClip[] prizeClips;
+    [SerializeField] private AudioSource prizeSource;
+    [SerializeField] private AudioClip[] grassClips;
+    [SerializeField] private AudioSource grassSource;
 
     public Button inventoryButton;
-    [SerializeField]
-    private Inventory inventory;
+    [SerializeField] private Inventory inventory;
 
     public List<Item> items = new List<Item>();
 
@@ -63,32 +52,6 @@ public class Player:MonoBehaviour
     #endregion
 
     #region Properties
-    public int Parts
-    {
-        get
-        {
-            return parts;
-        }
-        set
-        {
-            partsText.text = "Parts: " + value;
-            parts = value;
-        }
-    }
-
-    public int Crew
-    {
-        get
-        {
-            return crew;
-        }
-        set
-        {
-            crewText.text = "Crew: " + value;
-            crew = value;
-        }
-    }
-
     public static Player Instance
     {
         get
@@ -100,7 +63,6 @@ public class Player:MonoBehaviour
             return instance;
         }
     }
-
     #endregion
 
     void Awake()
@@ -109,19 +71,15 @@ public class Player:MonoBehaviour
         //allParts = false;
         //fixedShip = false;
         didWin = false;
-        //anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        parts = 0;
-        crew = 0;
-        //shipText.text = "Status: Broken";
-        partsText.text = "Parts: " + parts;
-        crewText.text = "Crew: " + crew;
+        convoPanel.SetActive(true);
+        convoText.text = "I should find the parts that fell off of my ship. If I can find my crew, they can do the repairs.";
+        StartCoroutine(Wait());
         currentFuel = maxFuel;
-        script = instance.GetComponent<Player_Movement>();
     }
 
     private void Update()
@@ -133,7 +91,7 @@ public class Player:MonoBehaviour
 
     public void CheckWin()
     {
-        if(parts == 5 && crew == 5)
+        if(gmScript.Parts == 5 && gmScript.Crew == 5)
         {
             convoText.text = "You've collected all the ship parts and rescued all of your crew!";
             didWin = true;
@@ -176,6 +134,7 @@ public class Player:MonoBehaviour
             grassSource.volume = 0.1f;
             GrassStep();
             grassSource.loop = true;
+            convoPanel.SetActive(true);
             convoText.text = "I think I'm hidden.";
         }
     }
@@ -186,13 +145,18 @@ public class Player:MonoBehaviour
         {
             //print("Collided with " + other.gameObject.name);
             other.gameObject.GetComponent<AudioSource>().Play();
+            convoPanel.SetActive(true);
+            convoText.text = "It got me!";
         }
 
         if(other.tag == "Friend")
         {
             //print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
+            convoPanel.SetActive(true);
             convoText.text = "It's my friend!";
+            StartCoroutine(Wait());
+
         }
 
         if(other.tag == "Item") // If we collide with an item that we can pick up
@@ -200,9 +164,11 @@ public class Player:MonoBehaviour
             print("Collided with " + other.gameObject.name);
             Grab();
             inventory.AddItem(other.GetComponent<Item>());
+            convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            parts++;
-            partsText.text = "Parts: " + parts;
+            currentParts++;
+            gmScript.GatherStats();
+            StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }
     }
@@ -242,7 +208,8 @@ public class Player:MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
+        convoPanel.SetActive(false);
     }
     #endregion
 
