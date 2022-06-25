@@ -41,28 +41,7 @@ public class AudioManager : MonoBehaviour
         sliderAnimator.SetBool("Open",false);
 
         isHidden = true;
-        if(scene == "Menu")
-        {
-            if(instance == null)
-            {
-                instance = this;
-            }
-            else if(instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            //Persist this instance through level change.
-            DontDestroyOnLoad(gameObject);
-            source = gameObject.GetComponent<AudioSource>();
 
-            instance.source.volume = 0.15f;
-            instance.GetComponent<AudioSource>().Play();
-        }
-        else
-        {
-            return;
-        }
     }
 
     void Start()

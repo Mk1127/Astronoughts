@@ -41,9 +41,9 @@ public class MMUIController : MonoBehaviour
     {
         if(scene == "SplashScreen")
         {
-            text.text = "Next";
-            text2.text = "Credits";
-            text3.text = "Controls";
+            text.text = "next";
+            text2.text = "credits";
+            text3.text = "controls";
             mainMenu.SetActive(false);
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(true);
@@ -59,18 +59,18 @@ public class MMUIController : MonoBehaviour
         {
             isPlaying = true;
             panelAnimator.SetBool("isPlaying",true);
-            text.text = "Help";
-            text2.text = "Credits";
-            text3.text = "Controls";
+            text.text = "help";
+            text2.text = "credits";
+            text3.text = "controls";
             mainMenu.SetActive(true);
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(false);
         }
         else if(scene == "Credits")
         {
-            text.text = "Next";
-            text2.text = "Back";
-            text3.text = "Return";
+            text.text = "next";
+            text2.text = "back";
+            text3.text = "return";
 
             helpButton.enabled = true;
             helpButton.gameObject.SetActive(true);
