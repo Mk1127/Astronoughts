@@ -30,7 +30,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] ParticleSystem ps;
     [SerializeField] EmissionManager emissionManager;
     [SerializeField] float fadeTime;
-    [SerializeField] float thrustGauge = 100;
+    [SerializeField] public float thrustGauge = 100;
     [HideInInspector] public bool hovering = false;
 
     [Header("Detection")]

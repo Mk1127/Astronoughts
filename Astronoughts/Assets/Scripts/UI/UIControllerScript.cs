@@ -12,7 +12,7 @@ public class UIControllerScript : MonoBehaviour
 
     private bool overlayHidden;
     private bool statusHidden;
-    //private bool convoHidden;
+    private bool convoHidden;
     private bool viewHidden;
     private bool allHidden;
 
@@ -40,17 +40,6 @@ public class UIControllerScript : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        /*if(instance == null)
-        {
-            instance = this;
-        }
-        else if(instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        //Persist this instance through level change.
-        DontDestroyOnLoad(gameObject);*/
     }
 
     // Start is called before the first frame update
@@ -59,7 +48,7 @@ public class UIControllerScript : MonoBehaviour
         overlayHidden = true;
         statusHidden = true;
         viewHidden = true;
-        //convoHidden = false;
+        convoHidden = true;
         //allHidden = false;
 
         overlay.SetActive(false);
@@ -96,6 +85,7 @@ public class UIControllerScript : MonoBehaviour
             overlayHidden = true;
             statusHidden = true;
             viewHidden = true;
+            convoHidden = true;
         }
         else
         {
@@ -105,6 +95,7 @@ public class UIControllerScript : MonoBehaviour
             overlayHidden = false;
             statusHidden = false;
             viewHidden = false;
+            convoHidden = false;
         }
     }
 

@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+using static Unity.VisualScripting.Member;
 
 public class Player:MonoBehaviour
 {
@@ -12,11 +16,12 @@ public class Player:MonoBehaviour
     public static Player Ps;
     //private Animator anim;
 
-    private int currentFuel;
-    public int maxFuel = 100;
+    private float currentFuel;
+    private float maxFuel = 100f;
+    public Player_Movement script;
+    public AudioSource jetpackSource;
 
     public GameObject player;
-    [SerializeField]
     private Rigidbody rb;
 
     // Shows the player what he needs to do
@@ -100,8 +105,8 @@ public class Player:MonoBehaviour
 
     void Awake()
     {
-        allCrew = false;
-        allParts = false;
+        //allCrew = false;
+        //allParts = false;
         //fixedShip = false;
         didWin = false;
         //anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -116,6 +121,12 @@ public class Player:MonoBehaviour
         partsText.text = "Parts: " + parts;
         crewText.text = "Crew: " + crew;
         currentFuel = maxFuel;
+        script = instance.GetComponent<Player_Movement>();
+    }
+
+    private void Update()
+    {
+        CheckFuel();
     }
 
     #region Functions
@@ -130,22 +141,28 @@ public class Player:MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
     }
-    public void TakeDamage(int damage)
+    public void CheckFuel()
     {
-        currentFuel -= damage;
+        currentFuel = script.thrustGauge;
         fuelText.text = "Fuel: " + currentFuel;
-        //anim.SetTrigger("Hurt");
-
-        if(currentFuel <= 0)
+        if(script.hovering == false)
         {
-            convoText.text = "You're stranded!";
-            PlayerFail();
+            jetpackSource.GetComponent<AudioSource>().mute = true;
+            return;
+        }
+        else if(script.hovering == true && currentFuel > 0)
+        {
+            jetpackSource.GetComponent<AudioSource>().mute = false;
+        }
+        else if(script.hovering == true && currentFuel <= 0)
+        {
+            jetpackSource.GetComponent<AudioSource>().mute = true;
         }
     }
 
     void PlayerFail()
     {
-        Debug.Log("Player is out of fuel!");
+        Debug.Log("Player Lost");
         StartCoroutine(Wait());
         //anim.SetBool("isStranded",true);
         SceneManager.LoadScene("GameOver");
@@ -168,7 +185,6 @@ public class Player:MonoBehaviour
         if(other.tag == "Enemy")
         {
             //print("Collided with " + other.gameObject.name);
-            TakeDamage(25);
             other.gameObject.GetComponent<AudioSource>().Play();
         }
 

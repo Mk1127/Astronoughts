@@ -32,11 +32,11 @@ public class EmissionManager : MonoBehaviour
     IEnumerator ToggleEffect()
     {
         sparksEnabled = false;
-        Debug.Log("Sparks are off");
+        //Debug.Log("Sparks are off");
 
         yield return new WaitForSeconds(duration);
 
         sparksEnabled = true;
-        Debug.Log("Sparks are on");
+        //Debug.Log("Sparks are on");
     }
 }

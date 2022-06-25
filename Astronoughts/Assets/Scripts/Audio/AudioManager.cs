@@ -91,7 +91,7 @@ public class AudioManager : MonoBehaviour
             isHidden = true;
         }
     }
-    //OnGUI controls for players
+    //OnGUI controls for player
     void OnGUI()
     {
         source = gameObject.GetComponent<AudioSource>();
