@@ -75,8 +75,6 @@ public class Enemy_Patrol : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
-        Debug.Log(playing);
         if (showCheckpoints)
         {
             Gizmos.color = Color.magenta;

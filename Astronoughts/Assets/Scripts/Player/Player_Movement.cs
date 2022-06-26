@@ -13,6 +13,7 @@ public class Player_Movement : MonoBehaviour
     Vector3 velocityXZ;
     [HideInInspector] public Vector3 velocity;
     [HideInInspector] public bool inGeyser = false;
+    float startY;
 
 
 
@@ -20,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] Transform cam;
     [SerializeField] CharacterController mover;
     [SerializeField] float speed;
+    [SerializeField] float sprintSpeed;
     [SerializeField] float accel;
     [SerializeField] float grav;
     [HideInInspector] public float jumpSpeed;
@@ -35,6 +37,7 @@ public class Player_Movement : MonoBehaviour
 
     [Header("Detection")]
     [SerializeField] public bool isGrounded = false;
+    bool reverseGravity = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,7 @@ public class Player_Movement : MonoBehaviour
         }
 
         startSpeed = speed;
+        hovering = false;
     }
 
     // Update is called once per frame
@@ -83,7 +87,6 @@ public class Player_Movement : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.275f))
         {
             isGrounded = true;
-            hovering = false;
 
             if (hit.collider.tag == "Geyser")
             {
@@ -104,7 +107,7 @@ public class Player_Movement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                speed = startSpeed * 1.33f;
+                speed = sprintSpeed;
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -123,24 +126,34 @@ public class Player_Movement : MonoBehaviour
         {
             if (isGrounded)
             {
-                velocity.y = -0.5f;
+                if (reverseGravity)
+                {
+                    velocity.y = 5f; //If the player is not hovering, on the ground, and gravity is reversed set the Y velocity to 5. Lifts the player;
+                }
+                else
+                {
+                    velocity.y = -0.5f; //If the player is not hovering, on the ground, and gravity is not reversed set the Y velocity to -0.5. Lowers the player;
+                }
             }
             else
             {
-                velocity.y -= grav * Time.deltaTime;
+                velocity.y -= grav * Time.deltaTime; // If the player is not hovering and is not on the ground set Y velocity by gravity * time, Lowers the player.
             }
 
             velocity.y = Mathf.Clamp(velocity.y, -10, 50);
         }
         else
         {
-            velocity.y = 0.0f;
+            if (!reverseGravity)
+            {
+                velocity.y = 0.0f; //Player is hovering. Turns off gravity;
+            }
         }
     }
 
     void Hover()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //On Press Space check for the following before starting to hover: Is not hovering, Is on the ground, and thrustGuage(fuel) is greater than 0. 
         {
             if (!hovering)
             {
@@ -149,13 +162,14 @@ public class Player_Movement : MonoBehaviour
                     if (thrustGauge > 0)
                     {
                         hovering = true;
-                        StartCoroutine(LiftPlayer());
+                        StartCoroutine(StartHover());
                     }
                 }
             }
-            else
+            else //On press Space, If playing is hovering, turn off hovering and turn off reverse gravity.
             {
                 hovering = false;
+                reverseGravity = false;
             }
         }
     }
@@ -179,7 +193,6 @@ public class Player_Movement : MonoBehaviour
         speed = startSpeed / 1.5f;
         while (thrustGauge > 0)
         {
-            Debug.Log("Thrusters: Draining");
             thrustGauge -= Time.deltaTime * 15;
             thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
             yield return null;
@@ -191,8 +204,8 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        Debug.Log("Thrusters: Empty");
         hovering = false;
+        reverseGravity = false;
         StartCoroutine(RefillThrusters());
     }
 
@@ -206,7 +219,6 @@ public class Player_Movement : MonoBehaviour
 
         while (thrustGauge < 100)
         {
-            Debug.Log("Thrusters: Refilling");
             thrustGauge += Time.deltaTime * 10;
             thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
             yield return null;
@@ -217,27 +229,25 @@ public class Player_Movement : MonoBehaviour
                 yield break;
             }
         }
-
-        Debug.Log("Thrusters: Full");
-
     }
 
-    IEnumerator LiftPlayer()
+    IEnumerator StartHover() // Lifts the player and starts thruster drain and thruster VFX.
     {
-        mover.enabled = false;
+        hovering = true;
+        reverseGravity = true;
 
-        for (int i = 0; i < 10; i++)
-        {
-            Vector3 newposition = transform.position + Vector3.up;
-            transform.position = Vector3.MoveTowards(transform.position, newposition, 0.1f);
-
-            yield return new WaitForSeconds(0.05f);
-        }
+        startY = transform.position.y;
 
         StartCoroutine(DrainThrusters());
         StartCoroutine(SparksFade());
-        hovering = true;
-        mover.enabled = true;
+
+        while (transform.position.y < startY + 1)
+        {
+            velocity.y = 3f;
+            yield return null;
+        }
+
+        reverseGravity = false;
     }
 
     IEnumerator Geyser()

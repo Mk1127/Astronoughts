@@ -11,23 +11,17 @@ public class Player_Interact : MonoBehaviour
     [SerializeField] Vector3 lastCheckpoint;
 
     public bool isHidden;
+    private bool isHolding = false;
 
     private void Start()
     {
-        /*if(playerRot == null)
-        {
-            playerRot = gameObject.GetComponent<Player_Rotate>();
-            playerRot.enabled = true;
-        }
-        else
-        {
-            playerRot.enabled = true;
-        }*/
-        //playerSource = GameObject.FindWithTag("AudioSource").GetComponent<AudioSource>();
-
         if(interactionText == null)
         {
-            if(GameObject.Find("InteractionText"))
+            if(!GameObject.Find("InteractionText"))
+            {
+                Debug.Log("Interaction Text was not found");
+            }
+            else
             {
                 interactionText = GameObject.Find("InteractionText").GetComponent<InteractionText>();
             }
@@ -41,39 +35,33 @@ public class Player_Interact : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out hit, rayDistance))
         {
 
-            Debug.Log(hit.collider.tag);
-
             if (hit.collider.tag == "Block")
             {
                 Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
-                Debug.DrawRay(transform.position, forward, Color.red);
 
-                if (Input.GetKey(KeyCode.Mouse0))
+                AutoToggleInteractionText(hit);
+
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.transform.parent = gameObject.transform;
-                    
-                    if(interactionText != null)
-                    {
-                        interactionText.gameObject.SetActive(false);
-                    }
+                    hit.collider.gameObject.transform.localPosition = Vector3.forward + Vector3.up;
+
+                    isHolding = true;
                 }
-                else
+                
+                if(Input.GetKeyUp(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.transform.parent = null;
 
-                    if (interactionText != null)
-                    {
-                        interactionText.lookAt = hit.transform;
-                        interactionText.gameObject.SetActive(true);
-                    }
+                    isHolding = false;
                 }
             }
 
             if (hit.collider.tag == "Totem")
             {
-                interactionText.lookAt = hit.transform;
-                interactionText.gameObject.SetActive(true);
-                
+                isHolding = false;
+
+                AutoToggleInteractionText(hit);
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
@@ -83,8 +71,9 @@ public class Player_Interact : MonoBehaviour
 
             if(hit.collider.tag == "Lever")
             {
-                interactionText.lookAt = hit.transform;
-                interactionText.gameObject.SetActive(true);
+                isHolding = false;
+
+                AutoToggleInteractionText(hit);
 
                 Lever lever = hit.collider.gameObject.GetComponent<Lever>();
                 if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -130,6 +119,11 @@ public class Player_Interact : MonoBehaviour
                 other.gameObject.GetComponentInChildren<Enemy_StateMachine>().ToggleFollow(false, true);
             }
         }
+
+        if (other.tag == "Rock")
+        {
+            other.gameObject.GetComponent<LavaRock>().LowerRock();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -142,6 +136,25 @@ public class Player_Interact : MonoBehaviour
         if (other.tag == "Checkpoint")
         {
             lastCheckpoint = other.transform.position;
+        }
+    }
+
+    private void AutoToggleInteractionText(RaycastHit hit)
+    {
+        if (isHolding)
+        {
+            if (interactionText != null)
+            {
+                interactionText.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (interactionText != null)
+            {
+                interactionText.lookAt = hit.transform;
+                interactionText.gameObject.SetActive(true);
+            }
         }
     }
 }
