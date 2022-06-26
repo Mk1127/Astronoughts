@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using static UnityEditor.Progress;
+
 public class GameManager : MonoBehaviour
 {
     #region Variables
@@ -18,11 +20,21 @@ public class GameManager : MonoBehaviour
     public int crew;
 
     // inventory statistics
+    [SerializeField] GameObject panel;
+    [SerializeField] GameObject solar1;
+    [SerializeField] GameObject solar2;
+    [SerializeField] GameObject engine;
+    [SerializeField] GameObject energy;
+
+    public bool panelEnabled;
+    public bool solar1Enabled;
+    public bool solar2Enabled;
+    public bool engineEnabled;
+    public bool energyEnabled;
+
     public List<GameObject> partList = new List<GameObject>();
-    //public SortedList SortedParts;
 
     //game statistics
-    public int sceneCounter;
     private string currentScene;
 
     //sources
@@ -87,8 +99,9 @@ public class GameManager : MonoBehaviour
         //playerScript = player.GetComponent<Player>();
         //UIScript = UIController.GetComponent<UIControllerScript>();
 
+        GetSlots();
+
         //game statistics
-        sceneCounter = 0;
         currentScene = SceneManager.GetActiveScene().name;
 
     }
@@ -111,8 +124,20 @@ public class GameManager : MonoBehaviour
         foreach(GameObject slot in GameObject.FindGameObjectsWithTag("Slot"))
         {
             partList.Add(slot);
-            //GameObject Clone = Instantiate()
+        }
+        // Return the slots array
+        return partList;
+    }
 
+    public List<GameObject> UpdateSlots()
+    {
+        foreach(GameObject slot in partList)
+        {
+            partList.Remove(slot);
+        }
+        foreach(GameObject slot in GameObject.FindGameObjectsWithTag("Slot"))
+{
+            partList.Add(slot);
         }
         // Return the slots array
         return partList;

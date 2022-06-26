@@ -41,7 +41,6 @@ public class AudioManager : MonoBehaviour
         sliderAnimator.SetBool("Open",false);
 
         isHidden = true;
-
     }
 
     void Start()

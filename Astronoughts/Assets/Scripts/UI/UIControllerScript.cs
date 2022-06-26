@@ -10,7 +10,7 @@ public class UIControllerScript : MonoBehaviour
     #region Variables
     public static UIControllerScript instance;
 
-    [SerializeField] public string scene;
+    private string scene;
 
     private bool overlayHidden;
     private bool statusHidden;
@@ -56,6 +56,7 @@ public class UIControllerScript : MonoBehaviour
         statusPanel.SetActive(false);
         viewPanel.SetActive(false);
         convoPanel.SetActive(false);
+        scene = SceneManager.GetActiveScene().name;
     }
 
     #region Functions

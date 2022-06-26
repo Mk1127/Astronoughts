@@ -55,6 +55,12 @@ public class Inventory : MonoBehaviour
     public GameObject slotPrefab;
     public Button inventoryButton;
 
+    [SerializeField] GameObject panel;
+    [SerializeField] GameObject solar1;
+    [SerializeField] GameObject solar2;
+    [SerializeField] GameObject engine;
+    [SerializeField] GameObject energy;
+
     // function-related variables
     private bool fadingIn;
     private bool fadingOut;
@@ -191,7 +197,7 @@ public class Inventory : MonoBehaviour
         isOpen = true;
 
         //Creates the inventory layout
-        MakeLayout();
+        //MakeLayout();
 
         Image[] slotImages = GetSlots();
         invImage.color = new Color(1,1,1,0);
@@ -257,84 +263,29 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void MakeLayout()
-    {
-        // Instantiate "allSlot" list
-        allSlots = new List<GameObject>();
-
-        // Store the number of empty slots
-        emptySlots = slots;
-
-        // Create a reference to the inventory's RectTransform
-        inventoryRect = GetComponent<RectTransform>();
-
-        // Set hoverYOffset: 1% of slot size, set inventory height and width
-        hoverYOffset = slotSize * 0.1f;
-        inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft);
-        inventoryHeight = rows * (slotSize + slotPaddingTop);
-        inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,inventoryWidth + slotPaddingLeft);
-        inventoryRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,inventoryHeight + slotPaddingTop);
-
-        // How many columns?
-        int columns = slots / rows;
-
-        for(int y = 0;y < rows;y++) //Runs through the rows
-        {
-            for(int x = 0;x < columns;x++) //Runs through the columns
-            {
-                // Instantiates the slot and creates a reference
-                GameObject newSlot = (GameObject)Instantiate(slotPrefab);
-
-                // Set Slotname
-                newSlot.name = "Slot";
-
-                //Sets the canvas as the parent of the slots, so that it will be visible on the screen
-                newSlot.transform.SetParent(this.transform.parent);
-
-                // Creates rect transform, sets position and size
-                RectTransform slotRect = newSlot.GetComponent<RectTransform>();
-                slotRect.localPosition = inventoryRect.localPosition + new Vector3(slotPaddingLeft * (x + 1) + (slotSize * x),-slotPaddingTop * (y + 1) - (slotSize * y));
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,slotSize * UI.scaleFactor);
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,slotSize * UI.scaleFactor);
-                newSlot.transform.SetParent(this.transform);
-
-                // Adds to allSlots
-                allSlots.Add(newSlot);
-            }
-        }
-    }
-
     public bool AddItem(Item item)
     {
-        if(item.maxSize == 1) // If the item isn't stackable
+        if(item.name == "Panel")
         {
-            // Places the item on an empty slot
-            PlaceEmpty(item);
-            return true;
+            panel.GetComponent<Button>().interactable = true;
         }
-        else // If the item is stackable 
+        if(item.name == "Solar1")
         {
-            foreach(GameObject slot in allSlots) // Runs through all slots in the inventory
-            {
-                Slot tmp = slot.GetComponent<Slot>(); // Creates a reference to the slot
-
-                if(!tmp.IsEmpty) // If the item isn't empty
-                {
-                    // Checks if the om the slot is the same type as the item we want to pick up
-                    if(tmp.CurrentItem.type == item.type && tmp.IsAvailable)
-                    {
-                        tmp.AddItem(item); // Adds the item to the inventory
-                        return true;
-                    }
-                }
-            }
-            if(emptySlots > 0) // Places the item on an empty slots
-            {
-                return PlaceEmpty(item);
-            }
+            solar1.GetComponent<Button>().interactable = true;
         }
-
-        return false;
+        if(item.name == "Solar2")
+        {
+            solar2.GetComponent<Button>().interactable = true;
+        }
+        if(item.name == "Engine")
+        {
+            engine.GetComponent<Button>().interactable = true;
+        }
+        if(item.name == "Energy")
+        {
+            energy.GetComponent<Button>().interactable = true;
+        }
+        return true;
     }
 
     private bool PlaceEmpty(Item item)

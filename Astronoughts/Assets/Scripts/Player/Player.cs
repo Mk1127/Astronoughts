@@ -48,10 +48,10 @@ public class Player:MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
-    private bool allCrew;
-    private bool allParts;
+    //private bool allCrew;
+    //private bool allParts;
     //private bool fixedShip;
-    private bool didWin;
+    //private bool didWin;
     #endregion
 
     #region Properties
@@ -73,7 +73,7 @@ public class Player:MonoBehaviour
         //allCrew = false;
         //allParts = false;
         //fixedShip = false;
-        didWin = false;
+        //didWin = false;
     }
 
     // Start is called before the first frame update
@@ -107,7 +107,7 @@ public class Player:MonoBehaviour
     }
     public void CheckFuel()
     {
-        currentFuel = (float)(Math.Truncate(script.thrustGauge * 10000) / 10000);
+        currentFuel = (float)(Math.Truncate(script.thrustGauge * 1000000) / 1000000);
         fuelText.text = "Fuel: " + currentFuel;
         if(script.hovering == false)
         {
@@ -172,13 +172,38 @@ public class Player:MonoBehaviour
         {
             print("Collided with " + other.gameObject.name);
             Grab();
-            inventory.AddItem(other.GetComponent<Item>());
+
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
             StartCoroutine(Wait());
+            inventory.AddItem(other.GetComponent<Item>());
             gmScript.Parts++;
-            gmScript.GatherStats();
-            gmScript.GetSlots();
+            if(other.gameObject.name == "Panel")
+            {
+                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.panelEnabled = true;
+            }
+            if(other.gameObject.name == "Solar1")
+            {
+                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.solar1Enabled = true;
+            }
+            if(other.gameObject.name == "Solar2")
+            {
+                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.solar2Enabled = true;
+            }
+            if(other.gameObject.name == "Engine")
+            {
+                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.engineEnabled = true;
+            }
+            if(other.gameObject.name == "Energy")
+            {
+                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.energyEnabled = true;
+            }
+            gmScript.UpdateSlots();
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }
