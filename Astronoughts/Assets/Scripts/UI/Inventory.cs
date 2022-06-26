@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 public class Inventory : MonoBehaviour
 {
     #region Variables
-    public static Inventory _instance;
+    public static Inventory inventory;
 
     // A reference to the inventorys RectTransform
     protected RectTransform inventoryRect;
@@ -174,11 +174,11 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance == null)
+        if(inventory == null)
         {
-            _instance = this;
+            inventory = this;
         }
-        else if(_instance != this)
+        else if(inventory != this)
         {
             Destroy(gameObject);
             return;
@@ -233,7 +233,7 @@ public class Inventory : MonoBehaviour
         // Get the slot objects
         GameObject[] slotObjects = GameObject.FindGameObjectsWithTag("Slot");
 
-        // Declare an array of slots with the amount of hearts present
+        // Declare an array of slots
         slotImages = new Image[slotObjects.Length];
 
         // Loop through the slots, adding each image component to the array
