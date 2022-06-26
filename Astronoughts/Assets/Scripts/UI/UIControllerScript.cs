@@ -24,6 +24,7 @@ public class UIControllerScript : MonoBehaviour
     [SerializeField] GameObject viewPanel;
     [SerializeField] GameObject[] allPanels;
 
+
     [SerializeField] Button startButton;
     [SerializeField] Button overlayButton;
     [SerializeField] Button inventoryButton;

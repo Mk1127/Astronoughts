@@ -4135,13 +4135,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159397340}
+  - component: {fileID: 1159397341}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159397340
 Transform:
   m_ObjectHideFlags: 0
@@ -4157,6 +4158,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1159397341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159397339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b02d82bb15795439a9bf8a46016608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFuel: 0
+  currentFuel: 0
+  crewNumber: 0
+  parts: 0
+  crew: 0
+  slot: {fileID: 0}
+  slotsToFill: []
+  collectedParts: []
+  sceneCounter: 0
+  currentScene: 
+  player: {fileID: 7639409723924394978, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  UIController: {fileID: 1172055845}
+  playerScript: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  UIScript: {fileID: 0}
+  partsText: {fileID: 0}
+  crewText: {fileID: 0}
+  fuelText: {fileID: 0}
+  shipText: {fileID: 0}
 --- !u!1 &1170977789
 GameObject:
   m_ObjectHideFlags: 0
