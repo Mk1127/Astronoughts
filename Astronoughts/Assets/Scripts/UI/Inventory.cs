@@ -50,16 +50,17 @@ public class Inventory : MonoBehaviour
     public CanvasGroup canvasGroup;
 
     // gameObjects (inventory prefabs to generate)
-    public GameObject itemPrefab;
     public GameObject iconPrefab;
-    public GameObject slotPrefab;
     public Button inventoryButton;
 
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject solar1;
-    [SerializeField] GameObject solar2;
-    [SerializeField] GameObject engine;
-    [SerializeField] GameObject energy;
+    public Button invPanel;
+    public Button invSolar1;
+    public Button invSolar2;
+    public Button invEngine;
+    public Button invEnergy;
+
+    private GameObject gm;
+    private GameManager gmScript;
 
     // function-related variables
     private bool fadingIn;
@@ -180,24 +181,17 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if(inventory == null)
-        {
-            inventory = this;
-        }
-        else if(inventory != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
     }
 
     // Use this for initialization
     private void Start()
     {
-        isOpen = true;
+        gm = GameObject.FindGameObjectWithTag("GameController");
+        gmScript = gm.GetComponent<GameManager>();
 
-        //Creates the inventory layout
-        //MakeLayout();
+        CheckSlots();
+
+        isOpen = true;
 
         Image[] slotImages = GetSlots();
         invImage.color = new Color(1,1,1,0);
@@ -234,7 +228,55 @@ public class Inventory : MonoBehaviour
     }
 
     #region Functions
-    public Image[] GetSlots()
+    public void CheckSlots()
+    {
+        if(gmScript.panelEnabled == true)
+        {
+            invPanel.interactable = true;
+        }
+        if(gmScript.panelEnabled == false)
+        {
+            invPanel.interactable = false;
+        }
+
+        if(gmScript.solar1Enabled == true)
+        {
+            invSolar1.interactable = true;
+        }
+        if(gmScript.solar1Enabled == false)
+        {
+            invSolar1.interactable = false;
+        }
+
+        if(gmScript.solar2Enabled == true)
+        {
+            invSolar2.interactable = true;
+        }
+        if(gmScript.solar2Enabled == false)
+        {
+            invSolar2.interactable = false;
+        }
+
+        if(gmScript.engineEnabled == true)
+        {
+            invEngine.interactable = true;
+        }
+        if(gmScript.engineEnabled == false)
+        {
+            invEngine.interactable = false;
+        }
+
+        if(gmScript.energyEnabled == true)
+        {
+            invEnergy.interactable = true;
+        }
+        if(gmScript.energyEnabled == false)
+        {
+            invEnergy.interactable = false;
+        }
+    }
+
+     public Image[] GetSlots()
     {
         // Get the slot objects
         GameObject[] slotObjects = GameObject.FindGameObjectsWithTag("Slot");
@@ -263,29 +305,28 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool AddItem(Item item)
+    public void AddItem(Item item)
     {
         if(item.name == "Panel")
         {
-            panel.GetComponent<Button>().interactable = true;
+            gmScript.panelButton.interactable = true;
         }
         if(item.name == "Solar1")
         {
-            solar1.GetComponent<Button>().interactable = true;
+            gmScript.solar1Button.interactable = true;
         }
         if(item.name == "Solar2")
         {
-            solar2.GetComponent<Button>().interactable = true;
+            gmScript.solar2Button.interactable = true;
         }
         if(item.name == "Engine")
         {
-            engine.GetComponent<Button>().interactable = true;
+            gmScript.engineButton.interactable = true;
         }
         if(item.name == "Energy")
         {
-            energy.GetComponent<Button>().interactable = true;
+            gmScript.energyButton.interactable = true;
         }
-        return true;
     }
 
     private bool PlaceEmpty(Item item)

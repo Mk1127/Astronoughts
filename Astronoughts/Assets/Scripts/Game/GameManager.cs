@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     public int crew;
 
     // inventory statistics
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject solar1;
-    [SerializeField] GameObject solar2;
-    [SerializeField] GameObject engine;
-    [SerializeField] GameObject energy;
+    public Button panelButton;
+    public Button solar1Button;
+    public Button solar2Button;
+    public Button engineButton;
+    public Button energyButton;
 
     public bool panelEnabled;
     public bool solar1Enabled;
@@ -40,13 +40,13 @@ public class GameManager : MonoBehaviour
     //sources
     private GameObject player;
     private GameObject UIController;
-    [SerializeField] public Player playerScript;
-    [SerializeField] public UIControllerScript UIScript;
+    private Player playerScript;
+    private UIControllerScript UIScript;
 
     //display
-    [SerializeField] public Text partsText;
-    [SerializeField] public Text crewText;
-    [SerializeField] public Text fuelText;
+    public Text partsText;
+    public Text crewText;
+    public Text fuelText;
     public Transform contentContainer;
 
     #endregion
@@ -96,8 +96,8 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         UIController = GameObject.FindGameObjectWithTag("UIController");
-        //playerScript = player.GetComponent<Player>();
-        //UIScript = UIController.GetComponent<UIControllerScript>();
+        playerScript = player.GetComponent<Player>();
+        UIScript = UIController.GetComponent<UIControllerScript>();
 
         GetSlots();
 

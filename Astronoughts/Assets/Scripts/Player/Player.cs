@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,13 +19,13 @@ public class Player:MonoBehaviour
 
     private float maxFuel = 100f;
     public Player_Movement script;
-    public UIControllerScript UIScript;
-    public GameManager gmScript;
     public AudioSource jetpackSource;
 
-    [SerializeField] public GameObject player;
-    [SerializeField] public GameObject UIController;
-    [SerializeField] public GameManager gm;
+    private GameObject UIController;
+    private UIControllerScript UIScript;
+    private GameObject gm;
+    private GameManager gmScript;
+
     [SerializeField] public GameObject convoPanel;
     private Rigidbody rb;
 
@@ -44,7 +42,8 @@ public class Player:MonoBehaviour
     [SerializeField] private AudioSource grassSource;
 
     public Button inventoryButton;
-    [SerializeField] private Inventory inventory;
+    private GameObject inventory;
+    private Inventory invScript;
 
     public List<Item> items = new List<Item>();
 
@@ -79,6 +78,13 @@ public class Player:MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIController = GameObject.FindGameObjectWithTag("UIController");
+        UIScript = UIController.GetComponent<UIControllerScript>();
+        gm = GameObject.FindGameObjectWithTag("GameController");
+        gmScript = gm.GetComponent<GameManager>();
+        inventory = GameObject.FindGameObjectWithTag("Inventory");
+        invScript = inventory.GetComponent<Inventory>();
+
         convoPanel.SetActive(true);
         convoText.text = "I should find the parts that fell off of my ship. If I can find my crew, they can do the repairs.";
         StartCoroutine(Wait());
@@ -172,38 +178,42 @@ public class Player:MonoBehaviour
         {
             print("Collided with " + other.gameObject.name);
             Grab();
-
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            StartCoroutine(Wait());
-            inventory.AddItem(other.GetComponent<Item>());
             gmScript.Parts++;
             if(other.gameObject.name == "Panel")
             {
-                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.panelButton.interactable = true;
                 gmScript.panelEnabled = true;
+                invScript.invPanel.interactable = true;
             }
             if(other.gameObject.name == "Solar1")
             {
-                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
+                invScript.invPanel.interactable = true;
+
             }
             if(other.gameObject.name == "Solar2")
             {
-                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
+                invScript.invPanel.interactable = true;
+
             }
             if(other.gameObject.name == "Engine")
             {
-                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
+                invScript.invPanel.interactable = true;
+
             }
             if(other.gameObject.name == "Energy")
             {
-                gmScript.gameObject.GetComponent<Button>().interactable = true;
+                gmScript.energyButton.interactable = true;
                 gmScript.energyEnabled = true;
+                invScript.invPanel.interactable = true;
             }
-            gmScript.UpdateSlots();
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }
