@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -14,30 +16,27 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int crewNumber;
     public int parts;
     public int crew;
-    private string shipState;
-
 
     // inventory statistics
-    public GameObject slot;
-    public GameObject[] slotsToFill;
-    public Image[] collectedParts;
-    public SortedList SortedParts;
- 
+    public List<GameObject> partList = new List<GameObject>();
+    //public SortedList SortedParts;
+
     //game statistics
     public int sceneCounter;
-    public string currentScene;
+    private string currentScene;
 
     //sources
-    [SerializeField] public GameObject player;
-    [SerializeField] public GameObject UIController;
-    public Player playerScript;
-    public UIControllerScript UIScript;
+    private GameObject player;
+    private GameObject UIController;
+    [SerializeField] public Player playerScript;
+    [SerializeField] public UIControllerScript UIScript;
 
     //display
     [SerializeField] public Text partsText;
     [SerializeField] public Text crewText;
     [SerializeField] public Text fuelText;
-    [SerializeField] public Text shipText;
+    public Transform contentContainer;
+
     #endregion
 
     #region Properties
@@ -50,7 +49,6 @@ public class GameManager : MonoBehaviour
         set
         {
             parts = value;
-            partsText.text = "Parts: " + value;
         }
     }
 
@@ -63,7 +61,6 @@ public class GameManager : MonoBehaviour
         set
         {
             crew = value;
-            crewText.text = "Crew: " + value;
         }
     }
     #endregion
@@ -87,30 +84,38 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         UIController = GameObject.FindGameObjectWithTag("UIController");
-        playerScript = player.GetComponent<Player>();
-        UIScript = UIController.GetComponent<UIControllerScript>();
+        //playerScript = player.GetComponent<Player>();
+        //UIScript = UIController.GetComponent<UIControllerScript>();
 
         //game statistics
         sceneCounter = 0;
-        currentScene = "";
+        currentScene = SceneManager.GetActiveScene().name;
 
     }
 
-    private void Update()
+     private void Update()
     {
-
     }
 
     public void GatherStats()
     {
-        parts = parts + playerScript.currentParts;
-        crew = crew + playerScript.currentCrew;
-        shipState = "My Ship is " + playerScript.currentShipState;
-        currentScene = UIScript.scene;
+        Parts = parts + playerScript.currentParts;
+        Crew = crew + playerScript.currentCrew;
+        // get shipState from number of pairs implemented (method not yet established) 
+        partsText.text = "Parts: " + Parts;
+        crewText.text = "Crew: " + Crew;
+    }
 
-        shipText.text = "My ship is " + shipState;
-        partsText.text = "Parts: " + parts;
-        crewText.text = "Crew: " + crew;
+    public List<GameObject> GetSlots()
+    {
+        foreach(GameObject slot in GameObject.FindGameObjectsWithTag("Slot"))
+        {
+            partList.Add(slot);
+            //GameObject Clone = Instantiate()
+
+        }
+        // Return the slots array
+        return partList;
     }
 
 }
