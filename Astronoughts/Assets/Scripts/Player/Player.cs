@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -91,6 +94,8 @@ public class Player:MonoBehaviour
 
     public void CheckWin()
     {
+        return;
+        /*
         if(gmScript.Parts == 5 && gmScript.Crew == 5)
         {
             convoText.text = "You've collected all the ship parts and rescued all of your crew!";
@@ -98,10 +103,11 @@ public class Player:MonoBehaviour
             StartCoroutine(Wait());
             SceneManager.LoadScene("GameOver");
         }
+        */
     }
     public void CheckFuel()
     {
-        currentFuel = script.thrustGauge;
+        currentFuel = (float)(Math.Truncate(script.thrustGauge * 10000) / 10000);
         fuelText.text = "Fuel: " + currentFuel;
         if(script.hovering == false)
         {
@@ -120,10 +126,13 @@ public class Player:MonoBehaviour
 
     void PlayerFail()
     {
+        return;
+        /*
         Debug.Log("Player Lost");
         StartCoroutine(Wait());
         //anim.SetBool("isStranded",true);
         SceneManager.LoadScene("GameOver");
+        */
     }
 
     private void OnTriggerStay(Collider other)
@@ -166,8 +175,9 @@ public class Player:MonoBehaviour
             inventory.AddItem(other.GetComponent<Item>());
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            currentParts++;
+            gmScript.Parts++;
             gmScript.GatherStats();
+            gmScript.GetSlots();
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }
