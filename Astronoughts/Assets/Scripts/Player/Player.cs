@@ -153,9 +153,10 @@ public class Player:MonoBehaviour
         if(other.tag == "Enemy")
         {
             //print("Collided with " + other.gameObject.name);
-            other.gameObject.GetComponent<AudioSource>().Play();
+            //other.gameObject.GetComponent<AudioSource>().Play();
             convoPanel.SetActive(true);
             convoText.text = "It got me!";
+            StartCoroutine(Wait());
         }
 
         if(other.tag == "Friend")
@@ -165,7 +166,6 @@ public class Player:MonoBehaviour
             convoPanel.SetActive(true);
             convoText.text = "It's my friend!";
             StartCoroutine(Wait());
-
         }
 
         if(other.tag == "Item") // If we collide with an item that we can pick up
@@ -175,6 +175,7 @@ public class Player:MonoBehaviour
             inventory.AddItem(other.GetComponent<Item>());
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
+            StartCoroutine(Wait());
             gmScript.Parts++;
             gmScript.GatherStats();
             gmScript.GetSlots();
@@ -190,6 +191,7 @@ public class Player:MonoBehaviour
             grassSource.loop = false;
             grassSource.mute = true;
             convoText.text = "";
+            convoPanel.SetActive(false);
         }
 
     }
