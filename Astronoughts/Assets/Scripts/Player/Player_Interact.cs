@@ -91,9 +91,12 @@ public class Player_Interact : MonoBehaviour
         }
         else
         {
-            if (interactionText.gameObject.activeSelf == true)
+            if(interactionText != null)
             {
-                interactionText.gameObject.SetActive(false);
+                if (interactionText.gameObject.activeSelf == true)
+                {
+                    interactionText.gameObject.SetActive(false);
+                }
             }
         }
     }

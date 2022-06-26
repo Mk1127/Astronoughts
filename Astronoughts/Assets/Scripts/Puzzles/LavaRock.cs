@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LavaRock : MonoBehaviour
 {
+    [SerializeField] float animationStartDelay;
     [SerializeField] bool sinks;
     private Animator animator;
     bool isPlaying = false;
@@ -11,6 +12,7 @@ public class LavaRock : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        StartCoroutine(ToggleAnimator());
     }
 
     public void LowerRock()
@@ -20,7 +22,7 @@ public class LavaRock : MonoBehaviour
             if (!isPlaying)
             {
                 isPlaying = true;
-                animator.Play("Lava Rock", 0, 0.0f);
+                animator.Play("Rock_Sink", 0, 0.0f);
                 StartCoroutine(DisbleIsPlaying());
             }
         }
@@ -30,5 +32,12 @@ public class LavaRock : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         isPlaying = false;
+    }
+
+    IEnumerator ToggleAnimator()
+    {
+        animator.enabled = false;
+        yield return new WaitForSeconds(animationStartDelay);
+        animator.enabled = true;
     }
 }

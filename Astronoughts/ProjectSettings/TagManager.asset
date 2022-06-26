@@ -30,6 +30,7 @@ TagManager:
   - AudioController
   - UIController
   - ShipText
+  - Rock
   layers:
   - Default
   - TransparentFX
