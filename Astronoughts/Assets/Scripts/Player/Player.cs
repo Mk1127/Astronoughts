@@ -94,11 +94,10 @@ public class Player:MonoBehaviour
         gmScript = gm.GetComponent<GameManager>();
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         invScript = inventory.GetComponent<Inventory>();
-
+        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
         convoText = GameObject.Find("convoText").GetComponent<Text>();
         crewText = GameObject.Find("crewText").GetComponent<Text>();
         partsText = GameObject.Find("partsText").GetComponent<Text>();
-        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
         partsText.text = "Parts: " + gmScript.Parts;
         crewText.text = "Crew: " + gmScript.Crew;
     }
@@ -170,8 +169,8 @@ public class Player:MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            //print("Collided with " + other.gameObject.name);
-            //other.gameObject.GetComponent<AudioSource>().Play();
+            print("Collided with " + other.gameObject.name);
+            other.gameObject.GetComponent<AudioSource>().Play();
             convoPanel.SetActive(true);
             convoText.text = "It got me!";
             StartCoroutine(Wait());
@@ -179,10 +178,13 @@ public class Player:MonoBehaviour
 
         if(other.tag == "Friend")
         {
-            //print("Collided with " + other.gameObject.name);
+            print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
             convoPanel.SetActive(true);
             convoText.text = "It's my friend!";
+            gmScript.crew++;
+            gmScript.GatherStats();
+            crewText.text = "Crew: " + gmScript.Crew;
             StartCoroutine(Wait());
         }
 
@@ -192,8 +194,9 @@ public class Player:MonoBehaviour
             Grab();
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            currentParts++;
+            gmScript.parts++;
             gmScript.GatherStats();
+            partsText.text = "Parts: " + gmScript.Parts;
             if(other.gameObject.name == "Panel")
             {
                 gmScript.panelButton.interactable = true;
@@ -204,30 +207,29 @@ public class Player:MonoBehaviour
             {
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
-                invScript.invPanel.interactable = true;
+                invScript.invSolar1.interactable = true;
 
             }
             if(other.gameObject.name == "Solar2")
             {
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
-                invScript.invPanel.interactable = true;
+                invScript.invSolar2.interactable = true;
 
             }
             if(other.gameObject.name == "Engine")
             {
                 gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
-                invScript.invPanel.interactable = true;
+                invScript.invEngine.interactable = true;
 
             }
-            if(other.gameObject.name == "Energy")
+            if(other.gameObject.name == "CP")
             {
                 gmScript.energyButton.interactable = true;
                 gmScript.energyEnabled = true;
-                invScript.invPanel.interactable = true;
+                invScript.invEnergy.interactable = true;
             }
-            gmScript.parts++;
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }

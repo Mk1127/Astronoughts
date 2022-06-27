@@ -2250,7 +2250,7 @@ AudioSource:
   m_GameObject: {fileID: 345381844}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6223811021391088451, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
+  OutputAudioMixerGroup: {fileID: 6985611823765903691, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2671,7 +2671,7 @@ PrefabInstance:
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: grassSource
       value: 
-      objectReference: {fileID: 788709681}
+      objectReference: {fileID: 0}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: prizeSource
       value: 
@@ -2726,7 +2726,7 @@ PrefabInstance:
       objectReference: {fileID: 1894908158}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: grassClips.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: prizeClips.Array.size
@@ -2774,12 +2774,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6223811021391088451, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7d92d81c86fa7f945b318f536d0bac75, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: -2.49
-  Loop: 0
-  Mute: 0
+  Loop: 1
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -9372,7 +9372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699337547}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -81.7, y: 14.2, z: 18.9}
+  m_LocalPosition: {x: -7, y: 66, z: -74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9400,7 +9400,7 @@ MonoBehaviour:
   aY: 0
   aZ: 0
   smoothSpeed: 0.125
-  damping: 1
+  damping: 3
   rotationSpeed: 5
   minPitch: -30
   maxPitch: 30
@@ -9429,7 +9429,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 25
   orthographic: 0
   orthographic size: 5
   m_Depth: 2
@@ -12970,7 +12970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241407348}
   m_LocalRotation: {x: 0.021548651, y: -0.97810864, z: 0.15885724, w: 0.13267829}
-  m_LocalPosition: {x: -78.4, y: 4.7, z: 20.9}
+  m_LocalPosition: {x: -5.6, y: 24, z: -73.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12992,13 +12992,13 @@ MonoBehaviour:
   CameraType: 4
   target: {fileID: 788709674}
   X: 0
-  Y: 0
-  Z: 0
-  aX: 0
+  Y: 3
+  Z: -5
+  aX: 7
   aY: 0
   aZ: 0
   smoothSpeed: 0.01
-  damping: 1
+  damping: 3
   rotationSpeed: 1
   minPitch: -30
   maxPitch: 30
@@ -22643,7 +22643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1936359897
 Transform:
   m_ObjectHideFlags: 0

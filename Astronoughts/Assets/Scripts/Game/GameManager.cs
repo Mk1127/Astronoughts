@@ -43,10 +43,6 @@ public class GameManager : MonoBehaviour
     private Player playerScript;
     private UIControllerScript UIScript;
 
-    //display
-    [HideInInspector] public Text partsText;
-    [HideInInspector] public Text crewText;
-    [HideInInspector] public Text fuelText;
     public Transform contentContainer;
 
     #endregion
@@ -94,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         Prepare();
         GetSlots();
 
@@ -103,25 +100,18 @@ public class GameManager : MonoBehaviour
 
     private void Prepare()
     {
-        parts = 0;
-        crew = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         UIController = GameObject.FindGameObjectWithTag("UIController");
         playerScript = player.GetComponent<Player>();
         UIScript = UIController.GetComponent<UIControllerScript>();
 
-        crewText = GameObject.FindGameObjectWithTag("crewText").GetComponent<Text>();
-        partsText = GameObject.FindGameObjectWithTag("partsText").GetComponent<Text>();
-        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
     }
 
     public void GatherStats()
     {
-        Parts = parts + playerScript.currentParts;
-        Crew = crew + playerScript.currentCrew;
+        Parts = parts;
+        Crew = crew;
         // get shipState from number of pairs implemented (method not yet established) 
-        partsText.text = "Parts: " + Parts;
-        crewText.text = "Crew: " + Crew;
     }
 
     public List<GameObject> GetSlots()
