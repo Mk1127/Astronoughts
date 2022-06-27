@@ -26,15 +26,15 @@ public class Player:MonoBehaviour
     private GameObject gm;
     private GameManager gmScript;
 
-    [SerializeField] public GameObject convoPanel;
+    public GameObject convoPanel;
     private Rigidbody rb;
 
     // Shows the player what he needs to do
     public Text convoText;
-    public Text[] allText;
-    public Sprite fullSlot;
 
-    [SerializeField] private Text fuelText;
+    [HideInInspector] public Text fuelText;
+    [HideInInspector] public Text partsText;
+    [HideInInspector] public Text crewText;
 
     [SerializeField] private AudioClip[] prizeClips;
     [SerializeField] private AudioSource prizeSource;
@@ -78,6 +78,16 @@ public class Player:MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetReady();
+
+        convoPanel.SetActive(true);
+        convoText.text = "I should find the parts that fell off of my ship. If I can find my crew, they can do the repairs.";
+        StartCoroutine(Wait());
+        currentFuel = maxFuel;
+    }
+
+    private void GetReady()
+    {
         UIController = GameObject.FindGameObjectWithTag("UIController");
         UIScript = UIController.GetComponent<UIControllerScript>();
         gm = GameObject.FindGameObjectWithTag("GameController");
@@ -85,10 +95,12 @@ public class Player:MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         invScript = inventory.GetComponent<Inventory>();
 
-        convoPanel.SetActive(true);
-        convoText.text = "I should find the parts that fell off of my ship. If I can find my crew, they can do the repairs.";
-        StartCoroutine(Wait());
-        currentFuel = maxFuel;
+        convoText = GameObject.Find("convoText").GetComponent<Text>();
+        crewText = GameObject.Find("crewText").GetComponent<Text>();
+        partsText = GameObject.Find("partsText").GetComponent<Text>();
+        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
+        partsText.text = "Parts: " + gmScript.Parts;
+        crewText.text = "Crew: " + gmScript.Crew;
     }
 
     private void Update()
@@ -180,7 +192,8 @@ public class Player:MonoBehaviour
             Grab();
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            gmScript.Parts++;
+            currentParts++;
+            gmScript.GatherStats();
             if(other.gameObject.name == "Panel")
             {
                 gmScript.panelButton.interactable = true;
@@ -214,6 +227,7 @@ public class Player:MonoBehaviour
                 gmScript.energyEnabled = true;
                 invScript.invPanel.interactable = true;
             }
+            gmScript.parts++;
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
         }

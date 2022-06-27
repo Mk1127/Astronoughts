@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
     private UIControllerScript UIScript;
 
     //display
-    public Text partsText;
-    public Text crewText;
-    public Text fuelText;
+    [HideInInspector] public Text partsText;
+    [HideInInspector] public Text crewText;
+    [HideInInspector] public Text fuelText;
     public Transform contentContainer;
 
     #endregion
@@ -94,20 +94,25 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Prepare();
+        GetSlots();
+
+        //game statistics
+        currentScene = SceneManager.GetActiveScene().name;
+    }
+
+    private void Prepare()
+    {
+        parts = 0;
+        crew = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         UIController = GameObject.FindGameObjectWithTag("UIController");
         playerScript = player.GetComponent<Player>();
         UIScript = UIController.GetComponent<UIControllerScript>();
 
-        GetSlots();
-
-        //game statistics
-        currentScene = SceneManager.GetActiveScene().name;
-
-    }
-
-     private void Update()
-    {
+        crewText = GameObject.FindGameObjectWithTag("crewText").GetComponent<Text>();
+        partsText = GameObject.FindGameObjectWithTag("partsText").GetComponent<Text>();
+        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
     }
 
     public void GatherStats()

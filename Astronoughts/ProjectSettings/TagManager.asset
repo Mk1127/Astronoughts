@@ -19,7 +19,6 @@ TagManager:
   - Inventory
   - ConvoText
   - ComponentsText
-  - HealthText
   - Friend
   - Item1
   - Item2
@@ -29,8 +28,10 @@ TagManager:
   - Geyser
   - AudioController
   - UIController
-  - ShipText
   - Rock
+  - UI Manager
+  - crewText
+  - partsText
   layers:
   - Default
   - TransparentFX
