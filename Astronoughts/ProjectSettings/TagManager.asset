@@ -33,6 +33,7 @@ TagManager:
   - crewText
   - partsText
   - Gateway
+  - Part
   layers:
   - Default
   - TransparentFX
