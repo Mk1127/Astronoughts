@@ -11,7 +11,16 @@ public class GameManager : MonoBehaviour
 {
     #region Variables
     public static GameManager gameManager;
-    
+
+    //spaceship model
+    public GameObject spaceshipBrokenDown;
+    public GameObject spaceshipBrokenUp;
+    public GameObject solar1;
+    public GameObject solar2;
+    public GameObject engine;
+    public GameObject cockpit;
+    public GameObject spaceshipWhole;
+
     // player statistics
     [HideInInspector] public float playerFuel;
     [HideInInspector] public float currentFuel;
@@ -24,13 +33,13 @@ public class GameManager : MonoBehaviour
     public Button solar1Button;
     public Button solar2Button;
     public Button engineButton;
-    public Button energyButton;
+    public Button cockpitButton;
 
     public bool panelEnabled;
     public bool solar1Enabled;
     public bool solar2Enabled;
     public bool engineEnabled;
-    public bool energyEnabled;
+    public bool cockpitEnabled;
 
     public List<GameObject> partList = new List<GameObject>();
 
@@ -104,7 +113,12 @@ public class GameManager : MonoBehaviour
         UIController = GameObject.FindGameObjectWithTag("UIController");
         playerScript = player.GetComponent<Player>();
         UIScript = UIController.GetComponent<UIControllerScript>();
-
+        spaceshipBrokenDown.gameObject.SetActive(true);
+        spaceshipBrokenUp.gameObject.SetActive(false);
+        solar1.gameObject.SetActive(false);
+        solar2.gameObject.SetActive(false);
+        engine.gameObject.SetActive(false);
+        spaceshipWhole.gameObject.SetActive(false);
     }
 
     public void GatherStats()
