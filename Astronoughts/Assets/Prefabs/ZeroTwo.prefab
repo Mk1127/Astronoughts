@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8665203091269710584, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8665203091269710586, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: source
       value: 

@@ -34,6 +34,9 @@ TagManager:
   - partsText
   - Gateway
   - Part
+  - cockpitDown
+  - spaceshipDown
+  - spaceshipUp
   layers:
   - Default
   - TransparentFX
