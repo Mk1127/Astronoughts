@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public bool cockpitEnabled;
 
     public List<GameObject> partList = new List<GameObject>();
+    public List<bool> astronoughtsFound = new List<bool>();
 
     //game statistics
     private string currentScene;
