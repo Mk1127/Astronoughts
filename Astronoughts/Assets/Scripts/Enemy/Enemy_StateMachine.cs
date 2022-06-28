@@ -17,6 +17,8 @@ public class Enemy_StateMachine : MonoBehaviour
 
     private bool playerFound = false;
 
+    public LayerMask ignoreLayer;
+
     private void Start()
     {
         if (player == null)
@@ -34,7 +36,7 @@ public class Enemy_StateMachine : MonoBehaviour
 
         Vector3 raydir = ((player.transform.position - transform.position) + (Vector3.up * .5f)).normalized;
 
-        if (Physics.Raycast(transform.position, raydir, out hit, rayLength))
+        if (Physics.Raycast(transform.position, raydir, out hit, rayLength, ~ignoreLayer))
         {
             if (hit.collider.tag == "Player" || hit.collider.tag == "Player")
             {
