@@ -84,11 +84,12 @@ public class Player_Movement : MonoBehaviour
     void CheckGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.275f))
+        Debug.DrawRay(transform.position + Vector3.up * 0.1f, Vector3.down * 0.5f, Color.cyan);
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.75f))
         {
             isGrounded = true;
 
-            if (hit.collider.tag == "Geyser")
+            if (hit.collider.tag == "Geyser" || hit.collider.tag == "Enemy")
             {
                 isGrounded = false;
             }
@@ -132,7 +133,7 @@ public class Player_Movement : MonoBehaviour
                 }
                 else
                 {
-                    velocity.y = -0.5f; //If the player is not hovering, on the ground, and gravity is not reversed set the Y velocity to -0.5. Lowers the player;
+                    velocity.y = -1f; //If the player is not hovering, on the ground, and gravity is not reversed set the Y velocity to -0.5. Lowers the player;
                 }
             }
             else
