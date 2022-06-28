@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
     public Button invSolar1;
     public Button invSolar2;
     public Button invEngine;
-    public Button invEnergy;
+    public Button invCockpit;
 
     private GameObject gm;
     private GameManager gmScript;
@@ -262,13 +262,13 @@ public class Inventory : MonoBehaviour
             invEngine.interactable = false;
         }
 
-        if(gmScript.energyEnabled == true)
+        if(gmScript.cockpitEnabled == true)
         {
-            invEnergy.interactable = true;
+            invCockpit.interactable = true;
         }
-        if(gmScript.energyEnabled == false)
+        if(gmScript.cockpitEnabled == false)
         {
-            invEnergy.interactable = false;
+            invCockpit.interactable = false;
         }
     }
 
@@ -319,9 +319,9 @@ public class Inventory : MonoBehaviour
         {
             gmScript.engineButton.interactable = true;
         }
-        if(item.name == "Energy")
+        if(item.name == "cockpit")
         {
-            gmScript.energyButton.interactable = true;
+            gmScript.cockpitButton.interactable = true;
         }
     }
 

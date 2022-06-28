@@ -235,11 +235,11 @@ public class Player:MonoBehaviour
                 invScript.invEngine.interactable = true;
 
             }
-            if(other.gameObject.name == "CP")
+            if(other.gameObject.name == "CockPit")
             {
-                gmScript.energyButton.interactable = true;
-                gmScript.energyEnabled = true;
-                invScript.invEnergy.interactable = true;
+                gmScript.cockpitButton.interactable = true;
+                gmScript.cockpitEnabled = true;
+                invScript.invCockpit.interactable = true;
             }
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
