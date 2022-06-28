@@ -32,7 +32,8 @@ public class Player:MonoBehaviour
     // Shows the player what he needs to do
     public Text convoText;
 
-    [HideInInspector] public Text fuelText;
+    public Text fuelText;
+    public Image fuelImage;
     [HideInInspector] public Text partsText;
     [HideInInspector] public Text crewText;
 
@@ -94,7 +95,8 @@ public class Player:MonoBehaviour
         gmScript = gm.GetComponent<GameManager>();
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         invScript = inventory.GetComponent<Inventory>();
-        fuelText = GameObject.Find("fuelText").GetComponent<Text>();
+        fuelText = GameObject.Find("FuelText").GetComponent<Text>();
+        fuelImage = GameObject.Find("FuelImage").GetComponent<Image>();
         convoText = GameObject.Find("convoText").GetComponent<Text>();
         crewText = GameObject.Find("crewText").GetComponent<Text>();
         partsText = GameObject.Find("partsText").GetComponent<Text>();
@@ -124,8 +126,17 @@ public class Player:MonoBehaviour
     }
     public void CheckFuel()
     {
-        currentFuel = (float)(Math.Truncate(script.thrustGauge * 1000000) / 1000000);
-        fuelText.text = "Fuel: " + currentFuel;
+        fuelImage.fillAmount = currentFuel / maxFuel;
+        currentFuel = (float)(Math.Truncate(script.thrustGauge * 100) / 100);
+        fuelText.text = "JetPack: " + currentFuel;
+        if(currentFuel < 25f)
+        {
+            fuelImage.color = Color.red;
+        }
+        else
+        {
+            fuelImage.color = Color.white;
+        }
         if(script.hovering == false)
         {
             jetpackSource.GetComponent<AudioSource>().mute = true;
