@@ -7,6 +7,7 @@ public class Footsteps : MonoBehaviour
 {
     [SerializeField]
     private AudioClip[] clips;
+    [SerializeField]
     private AudioSource audioSource;
 
     private void Awake()

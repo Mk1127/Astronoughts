@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
     public Button invSolar1;
     public Button invSolar2;
     public Button invEngine;
-    public Button invEnergy;
+    public Button invCockpit;
 
     private GameObject gm;
     private GameManager gmScript;
@@ -179,10 +179,6 @@ public class Inventory : MonoBehaviour
 
     #endregion
 
-    private void Awake()
-    {
-    }
-
     // Use this for initialization
     private void Start()
     {
@@ -266,13 +262,13 @@ public class Inventory : MonoBehaviour
             invEngine.interactable = false;
         }
 
-        if(gmScript.energyEnabled == true)
+        if(gmScript.cockpitEnabled == true)
         {
-            invEnergy.interactable = true;
+            invCockpit.interactable = true;
         }
-        if(gmScript.energyEnabled == false)
+        if(gmScript.cockpitEnabled == false)
         {
-            invEnergy.interactable = false;
+            invCockpit.interactable = false;
         }
     }
 
@@ -323,27 +319,10 @@ public class Inventory : MonoBehaviour
         {
             gmScript.engineButton.interactable = true;
         }
-        if(item.name == "Energy")
+        if(item.name == "cockpit")
         {
-            gmScript.energyButton.interactable = true;
+            gmScript.cockpitButton.interactable = true;
         }
-    }
-
-    private bool PlaceEmpty(Item item)
-    {
-        if(emptySlots > 0) // If we have at least one empty slot
-        {
-            foreach(GameObject slot in allSlots) // Run through all of the slots
-            {
-                Slot tmp = slot.GetComponent<Slot>(); // Create a reference to the slot 
-                if(tmp.IsEmpty) // If the slot is empty
-                {
-                    tmp.AddItem(item); // Add item
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     public void MoveItem(GameObject clicked)
@@ -352,7 +331,7 @@ public class Inventory : MonoBehaviour
         {
             if(!clicked.GetComponent<Slot>().IsEmpty) // The slot we clicked isn't empty
             {
-                from = clicked.GetComponent<Slot>(); // The slot we're emoving from
+                from = clicked.GetComponent<Slot>(); // The slot we're moving from
                 from.GetComponent<Image>().color = Color.gray; // Set the "from" slot's color to gray (its the "from" slot)
 
                 hoverObject = (GameObject)Instantiate(iconPrefab);

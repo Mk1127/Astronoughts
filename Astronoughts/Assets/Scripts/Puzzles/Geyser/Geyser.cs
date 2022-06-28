@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Geyser : MonoBehaviour
 {
+    [Header("Objects")]
+    public GameObject geyserVFX;
+
+    [Header("Floats")]
     public float geyserForce;
     public float startGeyserForce;
+
+    [Header("Bools")]
     public bool isactive;
 
     private void Awake()
@@ -16,8 +22,8 @@ public class Geyser : MonoBehaviour
     private void Start()
     {
 
-
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (isactive)
@@ -30,14 +36,14 @@ public class Geyser : MonoBehaviour
             }
         }
 
-        if (other.tag == "Block")
+        /*if (other.tag == "Block")
         {
-
+            transform.tag = "Untagged";
         }
         else
         {
-            gameObject.GetComponent<BoxCollider>().enabled = true;
-        }
+            transform.tag = "Geyser";
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,10 +51,9 @@ public class Geyser : MonoBehaviour
         if (other.tag == "Block")
         {
             isactive = false;
-            transform.parent.GetComponent<Geyser_System>().activeGeysers--;
-            transform.parent.GetComponent<Geyser_System>().UpdateGeysersForce();
-            other.transform.parent = null;
-            other.transform.position = transform.position + (Vector3.up / 2);
+            UpdateActiveGeysers(-1);
+            StartCoroutine(SetParent(other));
+            geyserVFX.SetActive(false);
         }
     }
 
@@ -57,8 +62,21 @@ public class Geyser : MonoBehaviour
         if (other.tag == "Block")
         {
             isactive = true;
-            transform.parent.GetComponent<Geyser_System>().activeGeysers++;
-            transform.parent.GetComponent<Geyser_System>().UpdateGeysersForce();
+            UpdateActiveGeysers(1);
+            geyserVFX.SetActive(true);
         }
+    }
+
+    private void UpdateActiveGeysers(int changeBy)
+    {
+        transform.parent.GetComponent<Geyser_System>().activeGeysers += changeBy;
+        transform.parent.GetComponent<Geyser_System>().UpdateGeysersForce();
+    }
+
+    IEnumerator SetParent(Collider other)
+    {
+        other.transform.parent = null;
+        yield return new WaitForSeconds(.2f);
+        other.transform.position = transform.position + Vector3.up;
     }
 }

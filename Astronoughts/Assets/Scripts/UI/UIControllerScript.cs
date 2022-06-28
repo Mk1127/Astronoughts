@@ -13,13 +13,13 @@ public class UIControllerScript : MonoBehaviour
     private string scene;
 
     private bool overlayHidden;
-    private bool statusHidden;
+    private bool miniMapHidden;
     private bool convoHidden;
     private bool viewHidden;
     private bool allHidden;
 
     [SerializeField] GameObject overlay;
-    [SerializeField] GameObject statusPanel;
+    [SerializeField] GameObject miniMapPanel;
     [SerializeField] public GameObject convoPanel;
     [SerializeField] GameObject viewPanel;
     [SerializeField] GameObject[] allPanels;
@@ -28,7 +28,7 @@ public class UIControllerScript : MonoBehaviour
     [SerializeField] Button startButton;
     [SerializeField] Button overlayButton;
     [SerializeField] Button inventoryButton;
-    [SerializeField] Button statusPanelButton;
+    [SerializeField] Button miniMapPanelButton;
     [SerializeField] Button viewPanelButton;
     [SerializeField] Button quitButton;
 
@@ -47,13 +47,13 @@ public class UIControllerScript : MonoBehaviour
     void Start()
     {
         overlayHidden = true;
-        statusHidden = true;
+        miniMapHidden = true;
         viewHidden = true;
         convoHidden = true;
         //allHidden = false;
 
         overlay.SetActive(false);
-        statusPanel.SetActive(false);
+        miniMapPanel.SetActive(false);
         viewPanel.SetActive(false);
         convoPanel.SetActive(false);
         scene = SceneManager.GetActiveScene().name;
@@ -82,20 +82,20 @@ public class UIControllerScript : MonoBehaviour
         if(overlayHidden == false)
         {
             overlay.SetActive(false);
-            statusPanel.SetActive(false);
+            miniMapPanel.SetActive(false);
             viewPanel.SetActive(false);
             overlayHidden = true;
-            statusHidden = true;
+            miniMapHidden = true;
             viewHidden = true;
             convoHidden = true;
         }
         else
         {
             overlay.SetActive(true);
-            statusPanel.SetActive(false);
+            miniMapPanel.SetActive(false);
             viewPanel.SetActive(false);
             overlayHidden = false;
-            statusHidden = false;
+            miniMapHidden = false;
             viewHidden = false;
             convoHidden = false;
         }
@@ -116,18 +116,18 @@ public class UIControllerScript : MonoBehaviour
         }
     }
 
-    public void OnStatusButtonClick()
+    public void OnMiniMapButtonClick()
     {
-        Debug.Log("You clicked the status button");
-        if(statusHidden == true)
+        Debug.Log("You clicked the miniMap button");
+        if(miniMapHidden == true)
         {
-            statusPanel.SetActive(true);
-            statusHidden = false;
+            miniMapPanel.SetActive(true);
+            miniMapHidden = false;
         }
         else
         {
-            statusPanel.SetActive(false);
-            statusHidden = true;
+            miniMapPanel.SetActive(false);
+            miniMapHidden = true;
         }
     }
     #endregion
