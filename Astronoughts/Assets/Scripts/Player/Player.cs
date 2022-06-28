@@ -34,8 +34,8 @@ public class Player:MonoBehaviour
 
     public Text fuelText;
     public Image fuelImage;
-    [HideInInspector] public Text partsText;
-    [HideInInspector] public Text crewText;
+    public Text partsText;
+    public Text crewText;
 
     [SerializeField] private AudioClip[] prizeClips;
     [SerializeField] private AudioSource prizeSource;
@@ -80,7 +80,6 @@ public class Player:MonoBehaviour
     void Start()
     {
         GetReady();
-
         convoPanel.SetActive(true);
         convoText.text = "I should find the parts that fell off of my ship. If I can find my crew, they can do the repairs.";
         StartCoroutine(Wait());
@@ -210,6 +209,7 @@ public class Player:MonoBehaviour
             partsText.text = "Parts: " + gmScript.Parts;
             if(other.gameObject.name == "Panel")
             {
+
                 gmScript.panelButton.interactable = true;
                 gmScript.panelEnabled = true;
                 invScript.invPanel.interactable = true;

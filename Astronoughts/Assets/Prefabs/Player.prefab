@@ -245,7 +245,7 @@ MonoBehaviour:
   currentCrew: 0
   currentParts: 0
   currentShipState: 
-  script: {fileID: 0}
+  script: {fileID: 7639409723924394976}
   jetpackSource: {fileID: 0}
   convoPanel: {fileID: 0}
   convoText: {fileID: 0}

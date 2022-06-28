@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-using static System.Net.Mime.MediaTypeNames;
-
 //[RequireComponent(typeof(AudioSource))]
 [System.Serializable]
 
