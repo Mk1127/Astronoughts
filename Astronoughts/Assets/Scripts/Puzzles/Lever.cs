@@ -8,14 +8,14 @@ public class Lever : MonoBehaviour
     [SerializeField] float lowerDistance;
     [SerializeField] public bool raise;
     [SerializeField] bool isLever;
-    bool isToggled;
+    bool isToggled = false;
     [SerializeField] MeshRenderer renderer;
     [SerializeField] List<Material> materials = new List<Material>();
     [SerializeField] Collider collider;
 
     private void Start()
     {
-
+        renderer.material = materials[0];
     }
 
     private void Update()
@@ -57,19 +57,25 @@ public class Lever : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!isLever)
+        if(!other.isTrigger)
         {
-            LowerDoor();
-            renderer.material = materials[1];
+            if (!isLever)
+            {
+                LowerDoor();
+                renderer.material = materials[1];
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (!isLever)
+        if (!other.isTrigger)
         {
-            RaiseDoor();
-            renderer.material = materials[0];
+            if (!isLever)
+            {
+                RaiseDoor();
+                renderer.material = materials[0];
+            }
         }
     }
 

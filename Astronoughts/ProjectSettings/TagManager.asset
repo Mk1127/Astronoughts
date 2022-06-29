@@ -37,6 +37,8 @@ TagManager:
   - spaceshipDown
   - spaceshipUp
   - Echo
+  - ComponentsText
+  - Laser
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class Beam_Laser : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out hit, rayDistance))
         {
-            if (hit.collider.tag == "Block" || hit.collider.tag == "Untagged")
+            if (hit.collider.tag == "Block" || hit.collider.tag == "Laser")
             {
                 Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
                 Debug.DrawRay(transform.position, forward, Color.green);
