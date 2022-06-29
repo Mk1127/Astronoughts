@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
 
     //spaceship model
-    public GameObject spaceshipBrokenDown;
-    public GameObject spaceshipBrokenUp;
-    public GameObject solar1;
-    public GameObject solar2;
-    public GameObject engine;
-    public GameObject cockpit;
-    public GameObject spaceshipWhole;
+    public bool spaceshipBrokenDownEnabled;
+    public bool spaceshipBrokenUpEnabled;
+    public bool shipsolar1Enabled;
+    public bool shipsolar2Enabled;
+    public bool shipengineEnabled;
+    public bool shipcockpitEnabled;
+    public bool spaceshipWholeEnabled;
 
     // player statistics
     [HideInInspector] public float playerFuel;

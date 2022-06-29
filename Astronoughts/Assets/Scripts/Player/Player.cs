@@ -219,37 +219,38 @@ public class Player:MonoBehaviour
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
                 invScript.invSolar1.interactable = true;
-                gmScript.spaceshipBrokenDown.gameObject.SetActive(false);
-                gmScript.spaceshipBrokenUp.gameObject.SetActive(true);
-                gmScript.solar1.gameObject.SetActive(true);
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.shipsolar1Enabled = true;
             }
             if(other.gameObject.name == "Solar2")
             {
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
                 invScript.invSolar2.interactable = true;
-                gmScript.spaceshipBrokenDown.gameObject.SetActive(false);
-                gmScript.spaceshipBrokenUp.gameObject.SetActive(true);
-                gmScript.solar2.gameObject.SetActive(true);
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.shipsolar2Enabled = true;
             }
             if(other.gameObject.name == "Engine")
             {
                 gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
                 invScript.invEngine.interactable = true;
-                gmScript.spaceshipBrokenDown.gameObject.SetActive(false);
-                gmScript.spaceshipBrokenUp.gameObject.SetActive(true);
-                gmScript.engine.gameObject.SetActive(true);
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.shipengineEnabled = true;
             }
             if(other.gameObject.name == "CockPit")
             {
                 gmScript.cockpitButton.interactable = true;
                 gmScript.cockpitEnabled = true;
                 invScript.invCockpit.interactable = true;
-                gmScript.spaceshipBrokenDown.gameObject.SetActive(false);
-                gmScript.spaceshipBrokenUp.gameObject.SetActive(false);
-                gmScript.spaceshipWhole.gameObject.SetActive(true);
-                gmScript.cockpit.gameObject.SetActive(true);
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.shipcockpitEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = false;
+                gmScript.spaceshipWholeEnabled = true;
             }
             StartCoroutine(Wait());
             other.gameObject.SetActive(false);
