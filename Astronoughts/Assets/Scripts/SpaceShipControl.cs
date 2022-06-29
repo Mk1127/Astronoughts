@@ -28,22 +28,13 @@ public class SpaceShipControl : MonoBehaviour
         CheckingShip();
     }
 
-    private void CheckingShip()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void Ready()
-    {
-        throw new NotImplementedException();
-    }
 
     // Update is called once per frame
     void Update()
     {
 
     }
-    private void GetReady()
+    private void Ready()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         UIController = GameObject.FindGameObjectWithTag("UIController");
@@ -58,7 +49,7 @@ public class SpaceShipControl : MonoBehaviour
         engine.gameObject.SetActive(false);
         spaceshipWhole.gameObject.SetActive(false);
     }
-    public void CheckShip()
+    public void CheckingShip()
     {
         if(gmScript.spaceshipBrokenDownEnabled == true)
         {
@@ -76,7 +67,7 @@ public class SpaceShipControl : MonoBehaviour
         {
             spaceshipBrokenUp.gameObject.SetActive(true);
         }
-        if(gmScript.shipSolar1Enabled == true)
+        if(gmScript.shipsolar1Enabled == true)
         {
             solar1.gameObject.SetActive(true);
         }
@@ -84,15 +75,15 @@ public class SpaceShipControl : MonoBehaviour
         {
             solar1.gameObject.SetActive(false);
         }
-        if(gmScript.shipSolar2Enabled == true)
+        if(gmScript.shipsolar2Enabled == true)
         {
             solar2.gameObject.SetActive(true);
         }
-        if(gmScript.shipSolar2Enabled == false)
+        if(gmScript.shipsolar2Enabled == false)
         {
             solar2.gameObject.SetActive(false);
         }
-        if(gmScript.shipEngineEnabled == true)
+        if(gmScript.shipengineEnabled == true)
         {
             engine.gameObject.SetActive(true);
         }

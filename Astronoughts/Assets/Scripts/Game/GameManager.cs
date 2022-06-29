@@ -112,12 +112,6 @@ public class GameManager : MonoBehaviour
         UIController = GameObject.FindGameObjectWithTag("UIController");
         playerScript = player.GetComponent<Player>();
         UIScript = UIController.GetComponent<UIControllerScript>();
-        spaceshipBrokenDown.gameObject.SetActive(true);
-        spaceshipBrokenUp.gameObject.SetActive(false);
-        solar1.gameObject.SetActive(false);
-        solar2.gameObject.SetActive(false);
-        engine.gameObject.SetActive(false);
-        spaceshipWhole.gameObject.SetActive(false);
     }
 
     public void GatherStats()
