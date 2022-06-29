@@ -18,7 +18,6 @@ TagManager:
   - AudioSource
   - Inventory
   - ConvoText
-  - ComponentsText
   - Friend
   - Item1
   - Item2

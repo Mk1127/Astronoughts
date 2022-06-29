@@ -266,7 +266,6 @@ public class Player:MonoBehaviour
             convoText.text = "";
             convoPanel.SetActive(false);
         }
-
     }
 
     public void Grab()
