@@ -5,20 +5,34 @@ using UnityEngine;
 public class RoofToggler : MonoBehaviour
 {
     [SerializeField] GameObject roof;
+
+    bool roofToggled = false;
     //private List<GameObject> listOfChildren;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //caveRoof.SetActive(false);
-        toggleAllChildren(roof);
+        if(other.tag == "Player")
+        {
+            if(!roofToggled)
+            {
+                toggleAllChildren(roof, true);
+                roofToggled = true;
+            }
+        }
+
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-        //caveRoof.SetActive(true);
-    //}
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            roofToggled = false;
+            toggleAllChildren(roof, false);
+        }
+    }
     
-private void toggleAllChildren(GameObject roof){
+private void toggleAllChildren(GameObject roof, bool toggle){
     
     foreach (Transform child in roof.transform){
         if (null == child)
@@ -29,16 +43,16 @@ private void toggleAllChildren(GameObject roof){
         //listOfChildren.Add(child.gameObject);
         //component m_Renderer = child.gameObject.GetComponent<Renderer>();
         //turns renderer off on entry
-        if (child.gameObject.GetComponent<Renderer>().enabled==true)
+        if (child.gameObject.GetComponent<Renderer>().enabled == toggle)
         {
             Debug.Log("Roof turns off");
-            child.gameObject.GetComponent<Renderer>().enabled=false;
+            child.gameObject.GetComponent<Renderer>().enabled = !toggle;
         }
         //turns renderer back off on exit
         else 
         {
             Debug.Log("Roof turns on");
-            child.gameObject.GetComponent<Renderer>().enabled=true;
+            child.gameObject.GetComponent<Renderer>().enabled = toggle;
         }
         //toggleAllChildren(child.gameObject);
     }
