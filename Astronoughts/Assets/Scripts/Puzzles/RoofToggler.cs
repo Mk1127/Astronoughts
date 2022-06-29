@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoofToggler : MonoBehaviour
 {
     [SerializeField] GameObject roof;
+    [SerializeField] bool exit;
 
     bool roofToggled = false;
     //private List<GameObject> listOfChildren;
@@ -14,21 +15,35 @@ public class RoofToggler : MonoBehaviour
         //caveRoof.SetActive(false);
         if(other.tag == "Player")
         {
-            if(!roofToggled)
+            if(!exit)
             {
-                toggleAllChildren(roof, true);
-                roofToggled = true;
+                if (!roofToggled)
+                {
+                    toggleAllChildren(roof, true);
+                    roofToggled = true;
+                }
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(exit)
+        {
+            roofToggled = false;
+            toggleAllChildren(roof, false);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player")
         {
-            roofToggled = false;
-            toggleAllChildren(roof, false);
+            if(!exit)
+            {
+                roofToggled = false;
+                toggleAllChildren(roof, false);
+            }
         }
     }
     
