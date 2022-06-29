@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Button engineButton;
     public Button cockpitButton;
 
+    //Inventory buttons
     public bool panelEnabled;
     public bool solar1Enabled;
     public bool solar2Enabled;
