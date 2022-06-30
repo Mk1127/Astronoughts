@@ -6,10 +6,40 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fan2
+    second: {fileID: 2100000, guid: 33ba666d373295b48b6fcf59549c0c08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flame1
+    second: {fileID: 2100000, guid: a41240eb927486a489e5df5d5ab8594f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlossyBlack
+    second: {fileID: 2100000, guid: b93a8ba57d902804d9d1153298ce4e24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: 2bc50d614cb759b43b3b3afb3f9a6132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 2bc50d614cb759b43b3b3afb3f9a6132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silver2
+    second: {fileID: 2100000, guid: 1a6c1f3adfd6db343bf7f3c3b5e92d97, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
+    materialName: 1
     materialSearch: 1
     materialLocation: 1
   animations:

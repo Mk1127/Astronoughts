@@ -137,6 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronought Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4491217428984649915, guid: 63e28e3c351bd1e4b800eb157331081b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5416593494579091671, guid: 63e28e3c351bd1e4b800eb157331081b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -169,7 +173,7 @@ BoxCollider:
   m_GameObject: {fileID: 2794146810568668762}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.033333335, y: 0.06666668, z: 0.033333335}
   m_Center: {x: 0, y: 0.0333333, z: 0}
