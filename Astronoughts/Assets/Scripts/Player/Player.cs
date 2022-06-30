@@ -177,14 +177,13 @@ public class Player:MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        /*if(other.tag == "Enemy")
         {
-            print("Collided with " + other.gameObject.name);
             other.gameObject.GetComponent<AudioSource>().Play();
             convoPanel.SetActive(true);
             convoText.text = "It got me!";
             StartCoroutine(Wait());
-        }
+        }*/
 
         if(other.tag == "Friend")
         {

@@ -87,11 +87,14 @@ public class Player_Movement : MonoBehaviour
         Debug.DrawRay(transform.position + Vector3.up * 0.1f, Vector3.down * 0.5f, Color.cyan);
         if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.75f))
         {
-            isGrounded = true;
-
-            if (hit.collider.tag == "Geyser" || hit.collider.tag == "Enemy")
+            if(!hit.collider.isTrigger)
             {
-                isGrounded = false;
+                isGrounded = true;
+
+                if (hit.collider.tag == "Geyser" || hit.collider.tag == "Enemy")
+                {
+                    isGrounded = false;
+                }
             }
         }
         else

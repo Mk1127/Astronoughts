@@ -43,6 +43,11 @@ public class Player_Interact : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
+                    if(hit.collider.GetComponent<Rigidbody>())
+                    {
+                        hit.collider.GetComponent<Rigidbody>().isKinematic = true;
+                    }
+
                     hit.collider.gameObject.transform.parent = gameObject.transform;
                     hit.collider.gameObject.transform.localPosition = Vector3.forward + Vector3.up;
 
@@ -52,6 +57,11 @@ public class Player_Interact : MonoBehaviour
                 if(Input.GetKeyUp(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.transform.parent = null;
+
+                    if (hit.collider.GetComponent<Rigidbody>())
+                    {
+                        hit.collider.GetComponent<Rigidbody>().isKinematic = false;
+                    }
 
                     isHolding = false;
                 }
@@ -126,7 +136,9 @@ public class Player_Interact : MonoBehaviour
         if (other.tag == "Rock")
         {
             other.gameObject.GetComponent<LavaRock>().LowerRock();
+            transform.parent = other.gameObject.transform;
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -139,6 +151,11 @@ public class Player_Interact : MonoBehaviour
         if (other.tag == "Checkpoint")
         {
             lastCheckpoint = other.transform.position;
+        }
+
+        if(other.tag == "Rock")
+        {
+            transform.parent = null;
         }
     }
 

@@ -43,7 +43,7 @@ public class Astronoughts : MonoBehaviour
             if(!inHub)
             {
                 UpdateGM();
-                Debug.Log("player found astro");
+                gameObject.SetActive(false);
             }
         }
     }
