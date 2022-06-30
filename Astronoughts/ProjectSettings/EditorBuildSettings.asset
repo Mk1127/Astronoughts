@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jungle.unity
     guid: cfaddbca24b12114d9b09bce8962c841
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Polar.unity
     guid: 5150eb25a41c3b4468cf4fa9c3c946d8
   - enabled: 1

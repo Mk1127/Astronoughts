@@ -16,8 +16,47 @@ public class Item : MonoBehaviour
     // The maximum amount of stacks
     public int maxSize;
 
-     public void Use()
+    private void Start()
     {
+        GameManager gm = GameManager.gameManager;
+
+        switch(type)
+        {
+            case ItemType.PART1:
+                if(gm.panelEnabled)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+            case ItemType.PART2:
+                if (gm.solar1Enabled)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+            case ItemType.PART3:
+                if (gm.solar2Enabled)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+            case ItemType.PART4:
+                if (gm.engineEnabled)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+            case ItemType.PART5:
+                if (gm.cockpitEnabled)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+        }
+    }
+
+     public void Use()
+     {
         switch(type)
         {
             case ItemType.PART1:
@@ -36,5 +75,5 @@ public class Item : MonoBehaviour
                 UnityEngine.Debug.Log("I implemented the 5th Part.");
                 break;
         }
-    }
+     }
 }
