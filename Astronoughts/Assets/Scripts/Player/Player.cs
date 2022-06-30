@@ -224,7 +224,7 @@ public class Player:MonoBehaviour
                 gmScript.shipengineEnabled = true;
                 other.gameObject.SetActive(false);
             }
-            if(other.gameObject.name == "CockPit")
+            if(other.gameObject.name == "Cockpit")
             {
                 gmScript.cockpitButton.interactable = true; // button
                 gmScript.cockpitEnabled = true; // bool
