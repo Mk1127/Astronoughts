@@ -6,9 +6,9 @@ using UnityEngine.Audio;
 public class Footsteps : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] clips;
+    public AudioClip[] clips;
     [SerializeField]
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {

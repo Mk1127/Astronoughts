@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6751643079778765538}
   - component: {fileID: 6751643079778765565}
   m_Layer: 0
-  m_Name: Energy
+  m_Name: Cockpit
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

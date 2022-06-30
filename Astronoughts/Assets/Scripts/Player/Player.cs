@@ -97,8 +97,8 @@ public class Player:MonoBehaviour
         fuelText = GameObject.Find("FuelText").GetComponent<Text>();
         fuelImage = GameObject.Find("FuelImage").GetComponent<Image>();
         convoText = GameObject.Find("convoText").GetComponent<Text>();
-        crewText = GameObject.Find("crewText").GetComponent<Text>();
-        partsText = GameObject.Find("partsText").GetComponent<Text>();
+        //crewText = GameObject.Find("crewText").GetComponent<Text>();
+        //partsText = GameObject.Find("partsText").GetComponent<Text>();
         partsText.text = "Parts: " + gmScript.Parts;
         crewText.text = "Crew: " + gmScript.Crew;
     }
@@ -149,17 +149,6 @@ public class Player:MonoBehaviour
         {
             jetpackSource.GetComponent<AudioSource>().mute = true;
         }
-    }
-
-    void PlayerFail()
-    {
-        return;
-        /*
-        Debug.Log("Player Lost");
-        StartCoroutine(Wait());
-        //anim.SetBool("isStranded",true);
-        SceneManager.LoadScene("GameOver");
-        */
     }
 
     private void OnTriggerStay(Collider other)

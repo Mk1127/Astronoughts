@@ -47,6 +47,7 @@ public class SpaceShipControl : MonoBehaviour
         solar1.gameObject.SetActive(false);
         solar2.gameObject.SetActive(false);
         engine.gameObject.SetActive(false);
+        cockpit.gameObject.SetActive(false);
         spaceshipWhole.gameObject.SetActive(false);
     }
     public void CheckingShip()
@@ -57,7 +58,7 @@ public class SpaceShipControl : MonoBehaviour
         }
         if(gmScript.spaceshipBrokenDownEnabled == false)
         {
-            spaceshipBrokenDown.gameObject.SetActive(true);
+            spaceshipBrokenDown.gameObject.SetActive(false);
         }
         if(gmScript.spaceshipBrokenUpEnabled == true)
         {
@@ -65,7 +66,7 @@ public class SpaceShipControl : MonoBehaviour
         }
         if(gmScript.spaceshipBrokenUpEnabled == false)
         {
-            spaceshipBrokenUp.gameObject.SetActive(true);
+            spaceshipBrokenUp.gameObject.SetActive(false);
         }
         if(gmScript.shipsolar1Enabled == true)
         {

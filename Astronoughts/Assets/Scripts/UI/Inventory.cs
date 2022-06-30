@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
 
     #region Collections
     // a list for all of the inventory's slots
-    private List<GameObject> allSlots;
+    public List<GameObject> allSlots;
     #endregion
 
     #region Properties
