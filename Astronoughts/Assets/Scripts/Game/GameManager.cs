@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     {
 
         Prepare();
-        //GetSlots();
+        GetSlots();
 
         //game statistics
         currentScene = SceneManager.GetActiveScene().name;

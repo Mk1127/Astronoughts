@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
 
     // background of inventory, slots, and slots qualities
     public Image invImage;
-    private readonly Image slotImage;
+    private Image slotImage;
     public Image[] slotImages;
 
     // Offset used to move the hovering object away from the mouse 
@@ -41,8 +41,7 @@ public class Inventory : MonoBehaviour
     private Slot movingSlot;
     private GameObject clicked;
     private GameObject hoverObject;
-    [SerializeField]
-    private int emptySlots;
+    [SerializeField] private int emptySlots;
 
     // structural objects
     public EventSystem eventSystem;

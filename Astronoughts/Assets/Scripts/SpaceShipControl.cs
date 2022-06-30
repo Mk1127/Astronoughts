@@ -28,12 +28,6 @@ public class SpaceShipControl : MonoBehaviour
         CheckingShip();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void Ready()
     {
         player = GameObject.FindGameObjectWithTag("Player");

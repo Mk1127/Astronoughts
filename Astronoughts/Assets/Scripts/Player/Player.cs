@@ -68,14 +68,6 @@ public class Player:MonoBehaviour
     }
     #endregion
 
-    void Awake()
-    {
-        //allCrew = false;
-        //allParts = false;
-        //fixedShip = false;
-        //didWin = false;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -112,16 +104,16 @@ public class Player:MonoBehaviour
 
     public void CheckWin()
     {
-        return;
-        /*
-        if(gmScript.Parts == 5 && gmScript.Crew == 5)
+        //return;
+
+        if(gmScript.Parts == 5)
         {
-            convoText.text = "You've collected all the ship parts and rescued all of your crew!";
-            didWin = true;
+            convoText.text = "You've collected all the ship parts!";
+            gmScript.spaceshipWholeEnabled = true;
+            //didWin = true;
             StartCoroutine(Wait());
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
-        */
     }
     public void CheckFuel()
     {
@@ -166,13 +158,13 @@ public class Player:MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        /*if(other.tag == "Enemy")
+        if(other.tag == "Enemy")
         {
-            other.gameObject.GetComponent<AudioSource>().Play();
-            convoPanel.SetActive(true);
-            convoText.text = "It got me!";
-            StartCoroutine(Wait());
-        }*/
+            gameObject.GetComponent<AudioSource>().Play();
+            //convoPanel.SetActive(true);
+            //convoText.text = "Argh!";
+            //StartCoroutine(Wait());
+        }
 
         if(other.tag == "Friend")
         {
@@ -188,7 +180,7 @@ public class Player:MonoBehaviour
 
         if(other.tag == "Item") // If we collide with an item that we can pick up
         {
-            print("Collided with " + other.gameObject.name);
+            //print("Collided with " + other.gameObject.name);
             Grab();
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
@@ -197,10 +189,10 @@ public class Player:MonoBehaviour
             partsText.text = "Parts: " + gmScript.Parts;
             if(other.gameObject.name == "Panel")
             {
-
                 gmScript.panelButton.interactable = true;
                 gmScript.panelEnabled = true;
                 invScript.invPanel.interactable = true;
+                other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Solar1")
             {
@@ -210,6 +202,7 @@ public class Player:MonoBehaviour
                 gmScript.spaceshipBrokenDownEnabled = false;
                 gmScript.spaceshipBrokenUpEnabled = true;
                 gmScript.shipsolar1Enabled = true;
+                other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Solar2")
             {
@@ -219,6 +212,7 @@ public class Player:MonoBehaviour
                 gmScript.spaceshipBrokenDownEnabled = false;
                 gmScript.spaceshipBrokenUpEnabled = true;
                 gmScript.shipsolar2Enabled = true;
+                other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Engine")
             {
@@ -228,20 +222,21 @@ public class Player:MonoBehaviour
                 gmScript.spaceshipBrokenDownEnabled = false;
                 gmScript.spaceshipBrokenUpEnabled = true;
                 gmScript.shipengineEnabled = true;
+                other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "CockPit")
             {
-                gmScript.cockpitButton.interactable = true;
-                gmScript.cockpitEnabled = true;
+                gmScript.cockpitButton.interactable = true; // button
+                gmScript.cockpitEnabled = true; // bool
                 invScript.invCockpit.interactable = true;
                 gmScript.spaceshipBrokenDownEnabled = false;
                 gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipcockpitEnabled = false;
+                gmScript.shipcockpitEnabled = true; //model
                 gmScript.spaceshipBrokenUpEnabled = false;
-                gmScript.spaceshipWholeEnabled = true;
+                other.gameObject.SetActive(false);
+
             }
             StartCoroutine(Wait());
-            other.gameObject.SetActive(false);
         }
     }
 

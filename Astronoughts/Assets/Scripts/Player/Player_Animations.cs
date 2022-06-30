@@ -6,11 +6,6 @@ public class Player_Animations : MonoBehaviour
 {
     [SerializeField] Player_Movement playerMovement;
     [SerializeField] Animator playerAnimator;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
