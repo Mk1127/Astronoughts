@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
     // background of inventory, slots, and slots qualities
     public Image invImage;
     private readonly Image slotImage;
-    private Image[] slotImages;
+    public Image[] slotImages;
 
     // Offset used to move the hovering object away from the mouse 
     protected float hoverYOffset;
@@ -74,6 +74,7 @@ public class Inventory : MonoBehaviour
     #region Collections
     // a list for all of the inventory's slots
     public List<GameObject> allSlots;
+    public GameObject[] slotObjects;
     #endregion
 
     #region Properties
@@ -207,7 +208,7 @@ public class Inventory : MonoBehaviour
             {
                 from.GetComponent<Image>().color = Color.white;
                 from.ClearSlot();
-                Destroy(GameObject.Find("Hover"));
+                //Destroy(GameObject.Find("Hover"));
                 to = null;
                 from = null;
                 hoverObject = null;
@@ -275,7 +276,7 @@ public class Inventory : MonoBehaviour
      public Image[] GetSlots()
     {
         // Get the slot objects
-        GameObject[] slotObjects = GameObject.FindGameObjectsWithTag("Slot");
+        //GameObject[] slotObjects = GameObject.FindGameObjectsWithTag("Slot");
 
         // Declare an array of slots
         slotImages = new Image[slotObjects.Length];
