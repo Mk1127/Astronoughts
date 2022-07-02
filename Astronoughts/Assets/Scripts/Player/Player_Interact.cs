@@ -7,6 +7,8 @@ public class Player_Interact : MonoBehaviour
 {
     [SerializeField] float rayDistance;
     [SerializeField] Player_Rotation playerRot;
+    [SerializeField] Player_Movement playerMove;
+    [SerializeField] CamPivot_Rotation camPivot;
     [SerializeField] InteractionText interactionText;
     [SerializeField] Vector3 lastCheckpoint;
 
@@ -51,6 +53,12 @@ public class Player_Interact : MonoBehaviour
                     hit.collider.gameObject.transform.parent = gameObject.transform;
                     hit.collider.gameObject.transform.localPosition = Vector3.forward + Vector3.up;
 
+                    playerRot.isGrabbing = true;
+                    playerMove.isGrabbing = true;
+                    playerMove.speed = playerMove.startSpeed / 1.5f;
+                    camPivot.enabled = false;
+
+
                     isHolding = true;
                 }
                 
@@ -62,6 +70,11 @@ public class Player_Interact : MonoBehaviour
                     {
                         hit.collider.GetComponent<Rigidbody>().isKinematic = false;
                     }
+
+                    playerRot.isGrabbing = false;
+                    playerMove.isGrabbing = false;
+                    playerMove.speed = playerMove.startSpeed;
+                    camPivot.enabled = true;
 
                     isHolding = false;
                 }

@@ -20,13 +20,13 @@ public class Player_Movement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] Transform cam;
     [SerializeField] CharacterController mover;
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     [SerializeField] float sprintSpeed;
     [SerializeField] float accel;
     [SerializeField] float grav;
     [HideInInspector] public float jumpSpeed;
 
-    float startSpeed;
+    [HideInInspector] public float startSpeed;
 
     [Header("Hover")]
     [SerializeField] ParticleSystem ps;
@@ -38,6 +38,7 @@ public class Player_Movement : MonoBehaviour
     [Header("Detection")]
     [SerializeField] public bool isGrounded = false;
     bool reverseGravity = false;
+    [HideInInspector] public bool isGrabbing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,12 @@ public class Player_Movement : MonoBehaviour
         CheckGround(); //Self explanatory
         CalcMovement(); //Does all calculations for movement, doesn't move the character
         Gravity(); // Calculates and sets gravity for the character
-        Hover();
+
+        if(!isGrabbing)
+        {
+            Hover();
+        }
+
         Jump();
         MoveCharacter();
     }
@@ -107,7 +113,8 @@ public class Player_Movement : MonoBehaviour
     {
         velocityXZ = velocity;
         velocityXZ.y = 0;
-        if (isGrounded)
+
+        if (isGrounded && !isGrabbing)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -118,9 +125,29 @@ public class Player_Movement : MonoBehaviour
             {
                 speed = startSpeed;
             }
-
         }
-        velocityXZ = Vector3.Lerp(velocity, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+
+        if (isGrabbing)
+        {
+            if (Input.GetAxisRaw("Vertical") != 0)
+            {
+                velocityXZ = Vector3.Lerp(velocity, cam.forward * input.y * speed, accel * Time.deltaTime);
+            }
+            else
+            {
+                velocityXZ = Vector3.Lerp(velocity, Vector3.zero, accel * Time.deltaTime);
+            }
+
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                velocityXZ = Vector3.Lerp(velocity, cam.right * input.x * speed, accel * Time.deltaTime);
+            }
+        }
+        else
+        {
+            velocityXZ = Vector3.Lerp(velocity, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+        }
+
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
     }
 
