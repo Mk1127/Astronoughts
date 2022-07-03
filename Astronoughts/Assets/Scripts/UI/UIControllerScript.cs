@@ -38,10 +38,6 @@ public class UIControllerScript : MonoBehaviour
     public bool isPlaying;
     #endregion
 
-    // Use this for initialization
-    void Awake()
-    {
-    }
 
     // Start is called before the first frame update
     void Start()
