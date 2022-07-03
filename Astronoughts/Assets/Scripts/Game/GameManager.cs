@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     #region Variables
     public static GameManager gameManager;
 
-    //spaceship model
+    //spaceship model part variables
     public bool spaceshipBrokenDownEnabled;
     public bool spaceshipBrokenUpEnabled;
     public bool shipsolar1Enabled;
@@ -19,39 +19,44 @@ public class GameManager : MonoBehaviour
     public bool shipcockpitEnabled;
     public bool spaceshipWholeEnabled;
 
-    // player statistics
+    // player statistics variables that are needed by other scripts
     [HideInInspector] public float playerFuel;
     [HideInInspector] public float currentFuel;
     [HideInInspector] public int crewNumber;
     public int parts;
     public int crew;
 
-    // inventory statistics
+    // Inventory slots (buttons). Public for manual assignment
     public Button panelButton;
     public Button solar1Button;
     public Button solar2Button;
     public Button engineButton;
     public Button cockpitButton;
 
-    //Inventory buttons
+    // Inventory bools. Button sprite swap changes empty icon (not interactable) to object (interactable)
     public bool panelEnabled;
     public bool solar1Enabled;
     public bool solar2Enabled;
     public bool engineEnabled;
     public bool cockpitEnabled;
 
+    // public lists
     public List<GameObject> partList = new List<GameObject>();
     public List<bool> astronoughtsFound = new List<bool>();
 
-    //game statistics
+    // which scene
     private string currentScene;
 
-    //sources
+    // sources for imported information. What scripts and gameObjects must we access?
+    // the GameObjects that have scripts we need
     private GameObject player;
     private GameObject UIController;
+    
+    // The scripts themselves that have variables we need to access
     private Player playerScript;
     private UIControllerScript UIScript;
 
+    // The location of the jetpack fuel gauge
     public Transform contentContainer;
 
     #endregion
@@ -83,6 +88,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
+    
+    // Ensure gm survives scenes changes
     void Awake()
     {
         if(gameManager == null)
@@ -99,11 +106,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        // find the player and UIController GameObjects (and their scripts) onLoad from the scene
         Prepare();
+        
+        // Find the inventory slots and add them to the partsList
         GetSlots();
 
-        //game statistics
+        // identify the scene name
         currentScene = SceneManager.GetActiveScene().name;
     }
 
@@ -115,11 +124,11 @@ public class GameManager : MonoBehaviour
         UIScript = UIController.GetComponent<UIControllerScript>();
     }
 
+    // assigning value of the public variables to private variables for safekeeping
     public void GatherStats()
     {
         Parts = parts;
         Crew = crew;
-        // get shipState from number of pairs implemented (method not yet established) 
     }
 
     public List<GameObject> GetSlots()

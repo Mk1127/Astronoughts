@@ -14,8 +14,8 @@ public class UIControllerScript : MonoBehaviour
 
     private bool overlayHidden;
     private bool miniMapHidden;
-    private bool convoHidden;
     private bool viewHidden;
+    private bool convoHidden;
     private bool allHidden;
 
     [SerializeField] GameObject overlay;
