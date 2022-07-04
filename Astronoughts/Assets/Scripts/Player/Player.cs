@@ -231,7 +231,8 @@ public class Player:MonoBehaviour
                 invScript.invCockpit.interactable = true;
                 gmScript.spaceshipBrokenDownEnabled = false;
                 gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipcockpitEnabled = true; //model
+                gmScript.shipcockpitEnabled = false; //model
+                gmScript.gotCockpit = true;
                 gmScript.spaceshipBrokenUpEnabled = false;
                 other.gameObject.SetActive(false);
 

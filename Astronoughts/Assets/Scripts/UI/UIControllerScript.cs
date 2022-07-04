@@ -12,9 +12,13 @@ public class UIControllerScript : MonoBehaviour
 
     private string scene;
 
+    private GameObject gm;
+    private GameManager gmScript;
+
     private bool overlayHidden;
     private bool miniMapHidden;
     private bool viewHidden;
+    [HideInInspector] public bool clickedView;
     private bool convoHidden;
     private bool allHidden;
 
@@ -37,7 +41,11 @@ public class UIControllerScript : MonoBehaviour
     public bool isHidden;
     public bool isPlaying;
     #endregion
-
+    private void Awake()
+    {
+        // identify the scene name
+        scene = SceneManager.GetActiveScene().name;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +61,8 @@ public class UIControllerScript : MonoBehaviour
         viewPanel.SetActive(false);
         convoPanel.SetActive(false);
         scene = SceneManager.GetActiveScene().name;
+        gm = GameObject.FindGameObjectWithTag("GameController");
+        gmScript = gm.GetComponent<GameManager>();
     }
 
     #region Functions
@@ -100,6 +110,7 @@ public class UIControllerScript : MonoBehaviour
     public void OnCloseViewButtonClick()
     {
         Debug.Log("You clicked the close view button");
+        gmScript.viewCheck = true;
         if(viewHidden == true)
         {
             viewPanel.SetActive(true);

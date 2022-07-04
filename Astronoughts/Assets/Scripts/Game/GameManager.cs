@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     #region Variables
     public static GameManager gameManager;
 
-    //spaceship model part variables
+    //spaceship model part is enabled/disabled variables
     public bool spaceshipBrokenDownEnabled;
     public bool spaceshipBrokenUpEnabled;
     public bool shipsolar1Enabled;
@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
     public bool shipengineEnabled;
     public bool shipcockpitEnabled;
     public bool spaceshipWholeEnabled;
+
+    // Hub specific bools
+    public bool grassCheck;
+    public bool viewCheck;
+    public bool blockInteract;
+    public bool gotCockpit;
 
     // player statistics variables that are needed by other scripts
     [HideInInspector] public float playerFuel;
@@ -45,7 +51,7 @@ public class GameManager : MonoBehaviour
     public List<bool> astronoughtsFound = new List<bool>();
 
     // which scene
-    private string currentScene;
+    private string scene;
 
     // sources for imported information. What scripts and gameObjects must we access?
     // the GameObjects that have scripts we need
@@ -92,6 +98,9 @@ public class GameManager : MonoBehaviour
     // Ensure gm survives scenes changes
     void Awake()
     {
+        // identify the scene name
+        scene = SceneManager.GetActiveScene().name;
+
         if(gameManager == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -111,9 +120,10 @@ public class GameManager : MonoBehaviour
         
         // Find the inventory slots and add them to the partsList
         GetSlots();
+        if(scene == "Hub")
+        {
 
-        // identify the scene name
-        currentScene = SceneManager.GetActiveScene().name;
+        }
     }
 
     private void Prepare()
