@@ -4317,6 +4317,10 @@ PrefabInstance:
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 689160689}
+    - target: {fileID: 201732186617689390, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7e313df0007e814fb72fbe521b8821f, type: 2}
     - target: {fileID: 4250724279702982921, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_IsActive
       value: 0
