@@ -66,6 +66,17 @@ public class MMUIController : MonoBehaviour
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(false);
         }
+        else if(scene == "Controls")
+        {
+            isPlaying = true;
+            panelAnimator.SetBool("isPlaying",true);
+            text.text = "help";
+            text2.text = "credits";
+            text3.text = "controls";
+            mainMenu.SetActive(false);
+            controlsMenu.SetActive(true);
+            instructionsMenu.SetActive(false);
+        }
         else if(scene == "Credits")
         {
             text.text = "next";
@@ -160,9 +171,7 @@ public class MMUIController : MonoBehaviour
         else
         {
             Debug.Log("You clicked the controls button");
-            mainMenu.SetActive(false);
-            controlsMenu.SetActive(true);
-            instructionsMenu.SetActive(false);
+            SceneManager.LoadScene("Controls");
         }
     }
 

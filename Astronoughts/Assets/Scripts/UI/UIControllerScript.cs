@@ -14,8 +14,8 @@ public class UIControllerScript : MonoBehaviour
 
     private bool overlayHidden;
     private bool miniMapHidden;
-    private bool convoHidden;
     private bool viewHidden;
+    private bool convoHidden;
     private bool allHidden;
 
     [SerializeField] GameObject overlay;
@@ -38,10 +38,6 @@ public class UIControllerScript : MonoBehaviour
     public bool isPlaying;
     #endregion
 
-    // Use this for initialization
-    void Awake()
-    {
-    }
 
     // Start is called before the first frame update
     void Start()
