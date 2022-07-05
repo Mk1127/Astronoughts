@@ -27,6 +27,7 @@ public class Portal : MonoBehaviour
             Debug.Log("hitting Player");
             if(nextScene != "")
             {
+                gm.lastScene = SceneManager.GetActiveScene().name;
                 SceneManager.LoadScene(nextScene);
             }
         }
