@@ -896,6 +896,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 180111098}
+    - target: {fileID: 7639409723924394976, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+      propertyPath: sprintSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394977, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: camPivot
       value: 
@@ -2583,6 +2587,7 @@ GameObject:
   - component: {fileID: 137844241}
   - component: {fileID: 137844240}
   - component: {fileID: 137844239}
+  - component: {fileID: 137844242}
   m_Layer: 0
   m_Name: inner_door
   m_TagString: Untagged
@@ -2668,6 +2673,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137844237}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &137844242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137844237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ad89024492bbd4e845fca5ae814429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerDistance: 4
 --- !u!1 &180111097
 GameObject:
   m_ObjectHideFlags: 0
@@ -8258,7 +8276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8325402211787224469, guid: 6f270ddbc3639e649be9e78578f9e7cd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.2160034
+      value: 6.2160645
       objectReference: {fileID: 0}
     - target: {fileID: 8325402211787224469, guid: 6f270ddbc3639e649be9e78578f9e7cd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8836,8 +8854,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 642561988}
-  - component: {fileID: 642561990}
   - component: {fileID: 642561989}
+  - component: {fileID: 642561991}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Lever
@@ -8872,9 +8890,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 5, z: 3}
+  m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &642561990
+--- !u!114 &642561991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8883,16 +8901,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 642561987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19f932e4e349d74dbb2e3e725a7a827, type: 3}
+  m_Script: {fileID: 11500000, guid: e03f5e37175a13e439dcc0603d7f9b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 137844238}
-  lowerDistance: 4
-  raise: 0
-  isLever: 1
-  renderer: {fileID: -7511558181221131132, guid: 5c6260b08a1f33342a45b5009a55a147, type: 3}
+  targetDoors:
+  - {fileID: 137844242}
   materials: []
-  collider: {fileID: 642561989}
+  isLever: 1
 --- !u!1001 &644962819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18276,6 +18291,10 @@ MonoBehaviour:
   shipengineEnabled: 0
   shipcockpitEnabled: 0
   spaceshipWholeEnabled: 0
+  grassCheck: 0
+  viewCheck: 0
+  blockInteract: 0
+  gotCockpit: 0
   playerFuel: 0
   currentFuel: 0
   crewNumber: 0
@@ -22508,6 +22527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e37e1534243da4c9040e0d05050e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickedView: 0
   overlay: {fileID: 832990401}
   miniMapPanel: {fileID: 573823613}
   convoPanel: {fileID: 985253501}
