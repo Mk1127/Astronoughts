@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     #region Variables
     public static GameManager gameManager;
 
+    //for player hub spawning
+    [HideInInspector] public string lastScene = "";
+
     //spaceship model part is enabled/disabled variables
     public bool spaceshipBrokenDownEnabled;
     public bool spaceshipBrokenUpEnabled;
