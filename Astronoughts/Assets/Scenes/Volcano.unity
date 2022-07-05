@@ -867,6 +867,10 @@ MonoBehaviour:
   shipengineEnabled: 0
   shipcockpitEnabled: 0
   spaceshipWholeEnabled: 0
+  grassCheck: 0
+  viewCheck: 0
+  blockInteract: 0
+  gotCockpit: 0
   playerFuel: 0
   currentFuel: 0
   crewNumber: 0
@@ -13192,6 +13196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e37e1534243da4c9040e0d05050e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickedView: 0
   overlay: {fileID: 404903205}
   miniMapPanel: {fileID: 1014207667}
   convoPanel: {fileID: 524642702}
@@ -24785,8 +24790,8 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  playTexture: {fileID: 2800000, guid: df73c8521512ca7488df42528998ad81, type: 3}
-  muteTexture: {fileID: 2800000, guid: 9ef8976668c31b24eaaa4d266b8ec2f6, type: 3}
+  playTexture: {fileID: 2800000, guid: aff2709b4608c3b4b9afbe79d845adb7, type: 3}
+  muteTexture: {fileID: 2800000, guid: 5861e60470ecbbb42829524d9d6849d5, type: 3}
   scene: Volcano
   source: {fileID: 1892927206}
   settings: {fileID: 1489639553}

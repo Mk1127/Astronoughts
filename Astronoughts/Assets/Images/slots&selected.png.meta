@@ -125,7 +125,7 @@ TextureImporter:
         height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 1, w: 0}
+      border: {x: 0, y: 0, z: 2, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -140,9 +140,9 @@ TextureImporter:
       name: slots&selected_1
       rect:
         serializedVersion: 2
-        x: 346
+        x: 343
         y: 765
-        width: 133
+        width: 136
         height: 131
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -161,7 +161,7 @@ TextureImporter:
       name: slots&selected_2
       rect:
         serializedVersion: 2
-        x: 483
+        x: 481
         y: 766
         width: 134
         height: 132
@@ -182,9 +182,9 @@ TextureImporter:
       name: slots&selected_3
       rect:
         serializedVersion: 2
-        x: 620
+        x: 619
         y: 766
-        width: 133
+        width: 134
         height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -561,9 +561,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 346
-        y: 492
+        y: 489
         width: 132
-        height: 132
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -749,9 +749,9 @@ TextureImporter:
       name: slots&selected_30
       rect:
         serializedVersion: 2
-        x: 208
+        x: 207
         y: 349
-        width: 132
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -791,9 +791,9 @@ TextureImporter:
       name: slots&selected_32
       rect:
         serializedVersion: 2
-        x: 478
+        x: 480
         y: 350
-        width: 135
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -833,9 +833,9 @@ TextureImporter:
       name: slots&selected_34
       rect:
         serializedVersion: 2
-        x: 752
+        x: 754
         y: 351
-        width: 135
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -854,7 +854,7 @@ TextureImporter:
       name: slots&selected_35
       rect:
         serializedVersion: 2
-        x: 890
+        x: 891
         y: 351
         width: 134
         height: 133
@@ -875,9 +875,9 @@ TextureImporter:
       name: slots&selected_36
       rect:
         serializedVersion: 2
-        x: 1030
+        x: 1029
         y: 351
-        width: 132
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -896,9 +896,9 @@ TextureImporter:
       name: slots&selected_37
       rect:
         serializedVersion: 2
-        x: 1166
+        x: 1165
         y: 351
-        width: 132
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -917,9 +917,9 @@ TextureImporter:
       name: slots&selected_38
       rect:
         serializedVersion: 2
-        x: 1304
+        x: 1303
         y: 349
-        width: 132
+        width: 133
         height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
