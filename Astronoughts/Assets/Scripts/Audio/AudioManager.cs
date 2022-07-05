@@ -73,14 +73,14 @@ public class AudioManager : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
         if(source.mute == false)
         {
-            if(GUI.Button(new Rect(0,0,35,35),muteTexture))
+            if(GUI.Button(new Rect(Screen.width - 150,0,50,50),muteTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = true;
             }
         }
         else if(source.mute == true)
         {
-            if(GUI.Button(new Rect(0,0,35,35),playTexture))
+            if(GUI.Button(new Rect(Screen.width - 150,0,50,50),playTexture))
             {
                 gameObject.GetComponent<AudioSource>().mute = false;
             }
