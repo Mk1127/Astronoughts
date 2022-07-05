@@ -85,7 +85,17 @@ public class UIControllerScript : MonoBehaviour
     public void OnOverlayButtonClick()
     {
         Debug.Log("You clicked the overlay button");
-        if(overlayHidden == false)
+        if(overlayHidden == true)
+        {
+            overlay.SetActive(true);
+            miniMapPanel.SetActive(true);
+            viewPanel.SetActive(true);
+            overlayHidden = false;
+            miniMapHidden = false;
+            viewHidden = false;
+            convoHidden = true;
+        }
+        else
         {
             overlay.SetActive(false);
             miniMapPanel.SetActive(false);
@@ -94,16 +104,7 @@ public class UIControllerScript : MonoBehaviour
             miniMapHidden = true;
             viewHidden = true;
             convoHidden = true;
-        }
-        else
-        {
-            overlay.SetActive(true);
-            miniMapPanel.SetActive(false);
-            viewPanel.SetActive(false);
-            overlayHidden = false;
-            miniMapHidden = false;
-            viewHidden = false;
-            convoHidden = false;
+
         }
     }
 
