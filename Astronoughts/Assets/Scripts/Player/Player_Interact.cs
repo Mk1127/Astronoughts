@@ -98,18 +98,33 @@ public class Player_Interact : MonoBehaviour
 
                 AutoToggleInteractionText(hit);
 
-                Lever lever = hit.collider.gameObject.GetComponent<Lever>();
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+
+                if(hit.collider.GetComponent<Lever>())
                 {
-                    if(lever.raise)
+                    Lever lever = hit.collider.gameObject.GetComponent<Lever>();
+
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
-                        lever.RaiseDoor();
-                    }
-                    else
-                    {
-                        lever.LowerDoor();
+                        if (lever.raise)
+                        {
+                            lever.RaiseDoor();
+                        }
+                        else
+                        {
+                            lever.LowerDoor();
+                        }
                     }
                 }
+                else
+                {
+                    Door_Switch doorSwitch = hit.collider.gameObject.GetComponent<Door_Switch>();
+
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        doorSwitch.ToggleDoors();
+                    }
+                }
+
             }
         }
         else
