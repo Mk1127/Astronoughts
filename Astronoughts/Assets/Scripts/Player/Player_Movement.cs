@@ -224,7 +224,7 @@ public class Player_Movement : MonoBehaviour
         speed = startSpeed / 1.5f;
         while (thrustGauge > 0)
         {
-            thrustGauge -= Time.deltaTime * 15;
+            thrustGauge -= Time.deltaTime * 25;
             thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
             yield return null;
 
@@ -250,7 +250,7 @@ public class Player_Movement : MonoBehaviour
 
         while (thrustGauge < 100)
         {
-            thrustGauge += Time.deltaTime * 10;
+            thrustGauge += Time.deltaTime * 20;
             thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
             yield return null;
 
