@@ -57,7 +57,7 @@ public class Player_Movement : MonoBehaviour
     {
         GetInputs(); //Checks horicontal and vertical inputs
         CalcCamera(); //Calculates cameras forwards and right based on it's rotation
-        CheckGround(); //Self explanatory
+        CheckGround();
         CalcMovement(); //Does all calculations for movement, doesn't move the character
         Gravity(); // Calculates and sets gravity for the character
 
@@ -197,11 +197,12 @@ public class Player_Movement : MonoBehaviour
                     }
                 }
             }
-            else //On press Space, If playing is hovering, turn off hovering and turn off reverse gravity.
-            {
-                hovering = false;
-                reverseGravity = false;
-            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            hovering = false;
+            reverseGravity = false;
         }
     }
 
