@@ -118,12 +118,19 @@ public class Player_Movement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                speed = sprintSpeed;
+                if(!hovering)
+                {
+                    speed = sprintSpeed;
+                }
+
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                speed = startSpeed;
+                if(!hovering)
+                {
+                    speed = startSpeed;
+                }
             }
         }
 
