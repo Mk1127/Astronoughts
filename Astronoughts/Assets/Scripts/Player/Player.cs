@@ -168,6 +168,7 @@ public class Player:MonoBehaviour
 
         if(other.tag == "Friend")
         {
+
             print("Collided with " + other.gameObject.name);
             //other.gameObject.GetComponent<AudioSource>().Play();
             convoPanel.SetActive(true);
