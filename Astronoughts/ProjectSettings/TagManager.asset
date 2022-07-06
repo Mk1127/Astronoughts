@@ -40,6 +40,7 @@ TagManager:
   - ComponentsText
   - Laser
   - Mirror
+  - Ceiling
   layers:
   - Default
   - TransparentFX
