@@ -3,10 +3,10 @@ guid: e29b0daad50a4e64cb6cc2ed1b2f3f31
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -23,6 +23,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -31,16 +33,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
-  nPOTScale: 1
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,17 +51,69 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -72,17 +126,1426 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cloud04_8x8_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 905
+        width: 126
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c46e1e16652ea43b1dc813ee8d8e03
+      internalID: 906623377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 905
+        width: 126
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3474ff319b2039b41995a89fb09b1bf5
+      internalID: 1660852192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 904
+        width: 125
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83322e0ac81b7014683d7a22b9d4bb40
+      internalID: -1970702271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 905
+        width: 126
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3136a0111e914e4faa29447780e6aa2
+      internalID: 1796939539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 904
+        width: 125
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820ab36c8abfdf6478e99c7f4cb21246
+      internalID: -1424017857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 903
+        width: 125
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dec2a87d82bb4c48a9dc5694fc8f47d
+      internalID: 1332949556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_6
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 903
+        width: 125
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b857ff8c16412a94f9e615764b5d9f2b
+      internalID: 1699806913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_7
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 903
+        width: 124
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e391fc0dc2bdc74ba170ff2f5d2e5c7
+      internalID: 483011465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 775
+        width: 125
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5e92db741c9264e9c9da1bf962995e
+      internalID: 789901771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 776
+        width: 125
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110df20608c07cf44b84d7fb4bc717a8
+      internalID: -1088992099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 776
+        width: 125
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debfd4eba84d75c4985610433388f2c0
+      internalID: 1739290213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 776
+        width: 125
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba3001f999221b46b702dfeb269231b
+      internalID: -1460895928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 775
+        width: 124
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afdd05d8fe055842b65593fa3fa4f9f
+      internalID: -52230211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 775
+        width: 124
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a24bebda3521040959172ce1c0e8ca
+      internalID: 1957464114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 775
+        width: 124
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86117e7e99de85418cd118bd0f3f257
+      internalID: -542611423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_15
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 775
+        width: 124
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a92a4899c0f6f14e907e6fa8894da71
+      internalID: 546527882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 647
+        width: 124
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736ff5e879a5d8b4f854ff924245e979
+      internalID: -704255005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 647
+        width: 124
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c59a90833ad8574a8b4aab1b402533e
+      internalID: -301619342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 647
+        width: 124
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa02bef6780f60540a1dfcd594aef2ff
+      internalID: 1338635780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 647
+        width: 124
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3ccb43fdae56242931aaf51b9285a1
+      internalID: 637125634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 647
+        width: 124
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09634cf533f26b34ab7b9d1bf193b5ff
+      internalID: -1975690362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 647
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690349a6ea5f5664c93308c807efc720
+      internalID: 255030156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 647
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e02616d93718a4e9038c1296be60f4
+      internalID: -1434974034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_23
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 647
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56f78d50f2b25044a91eaae63109208
+      internalID: -1755173525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 519
+        width: 125
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583ca11e4a00b0247a1c1187101e9f90
+      internalID: 1778467279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 518
+        width: 125
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b371096dd10ef4db968d1685d3a5eb
+      internalID: -1548940259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 518
+        width: 125
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5955c4c79b286c4408fee066ccac0eec
+      internalID: -2032919644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 519
+        width: 125
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f205ea9c736acf14ab7560c92c4af141
+      internalID: -982987612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 519
+        width: 125
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c533489904f413547bc968eb0a2d9290
+      internalID: 14580207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 519
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09edc787891bc724ea402ebd3c99fb4c
+      internalID: 2354189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 519
+        width: 125
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5277b07af2f77ec41a4fc4f1157e27ff
+      internalID: 426986170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 519
+        width: 125
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbd07aecfa31474085c562d46f613e1
+      internalID: -692662315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 391
+        width: 125
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046132f19ed86cf48abb5552616011c9
+      internalID: -763368433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 392
+        width: 126
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35efc680a2d50dd41801243fba43ec0f
+      internalID: 964644403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 392
+        width: 126
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804d2c6037001b944ae819f0eba32252
+      internalID: -319016191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 392
+        width: 126
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96f03cc25191184696a3ffaaa6e5462
+      internalID: -119903537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_36
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 392
+        width: 126
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618e61be17c878743af9af33c516d207
+      internalID: 1374201564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_37
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 391
+        width: 126
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb663e155c943354bb0fa890ee2d77b2
+      internalID: -540425361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 390
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d2d4d3cedb03640b490da6db131610
+      internalID: 1583174738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_39
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 389
+        width: 127
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd70c6bc56bc6d4db8496defdfab6b9
+      internalID: 707463129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 261
+        width: 126
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb179bd270a34e94f9fdf09ca13188a7
+      internalID: 1067468234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 261
+        width: 126
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463b9c5ee51de7d4bacede884d4508be
+      internalID: -835459327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_42
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 262
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7dca7ae607e4942967555127c27210
+      internalID: 1787269454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_43
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 262
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4fb0c6cb695cd4da455c9e0111bd5c
+      internalID: 1938848089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_44
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 262
+        width: 127
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dff53eac1ebf084d908d13b9353a45b
+      internalID: 409149218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_45
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 262
+        width: 126
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65028641ba04cf245ab09c6298188ca2
+      internalID: -473060147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_46
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 262
+        width: 128
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d3eb448b5256a4f9769103cec5242e
+      internalID: 1785394807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_47
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 263
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9a86c02e874784fb5adae2750f7b9f
+      internalID: -1160732239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615c42c4c484ae847b110ceac1e7a079
+      internalID: 2122651749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 135
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c6f83ebcbf04548bdb2328deae7f11
+      internalID: -1537835276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 135
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d88c599ee57374096dafe00ce7c6f6
+      internalID: 1311009660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 136
+        width: 127
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b998ae0b9f8e24b49a057a97b98cb894
+      internalID: -1846006272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 136
+        width: 127
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c6dbb0ac583de4d9195dc4fb1f7419
+      internalID: 991868617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 136
+        width: 127
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aa255219531fc4299a50ef1e160f22
+      internalID: -1333765464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 136
+        width: 127
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea30db461bb019449c88cff969e18f7
+      internalID: -746801355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 136
+        width: 127
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd0fb4bd3c7cb54ea88f25ab69e244b
+      internalID: -1175505824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 126
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b795305e7c35c046ac6603715561ea4
+      internalID: 923998977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 8
+        width: 127
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2a249df9b09684795cf1b9f9370ca4
+      internalID: 468032194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 8
+        width: 126
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d8496b9c9662549bcaff5c5a2a4a3e
+      internalID: 1357584243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_59
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 8
+        width: 126
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90dd2f093c1f64a4e80b7e383f12a0de
+      internalID: 1087472003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_60
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 9
+        width: 127
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2563d53a01a92e74ca31ee6b08eb4948
+      internalID: -2130570682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_61
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 9
+        width: 126
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7193b38afa30c34bad54d61b84331f2
+      internalID: 390196908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_62
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 9
+        width: 126
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e42f10495ea914699dd31e9247ea37
+      internalID: 451772082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud04_8x8_63
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 9
+        width: 126
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4635e6255f3b7ce4e9b5b1215292a5b1
+      internalID: 2002236786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5b7d22d1cd43fab4d982e3991f510150
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Cloud04_8x8_13: 1957464114
+      Cloud04_8x8_54: -746801355
+      Cloud04_8x8_57: 468032194
+      Cloud04_8x8_5: 1332949556
+      Cloud04_8x8_10: 1739290213
+      Cloud04_8x8_58: 1357584243
+      Cloud04_8x8_31: -692662315
+      Cloud04_8x8_49: -1537835276
+      Cloud04_8x8_59: 1087472003
+      Cloud04_8x8_39: 707463129
+      Cloud04_8x8_50: 1311009660
+      Cloud04_8x8_23: -1755173525
+      Cloud04_8x8_55: -1175505824
+      Cloud04_8x8_19: 637125634
+      Cloud04_8x8_8: 789901771
+      Cloud04_8x8_2: -1970702271
+      Cloud04_8x8_24: 1778467279
+      Cloud04_8x8_51: -1846006272
+      Cloud04_8x8_32: -763368433
+      Cloud04_8x8_16: -704255005
+      Cloud04_8x8_62: 451772082
+      Cloud04_8x8_44: 409149218
+      Cloud04_8x8_46: 1785394807
+      Cloud04_8x8_48: 2122651749
+      Cloud04_8x8_63: 2002236786
+      Cloud04_8x8_15: 546527882
+      Cloud04_8x8_14: -542611423
+      Cloud04_8x8_60: -2130570682
+      Cloud04_8x8_30: 426986170
+      Cloud04_8x8_17: -301619342
+      Cloud04_8x8_12: -52230211
+      Cloud04_8x8_18: 1338635780
+      Cloud04_8x8_22: -1434974034
+      Cloud04_8x8_28: 14580207
+      Cloud04_8x8_43: 1938848089
+      Cloud04_8x8_42: 1787269454
+      Cloud04_8x8_61: 390196908
+      Cloud04_8x8_11: -1460895928
+      Cloud04_8x8_29: 2354189
+      Cloud04_8x8_38: 1583174738
+      Cloud04_8x8_33: 964644403
+      Cloud04_8x8_52: 991868617
+      Cloud04_8x8_1: 1660852192
+      Cloud04_8x8_7: 483011465
+      Cloud04_8x8_20: -1975690362
+      Cloud04_8x8_35: -119903537
+      Cloud04_8x8_41: -835459327
+      Cloud04_8x8_37: -540425361
+      Cloud04_8x8_4: -1424017857
+      Cloud04_8x8_34: -319016191
+      Cloud04_8x8_53: -1333765464
+      Cloud04_8x8_0: 906623377
+      Cloud04_8x8_47: -1160732239
+      Cloud04_8x8_40: 1067468234
+      Cloud04_8x8_6: 1699806913
+      Cloud04_8x8_21: 255030156
+      Cloud04_8x8_26: -2032919644
+      Cloud04_8x8_25: -1548940259
+      Cloud04_8x8_56: 923998977
+      Cloud04_8x8_3: 1796939539
+      Cloud04_8x8_45: -473060147
+      Cloud04_8x8_27: -982987612
+      Cloud04_8x8_9: -1088992099
+      Cloud04_8x8_36: 1374201564
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
