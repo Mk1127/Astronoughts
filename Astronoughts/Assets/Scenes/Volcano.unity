@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1aec7da1fc2a0474e838f5a024cda1ea, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ef819bde206be52468bfd6dbb625ce51, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -5682,8 +5682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 365.9622, y: 48}
+  m_AnchoredPosition: {x: 6.216, y: 7}
+  m_SizeDelta: {x: 359.75, y: 41}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &524642704
 MonoBehaviour:
@@ -5705,8 +5705,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -11875586, guid: 8f0f0b890e2d8ee4bbf3db0b0c297401, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6559,11 +6559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 290.44
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 272.45
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6595,11 +6595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500
+      value: 640.37476
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 48.000008
+      value: 51.699997
       objectReference: {fileID: 0}
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6612,6 +6612,22 @@ PrefabInstance:
     - target: {fileID: 2558065599510923494, guid: 0fe3070490b796348b4122951858001c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558065600795024817, guid: 0fe3070490b796348b4122951858001c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 106.2816
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558065600795024817, guid: 0fe3070490b796348b4122951858001c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.0663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558065600795024817, guid: 0fe3070490b796348b4122951858001c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4409027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558065600795024817, guid: 0fe3070490b796348b4122951858001c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2869987
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fe3070490b796348b4122951858001c, type: 3}
@@ -11560,7 +11576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1142154003
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12966,12 +12982,12 @@ MonoBehaviour:
   target: {fileID: 788709674}
   X: 0
   Y: 3
-  Z: -5
+  Z: 0
   aX: 7
   aY: 0
   aZ: 0
   smoothSpeed: 0.01
-  damping: 3
+  damping: 20
   rotationSpeed: 1
   minPitch: -30
   maxPitch: 30
@@ -17237,11 +17253,11 @@ RectTransform:
   m_Father: {fileID: 524642703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 14663.049, y: 77021.2}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 280, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636714745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17255,7 +17271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17264,12 +17280,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -25300,8 +25316,8 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  playTexture: {fileID: 2800000, guid: aff2709b4608c3b4b9afbe79d845adb7, type: 3}
-  muteTexture: {fileID: 2800000, guid: 5861e60470ecbbb42829524d9d6849d5, type: 3}
+  playTexture: {fileID: 2800000, guid: 5861e60470ecbbb42829524d9d6849d5, type: 3}
+  muteTexture: {fileID: 2800000, guid: aff2709b4608c3b4b9afbe79d845adb7, type: 3}
   scene: Volcano
   source: {fileID: 1892927206}
   settings: {fileID: 1489639553}
