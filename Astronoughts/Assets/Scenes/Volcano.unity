@@ -806,6 +806,10 @@ MonoBehaviour:
   shipengineEnabled: 0
   shipcockpitEnabled: 0
   spaceshipWholeEnabled: 0
+  GreenFound: 0
+  YellowFound: 0
+  RedFound: 0
+  BlueFound: 0
   grassCheck: 0
   viewCheck: 0
   blockInteract: 0
@@ -3652,7 +3656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -4553,7 +4557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -6979,7 +6983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -13673,7 +13677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -17589,7 +17593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -19145,7 +19149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -24313,7 +24317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
@@ -25514,7 +25518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029289127391262616, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: animationStartDelay
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7198541941302133834, guid: 84f15570ee000764baeac0b2991f27b6, type: 3}
       propertyPath: m_Name
