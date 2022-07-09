@@ -326,18 +326,10 @@ public class Player:MonoBehaviour
     {
         convoPanel.SetActive(true);
         convoText.text = "It's Zero Two!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.green;
-        convoText.text = "Zero One, thank the stars. I thought you were one of the creatures!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.black;
-        convoText.text = "Where are the others?";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.green;
-        convoText.text = "Dunno. But I need Zero Five and the heat panels to fix the ship!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.black;
-        convoText.text = "I'll find them.";
+        //convoText.GetComponent<Text>().color = Color.green;
+        //convoText.text = "Zero One, thank the stars. I thought you were one of the creatures!";
+        //convoText.GetComponent<Text>().color = Color.white;
+        //convoText.text = "Head back to the ship. You'll be safe there.";
         StartCoroutine(Wait());
     }
 
@@ -345,12 +337,10 @@ public class Player:MonoBehaviour
     {
         convoPanel.SetActive(true);
         convoText.text = "It's Zero Four!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.red;
-        convoText.text = "Please find the engine! And Zero Three to help me fix it!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.black;
-        convoText.text = "Don't worry. I'm on it.";
+        //convoText.GetComponent<Text>().color = Color.red;
+        //convoText.text = "Please find the engine! And Zero Three to help me fix it!";
+        //convoText.GetComponent<Text>().color = Color.white;
+        //convoText.text = "Don't worry. I'm on it.";
         StartCoroutine(Wait());
     }
 
@@ -358,24 +348,20 @@ public class Player:MonoBehaviour
     {
         convoPanel.SetActive(true);
         convoText.text = "It's Zero Three!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.yellow;
-        convoText.text = "Have you gone inside the temple? We've got to find the solar panels.";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.black;
-        convoText.text = "I'll have a look. Go back to the ship.";
+        //convoText.GetComponent<Text>().color = Color.yellow;
+        //convoText.text = "Have you gone inside the temple? We've got to find the solar panels.";
+        //convoText.GetComponent<Text>().color = Color.white;
+        //convoText.text = "I'll have a look. Go back to the ship.";
         StartCoroutine(Wait());
     }
     private void BlueConvo()
     {
         convoPanel.SetActive(true);
         convoText.text = "It's Zero Five!";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.blue;
-        convoText.text = "I hope you've located the cockpit. If not, we're stuck here.";
-        StartCoroutine(Pause());
-        convoText.GetComponent<Text>().color = Color.black;
-        convoText.text = "You worry too much. I'll find everything.";
+        //convoText.GetComponent<Text>().color = Color.blue;
+        //convoText.text = "I hope you've located the cockpit. If not, we're stuck here.";
+        //convoText.GetComponent<Text>().color = Color.white;
+        //convoText.text = "You worry too much. I'll find everything.";
         StartCoroutine(Wait());
     }
 
@@ -384,10 +370,6 @@ public class Player:MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         convoPanel.SetActive(false);
-    }
-    IEnumerator Pause()
-    {
-        yield return new WaitForSecondsRealtime(5);
     }
     #endregion
 
