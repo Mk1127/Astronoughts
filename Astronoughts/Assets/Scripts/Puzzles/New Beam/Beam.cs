@@ -61,6 +61,11 @@ public class Beam : MonoBehaviour
 
                 if (!hasCollision)
                 {
+                    if (hit.collider.tag == "Melt")
+                    {
+                        hit.collider.gameObject.SetActive(false);
+                    }
+
                     if (hit.transform.tag != "Mirror" && reflectOffMirror)
                     {
                         for (int j = (i + 1); j <= maxBounces; j++)

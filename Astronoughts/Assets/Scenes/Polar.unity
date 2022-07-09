@@ -1090,7 +1090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7639409723924394982, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5801,7 +5801,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &314788738
 MonoBehaviour:
@@ -10457,7 +10457,7 @@ GameObject:
   - component: {fileID: 601511975}
   m_Layer: 0
   m_Name: ice_wall
-  m_TagString: Untagged
+  m_TagString: Melt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23893,6 +23893,10 @@ MonoBehaviour:
   shipengineEnabled: 0
   shipcockpitEnabled: 0
   spaceshipWholeEnabled: 0
+  GreenFound: 0
+  YellowFound: 0
+  RedFound: 0
+  BlueFound: 0
   grassCheck: 0
   viewCheck: 0
   blockInteract: 0
@@ -32950,7 +32954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033213559}
   m_LocalRotation: {x: -0, y: -0.078441665, z: -0, w: 0.99691874}
-  m_LocalPosition: {x: 34.905895, y: 114.25632, z: -33.84711}
+  m_LocalPosition: {x: 34.905895, y: 114.589, z: -33.84711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

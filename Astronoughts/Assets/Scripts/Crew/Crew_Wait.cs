@@ -35,6 +35,9 @@ public class Crew_Wait : MonoBehaviour
         Vector3 target = (player.position + Vector3.up) - transform.position;
         float singleStep = rotateSpeed * Time.deltaTime;
         Vector3 newDirection = Vector3.RotateTowards(transform.forward,target,singleStep,0f);
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        Quaternion nextDirection = Quaternion.LookRotation(newDirection);
+        nextDirection.x = 0;
+        nextDirection.z = 0;
+        transform.rotation = nextDirection;
     }
 }
