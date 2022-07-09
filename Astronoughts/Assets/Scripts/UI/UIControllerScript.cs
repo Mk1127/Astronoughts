@@ -19,8 +19,8 @@ public class UIControllerScript : MonoBehaviour
     private bool miniMapHidden;
     private bool viewHidden;
     [HideInInspector] public bool clickedView;
-    private bool convoHidden;
-    private bool allHidden;
+    //private bool convoHidden;
+    //private bool allHidden;
 
     [SerializeField] GameObject overlay;
     [SerializeField] GameObject miniMapPanel;
@@ -53,7 +53,7 @@ public class UIControllerScript : MonoBehaviour
         overlayHidden = true;
         miniMapHidden = true;
         viewHidden = true;
-        convoHidden = true;
+        //convoHidden = true;
         //allHidden = false;
 
         overlay.SetActive(false);
@@ -93,7 +93,7 @@ public class UIControllerScript : MonoBehaviour
             overlayHidden = false;
             miniMapHidden = false;
             viewHidden = false;
-            convoHidden = true;
+            //convoHidden = true;
         }
         else
         {
@@ -103,7 +103,7 @@ public class UIControllerScript : MonoBehaviour
             overlayHidden = true;
             miniMapHidden = true;
             viewHidden = true;
-            convoHidden = true;
+            //convoHidden = true;
 
         }
     }

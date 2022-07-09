@@ -15,12 +15,18 @@ public class GameManager : MonoBehaviour
 
     //spaceship model part is enabled/disabled variables
     public bool spaceshipBrokenDownEnabled;
-    public bool spaceshipBrokenUpEnabled;
-    public bool shipsolar1Enabled;
-    public bool shipsolar2Enabled;
-    public bool shipengineEnabled;
-    public bool shipcockpitEnabled;
-    public bool spaceshipWholeEnabled;
+    [HideInInspector] public bool spaceshipBrokenUpEnabled;
+    [HideInInspector] public bool shipsolar1Enabled;
+    [HideInInspector] public bool shipsolar2Enabled;
+    [HideInInspector] public bool shipengineEnabled;
+    [HideInInspector] public bool shipcockpitEnabled;
+    [HideInInspector] public bool spaceshipWholeEnabled;
+
+    //spaceship model part is enabled/disabled variables
+    [HideInInspector] public bool GreenFound;
+    [HideInInspector] public bool YellowFound;
+    [HideInInspector] public bool RedFound;
+    [HideInInspector] public bool BlueFound;
 
     // Hub specific bools
     public bool grassCheck;

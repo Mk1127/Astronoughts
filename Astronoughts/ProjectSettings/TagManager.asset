@@ -41,6 +41,10 @@ TagManager:
   - Laser
   - Mirror
   - Ceiling
+  - Red
+  - Yellow
+  - Green
+  - Blue
   layers:
   - Default
   - TransparentFX

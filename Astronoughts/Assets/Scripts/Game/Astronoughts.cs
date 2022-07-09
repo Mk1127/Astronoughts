@@ -40,6 +40,7 @@ public class Astronoughts : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            StartCoroutine(Pause());
             if(!inHub)
             {
                 UpdateGM();
@@ -56,5 +57,10 @@ public class Astronoughts : MonoBehaviour
     private void ToggleAstro()
     {
 
+    }
+
+    IEnumerator Pause()
+    {
+        yield return new WaitForSecondsRealtime(10);
     }
 }
