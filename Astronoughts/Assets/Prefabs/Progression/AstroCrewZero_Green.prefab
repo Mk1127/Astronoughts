@@ -96,7 +96,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 413165236489519729}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &158016221626109570
 ParticleSystem:
@@ -5113,7 +5113,6 @@ Transform:
   - {fileID: 413165234858494290}
   - {fileID: 1292720173434923310}
   - {fileID: 5326502009467167461}
-  - {fileID: 266895229716353136}
   - {fileID: 158016221626109568}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6393,92 +6392,6 @@ Transform:
   m_Father: {fileID: 891841592439633964}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5186714949794400663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 266895229716353136}
-  - component: {fileID: 4218233536807504008}
-  - component: {fileID: 8292932582485479421}
-  m_Layer: 0
-  m_Name: TurbineThrusters2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &266895229716353136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186714949794400663}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00007817924, y: 0.0501, z: -0.014554796}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 413165236489519729}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4218233536807504008
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186714949794400663}
-  m_Mesh: {fileID: -165478561052219606, guid: 30868255c9bba7d4db6e04f0375d34aa, type: 3}
---- !u!23 &8292932582485479421
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186714949794400663}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 33ba666d373295b48b6fcf59549c0c08, type: 2}
-  - {fileID: 2100000, guid: 2bc50d614cb759b43b3b3afb3f9a6132, type: 2}
-  - {fileID: 2100000, guid: b93a8ba57d902804d9d1153298ce4e24, type: 2}
-  - {fileID: 2100000, guid: a41240eb927486a489e5df5d5ab8594f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5293057036288653068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,6 +7302,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: bb40fb38080db424aaddb7be5d01fd30, type: 2}
     - target: {fileID: 5866666021909216657, guid: a07c92eb7b0824944aced37e1d13ab25, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+        'mixamorig:LeftLeg'\n\tand more ...\n\tFrom animation clip 'Waving'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a07c92eb7b0824944aced37e1d13ab25, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
@@ -7518,8 +7441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   destination: {fileID: 0}
-  rotateSpeed: 0
-  speed: 0
+  rotateSpeed: 2
+  speed: 2
   checkpoints: []
   showCheckpoints: 1
 --- !u!114 &158016222765848793
@@ -7535,8 +7458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rotateSpeed: 1
-  speed: 1
+  rotateSpeed: 2
+  speed: 2
 --- !u!114 &158016222765848794
 MonoBehaviour:
   m_ObjectHideFlags: 0
