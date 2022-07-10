@@ -17,9 +17,9 @@ public class Player_Interact : MonoBehaviour
 
     private void Start()
     {
-        if(interactionText == null)
+        if (interactionText == null)
         {
-            if(!GameObject.Find("InteractionText"))
+            if (!GameObject.Find("InteractionText"))
             {
                 Debug.Log("Interaction Text was not found");
             }
@@ -41,50 +41,14 @@ public class Player_Interact : MonoBehaviour
             {
                 Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
 
-                AutoToggleInteractionText(hit);
-
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    if(hit.collider.GetComponent<Rigidbody>())
-                    {
-                        hit.collider.GetComponent<Rigidbody>().isKinematic = true;
-                    }
-
-                    hit.collider.gameObject.transform.parent = gameObject.transform;
-                    hit.collider.gameObject.transform.localPosition = Vector3.forward + Vector3.up;
-
-                    playerRot.isGrabbing = true;
-                    playerMove.isGrabbing = true;
-                    playerMove.speed = playerMove.startSpeed / 1.5f;
-                    camPivot.enabled = false;
-
-
-                    isHolding = true;
-                }
-                
-                if(Input.GetKeyUp(KeyCode.Mouse0))
-                {
-                    hit.collider.gameObject.transform.parent = null;
-
-                    if (hit.collider.GetComponent<Rigidbody>())
-                    {
-                        hit.collider.GetComponent<Rigidbody>().isKinematic = false;
-                    }
-
-                    playerRot.isGrabbing = false;
-                    playerMove.isGrabbing = false;
-                    playerMove.speed = playerMove.startSpeed;
-                    camPivot.enabled = true;
-
-                    isHolding = false;
-                }
+                AutoToggleInteractionText(hit.transform);
             }
 
             if (hit.collider.tag == "Totem")
             {
                 isHolding = false;
 
-                AutoToggleInteractionText(hit);
+                AutoToggleInteractionText(hit.transform);
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
@@ -92,14 +56,14 @@ public class Player_Interact : MonoBehaviour
                 }
             }
 
-            if(hit.collider.tag == "Lever")
+            if (hit.collider.tag == "Lever")
             {
                 isHolding = false;
 
-                AutoToggleInteractionText(hit);
+                AutoToggleInteractionText(hit.transform);
 
 
-                if(hit.collider.GetComponent<Lever>())
+                if (hit.collider.GetComponent<Lever>())
                 {
                     Lever lever = hit.collider.gameObject.GetComponent<Lever>();
 
@@ -129,7 +93,7 @@ public class Player_Interact : MonoBehaviour
         }
         else
         {
-            if(interactionText != null)
+            if (interactionText != null)
             {
                 if (interactionText.gameObject.activeSelf == true)
                 {
@@ -155,7 +119,7 @@ public class Player_Interact : MonoBehaviour
             gameObject.transform.position = lastCheckpoint;
             gameObject.GetComponent<CharacterController>().enabled = true;
 
-            if(other.transform.childCount > 0)
+            if (other.transform.childCount > 0)
             {
                 other.gameObject.GetComponentInChildren<Enemy_StateMachine>().ToggleFollow(false, true);
             }
@@ -171,7 +135,7 @@ public class Player_Interact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Grass")
+        if (other.tag == "Grass")
         {
             isHidden = false;
         }
@@ -181,13 +145,13 @@ public class Player_Interact : MonoBehaviour
             lastCheckpoint = other.transform.position;
         }
 
-        if(other.tag == "Rock")
+        if (other.tag == "Rock")
         {
             transform.parent = null;
         }
     }
 
-    private void AutoToggleInteractionText(RaycastHit hit)
+    public void AutoToggleInteractionText(Transform hit)
     {
         if (isHolding)
         {
@@ -204,5 +168,26 @@ public class Player_Interact : MonoBehaviour
                 interactionText.gameObject.SetActive(true);
             }
         }
+    }
+
+    public void LockPlayer()
+    {
+        playerRot.isGrabbing = true;
+        playerMove.isGrabbing = true;
+        playerMove.speed = playerMove.startSpeed / 1.5f;
+        camPivot.enabled = false;
+
+
+        isHolding = true;
+    }
+
+    public void ReleasePlayer()
+    {
+        playerRot.isGrabbing = false;
+        playerMove.isGrabbing = false;
+        playerMove.speed = playerMove.startSpeed;
+        camPivot.enabled = true;
+
+        isHolding = false;
     }
 }

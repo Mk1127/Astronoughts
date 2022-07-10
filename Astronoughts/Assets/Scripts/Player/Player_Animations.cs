@@ -15,13 +15,20 @@ public class Player_Animations : MonoBehaviour
         {
             if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
-                if(playerIS.isHidden)
+                if(playerMovement.isGrabbing)
                 {
-                    playerAnimator.Play("Crouch Walking");
+                    playerAnimator.Play("Pushing");
                 }
                 else
                 {
-                    playerAnimator.Play("Running");
+                    if (playerIS.isHidden)
+                    {
+                        playerAnimator.Play("Crouch Walking");
+                    }
+                    else
+                    {
+                        playerAnimator.Play("Running");
+                    }
                 }
             }
             else
