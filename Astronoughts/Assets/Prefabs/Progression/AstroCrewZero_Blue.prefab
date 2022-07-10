@@ -2139,7 +2139,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6223811021391088451, guid: 8941dc903e92cab488aff14b90e1c837, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c402f5c0ed6c3404984ceffa44a781bd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astroIndex: 0
-  inHub: 1
+  inHub: 0
   gm: {fileID: 0}
 --- !u!1 &9206106678331649579
 GameObject:
@@ -2526,8 +2526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rotateSpeed: 1
-  speed: 1
+  rotateSpeed: 2
+  speed: 2
 --- !u!114 &433545268607785051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,8 +2561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   destination: {fileID: 0}
-  rotateSpeed: 0
-  speed: 0
+  rotateSpeed: 2
+  speed: 2
   checkpoints: []
   showCheckpoints: 1
 --- !u!114 &5052911803065957851

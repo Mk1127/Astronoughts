@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool YellowFound;
     [HideInInspector] public bool RedFound;
     [HideInInspector] public bool BlueFound;
+    [HideInInspector] public bool OrangeFound;
 
     // Hub specific bools
     public bool grassCheck;
@@ -129,10 +130,6 @@ public class GameManager : MonoBehaviour
         
         // Find the inventory slots and add them to the partsList
         GetSlots();
-        if(scene == "Hub")
-        {
-
-        }
     }
 
     private void Prepare()
