@@ -48,10 +48,6 @@ public class Player:MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
-    //private bool allCrew;
-    //private bool allParts;
-    //private bool fixedShip;
-    //private bool didWin;
     #endregion
 
     #region Properties
@@ -161,9 +157,6 @@ public class Player:MonoBehaviour
         if(other.tag == "Enemy")
         {
             gameObject.GetComponent<AudioSource>().Play();
-            //convoPanel.SetActive(true);
-            //convoText.text = "Argh!";
-            //StartCoroutine(Wait());
         }
 
         if(other.tag == "Red")
@@ -172,7 +165,6 @@ public class Player:MonoBehaviour
             {
                 gmScript.RedFound = true;
                 print("Collided with " + other.gameObject.name);
-                //other.gameObject.GetComponent<AudioSource>().Play();
                 gmScript.crew++;
                 gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
@@ -187,7 +179,6 @@ public class Player:MonoBehaviour
             {
                 gmScript.BlueFound = true;
                 print("Collided with " + other.gameObject.name);
-                //other.gameObject.GetComponent<AudioSource>().Play();
                 gmScript.crew++;
                 gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
@@ -202,7 +193,6 @@ public class Player:MonoBehaviour
             {
                 gmScript.GreenFound = true;
                 print("Collided with " + other.gameObject.name);
-                //other.gameObject.GetComponent<AudioSource>().Play();
                 gmScript.crew++;
                 gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
@@ -217,12 +207,25 @@ public class Player:MonoBehaviour
             {
                 gmScript.YellowFound = true;
                 print("Collided with " + other.gameObject.name);
-                //other.gameObject.GetComponent<AudioSource>().Play();
                 gmScript.crew++;
                 gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 YellowConvo();
+            }
+        }
+
+        if(other.tag == "Orange")
+        {
+            if(gmScript.OrangeFound == false)
+            {
+                gmScript.OrangeFound = true;
+                print("Collided with " + other.gameObject.name);
+                gmScript.crew++;
+                gmScript.GatherStats();
+                crewText.text = "Crew: " + gmScript.Crew;
+                convoPanel.SetActive(true);
+                OrangeConvo();
             }
         }
 
@@ -325,22 +328,21 @@ public class Player:MonoBehaviour
     private void GreenConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Two!";
-        //convoText.GetComponent<Text>().color = Color.green;
-        //convoText.text = "Zero One, thank the stars. I thought you were one of the creatures!";
-        //convoText.GetComponent<Text>().color = Color.white;
-        //convoText.text = "Head back to the ship. You'll be safe there.";
+        convoText.text = "It's Zero Four!";
         StartCoroutine(Wait());
     }
 
     private void RedConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Four!";
-        //convoText.GetComponent<Text>().color = Color.red;
-        //convoText.text = "Please find the engine! And Zero Three to help me fix it!";
-        //convoText.GetComponent<Text>().color = Color.white;
-        //convoText.text = "Don't worry. I'm on it.";
+        convoText.text = "It's Zero Six!";
+        StartCoroutine(Wait());
+    }
+
+    private void OrangeConvo()
+    {
+        convoPanel.SetActive(true);
+        convoText.text = "It's Zero Five!";
         StartCoroutine(Wait());
     }
 
@@ -348,20 +350,12 @@ public class Player:MonoBehaviour
     {
         convoPanel.SetActive(true);
         convoText.text = "It's Zero Three!";
-        //convoText.GetComponent<Text>().color = Color.yellow;
-        //convoText.text = "Have you gone inside the temple? We've got to find the solar panels.";
-        //convoText.GetComponent<Text>().color = Color.white;
-        //convoText.text = "I'll have a look. Go back to the ship.";
         StartCoroutine(Wait());
     }
     private void BlueConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Five!";
-        //convoText.GetComponent<Text>().color = Color.blue;
-        //convoText.text = "I hope you've located the cockpit. If not, we're stuck here.";
-        //convoText.GetComponent<Text>().color = Color.white;
-        //convoText.text = "You worry too much. I'll find everything.";
+        convoText.text = "It's Zero Two!";
         StartCoroutine(Wait());
     }
 
