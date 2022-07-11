@@ -30245,7 +30245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  astroIndex: 1
+  astroIndex: 2
   inHub: 0
   gm: {fileID: 0}
 --- !u!4 &1879858598 stripped
