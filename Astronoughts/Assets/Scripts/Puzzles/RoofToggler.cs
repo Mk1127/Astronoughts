@@ -48,14 +48,23 @@ public class RoofToggler : MonoBehaviour
             {
                 Debug.Log("Roof turns off");
                 child.gameObject.GetComponent<Renderer>().enabled = false;
-                astronought.SetActive(false);
+
+                if(astronought != null)
+                {
+                    astronought.SetActive(false);
+                }
+                
             }
         //turns renderer back off on exit
             else 
             {
                 Debug.Log("Roof turns on");
                 child.gameObject.GetComponent<Renderer>().enabled = true;
-                astronought.SetActive(true);
+
+                if (astronought != null)
+                {
+                    astronought.SetActive(true);
+                }
             }
         //toggleAllChildren(child.gameObject);
     }
