@@ -893,6 +893,7 @@ MonoBehaviour:
   YellowFound: 0
   RedFound: 0
   BlueFound: 0
+  OrangeFound: 0
   grassCheck: 0
   viewCheck: 0
   blockInteract: 0
@@ -913,7 +914,7 @@ MonoBehaviour:
   engineEnabled: 0
   cockpitEnabled: 0
   partList: []
-  astronoughtsFound: 0000
+  astronoughtsFound: 00000000
   contentContainer: {fileID: 0}
 --- !u!4 &43639558
 Transform:
@@ -30148,6 +30149,22 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: checkpoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: checkpoints.Array.data[0].x
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: checkpoints.Array.data[1].x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: checkpoints.Array.data[1].z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6727261104576276292, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: speed
       value: 2
@@ -30208,8 +30225,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: AstroCrewZero_Red
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6961781019365828909, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+--- !u!1 &1875964177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7808220454985290889, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+  m_PrefabInstance: {fileID: 1875964176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875964178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875964177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astroIndex: 1
+  inHub: 0
+  gm: {fileID: 0}
 --- !u!4 &1879858598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d679c7559d9b42041974c688e2cf7a55, type: 3}
