@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Door_Door : MonoBehaviour
 {
-    [SerializeField] float lowerDistance;
-    bool isLowered = false;
+    [SerializeField] public float lowerDistance;
+    [SerializeField] bool isLowered = false;
     // Start is called before the first frame update
     void Start()
     {

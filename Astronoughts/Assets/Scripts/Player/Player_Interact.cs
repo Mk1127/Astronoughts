@@ -37,13 +37,6 @@ public class Player_Interact : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out hit, rayDistance))
         {
 
-            if (hit.collider.tag == "Block")
-            {
-                Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
-
-                AutoToggleInteractionText(hit.transform);
-            }
-
             if (hit.collider.tag == "Totem")
             {
                 isHolding = false;
@@ -56,7 +49,7 @@ public class Player_Interact : MonoBehaviour
                 }
             }
 
-            if (hit.collider.tag == "Lever")
+            /*if (hit.collider.tag == "Lever")
             {
                 isHolding = false;
 
@@ -89,7 +82,7 @@ public class Player_Interact : MonoBehaviour
                     }
                 }
 
-            }
+            }*/
         }
         else
         {
