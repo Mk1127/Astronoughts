@@ -36,7 +36,7 @@ public class Moveable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, playerGO.transform.position) < 5f)
+        if (Vector3.Distance(transform.position, playerGO.transform.position) < 3f)
         {
             RaycastHit hit;
 
@@ -48,60 +48,78 @@ public class Moveable : MonoBehaviour
 
                 if (hit.collider.tag == "Player")
                 {
-                    SetMaterial(1);
-
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    if(playerIS.currentInteraction == "")
                     {
-                        if (lockPlayer)
-                        {
-                            playerIS.LockPlayer();
-                        }
-                        else
-                        {
-                            GetComponent<Rigidbody>().isKinematic = true;
-                        }
-
-                        transform.position = playerGO.transform.position + (playerGO.transform.forward * 1.5f) + Vector3.up;
-                        transform.parent = playerGO.transform;
+                        playerIS.currentInteraction = this.name;
                     }
 
-                    if (Input.GetKeyUp(KeyCode.Mouse0))
+                    if(playerIS.currentInteraction == this.name)
                     {
                         SetMaterial(1);
 
-                        if (lockPlayer)
+                        if (Input.GetKeyDown(KeyCode.Mouse0))
                         {
-                            playerIS.ReleasePlayer();
-                        }
-                        else
-                        {
-                            GetComponent<Rigidbody>().isKinematic = false;
+                            if (lockPlayer)
+                            {
+                                playerIS.LockPlayer();
+                            }
+                            else
+                            {
+                                GetComponent<Rigidbody>().isKinematic = true;
+                            }
+
+                            transform.position = playerGO.transform.position + (playerGO.transform.forward * 1.5f) + Vector3.up;
+                            transform.parent = playerGO.transform;
                         }
 
-                        transform.parent = null;
+                        if (Input.GetKeyUp(KeyCode.Mouse0))
+                        {
+                            SetMaterial(1);
+
+                            if (lockPlayer)
+                            {
+                                playerIS.ReleasePlayer();
+                            }
+                            else
+                            {
+                                GetComponent<Rigidbody>().isKinematic = false;
+                            }
+                            transform.parent = null;
+                        }
                     }
                 }
                 else
                 {
-                    SetMaterial(0);
+                    if (playerIS.currentInteraction == this.name)
+                    {
+                        playerIS.currentInteraction = "";
+                        SetMaterial(0);
+                    }
                 }
             }
         }
         else
         {
-            SetMaterial(0);
+            if(playerIS.currentInteraction == this.name)
+            {
+                playerIS.currentInteraction = "";
+                SetMaterial(0);
+            }
         }
     }
 
     private void SetMaterial(int index)
     {
-        if (materials.Count < 2)
+        if(renderer.material != materials[index])
         {
-            Debug.LogError(transform.name + " needs 2 materials in the Moveable script");
-        }
-        else
-        {
-            renderer.material = materials[index];
+            if (materials.Count < 2)
+            {
+                Debug.LogError(transform.name + " needs 2 materials in the Moveable script");
+            }
+            else
+            {
+                renderer.material = materials[index];
+            }
         }
     }
 }

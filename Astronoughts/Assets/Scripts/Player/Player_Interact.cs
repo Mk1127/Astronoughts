@@ -12,8 +12,11 @@ public class Player_Interact : MonoBehaviour
     [SerializeField] InteractionText interactionText;
     [SerializeField] Vector3 lastCheckpoint;
 
+
     public bool isHidden;
     private bool isHolding = false;
+
+    public string currentInteraction = "";
 
     private void Start()
     {
@@ -37,52 +40,6 @@ public class Player_Interact : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out hit, rayDistance))
         {
 
-            if (hit.collider.tag == "Totem")
-            {
-                isHolding = false;
-
-                AutoToggleInteractionText(hit.transform);
-
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    hit.collider.gameObject.GetComponent<Sequence_Totem>().ToggleTotem();
-                }
-            }
-
-            /*if (hit.collider.tag == "Lever")
-            {
-                isHolding = false;
-
-                AutoToggleInteractionText(hit.transform);
-
-
-                if (hit.collider.GetComponent<Lever>())
-                {
-                    Lever lever = hit.collider.gameObject.GetComponent<Lever>();
-
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
-                    {
-                        if (lever.raise)
-                        {
-                            lever.RaiseDoor();
-                        }
-                        else
-                        {
-                            lever.LowerDoor();
-                        }
-                    }
-                }
-                else
-                {
-                    Door_Switch doorSwitch = hit.collider.gameObject.GetComponent<Door_Switch>();
-
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
-                    {
-                        doorSwitch.ToggleDoors();
-                    }
-                }
-
-            }*/
         }
         else
         {
