@@ -44,7 +44,6 @@ public class Astronoughts : MonoBehaviour
             if(!inHub)
             {
                 UpdateGM();
-                gameObject.SetActive(false);
             }
         }
     }
