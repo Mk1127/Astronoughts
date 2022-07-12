@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionText : MonoBehaviour
 {
@@ -9,10 +10,44 @@ public class InteractionText : MonoBehaviour
 
     [SerializeField] Camera cam;
 
+    [SerializeField] GameManager gm;
+
+    [Header("For Ship Only")]
+    [SerializeField] bool isShip;
+    [SerializeField] bool isFinished;
+
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameManager.gameManager;
+
         cam = Camera.main;
+
+        if (isShip)
+        {
+            if(gm.parts < 5)
+            {
+                if(isFinished)
+                {
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                if(isFinished)
+                {
+                    gameObject.SetActive(true);
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -27,9 +62,13 @@ public class InteractionText : MonoBehaviour
             }
         }
 
-        if(lookAt.gameObject.activeSelf == false)
+        if(!isShip)
         {
-            gameObject.SetActive(false);
+            if (lookAt.gameObject.activeSelf == false)
+            {
+                gameObject.SetActive(false);
+            }
         }
+
     }
 }

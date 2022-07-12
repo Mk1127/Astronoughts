@@ -12,7 +12,7 @@ public class Portal : MonoBehaviour
     {
         gm = GameManager.gameManager;
 
-        if (nextScene == "Menu")
+        if (nextScene == "SpaceShipWinSequence")
         {
             if(gm.parts < 5)
             {
