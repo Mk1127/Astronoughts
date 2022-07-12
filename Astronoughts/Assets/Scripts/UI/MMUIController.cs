@@ -24,6 +24,17 @@ public class MMUIController : MonoBehaviour
     public Button helpButton;
     public Button quitButton;
 
+    public Image Results;
+
+    public Sprite wPress;
+    public Sprite aPress;
+    public Sprite sPress;
+    public Sprite dPress;
+    public Sprite waPress;
+    public Sprite wdPress;
+    public Sprite asPress;
+    public Sprite dsPress;
+
     int panelIndex = 0;
 
     public Text text;
@@ -97,6 +108,28 @@ public class MMUIController : MonoBehaviour
     }
 
     #region Functions
+
+    public void OnWButtonClick()
+    {
+        Results = GameObject.Find("Results").GetComponent<Image>();
+        Results.sprite = wPress;
+    }
+    public void OnSButtonClick()
+    {
+        Results = GameObject.Find("Results").GetComponent<Image>();
+        Results.sprite = sPress;
+    }
+    public void OnDButtonClick()
+    {
+        Results = GameObject.Find("Results").GetComponent<Image>();
+        Results.sprite = dPress;
+    }
+    public void OnAButtonClick()
+    {
+        Results = GameObject.Find("Results").GetComponent<Image>();
+        Results.sprite = aPress;
+    }
+
     public void OnStartButtonClick()
     {
         // This button was clicked.
