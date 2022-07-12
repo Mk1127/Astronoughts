@@ -91,7 +91,7 @@ public class Player_Movement : MonoBehaviour
     {
         RaycastHit hit;
         Debug.DrawRay(transform.position + Vector3.up * 0.1f, Vector3.down * 0.5f, Color.cyan);
-        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.75f))
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.25f))
         {
             if(!hit.collider.isTrigger)
             {
@@ -191,7 +191,7 @@ public class Player_Movement : MonoBehaviour
 
     void Hover()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //On Press Space check for the following before starting to hover: Is not hovering, Is on the ground, and thrustGuage(fuel) is greater than 0. 
+        if (Input.GetKey(KeyCode.Space)) //On Press Space check for the following before starting to hover: Is not hovering, Is on the ground, and thrustGuage(fuel) is greater than 0. 
         {
             if (!hovering)
             {
@@ -205,12 +205,16 @@ public class Player_Movement : MonoBehaviour
                 }
             }
         }
-
-        if(Input.GetKeyUp(KeyCode.Space))
+        else
         {
             hovering = false;
             reverseGravity = false;
         }
+
+        /*if(Input.GetKeyUp(KeyCode.Space))
+        {
+
+        }*/
     }
 
     public void Jump()
@@ -267,6 +271,7 @@ public class Player_Movement : MonoBehaviour
                 StartCoroutine(DrainThrusters());
                 yield break;
             }
+
         }
     }
 

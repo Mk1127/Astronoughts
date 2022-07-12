@@ -32,11 +32,18 @@ public class Player_Interact : MonoBehaviour
             }
         }
 
+        if (interactionText.gameObject.activeSelf == true)
+        {
+            interactionText.gameObject.SetActive(false);
+        }
+
+
     }
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
+        /*RaycastHit hit;
+
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out hit, rayDistance))
         {
 
@@ -50,7 +57,7 @@ public class Player_Interact : MonoBehaviour
                     interactionText.gameObject.SetActive(false);
                 }
             }
-        }
+        }*/
     }
 
     private void OnTriggerStay(Collider other)
