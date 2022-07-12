@@ -17,6 +17,7 @@ public class Crew_StateMachine : MonoBehaviour
     [SerializeField] Animator crewAnimator;
 
     private bool playerFound = false;
+    [SerializeField] bool inHub = false;
 
     public LayerMask ignoreLayer;
 
@@ -25,6 +26,12 @@ public class Crew_StateMachine : MonoBehaviour
         if(player == null)
         {
             player = GameObject.FindWithTag("Player");
+        }
+
+        if(inHub)
+        {
+            ToggleMove(false, true);
+            playerFound = true;
         }
 
         wait.enabled = true;
