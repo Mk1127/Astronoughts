@@ -7,6 +7,8 @@ public class Astronoughts : MonoBehaviour
     public int astroIndex;
     [SerializeField] bool inHub;
     [SerializeField] GameManager gm;
+    [SerializeField] Animator anim;
+    [SerializeField] string animationName;
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class Astronoughts : MonoBehaviour
             if (gm.astronoughtsFound[astroIndex])
             {
                 gameObject.SetActive(true);
+                anim.Play(animationName);
             }
             else
             {
@@ -34,6 +37,8 @@ public class Astronoughts : MonoBehaviour
                 gameObject.SetActive(true);
             }
         }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
