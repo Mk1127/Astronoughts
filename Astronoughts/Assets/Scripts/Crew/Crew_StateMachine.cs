@@ -90,7 +90,14 @@ public class Crew_StateMachine : MonoBehaviour
             }
             else
             {
-                crewAnimator.Play("Running");
+                if(inHub)
+                {
+                    crewAnimator.Play("Walking");
+                }
+                else
+                {
+                    crewAnimator.Play("Running");
+                }
             }
         }
 
