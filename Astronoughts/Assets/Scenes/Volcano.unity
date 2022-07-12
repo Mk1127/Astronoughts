@@ -30139,7 +30139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: destination
@@ -30147,7 +30147,7 @@ PrefabInstance:
       objectReference: {fileID: 141315565}
     - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: rotateSpeed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5078758408213055382, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: checkpoints.Array.size
@@ -30248,6 +30248,13 @@ MonoBehaviour:
   astroIndex: 2
   inHub: 0
   gm: {fileID: 0}
+  anim: {fileID: 1875964179}
+  animationName: Idle
+--- !u!95 &1875964179 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1354744669373093588, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+  m_PrefabInstance: {fileID: 1875964176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1879858598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d679c7559d9b42041974c688e2cf7a55, type: 3}

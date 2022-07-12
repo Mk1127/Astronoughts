@@ -1833,8 +1833,8 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  playTexture: {fileID: 2800000, guid: 5861e60470ecbbb42829524d9d6849d5, type: 3}
-  muteTexture: {fileID: 2800000, guid: aff2709b4608c3b4b9afbe79d845adb7, type: 3}
+  playTexture: {fileID: 2800000, guid: 2a9ab91cea9234c43b2f3e41395419b1, type: 3}
+  muteTexture: {fileID: 2800000, guid: bc2d6daa74cc3434ab8194f1104124bc, type: 3}
   scene: SplashScreen
   source: {fileID: 513482425}
   settings: {fileID: 1743585155}
@@ -4178,6 +4178,11 @@ MonoBehaviour:
   shipengineEnabled: 0
   shipcockpitEnabled: 0
   spaceshipWholeEnabled: 0
+  GreenFound: 0
+  YellowFound: 0
+  RedFound: 0
+  BlueFound: 0
+  OrangeFound: 0
   grassCheck: 0
   viewCheck: 0
   blockInteract: 0
@@ -4398,6 +4403,15 @@ MonoBehaviour:
   controlsButton: {fileID: 2070592251}
   helpButton: {fileID: 103873442}
   quitButton: {fileID: 1293243807}
+  Results: {fileID: 0}
+  wPress: {fileID: 21300000, guid: 9ddea70359f64654aaf0a259714419f5, type: 3}
+  aPress: {fileID: 21300000, guid: 0fcfa61f3141f8f43b0b55e1dfdcd97d, type: 3}
+  sPress: {fileID: 21300000, guid: 05e7f12fd7264514186385213bb9310c, type: 3}
+  dPress: {fileID: 21300000, guid: bf486399ff4dc1644b84e56513c5c05f, type: 3}
+  waPress: {fileID: 21300000, guid: 5bb502e1eff19b34b95e15907b3a35b2, type: 3}
+  wdPress: {fileID: 21300000, guid: 478a2c29ac57a7b4983a58a5b1f17261, type: 3}
+  asPress: {fileID: 21300000, guid: 572e9fb098df5aa4da0fea2c8825d79a, type: 3}
+  dsPress: {fileID: 21300000, guid: 611ef83eea22518439f7a60fa966c4a0, type: 3}
   text: {fileID: 1634657199}
   text2: {fileID: 1850150954}
   text3: {fileID: 960111804}
