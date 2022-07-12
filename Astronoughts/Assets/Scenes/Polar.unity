@@ -357,7 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3608722daa974d4d9095bc49d86c67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 211f243fb59c98242acc9a4b9980fbcd, type: 2}
+  - {fileID: 2100000, guid: 8e5133bbf1bd4c34d858093f58c077cf, type: 2}
   playerGO: {fileID: 0}
   playerIS: {fileID: 0}
   lockPlayer: 1
@@ -9717,7 +9719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  astroIndex: 0
+  astroIndex: 3
   inHub: 0
   gm: {fileID: 0}
   anim: {fileID: 523648296}
@@ -11207,8 +11209,8 @@ MonoBehaviour:
   - {fileID: 137844242}
   materials: []
   isLever: 1
-  leverHandle: {fileID: 0}
-  leverHandleAnimator: {fileID: 0}
+  leverHandle: {fileID: 1982168479}
+  leverHandleAnimator: {fileID: 1982168482}
 --- !u!1001 &644962819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23739,7 +23741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3608722daa974d4d9095bc49d86c67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 211f243fb59c98242acc9a4b9980fbcd, type: 2}
+  - {fileID: 2100000, guid: 8e5133bbf1bd4c34d858093f58c077cf, type: 2}
   playerGO: {fileID: 0}
   playerIS: {fileID: 0}
   lockPlayer: 1
@@ -24377,7 +24381,7 @@ MonoBehaviour:
   engineEnabled: 0
   cockpitEnabled: 0
   partList: []
-  astronoughtsFound: 
+  astronoughtsFound: 00000000
   contentContainer: {fileID: 907811429}
 --- !u!4 &1442118851
 Transform:
@@ -32656,6 +32660,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91cc9533525a567438b4752977e52465, type: 3}
   m_PrefabInstance: {fileID: 1969009582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982168478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1002232137509595086, guid: 5c6260b08a1f33342a45b5009a55a147, type: 3}
+  m_PrefabInstance: {fileID: 1326749161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1982168479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4368486588148642944, guid: 5c6260b08a1f33342a45b5009a55a147, type: 3}
+  m_PrefabInstance: {fileID: 1326749161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1982168482
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982168478}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1606b24b9a2184348883c57045493b5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1986987077
 PrefabInstance:
   m_ObjectHideFlags: 0

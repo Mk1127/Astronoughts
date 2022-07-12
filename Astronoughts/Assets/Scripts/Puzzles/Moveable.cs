@@ -110,13 +110,13 @@ public class Moveable : MonoBehaviour
 
     private void SetMaterial(int index)
     {
-        if(renderer.material != materials[index])
+        if (materials.Count < 2)
         {
-            if (materials.Count < 2)
-            {
-                Debug.LogError(transform.name + " needs 2 materials in the Moveable script");
-            }
-            else
+            Debug.LogError(transform.name + " needs 2 materials in the Moveable script");
+        }
+        else
+        {
+            if (renderer.material != materials[index])
             {
                 renderer.material = materials[index];
             }
