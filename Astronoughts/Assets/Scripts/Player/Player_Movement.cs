@@ -34,6 +34,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float fadeTime;
     [SerializeField] public float thrustGauge = 100;
     [HideInInspector] public bool hovering = false;
+    [HideInInspector] public bool canHover = true;
 
     [Header("Detection")]
     [SerializeField] public bool isGrounded = false;
@@ -63,7 +64,10 @@ public class Player_Movement : MonoBehaviour
 
         if(!isGrabbing)
         {
-            Hover();
+            if(canHover)
+            {
+                Hover();
+            }
         }
 
         Jump();

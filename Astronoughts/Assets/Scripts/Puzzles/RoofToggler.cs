@@ -15,58 +15,37 @@ public class RoofToggler : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(exit)
+            if(exit == true)
             {
-                toggleAllChildren(roof);
+                toggleAllChildren(roof, true);
+                other.GetComponent<Player_Movement>().canHover = true;
+            }
+            else
+            {
+                toggleAllChildren(roof, false);
+                other.GetComponent<Player_Movement>().canHover = false;
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void toggleAllChildren(GameObject roof, bool toggleRoof)
     {
-        if(other.tag == "Player")
-        {
-            if(!exit)
-            {
-                toggleAllChildren(roof);
-            }
-        }
-    }
-
-    private void toggleAllChildren(GameObject roof){
     
-    foreach (Transform child in roof.transform){
-        if (null == child)
-            continue;
-        if (child.gameObject.GetComponent<Renderer>()==null)
-            continue;
-        //child.gameobject contains the current child
-        //listOfChildren.Add(child.gameObject);
-        //component m_Renderer = child.gameObject.GetComponent<Renderer>();
-        //turns renderer off on entry
-            if (child.gameObject.GetComponent<Renderer>().enabled == true)
-            {
-                Debug.Log("Roof turns off");
-                child.gameObject.GetComponent<Renderer>().enabled = false;
+        foreach (Transform child in roof.transform)
+        {
+            if (null == child)
+                continue;
+            if (child.gameObject.GetComponent<Renderer>()==null)
+                continue;
+
+               Debug.Log("Roof turns off");
+                child.gameObject.GetComponent<Renderer>().enabled = toggleRoof;
 
                 if(astronought != null)
                 {
-                    astronought.SetActive(false);
+                    astronought.SetActive(toggleRoof);
                 }
                 
-            }
-        //turns renderer back off on exit
-            else 
-            {
-                Debug.Log("Roof turns on");
-                child.gameObject.GetComponent<Renderer>().enabled = true;
-
-                if (astronought != null)
-                {
-                    astronought.SetActive(true);
-                }
-            }
-        //toggleAllChildren(child.gameObject);
+        }
     }
-}
 }
