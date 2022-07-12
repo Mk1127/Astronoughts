@@ -26,5 +26,10 @@ public class InteractionText : MonoBehaviour
                 transform.position = pos;
             }
         }
+
+        if(lookAt.gameObject.activeSelf == false)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
