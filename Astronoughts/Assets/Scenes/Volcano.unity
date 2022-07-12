@@ -30173,6 +30173,14 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6961781019365828901, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: m_Volume
+      value: 0.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961781019365828901, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 86b0a5ebda2e6ad4c8d839fd1f13e7f6, type: 3}
     - target: {fileID: 6961781019365828909, guid: 17f0a4679f8c5ff40b632fab4a515045, type: 3}
       propertyPath: astroIndex
       value: 0
