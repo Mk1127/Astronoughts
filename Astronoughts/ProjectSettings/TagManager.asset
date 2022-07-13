@@ -46,6 +46,7 @@ TagManager:
   - Green
   - Blue
   - Melt
+  - Orange
   layers:
   - Default
   - TransparentFX
