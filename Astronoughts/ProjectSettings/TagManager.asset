@@ -47,6 +47,9 @@ TagManager:
   - Blue
   - Melt
   - Orange
+  - GrassTag
+  - PartTag
+  - ViewTag
   layers:
   - Default
   - TransparentFX
