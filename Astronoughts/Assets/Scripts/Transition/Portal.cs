@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Portal : MonoBehaviour
 {
     [SerializeField] string nextScene;
     GameManager gm;
+    private AudioSource source;
+    private AudioClip clip;
 
     private void Start()
     {
@@ -14,7 +17,7 @@ public class Portal : MonoBehaviour
 
         if (nextScene == "SpaceShipWinSequence")
         {
-            if(gm.parts < 5)
+            if(gm.Parts < 5 && gm.Crew < 4)
             {
                 gameObject.SetActive(false);
             }

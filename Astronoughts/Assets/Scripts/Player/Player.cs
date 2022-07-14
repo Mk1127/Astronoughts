@@ -45,6 +45,7 @@ public class Player:MonoBehaviour
     public Button inventoryButton;
     private GameObject inventory;
     private Inventory invScript;
+    private SpaceShipControl spaceshipControlScript;
 
     public List<Item> items = new List<Item>();
 
@@ -84,7 +85,7 @@ public class Player:MonoBehaviour
         invScript = inventory.GetComponent<Inventory>();
         fuelText = GameObject.Find("FuelText").GetComponent<Text>();
         fuelImage = GameObject.Find("FuelImage").GetComponent<Image>();
-        convoText = GameObject.Find("convoText").GetComponent<Text>();
+        //convoText = GameObject.Find("convoText").GetComponent<Text>();
         //crewText = GameObject.Find("crewText").GetComponent<Text>();
         //partsText = GameObject.Find("partsText").GetComponent<Text>();
         partsText.text = "Parts: " + gmScript.Parts;
@@ -94,6 +95,7 @@ public class Player:MonoBehaviour
     private void Update()
     {
         CheckFuel();
+        GetReady();
     }
 
     #region Functions
@@ -104,7 +106,15 @@ public class Player:MonoBehaviour
 
         if(gmScript.Parts == 5)
         {
-            convoText.text = "You've collected all the ship parts!";
+            convoText.text = "I've collected all the ship parts!";
+            gmScript.spaceshipWholeEnabled = true;
+            //didWin = true;
+            StartCoroutine(Wait());
+            //SceneManager.LoadScene("GameOver");
+        }
+        if(gmScript.Crew == 4)
+        {
+            convoText.text = "I've found all of my crew!";
             gmScript.spaceshipWholeEnabled = true;
             //didWin = true;
             StartCoroutine(Wait());
@@ -165,8 +175,9 @@ public class Player:MonoBehaviour
             {
                 gmScript.RedFound = true;
                 print("Collided with " + other.gameObject.name);
-                gmScript.crew++;
-                gmScript.GatherStats();
+                other.gameObject.GetComponent<AudioSource>().Play();
+                gmScript.Crew++;
+                //gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 RedConvo();
@@ -179,8 +190,9 @@ public class Player:MonoBehaviour
             {
                 gmScript.BlueFound = true;
                 print("Collided with " + other.gameObject.name);
-                gmScript.crew++;
-                gmScript.GatherStats();
+                other.gameObject.GetComponent<AudioSource>().Play();
+                gmScript.Crew++;
+                //gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 BlueConvo();
@@ -193,8 +205,9 @@ public class Player:MonoBehaviour
             {
                 gmScript.GreenFound = true;
                 print("Collided with " + other.gameObject.name);
-                gmScript.crew++;
-                gmScript.GatherStats();
+                other.gameObject.GetComponent<AudioSource>().Play();
+                gmScript.Crew++;
+                //gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 GreenConvo();
@@ -207,8 +220,9 @@ public class Player:MonoBehaviour
             {
                 gmScript.YellowFound = true;
                 print("Collided with " + other.gameObject.name);
-                gmScript.crew++;
-                gmScript.GatherStats();
+                other.gameObject.GetComponent<AudioSource>().Play();
+                gmScript.Crew++;
+                //gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 YellowConvo();
@@ -221,8 +235,9 @@ public class Player:MonoBehaviour
             {
                 gmScript.OrangeFound = true;
                 print("Collided with " + other.gameObject.name);
-                gmScript.crew++;
-                gmScript.GatherStats();
+                other.gameObject.GetComponent<AudioSource>().Play();
+                gmScript.Crew++;
+                //gmScript.GatherStats();
                 crewText.text = "Crew: " + gmScript.Crew;
                 convoPanel.SetActive(true);
                 OrangeConvo();
@@ -235,8 +250,8 @@ public class Player:MonoBehaviour
             Grab();
             convoPanel.SetActive(true);
             convoText.text = "I picked up my " + other.gameObject.name;
-            gmScript.parts++;
-            gmScript.GatherStats();
+            gmScript.Parts++;
+            //gmScript.GatherStats();
             partsText.text = "Parts: " + gmScript.Parts;
             if(other.gameObject.name == "Panel")
             {
@@ -250,9 +265,9 @@ public class Player:MonoBehaviour
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
                 invScript.invSolar1.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipsolar1Enabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipsolar1Enabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Solar2")
@@ -260,9 +275,9 @@ public class Player:MonoBehaviour
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
                 invScript.invSolar2.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipsolar2Enabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipsolar2Enabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Engine")
@@ -270,9 +285,9 @@ public class Player:MonoBehaviour
                 gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
                 invScript.invEngine.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipengineEnabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipengineEnabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Cockpit")
@@ -280,11 +295,11 @@ public class Player:MonoBehaviour
                 gmScript.cockpitButton.interactable = true; // button
                 gmScript.cockpitEnabled = true; // bool
                 invScript.invCockpit.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
-                gmScript.shipcockpitEnabled = false; //model
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipcockpitEnabled = false; //model
                 gmScript.gotCockpit = true;
-                gmScript.spaceshipBrokenUpEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = false;
                 other.gameObject.SetActive(false);
 
             }

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enemy_Follow : MonoBehaviour
 {
+    private AudioSource source;
+    private AudioClip clip;
     [SerializeField] Transform player;
     [SerializeField] float rotateSpeed;
     [SerializeField] float speed;

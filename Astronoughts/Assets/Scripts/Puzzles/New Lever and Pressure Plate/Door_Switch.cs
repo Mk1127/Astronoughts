@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Door_Switch : MonoBehaviour
 {
+    private AudioSource source;
+    private AudioClip clip;
+
     [Header("Lists")]
     [SerializeField] List<Door_Door> targetDoors = new List<Door_Door>();
     [SerializeField] List<Material> materials = new List<Material>();
@@ -66,6 +70,7 @@ public class Door_Switch : MonoBehaviour
         if (!other.isTrigger && !isLever)
         {
             ToggleDoors();
+            other.gameObject.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -74,6 +79,7 @@ public class Door_Switch : MonoBehaviour
         if (!other.isTrigger && !isLever)
         {
             ToggleDoors();
+            other.gameObject.GetComponent<AudioSource>().Play();
         }
     }
 

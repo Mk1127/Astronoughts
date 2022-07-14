@@ -2542,6 +2542,7 @@ GameObject:
   - component: {fileID: 3851982552559819822}
   - component: {fileID: 3851982552559819821}
   - component: {fileID: 3851982552559819823}
+  - component: {fileID: 5296315326521551215}
   m_Layer: 0
   m_Name: EmissionManager
   m_TagString: Untagged
@@ -7448,6 +7449,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5296315326521551215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3851982552559819811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c70244b9d26984b859c65e307e31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparksEnabled: 1
+  duration: 5
+  source: {fileID: 3851982552559819823}
 --- !u!1 &3993531521943811440
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,6 +7738,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rayLength: 0.5
   crewAnimator: {fileID: 7214318073382650244}
+  inHub: 0
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -7933,12 +7950,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4158393009376676455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49db8292013b5b14299a1f3e46161775, type: 3}
+  m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   astroIndex: 0
-  inHub: 1
+  inHub: 0
   gm: {fileID: 0}
+  anim: {fileID: 7214318073382650244}
+  animationName: 
 --- !u!1 &4211425464813398332
 GameObject:
   m_ObjectHideFlags: 0

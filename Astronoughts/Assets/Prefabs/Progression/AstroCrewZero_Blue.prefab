@@ -2234,12 +2234,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9086683779840839451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49db8292013b5b14299a1f3e46161775, type: 3}
+  m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   astroIndex: 0
   inHub: 0
   gm: {fileID: 0}
+  anim: {fileID: 3528029969606265290}
+  animationName: Sitting
 --- !u!1 &9206106678331649579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2584,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rayLength: 0.5
   crewAnimator: {fileID: 3528029969606265290}
+  inHub: 0
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 0

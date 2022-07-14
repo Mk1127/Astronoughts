@@ -56,12 +56,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079110187588996353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49db8292013b5b14299a1f3e46161775, type: 3}
+  m_Script: {fileID: 11500000, guid: 66379f528d5c2ec4b9a56aea5a0e05d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   astroIndex: 0
   inHub: 0
   gm: {fileID: 0}
+  anim: {fileID: 0}
+  animationName: 
 --- !u!1001 &183759768517589127
 PrefabInstance:
   m_ObjectHideFlags: 0

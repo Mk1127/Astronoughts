@@ -15,32 +15,36 @@ public class GameManager : MonoBehaviour
 
     //spaceship model part is enabled/disabled variables
     public bool spaceshipBrokenDownEnabled;
-    [HideInInspector] public bool spaceshipBrokenUpEnabled;
-    [HideInInspector] public bool shipsolar1Enabled;
-    [HideInInspector] public bool shipsolar2Enabled;
-    [HideInInspector] public bool shipengineEnabled;
-    [HideInInspector] public bool shipcockpitEnabled;
-    [HideInInspector] public bool spaceshipWholeEnabled;
+    public bool spaceshipBrokenUpEnabled;
+    public bool spaceshipWholeEnabled;
+    public bool shipPanelEnabled;
+    public bool shipsolar1Enabled;
+    public bool shipsolar2Enabled;
+    public bool shipengineEnabled;
+    public bool shipcockpitEnabled;
 
-    //spaceship model part is enabled/disabled variables
-    [HideInInspector] public bool GreenFound;
-    [HideInInspector] public bool YellowFound;
-    [HideInInspector] public bool RedFound;
-    [HideInInspector] public bool BlueFound;
-    [HideInInspector] public bool OrangeFound;
+
+    //crew found variables
+    public bool GreenFound;
+    public bool YellowFound;
+    public bool RedFound;
+    public bool BlueFound;
+    public bool OrangeFound;
+
+    public List<bool> astronoughtsFound = new();
 
     // Hub specific bools
-    public bool grassCheck;
-    public bool viewCheck;
-    public bool blockInteract;
-    public bool gotCockpit;
+    [HideInInspector] public bool grassCheck;
+    [HideInInspector] public bool viewCheck;
+    [HideInInspector] public bool blockInteract;
+    [HideInInspector] public bool gotCockpit;
 
     // player statistics variables that are needed by other scripts
     [HideInInspector] public float playerFuel;
     [HideInInspector] public float currentFuel;
     [HideInInspector] public int crewNumber;
-    public int parts;
-    public int crew;
+    private int parts;
+    private int crew;
 
     // Inventory slots (buttons). Public for manual assignment
     public Button panelButton;
@@ -49,19 +53,17 @@ public class GameManager : MonoBehaviour
     public Button engineButton;
     public Button cockpitButton;
 
-    // Inventory bools. Button sprite swap changes empty icon (not interactable) to object (interactable)
+    // Game Manager bools to determine if something has been picked up
     public bool panelEnabled;
     public bool solar1Enabled;
     public bool solar2Enabled;
     public bool engineEnabled;
     public bool cockpitEnabled;
 
-    // public lists
-    public List<GameObject> partList = new List<GameObject>();
-    public List<bool> astronoughtsFound = new List<bool>();
+    public List<GameObject> partList = new();
+    public List<GameObject> partsFound = new();
 
-    // which scene
-    private string scene;
+
 
     // sources for imported information. What scripts and gameObjects must we access?
     // the GameObjects that have scripts we need
@@ -78,38 +80,24 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Properties
+
     public int Parts
     {
-        get
-        {
-            return parts;
-        }
-        set
-        {
-            parts = value;
-        }
+        get => parts;
+        set => parts = value;
     }
-
     public int Crew
     {
-        get
-        {
-            return crew;
-        }
-        set
-        {
-            crew = value;
-        }
+        get => crew;
+        set => crew = value;
     }
     #endregion
 
     // Start is called before the first frame update
-    
+
     // Ensure gm survives scenes changes
     void Awake()
     {
-        // identify the scene name
-        scene = SceneManager.GetActiveScene().name;
 
         if(gameManager == null)
         {
@@ -128,8 +116,8 @@ public class GameManager : MonoBehaviour
         // find the player and UIController GameObjects (and their scripts) onLoad from the scene
         Prepare();
         
-        // Find the inventory slots and add them to the partsList
-        GetSlots();
+        // Find the parts and add them to the partsList
+        GetParts();
     }
 
     private void Prepare()
@@ -147,25 +135,11 @@ public class GameManager : MonoBehaviour
         Crew = crew;
     }
 
-    public List<GameObject> GetSlots()
+    public List<GameObject> GetParts()
     {
-        foreach(GameObject slot in GameObject.FindGameObjectsWithTag("Slot"))
+        foreach(GameObject Part in GameObject.FindGameObjectsWithTag("Item"))
         {
-            partList.Add(slot);
-        }
-        // Return the slots array
-        return partList;
-    }
-
-    public List<GameObject> UpdateSlots()
-    {
-        foreach(GameObject slot in partList)
-        {
-            partList.Remove(slot);
-        }
-        foreach(GameObject slot in GameObject.FindGameObjectsWithTag("Slot"))
-{
-            partList.Add(slot);
+            partList.Add(Part);
         }
         // Return the slots array
         return partList;

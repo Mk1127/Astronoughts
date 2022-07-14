@@ -25,7 +25,7 @@ public class InteractionText : MonoBehaviour
 
         if (isShip)
         {
-            if(gm.parts < 5)
+            if(gm.Parts < 5 && gm.Crew < 4)
             {
                 if(isFinished)
                 {

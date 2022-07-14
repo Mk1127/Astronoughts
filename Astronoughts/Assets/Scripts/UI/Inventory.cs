@@ -58,6 +58,8 @@ public class Inventory : MonoBehaviour
     public Button invEngine;
     public Button invCockpit;
 
+    public Buttons[] inventoryButtons;
+
     private GameObject gm;
     private GameManager gmScript;
 
@@ -188,19 +190,14 @@ public class Inventory : MonoBehaviour
         CheckSlots();
 
         isOpen = true;
-
-        Image[] slotImages = GetSlots();
-        invImage.color = new Color(1,1,1,0);
-
-        foreach(Image slotImage in slotImages)
-        {
-            slotImage.color = new Color(1,1,1,0); // hidden at first
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckSlots();
+    }
+        /*
         if(Input.GetMouseButtonUp(0)) //Check if the user lifted the first mousebutton
         {
             if(!eventSystem.IsPointerOverGameObject(-1) && from != null)
@@ -221,7 +218,7 @@ public class Inventory : MonoBehaviour
                 hoverObject.transform.position = UI.transform.TransformPoint(position);
             }
         }
-    }
+        }*/
 
     #region Functions
     public void CheckSlots()
@@ -272,23 +269,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-     public Image[] GetSlots()
-    {
-        // Get the slot objects
-        //GameObject[] slotObjects = GameObject.FindGameObjectsWithTag("Slot");
-
-        // Declare an array of slots
-        slotImages = new Image[slotObjects.Length];
-
-        // Loop through the slots, adding each image component to the array
-        for(int i = 0;i < slotImages.Length;i++)
-        {
-            slotImages[i] = slotObjects[i].GetComponent<Image>();
-        }
-        // Return the slots array
-        return slotImages;
-    }
-
     public void InventoryClick()
     {
         if(iA > 0)
@@ -325,63 +305,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void MoveItem(GameObject clicked)
-    {
-        if(from == null)
-        {
-            if(!clicked.GetComponent<Slot>().IsEmpty) // The slot we clicked isn't empty
-            {
-                from = clicked.GetComponent<Slot>(); // The slot we're moving from
-                from.GetComponent<Image>().color = Color.gray; // Set the "from" slot's color to gray (its the "from" slot)
-
-                hoverObject = (GameObject)Instantiate(iconPrefab);
-                hoverObject.GetComponent<Image>().sprite = clicked.GetComponent<Image>().sprite; // Sets the sprite on the hover object so that it reflects the object we are moving
-                hoverObject.name = "Hover"; // Sets the name of the hover object
-
-                // Creates references to the transforms
-                RectTransform hoverTransform = hoverObject.GetComponent<RectTransform>();
-                RectTransform clickedTransform = clicked.GetComponent<RectTransform>();
-
-                // Sets the size of the hoverobject so that it has the same size as the clicked object
-                hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,clickedTransform.sizeDelta.x);
-                hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,clickedTransform.sizeDelta.y);
-
-                // Sets the hoverobject's parent as the canvas, so that it is visible in the game
-                hoverObject.transform.SetParent(GameObject.Find("UI").transform,true);
-
-                // Sets the local scale to make usre that it has the correct size
-                hoverObject.transform.localScale = clicked.transform.localScale;
-
-                // hoverObject.transform.GetChild(0).GetComponent<Text>().text = movingSlot.Items.Count > 1 ? movingSlot.Items.Count.ToString() : string.Empty;
-            }
-        }
-        else if(to == null) // Select the slot we are moving to
-        {
-            to = clicked.GetComponent<Slot>(); // Set the "to" object
-            Destroy(GameObject.Find("Hover"));
-        }
-        
-        if(to != null && from != null) // If both "to" and "from" are null we're done moving items. 
-        {
-            Stack<Item> tmpTo = new(to.Items);
-            to.AddItems(from.Items);
-
-            if(tmpTo.Count == 0)
-            {
-                from.ClearSlot();
-            }
-            else
-            {
-                from.AddItems(tmpTo);
-            }
-            // Reset all values
-            from.GetComponent<Image>().color = Color.white;
-            to = null;
-            from = null;
-
-        }
-    }
-    
     private IEnumerator FadeOut()
     {
         if(!fadingOut) // Checks if we are already fading out
