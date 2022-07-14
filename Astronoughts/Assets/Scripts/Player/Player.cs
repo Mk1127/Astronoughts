@@ -260,7 +260,7 @@ public class Player:MonoBehaviour
                 invScript.invPanel.interactable = true;
                 other.gameObject.SetActive(false);
             }
-            if(other.gameObject.name == "Solar1")
+            if(other.gameObject.name == "Left Solar Panel")
             {
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
@@ -270,7 +270,7 @@ public class Player:MonoBehaviour
                 //gmScript.shipsolar1Enabled = true;
                 other.gameObject.SetActive(false);
             }
-            if(other.gameObject.name == "Solar2")
+            if(other.gameObject.name == "Right Solar Panel")
             {
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
@@ -295,11 +295,10 @@ public class Player:MonoBehaviour
                 gmScript.cockpitButton.interactable = true; // button
                 gmScript.cockpitEnabled = true; // bool
                 invScript.invCockpit.interactable = true;
-                //gmScript.spaceshipBrokenDownEnabled = false;
-                //gmScript.spaceshipBrokenUpEnabled = true;
-                //gmScript.shipcockpitEnabled = false; //model
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.shipcockpitEnabled = true; //model
                 gmScript.gotCockpit = true;
-                //gmScript.spaceshipBrokenUpEnabled = false;
                 other.gameObject.SetActive(false);
 
             }

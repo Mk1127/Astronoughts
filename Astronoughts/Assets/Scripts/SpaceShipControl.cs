@@ -43,7 +43,6 @@ public class SpaceShipControl : MonoBehaviour
     void Start()
     {
         Ready();
-        CheckingShip();
     }
 
     void Update()
@@ -187,7 +186,7 @@ public class SpaceShipControl : MonoBehaviour
         }
         else if(gmScript.shipcockpitEnabled == false)
         {
-            convoText.text = "I can't install the panels until I've installed the cockpit.";
+            convoText.text = "I need to get the cockpit.";
             return;
         }
     }

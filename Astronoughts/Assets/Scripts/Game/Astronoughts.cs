@@ -8,27 +8,39 @@ public class Astronoughts : MonoBehaviour
     [SerializeField] bool inHub;
     [SerializeField] GameManager gm;
     [SerializeField] Animator anim;
+    [SerializeField] string[] anims;
     [SerializeField] string animationName;
+    [SerializeField] AudioClip[] crewClips;
+    [SerializeField] AudioSource crewSource;
+    private GameObject zeroFourGreen;
 
     private void Start()
     {
         gm = GameManager.gameManager;
+        zeroFourGreen = GameObject.FindGameObjectWithTag("Green");
 
-        if (inHub)
+        if(inHub)
         {
-            if (gm.astronoughtsFound[astroIndex])
+            if(!zeroFourGreen)
             {
-                gameObject.SetActive(true);
-                anim.Play(animationName);
+                if(gm.astronoughtsFound[astroIndex])
+                {
+                    gameObject.SetActive(true);
+                    anim.Play(animationName);
+                }
+                else
+                {
+                    gameObject.SetActive(!true);
+                }
             }
             else
             {
-                gameObject.SetActive(!true);
+                GetAnim(animationName);
             }
         }
         else
         {
-            if (gm.astronoughtsFound[astroIndex])
+            if(gm.astronoughtsFound[astroIndex])
             {
                 gameObject.SetActive(false);
             }
@@ -41,14 +53,22 @@ public class Astronoughts : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             StartCoroutine(Pause());
-            if(!inHub)
+            if(zeroFourGreen)
             {
                 UpdateGM();
+            }
+            else if(!zeroFourGreen)
+            {
+                if(!inHub)
+                {
+                    UpdateGM();
+                }
             }
         }
     }
@@ -63,8 +83,18 @@ public class Astronoughts : MonoBehaviour
 
     }
 
+    public string GetAnim(string animationName)
+    {
+        return anims[UnityEngine.Random.Range(0,anims.Length)];
+    }
+
+    public AudioClip GetCrewClip()
+    {
+        return crewClips[UnityEngine.Random.Range(0,crewClips.Length)];
+    }
+
     IEnumerator Pause()
     {
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSecondsRealtime(2);
     }
 }
