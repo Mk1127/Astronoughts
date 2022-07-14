@@ -5229,7 +5229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272219050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -110.6, y: 1.4, z: -50.43}
+  m_LocalPosition: {x: -110.6, y: -8.1, z: -50.43}
   m_LocalScale: {x: 250.80858, y: 9.560811, z: 200.03201}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10492,7 +10492,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1152406934, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
   m_PrefabInstance: {fileID: 56698449}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1665381994}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d96470b87a908bd49bf1cbc886989438, type: 3}
@@ -10608,7 +10608,7 @@ GameObject:
   - component: {fileID: 549110494}
   - component: {fileID: 549110493}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: cavefloorCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16796,6 +16796,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875944324}
   m_CullTransparentMesh: 1
+--- !u!1 &878133336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cafba3326d0c1dc47b482ea2163d6fe7, type: 3}
+  m_PrefabInstance: {fileID: 1628252218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &878133340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878133336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7614701336676125291, guid: cafba3326d0c1dc47b482ea2163d6fe7, type: 3}
 --- !u!1001 &885954749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16941,8 +16960,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
 --- !u!65 &889158127
@@ -23212,6 +23231,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6606501483488557099, guid: 1b6d2fd1eb3237c4bb0bc1f240285f7e, type: 3}
+--- !u!1 &1258846495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b9f31a4a78c7e41906281154356547, type: 3}
+  m_PrefabInstance: {fileID: 101517930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1258846499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258846495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4188890608835283453, guid: a7b9f31a4a78c7e41906281154356547, type: 3}
 --- !u!1 &1259317883
 GameObject:
   m_ObjectHideFlags: 0
@@ -23789,7 +23827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1285430821
 Transform:
   m_ObjectHideFlags: 0
@@ -30169,6 +30207,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b6d2fd1eb3237c4bb0bc1f240285f7e, type: 3}
   m_PrefabInstance: {fileID: 1647970156}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1665381994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7639409723924394978, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
+  m_PrefabInstance: {fileID: 56698449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1672536469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35325,7 +35368,7 @@ GameObject:
   - component: {fileID: 1906029824}
   - component: {fileID: 1906029827}
   m_Layer: 0
-  m_Name: solar2
+  m_Name: Right Solar Panel
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40146,6 +40189,14 @@ PrefabInstance:
       value: 202.048
       objectReference: {fileID: 0}
     - target: {fileID: 8233419321166763959, guid: bd5839f20a0d7554ab993383952976cd, type: 3}
+      propertyPath: playerGO
+      value: 
+      objectReference: {fileID: 1665381994}
+    - target: {fileID: 8233419321166763959, guid: bd5839f20a0d7554ab993383952976cd, type: 3}
+      propertyPath: playerIS
+      value: 
+      objectReference: {fileID: 540108099}
+    - target: {fileID: 8233419321166763959, guid: bd5839f20a0d7554ab993383952976cd, type: 3}
       propertyPath: renderer
       value: 
       objectReference: {fileID: 6805281461803784050}
@@ -40586,8 +40637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
 --- !u!4 &8758990269366989387
@@ -40618,8 +40669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
 --- !u!4 &8758990269774433425
@@ -40650,8 +40701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
 --- !u!4 &8758990269844247252
@@ -40682,8 +40733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
 --- !u!4 &8758990270274259496 stripped
@@ -40719,7 +40770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials: []
-  playerGO: {fileID: 0}
-  playerIS: {fileID: 0}
+  playerGO: {fileID: 1665381994}
+  playerIS: {fileID: 540108099}
   lockPlayer: 1
   renderer: {fileID: 6805281461803784050}
