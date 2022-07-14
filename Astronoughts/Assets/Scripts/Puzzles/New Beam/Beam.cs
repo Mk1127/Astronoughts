@@ -56,7 +56,7 @@ public class Beam : MonoBehaviour
             {
                 firstLength = Vector3.Distance(lr.GetPosition(1), startPoint.position);
                 position = hit.point;
-                direction = Vector3.Reflect(direction, hit.normal);
+                direction = Vector3.Reflect(direction, hit.normal/*new Vector3(hit.normal.x, hit.normal.y, hit.normal.z)*/);
                 lr.SetPosition(i + 1, hit.point);
 
                 if (!hasCollision)
