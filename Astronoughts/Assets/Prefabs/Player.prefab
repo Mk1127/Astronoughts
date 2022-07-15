@@ -85,6 +85,7 @@ MonoBehaviour:
   fadeTime: 1
   thrustGauge: 100
   hovering: 0
+  canHover: 1
   isGrounded: 0
   isGrabbing: 0
 --- !u!114 &7639409723924394977
@@ -120,6 +121,7 @@ MonoBehaviour:
   interactionText: {fileID: 0}
   lastCheckpoint: {x: 0, y: 0, z: 0}
   isHidden: 0
+  currentInteraction: 
 --- !u!114 &8665203092450779495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,9 @@ MonoBehaviour:
   grassClips: []
   grassSource: {fileID: 788709689}
   inventoryButton: {fileID: 0}
+  inventory: {fileID: 0}
+  invScript: {fileID: 0}
+  spaceshipControlScript: {fileID: 0}
   items:
   - {fileID: 0}
   - {fileID: 0}
@@ -531,6 +536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 7639409723924394976}
   playerAnimator: {fileID: 8653701173347106138}
+  playerIS: {fileID: 0}
+  rayDistance: 0
 --- !u!114 &1086322762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,21 +693,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1320226745465686762, guid: a011d03650fa42b43b71372f6765ea6f, type: 3}
   m_PrefabInstance: {fileID: 8665203091269710577}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8665203091269710586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7643346854470268955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c70244b9d26984b859c65e307e31b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sparksEnabled: 1
-  duration: 2
-  source: {fileID: 239412240}
 --- !u!198 &239412244
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5576,3 +5568,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8665203091269710586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643346854470268955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c70244b9d26984b859c65e307e31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparksEnabled: 1
+  duration: 2
+  source: {fileID: 239412240}

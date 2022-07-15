@@ -43,9 +43,9 @@ public class Player:MonoBehaviour
     [SerializeField] private AudioSource grassSource;
 
     public Button inventoryButton;
-    private GameObject inventory;
-    private Inventory invScript;
-    private SpaceShipControl spaceshipControlScript;
+    public GameObject inventory;
+    public Inventory invScript;
+    public SpaceShipControl spaceshipControlScript;
 
     public List<Item> items = new List<Item>();
 
@@ -81,8 +81,8 @@ public class Player:MonoBehaviour
         UIScript = UIController.GetComponent<UIControllerScript>();
         gm = GameObject.FindGameObjectWithTag("GameController");
         gmScript = gm.GetComponent<GameManager>();
-        inventory = GameObject.FindGameObjectWithTag("Inventory");
-        invScript = inventory.GetComponent<Inventory>();
+        //inventory = GameObject.FindGameObjectWithTag("Inventory");
+        //invScript = inventory.GetComponent<Inventory>();
         fuelText = GameObject.Find("FuelText").GetComponent<Text>();
         fuelImage = GameObject.Find("FuelImage").GetComponent<Image>();
         //convoText = GameObject.Find("convoText").GetComponent<Text>();
