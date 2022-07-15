@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 6801d2ef22a73944a8212cd4d6018e61
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 59681bb823432aa4ab9339516e4421c0
   - enabled: 1
@@ -32,7 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Polar.unity
     guid: 5150eb25a41c3b4468cf4fa9c3c946d8
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 2bf151e76ef08f742a0fe4492b196cbd
   m_configObjects: {}

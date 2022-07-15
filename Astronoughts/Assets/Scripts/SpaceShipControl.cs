@@ -186,7 +186,7 @@ public class SpaceShipControl : MonoBehaviour
         }
         else if(gmScript.shipcockpitEnabled == false)
         {
-            convoText.text = "I need to get the cockpit.";
+            convoText.text += "I need to get the cockpit.";
             return;
         }
     }
