@@ -31,7 +31,7 @@ public class UIControllerScript : MonoBehaviour
 
     [SerializeField] Button startButton;
     [SerializeField] Button overlayButton;
-    //[SerializeField] Button inventoryButton;
+    [SerializeField] Button inventoryButton;
     [SerializeField] Button miniMapPanelButton;
     [SerializeField] Button viewPanelButton;
     [SerializeField] Button quitButton;
@@ -88,21 +88,21 @@ public class UIControllerScript : MonoBehaviour
         if(overlayHidden == true)
         {
             overlay.SetActive(true);
-            //miniMapPanel.SetActive(true);
-            //viewPanel.SetActive(true);
+            miniMapPanel.SetActive(true);
+            viewPanel.SetActive(true);
             overlayHidden = false;
-            //miniMapHidden = false;
-            //viewHidden = false;
+            miniMapHidden = false;
+            viewHidden = false;
             //convoHidden = true;
         }
         else
         {
             overlay.SetActive(false);
-            //miniMapPanel.SetActive(false);
-            //viewPanel.SetActive(false);
+            miniMapPanel.SetActive(false);
+            viewPanel.SetActive(false);
             overlayHidden = true;
-            //miniMapHidden = true;
-            //viewHidden = true;
+            miniMapHidden = true;
+            viewHidden = true;
             //convoHidden = true;
 
         }

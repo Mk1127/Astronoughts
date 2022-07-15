@@ -77,22 +77,11 @@ public class MMUIController : MonoBehaviour
             controlsMenu.SetActive(false);
             instructionsMenu.SetActive(false);
         }
-        else if(scene == "Instructions")
-        {
-            isPlaying = true;
-            panelAnimator.SetBool("isPlaying",true);
-            text.text = "menu";
-            text2.text = "credits";
-            text3.text = "controls";
-            mainMenu.SetActive(false);
-            controlsMenu.SetActive(false);
-            instructionsMenu.SetActive(true);
-        }
         else if(scene == "Controls")
         {
             isPlaying = true;
             panelAnimator.SetBool("isPlaying",true);
-            text.text = "menu";
+            text.text = "help";
             text2.text = "credits";
             text3.text = "controls";
             mainMenu.SetActive(false);
@@ -195,16 +184,13 @@ public class MMUIController : MonoBehaviour
                 SwitchPanel();
             }
         }
-        else if(scene == "Menu")
+        else
         {
             Debug.Log("You clicked the help button");
-            SceneManager.LoadScene("Instructions");
-        }
-        else if(scene == "Controls")
-        {
-            Debug.Log("You clicked the menu button");
-            text.text = "menu";
-            SceneManager.LoadScene("Menu");
+            text.text = "Help";
+            instructionsMenu.SetActive(true);
+            mainMenu.SetActive(false);
+            controlsMenu.SetActive(false);
         }
     }
 
