@@ -21,10 +21,10 @@ public class Player:MonoBehaviour
     public Player_Movement script;
     public AudioSource jetpackSource;
 
-    private GameObject UIController;
-    private UIControllerScript UIScript;
-    private GameObject gm;
-    private GameManager gmScript;
+    [SerializeField] private GameObject UIController;
+    [SerializeField] private UIControllerScript UIScript;
+    [SerializeField] private GameObject gm;
+    [SerializeField] private GameManager gmScript;
 
     public GameObject convoPanel;
     private Rigidbody rb;
@@ -43,9 +43,9 @@ public class Player:MonoBehaviour
     [SerializeField] private AudioSource grassSource;
 
     public Button inventoryButton;
-    private GameObject inventory;
-    private Inventory invScript;
-    private SpaceShipControl spaceshipControlScript;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private Inventory invScript;
+    [SerializeField] private SpaceShipControl spaceshipControlScript;
 
     public List<Item> items = new List<Item>();
 
@@ -81,8 +81,8 @@ public class Player:MonoBehaviour
         UIScript = UIController.GetComponent<UIControllerScript>();
         gm = GameObject.FindGameObjectWithTag("GameController");
         gmScript = gm.GetComponent<GameManager>();
-        inventory = GameObject.FindGameObjectWithTag("Inventory");
-        invScript = inventory.GetComponent<Inventory>();
+        //inventory = GameObject.FindGameObjectWithTag("Inventory");
+        //invScript = inventory.GetComponent<Inventory>();
         fuelText = GameObject.Find("FuelText").GetComponent<Text>();
         fuelImage = GameObject.Find("FuelImage").GetComponent<Image>();
         //convoText = GameObject.Find("convoText").GetComponent<Text>();
@@ -265,8 +265,8 @@ public class Player:MonoBehaviour
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
                 invScript.invSolar1.interactable = true;
-                //gmScript.spaceshipBrokenDownEnabled = false;
-                //gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
                 //gmScript.shipsolar1Enabled = true;
                 other.gameObject.SetActive(false);
             }
@@ -275,8 +275,8 @@ public class Player:MonoBehaviour
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
                 invScript.invSolar2.interactable = true;
-                //gmScript.spaceshipBrokenDownEnabled = false;
-                //gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
                 //gmScript.shipsolar2Enabled = true;
                 other.gameObject.SetActive(false);
             }
@@ -285,8 +285,8 @@ public class Player:MonoBehaviour
                 gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
                 invScript.invEngine.interactable = true;
-                //gmScript.spaceshipBrokenDownEnabled = false;
-                //gmScript.spaceshipBrokenUpEnabled = true;
+                gmScript.spaceshipBrokenDownEnabled = false;
+                gmScript.spaceshipBrokenUpEnabled = true;
                 //gmScript.shipengineEnabled = true;
                 other.gameObject.SetActive(false);
             }
