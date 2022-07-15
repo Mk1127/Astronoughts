@@ -196,8 +196,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         CheckSlots();
-    }
-        /*
+        
         if(Input.GetMouseButtonUp(0)) //Check if the user lifted the first mousebutton
         {
             if(!eventSystem.IsPointerOverGameObject(-1) && from != null)
@@ -218,7 +217,7 @@ public class Inventory : MonoBehaviour
                 hoverObject.transform.position = UI.transform.TransformPoint(position);
             }
         }
-        }*/
+    }
 
     #region Functions
     public void CheckSlots()
