@@ -4173,16 +4173,18 @@ MonoBehaviour:
   lastScene: 
   spaceshipBrokenDownEnabled: 0
   spaceshipBrokenUpEnabled: 0
+  spaceshipWholeEnabled: 0
+  shipPanelEnabled: 0
   shipsolar1Enabled: 0
   shipsolar2Enabled: 0
   shipengineEnabled: 0
   shipcockpitEnabled: 0
-  spaceshipWholeEnabled: 0
   GreenFound: 0
   YellowFound: 0
   RedFound: 0
   BlueFound: 0
   OrangeFound: 0
+  astronoughtsFound: 
   grassCheck: 0
   viewCheck: 0
   blockInteract: 0
@@ -4190,8 +4192,6 @@ MonoBehaviour:
   playerFuel: 0
   currentFuel: 0
   crewNumber: 0
-  parts: 0
-  crew: 0
   panelButton: {fileID: 0}
   solar1Button: {fileID: 0}
   solar2Button: {fileID: 0}
@@ -4203,7 +4203,7 @@ MonoBehaviour:
   engineEnabled: 0
   cockpitEnabled: 0
   partList: []
-  astronoughtsFound: 
+  partsFound: []
   contentContainer: {fileID: 0}
 --- !u!1 &1170977789
 GameObject:
@@ -6967,8 +6967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.000061035156}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_SizeDelta: {x: 0, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994224072
 MonoBehaviour:
