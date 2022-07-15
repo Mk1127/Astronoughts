@@ -1255,14 +1255,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 56698452}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: gm
-      value: 
-      objectReference: {fileID: 1442118849}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: UIScript
-      value: 
-      objectReference: {fileID: 1854002842}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: crewText
       value: 
       objectReference: {fileID: 1359312480}
@@ -1271,10 +1263,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1750526083}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: gmScript
-      value: 
-      objectReference: {fileID: 1442118850}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: convoText
       value: 
       objectReference: {fileID: 88264224}
@@ -1282,14 +1270,6 @@ PrefabInstance:
       propertyPath: fuelImage
       value: 
       objectReference: {fileID: 935261501}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: invScript
-      value: 
-      objectReference: {fileID: 1609672637}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1609672635}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: partsText
       value: 
@@ -1306,10 +1286,6 @@ PrefabInstance:
       propertyPath: prizeSource
       value: 
       objectReference: {fileID: 258772491}
-    - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
-      propertyPath: UIController
-      value: 
-      objectReference: {fileID: 1854002841}
     - target: {fileID: 8665203092450779495, guid: 68f8cf339a302004598e9fe6db146514, type: 3}
       propertyPath: jetpackSource
       value: 
@@ -1710,12 +1686,12 @@ GameObject:
   - component: {fileID: 65628174}
   - component: {fileID: 65628177}
   m_Layer: 0
-  m_Name: Engine
+  m_Name: engine
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &65628172
 Transform:
   m_ObjectHideFlags: 0
@@ -1723,14 +1699,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65628171}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 258772490}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &65628174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,7 +1743,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 569a38b7f2068af49812011fcbf88af7, type: 2}
+  - {fileID: 2100000, guid: 130c98985d9dd0842b63f8c5e2f00d51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5393,7 +5369,7 @@ RectTransform:
   - {fileID: 1259317884}
   - {fileID: 17442530}
   m_Father: {fileID: 439436978}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6481,7 +6457,7 @@ GameObject:
   - component: {fileID: 322913566}
   m_Layer: 5
   m_Name: Inventory
-  m_TagString: Inventory
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8064,12 +8040,12 @@ GameObject:
   - component: {fileID: 413778340}
   - component: {fileID: 413778343}
   m_Layer: 0
-  m_Name: Cockpit
+  m_Name: cockPit
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413778338
 Transform:
   m_ObjectHideFlags: 0
@@ -8078,7 +8054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413778337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.94, z: 2.566}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8121,7 +8097,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 569a38b7f2068af49812011fcbf88af7, type: 2}
+  - {fileID: 2100000, guid: bf68dce1f6655a748be292bbd45d8e15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8150,7 +8126,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413778337}
-  m_Mesh: {fileID: 2744664217637831399, guid: 1e782a1ef47900140bbc9ed841a4eff1, type: 3}
+  m_Mesh: {fileID: 1364266316879596036, guid: 9a17fb2669f3fed46bdd94dbb06a029e, type: 3}
 --- !u!65 &413778343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8159,11 +8135,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413778337}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.039738506, y: 0.027346512, z: 0.03976063}
-  m_Center: {x: -0.0016631107, y: -0.00950297, z: 0.0016602636}
+  m_Size: {x: 0.016743757, y: 0.007345668, z: 0.025520306}
+  m_Center: {x: 0.00000047823414, y: 0.00049744186, z: -0.00038446067}
 --- !u!1001 &415355964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8318,6 +8294,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       - m_Target: {fileID: 739536397}
 =======
@@ -8326,6 +8303,9 @@ MonoBehaviour:
 =======
       - m_Target: {fileID: 0}
 >>>>>>> parent of d65cb22 (attempt to fix polar inventory)
+=======
+      - m_Target: {fileID: 739536397}
+>>>>>>> parent of 136743b (Edited the Parts and Inventory in Polar.)
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: InventoryClick
         m_Mode: 1
@@ -8350,7 +8330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8491,8 +8471,8 @@ RectTransform:
   m_Children:
   - {fileID: 1940854340}
   - {fileID: 832990402}
-  - {fileID: 278969271}
   - {fileID: 907811429}
+  - {fileID: 278969271}
   - {fileID: 1786548819}
   - {fileID: 985253502}
   - {fileID: 949114754}
@@ -8777,12 +8757,12 @@ GameObject:
   - component: {fileID: 443314180}
   - component: {fileID: 443314183}
   m_Layer: 0
-  m_Name: Left Solar Panel
+  m_Name: solar1
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &443314178
 Transform:
   m_ObjectHideFlags: 0
@@ -8834,7 +8814,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 569a38b7f2068af49812011fcbf88af7, type: 2}
+  - {fileID: 2100000, guid: 1a6c1f3adfd6db343bf7f3c3b5e92d97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13708,14 +13688,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 803453499299350942, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305592376225183084, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5499604225825662523, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -17549,7 +17521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410511036416970159, guid: 3d94837f3ae6c8847bd4337a6a3bd1ff, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3410511036416970159, guid: 3d94837f3ae6c8847bd4337a6a3bd1ff, type: 3}
       propertyPath: m_AnchorMax.x
@@ -23862,7 +23834,7 @@ GameObject:
   - component: {fileID: 1285430823}
   - component: {fileID: 1285430826}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: panel
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23920,7 +23892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 569a38b7f2068af49812011fcbf88af7, type: 2}
+  - {fileID: 2100000, guid: b37199a3d67dd3a428dd553373e984c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26657,7 +26629,7 @@ MonoBehaviour:
   playerFuel: 0
   currentFuel: 0
   crewNumber: 0
-  panelButton: {fileID: 1676822901}
+  panelButton: {fileID: 58565316}
   solar1Button: {fileID: 739536396}
   solar2Button: {fileID: 739536395}
   engineButton: {fileID: 739536394}
@@ -29315,22 +29287,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6606501483488557099, guid: 1b6d2fd1eb3237c4bb0bc1f240285f7e, type: 3}
---- !u!1 &1609672635 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 803453499299350936, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
-  m_PrefabInstance: {fileID: 739536391}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1609672637 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 803453499299350937, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
-  m_PrefabInstance: {fileID: 739536391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609672635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c19cfab3cce2e4cbae409c6c3c2682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1614690169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30365,17 +30321,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6606501483488557099, guid: 1b6d2fd1eb3237c4bb0bc1f240285f7e, type: 3}
---- !u!114 &1676822901 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1305592376099898119, guid: ece7ca8b473579844b16aed2bb53a3b5, type: 3}
-  m_PrefabInstance: {fileID: 739536391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1677254699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35449,7 +35394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906029821}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -11.02, y: -1.61, z: 13.6}
+  m_LocalPosition: {x: -104.39, y: 18.78, z: 130.64}
   m_LocalScale: {x: 0.58902, y: 0.58902, z: 0.58902}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35493,7 +35438,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 569a38b7f2068af49812011fcbf88af7, type: 2}
+  - {fileID: 2100000, guid: 09d68147c5ceae74ea03507186b3b727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35534,8 +35479,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9366007, y: 9.7397375, z: 0.63130593}
-  m_Center: {x: -0.0023954385, y: 7.3869224, z: 0.13640633}
+  m_Size: {x: 1.2459134, y: 9.7397375, z: 0.35846278}
+  m_Center: {x: 0.000041484833, y: 7.3869224, z: -0.000015318394}
 --- !u!1001 &1906711683
 PrefabInstance:
   m_ObjectHideFlags: 0
