@@ -21,7 +21,7 @@ public class Astronoughts : MonoBehaviour
 
         if(inHub)
         {
-            if(!zeroFourGreen)
+            if(gameObject != zeroFourGreen)
             {
                 if(gm.astronoughtsFound[astroIndex])
                 {
