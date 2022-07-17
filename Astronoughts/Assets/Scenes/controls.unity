@@ -3859,8 +3859,8 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  playTexture: {fileID: 2800000, guid: 2a9ab91cea9234c43b2f3e41395419b1, type: 3}
-  muteTexture: {fileID: 2800000, guid: bc2d6daa74cc3434ab8194f1104124bc, type: 3}
+  playTexture: {fileID: 2800000, guid: 4046cdcbcfae4f94f8a2fac8752125ab, type: 3}
+  muteTexture: {fileID: 2800000, guid: 2a8efaa59207b9e49bcd53562ffde3a5, type: 3}
   scene: Menu
   source: {fileID: 513482425}
   settings: {fileID: 489230713}
