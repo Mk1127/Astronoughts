@@ -70,7 +70,7 @@ public class Door_Switch : MonoBehaviour
         if (!other.isTrigger && !isLever)
         {
             ToggleDoors();
-            other.gameObject.GetComponent<AudioSource>().Play();
+            PlayDoorSound();
         }
     }
 
@@ -79,7 +79,7 @@ public class Door_Switch : MonoBehaviour
         if (!other.isTrigger && !isLever)
         {
             ToggleDoors();
-            other.gameObject.GetComponent<AudioSource>().Play();
+            PlayDoorSound();
         }
     }
 
@@ -138,5 +138,13 @@ public class Door_Switch : MonoBehaviour
         Debug.Log("Lever Is Ready Again");
 
         isMoving = false;
+    }
+
+    private void PlayDoorSound()
+    {
+        for(int i = 0; i < targetDoors.Count; i++)
+        {
+            targetDoors[i].GetComponent<AudioSource>().Play();
+        }
     }
 }
