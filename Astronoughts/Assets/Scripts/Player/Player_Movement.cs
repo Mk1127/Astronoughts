@@ -25,7 +25,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float accel;
     [SerializeField] float grav;
     [HideInInspector] public float jumpSpeed;
-
+    [HideInInspector] public bool isSprinting;
     [HideInInspector] public float startSpeed;
 
     [Header("Hover")]
@@ -41,6 +41,8 @@ public class Player_Movement : MonoBehaviour
     bool reverseGravity = false;
     [HideInInspector] public bool isGrabbing = false;
 
+    [HideInInspector] Player_Interact playerIS;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class Player_Movement : MonoBehaviour
         {
             mover = GetComponent<CharacterController>();
         }
+
+        playerIS = GetComponent<Player_Interact>();
 
         startSpeed = speed;
         hovering = false;
@@ -124,9 +128,29 @@ public class Player_Movement : MonoBehaviour
             {
                 if(!hovering)
                 {
-                    speed = sprintSpeed;
-                }
+                    isSprinting = true;
 
+                    if(playerIS.isHidden)
+                    {
+                        speed = startSpeed * .75f;
+                    }
+                    else
+                    {
+                        speed = sprintSpeed;
+                    }
+                }
+                else
+                {
+                    speed = startSpeed;
+                    isSprinting = false;
+                }
+            }
+            else
+            {
+                if(playerIS.isHidden)
+                {
+                    speed = startSpeed * .75f;
+                }
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -134,12 +158,14 @@ public class Player_Movement : MonoBehaviour
                 if(!hovering)
                 {
                     speed = startSpeed;
+                    isSprinting = false;
                 }
             }
         }
 
         if (isGrabbing)
         {
+            isSprinting = false;
             if (Input.GetAxisRaw("Vertical") != 0)
             {
                 velocityXZ = Vector3.Lerp(velocity, cam.forward * input.y * speed, accel * Time.deltaTime);

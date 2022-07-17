@@ -47,15 +47,26 @@ public class Player_Animations : MonoBehaviour
                 if(playerMovement.isGrabbing)
                 {
                     playerAnimator.Play("Pushing");
+                    SetAnimatorSpeed(1.5f);
                 }
                 else
                 {
                     if (playerIS.isHidden)
                     {
+                        SetAnimatorSpeed(1.5f);
                         playerAnimator.Play("Crouch Walking");
                     }
                     else
                     {
+                        if(playerMovement.isSprinting)
+                        {
+                            SetAnimatorSpeed(3f);
+                        }
+                        else
+                        {
+                            SetAnimatorSpeed(1.5f);
+                        }
+
                         playerAnimator.Play("Running");
                     }
                 }
@@ -64,16 +75,19 @@ public class Player_Animations : MonoBehaviour
             {
                 if(playerIS.isHidden)
                 {
+                    SetAnimatorSpeed(1.5f);
                     playerAnimator.Play("Crouch Idle");
                 }
                 else
                 {
+                    SetAnimatorSpeed(1.5f);
                     playerAnimator.Play("Idle");
                 }
             }
         }
         else
         {
+            SetAnimatorSpeed(1.5f);
             playerAnimator.Play("Floating");
         }
     }
@@ -104,7 +118,6 @@ public class Player_Animations : MonoBehaviour
                 rayDistance = startRayDistance;
             }
         }
-
     }
 
     private void CastFrontRay()
@@ -241,6 +254,14 @@ public class Player_Animations : MonoBehaviour
         else
         {
             isGrounded = false;
+        }
+    }
+
+    private void SetAnimatorSpeed(float speed)
+    {
+        if (playerAnimator.speed != speed)
+        {
+            playerAnimator.speed = speed;
         }
     }
 }
