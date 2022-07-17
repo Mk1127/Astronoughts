@@ -53,7 +53,7 @@ public class Enemy_Patrol : MonoBehaviour
 
     private void MoveToCheckpoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, nextCheckPoint, speed * 0.005f);
+        transform.position = Vector3.MoveTowards(transform.position, nextCheckPoint, speed * Time.deltaTime);
         LookAtTarget();
 
 

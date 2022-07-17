@@ -19,7 +19,7 @@ public class Enemy_Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, (player.position + Vector3.up), speed * 0.005f);
+        transform.position = Vector3.MoveTowards(transform.position, (player.position + Vector3.up), speed * Time.deltaTime);
         LookAtTarget();
     }
 
