@@ -342,34 +342,34 @@ public class Player:MonoBehaviour
     private void GreenConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Four!";
+        convoText.text = "Hey Zero One, We need to find our crew and repair out ship. Find parts and I'll worry about fixing the ship.";
         StartCoroutine(Wait());
     }
 
     private void RedConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Six!";
+        convoText.text = "Hey Zero One! Thanks for finding me. I'll see you back at the ship.";
         StartCoroutine(Wait());
     }
 
     private void OrangeConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Five!";
+        convoText.text = "Hey Zero One! I'm saved. I'll see you back at the ship.";
         StartCoroutine(Wait());
     }
 
     private void YellowConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Three!";
+        convoText.text = "Hey Zero One! Took you long enough. I'll see you back at the ship.";
         StartCoroutine(Wait());
     }
     private void BlueConvo()
     {
         convoPanel.SetActive(true);
-        convoText.text = "It's Zero Two!";
+        convoText.text = "Hey Zero One! It's been 84 years. I'll see you back at the ship.";
         StartCoroutine(Wait());
     }
 
