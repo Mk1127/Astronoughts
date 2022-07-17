@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 59681bb823432aa4ab9339516e4421c0
   - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 4974521ae49d91544828c664c2d43c9d
+  - enabled: 1
     path: Assets/Scenes/controls.unity
     guid: ae7e561fc66cfe84d9ba29057daac823
   - enabled: 0
@@ -32,7 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpaceShipWinSequence.unity
     guid: 9c7c55270c3123d40a1183e2ada7b892
-  - enabled: 0
-    path: Assets/Scenes/GameOver.unity
-    guid: 2bf151e76ef08f742a0fe4492b196cbd
   m_configObjects: {}

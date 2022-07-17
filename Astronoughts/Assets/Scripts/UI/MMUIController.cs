@@ -200,6 +200,12 @@ public class MMUIController:MonoBehaviour
             Debug.Log("You clicked the help button");
             SceneManager.LoadScene("Instructions");
         }
+        else if(scene == "Instructions")
+        {
+            Debug.Log("You clicked the menu button");
+            text.text = "menu";
+            SceneManager.LoadScene("Menu");
+        }
         else if(scene == "Controls")
         {
             Debug.Log("You clicked the menu button");
