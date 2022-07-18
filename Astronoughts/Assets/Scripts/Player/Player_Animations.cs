@@ -66,7 +66,6 @@ public class Player_Animations : MonoBehaviour
                         {
                             SetAnimatorSpeed(1.5f);
                         }
-
                         playerAnimator.Play("Running");
                     }
                 }

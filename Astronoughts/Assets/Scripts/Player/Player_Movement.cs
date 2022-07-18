@@ -150,6 +150,12 @@ public class Player_Movement : MonoBehaviour
                 if(playerIS.isHidden)
                 {
                     speed = startSpeed * .75f;
+                    isSprinting = false;
+                }
+                else
+                {
+                    speed = startSpeed;
+                    isSprinting = false;
                 }
             }
 
