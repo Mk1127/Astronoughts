@@ -169,6 +169,11 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
+        if(!isGrounded)
+        {
+            speed = startSpeed * .75f;
+        }
+
         if (isGrabbing)
         {
             isSprinting = false;
@@ -200,20 +205,15 @@ public class Player_Movement : MonoBehaviour
         {
             if (isGrounded)
             {
-                if (reverseGravity)
+                if (!reverseGravity)
                 {
-                    velocity.y = 5f; //If the player is not hovering, on the ground, and gravity is reversed set the Y velocity to 5. Lifts the player;
-                }
-                else
-                {
-                    velocity.y = -1f; //If the player is not hovering, on the ground, and gravity is not reversed set the Y velocity to -0.5. Lowers the player;
+                    velocity.y = -1f; //If the player is not hovering, on the ground, and gravity is reversed set the Y velocity to 5. Lifts the player;
                 }
             }
             else
             {
                 velocity.y -= grav * Time.deltaTime; // If the player is not hovering and is not on the ground set Y velocity by gravity * time, Lowers the player.
             }
-
             velocity.y = Mathf.Clamp(velocity.y, -10, 50);
         }
         else
@@ -231,14 +231,12 @@ public class Player_Movement : MonoBehaviour
         {
             if (!hovering)
             {
-                if (isGrounded)
+                if (thrustGauge > 0)
                 {
-                    if (thrustGauge > 0)
-                    {
-                        hovering = true;
-                        StartCoroutine(StartHover());
-                    }
+                    hovering = true;
+                    StartCoroutine(StartHover());
                 }
+                
             }
         }
         else
@@ -246,11 +244,6 @@ public class Player_Movement : MonoBehaviour
             hovering = false;
             reverseGravity = false;
         }
-
-        /*if(Input.GetKeyUp(KeyCode.Space))
-        {
-
-        }*/
     }
 
     public void Jump()
@@ -278,8 +271,7 @@ public class Player_Movement : MonoBehaviour
 
             if (!hovering)
             {
-                StartCoroutine(RefillThrusters());
-                yield break;
+                break;
             }
         }
 
@@ -291,23 +283,48 @@ public class Player_Movement : MonoBehaviour
     IEnumerator RefillThrusters()
     {
         speed = startSpeed;
+        float timer;
         if (thrustGauge == 0)
         {
-            yield return new WaitForSeconds(3.0f);
+            timer = 2f;
+        }
+        else
+        {
+            timer = 1f;
         }
 
-        while (thrustGauge < 100)
+        while (timer > 0)
         {
-            thrustGauge += Time.deltaTime * 20;
-            thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
-            yield return null;
+            if(isGrounded)
+            {
+                timer -= Time.deltaTime;
+            }
 
             if (hovering)
             {
+                hovering = true;
                 StartCoroutine(DrainThrusters());
                 yield break;
             }
 
+            yield return null;
+        }
+
+        while (thrustGauge < 100)
+        {
+            if(isGrounded)
+            {
+                thrustGauge += Time.deltaTime * 20;
+                thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
+            }
+            yield return null;
+
+            if (hovering)
+            {
+                hovering = true;
+                StartCoroutine(DrainThrusters());
+                yield break;
+            }
         }
     }
 
@@ -321,10 +338,13 @@ public class Player_Movement : MonoBehaviour
         StartCoroutine(DrainThrusters());
         StartCoroutine(SparksFade());
 
-        while (transform.position.y < startY + 1)
+        if(isGrounded)
         {
-            velocity.y = 3f;
-            yield return null;
+            while (transform.position.y < startY + 1)
+            {
+                velocity.y = 3f;
+                yield return null;
+            }
         }
 
         reverseGravity = false;
