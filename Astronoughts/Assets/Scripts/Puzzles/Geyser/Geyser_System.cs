@@ -7,6 +7,8 @@ public class Geyser_System : MonoBehaviour
     [SerializeField] List<Geyser> geysers = new List<Geyser>();
 
     [HideInInspector] public int activeGeysers;
+
+    public bool lowerFinalForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,18 @@ public class Geyser_System : MonoBehaviour
 
         for (int i = 0; i < geysers.Count; i++)
         {
-            geysers[i].geyserForce = geysers[i].startGeyserForce / activeGeysers;
+            if(activeGeysers == 1)
+            {
+                if(lowerFinalForce)
+                {
+                    geysers[i].geyserForce = (geysers[i].startGeyserForce / activeGeysers) - 7;
+                }
+            }
+            else
+            {
+                geysers[i].geyserForce = geysers[i].startGeyserForce / activeGeysers;
+            }
+            
 
             if (i == 0)
             {
@@ -29,7 +42,6 @@ public class Geyser_System : MonoBehaviour
                     addZ -= 0.15f;
                 }
             }
-
 
             Debug.Log(addZ);
 
