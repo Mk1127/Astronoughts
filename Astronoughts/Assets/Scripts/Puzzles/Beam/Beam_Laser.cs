@@ -27,10 +27,16 @@ public class Beam_Laser : MonoBehaviour
                 Vector3 forward = transform.TransformDirection(Vector3.forward) * rayDistance;
                 Debug.DrawRay(transform.position, forward, Color.green);
 
+                rayDistance = Vector3.Distance(hit.transform.position, transform.position);
+
                 lightRay.localScale = new Vector3(rayDistance / this.transform.localScale.x, lightRay.localScale.y, lightRay.localScale.z);
                 lightRay.localPosition = new Vector3(lightRay.localPosition.x, lightRay.localPosition.y, rayDistance / (2 * 0.5f));
-
-                rayDistance = Vector3.Distance(hit.transform.position, transform.position);
+            }
+            else
+            {
+                rayDistance = startRayDisctance;
+                lightRay.localScale = new Vector3(rayDistance / this.transform.localScale.x, lightRay.localScale.y, lightRay.localScale.z);
+                lightRay.localPosition = new Vector3(lightRay.localPosition.x, lightRay.localPosition.y, rayDistance / (2 * 0.5f));
             }
         }
         else

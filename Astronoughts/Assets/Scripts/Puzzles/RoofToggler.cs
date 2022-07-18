@@ -41,6 +41,14 @@ public class RoofToggler : MonoBehaviour
                Debug.Log("Roof turns off");
                 child.gameObject.GetComponent<Renderer>().enabled = toggleRoof;
 
+            if(child.transform.childCount > 0)
+            {
+                foreach(Transform grandChild in child.transform)
+                {
+                    grandChild.GetComponent<Renderer>().enabled = toggleRoof;
+                }
+            }
+
                 if(astronought != null)
                 {
                     astronought.SetActive(toggleRoof);
