@@ -42,6 +42,7 @@ public class Player_Movement : MonoBehaviour
     [HideInInspector] public bool isGrabbing = false;
 
     [HideInInspector] Player_Interact playerIS;
+    [HideInInspector] Player_Animations playerAS;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,8 @@ public class Player_Movement : MonoBehaviour
         }
 
         playerIS = GetComponent<Player_Interact>();
+
+        playerAS = transform.GetComponentInChildren<Player_Animations>();
 
         startSpeed = speed;
         hovering = false;
@@ -295,7 +298,7 @@ public class Player_Movement : MonoBehaviour
 
         while (timer > 0)
         {
-            if(isGrounded)
+            if(playerAS.isGrounded)
             {
                 timer -= Time.deltaTime;
             }
@@ -312,7 +315,7 @@ public class Player_Movement : MonoBehaviour
 
         while (thrustGauge < 100)
         {
-            if(isGrounded)
+            if(playerAS.isGrounded)
             {
                 thrustGauge += Time.deltaTime * 20;
                 thrustGauge = Mathf.Clamp(thrustGauge, 0, 100);
@@ -338,7 +341,7 @@ public class Player_Movement : MonoBehaviour
         StartCoroutine(DrainThrusters());
         StartCoroutine(SparksFade());
 
-        if(isGrounded)
+        if(playerAS.isGrounded)
         {
             while (transform.position.y < startY + 1)
             {

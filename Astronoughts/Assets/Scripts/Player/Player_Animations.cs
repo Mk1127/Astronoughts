@@ -8,7 +8,7 @@ public class Player_Animations : MonoBehaviour
     [SerializeField] Animator playerAnimator;
     [SerializeField] Player_Interact playerIS;
 
-    private bool isGrounded = false;
+    public bool isGrounded = false;
 
     [SerializeField] float rayDistance;
     private float startRayDistance;
