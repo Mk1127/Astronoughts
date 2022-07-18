@@ -12,6 +12,8 @@ public class Moveable : MonoBehaviour
     [SerializeField] Player_Interact playerIS;
     [SerializeField] bool lockPlayer;
     [SerializeField] MeshRenderer renderer;
+
+    private Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class Moveable : MonoBehaviour
         {
             renderer = GetComponent<MeshRenderer>();
         }
+
+        startPos = transform.position;
 
         SetMaterial(0);
     }
@@ -105,6 +109,15 @@ public class Moveable : MonoBehaviour
                 playerIS.currentInteraction = "";
                 SetMaterial(0);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            transform.parent = null;
+            transform.position = startPos;
         }
     }
 

@@ -12,12 +12,17 @@ public class LavaRock : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        StartCoroutine(ToggleAnimator());
+
+        if(sinks)
+        {
+            StartCoroutine(ToggleAnimator());
+        }
+
     }
 
     public void LowerRock()
     {
-        if (sinks)
+        /*if (sinks)
         {
             if (!isPlaying)
             {
@@ -25,7 +30,7 @@ public class LavaRock : MonoBehaviour
                 animator.Play("Rock_Sink", 0, 0.0f);
                 StartCoroutine(DisbleIsPlaying());
             }
-        }
+        }*/
     }
 
     IEnumerator DisbleIsPlaying()
