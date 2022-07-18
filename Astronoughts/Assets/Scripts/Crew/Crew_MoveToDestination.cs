@@ -47,19 +47,16 @@ public class Crew_MoveToDestination:MonoBehaviour
 
     private void SelectCheckpoint()
     {
-        if(Vector3.Distance(transform.position,destination.position) < 0.1f)
+        if(Vector3.Distance(transform.position,nextCheckPoint) < 0.1f)
         {
-            //wait here
-        }
-        else
-        {
-            if(Vector3.Distance(transform.position,nextCheckPoint) < 0.1f)
+            nextCheckPoint = startPos + checkpoints[checkpointIndex];
+            if(checkpointIndex != checkpoints.Count - 1)
             {
-                nextCheckPoint = startPos + checkpoints[checkpointIndex];
-                if(checkpointIndex != checkpoints.Count - 1)
-                {
-                    checkpointIndex++;
-                }
+                checkpointIndex++;
+            }
+            else
+            {
+                checkpointIndex = 0;
             }
         }
     }
@@ -67,15 +64,18 @@ public class Crew_MoveToDestination:MonoBehaviour
     private void MoveToCheckpoint()
     {
         transform.position = Vector3.MoveTowards(transform.position,nextCheckPoint,speed * 0.005f);
-        LookAtTarget();
+        LookAtTarget(nextCheckPoint);
     }
 
-    private void LookAtTarget()
+    private void LookAtTarget(Vector3 targetPosition)
     {
-        Vector3 target = nextCheckPoint - transform.position;
+        Vector3 target = (targetPosition + Vector3.up) - transform.position;
         float singleStep = rotateSpeed * Time.deltaTime;
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward,target,singleStep,0f);
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, target, singleStep, 0f);
+        Quaternion nextDirection = Quaternion.LookRotation(newDirection);
+        nextDirection.x = 0;
+        nextDirection.z = 0;
+        transform.rotation = nextDirection;
     }
 
     private void DebugLogs()
