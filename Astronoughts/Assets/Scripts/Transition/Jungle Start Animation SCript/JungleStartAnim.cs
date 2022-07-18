@@ -48,6 +48,7 @@ public class JungleStartAnim : MonoBehaviour
         if(hasStarted)
         {
             camFS.target = enemyPatrol.gameObject.transform;
+            playerMS.velocity = new Vector3(0, 0, 0);
         }
         else
         {

@@ -20,12 +20,14 @@ public class Gateway_Pillars : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Enemy")
         {
-            other.gameObject.SetActive(false);
-            triggered = true;
-            Toggle(true);
+            if(!triggered)
+            {
+                other.gameObject.SetActive(false);
+                triggered = true;
+                Toggle(true);
+            }
         }
     }
 
