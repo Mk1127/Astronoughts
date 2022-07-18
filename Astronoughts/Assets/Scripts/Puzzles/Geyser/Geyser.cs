@@ -14,6 +14,8 @@ public class Geyser : MonoBehaviour
     [Header("Bools")]
     public bool isactive;
 
+    private int rockCount;
+
     private BoxCollider collider;
 
     private void Awake()
@@ -39,7 +41,7 @@ public class Geyser : MonoBehaviour
 
             if (other.tag == "Block")
             {
-                StartCoroutine(ToggleGeyser(0, false));
+                StartCoroutine(ToggleGeyser(0, false));           
             }
         }
     }
@@ -48,18 +50,35 @@ public class Geyser : MonoBehaviour
     {
         if (other.tag == "Block")
         {
-            StartCoroutine(ToggleGeyser(0, false));
-            StartCoroutine(SetParent(other));
-            UpdateActiveGeysers(-1);
+            rockCount++;
+            if(rockCount == 1)
+            {
+                if(isactive)
+                {
+                    StartCoroutine(ToggleGeyser(0, false));
+                    StartCoroutine(SetParent(other));
+                    UpdateActiveGeysers(-1);
+                    isactive = false;
+                }
+            }
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Block")
         {
-            StartCoroutine(ToggleGeyser(2, true));
-            UpdateActiveGeysers(1);
+            rockCount--;
+            if(rockCount == 0)
+            {
+                if(!isactive)
+                {
+                    StartCoroutine(ToggleGeyser(2, true));
+                    UpdateActiveGeysers(1);
+                    isactive = true;
+                }
+            }
         }
     }
 
