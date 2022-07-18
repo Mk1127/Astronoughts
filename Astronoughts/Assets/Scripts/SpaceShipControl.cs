@@ -123,18 +123,18 @@ public class SpaceShipControl : MonoBehaviour
                     }
                     else if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == false)
                     {
-                        convoText.text = "I need to find the other solar panel.";
+                        //convoText.text = "I need to find the other solar panel.";
                         return;
                     }
                     else if(gmScript.solar1Enabled == false && gmScript.solar2Enabled == true)
                     {
-                        convoText.text = "I need to find the other solar panel.";
+                        //convoText.text = "I need to find the other solar panel.";
                         return;
                     }
                     else
                     {
                         engine2.gameObject.SetActive(true); // engine on the whole one
-                        convoText.text = "I'd better go find the solar panels.";
+                        //convoText.text = "I'd better go find the solar panels.";
                     }
                     return;
                 }
@@ -153,21 +153,21 @@ public class SpaceShipControl : MonoBehaviour
                         spaceshipWhole.gameObject.SetActive(true);
                         solar3.gameObject.SetActive(true); // solar3 on the whole one
                         solar4.gameObject.SetActive(true); // solar4 on the whole one
-                        convoText.text = "I need to find the engine.";
+                        //convoText.text = "I need to find the engine.";
                     }
                     else if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == false)
                     {
-                        convoText.text = "I need to find the other solar panel and the engine.";
+                        //convoText.text = "I need to find the other solar panel and the engine.";
                         return;
                     }
                     else if(gmScript.solar1Enabled == false && gmScript.solar2Enabled == true)
                     {
-                        convoText.text = "I need to find the other solar panel and the engine.";
+                        //convoText.text = "I need to find the other solar panel and the engine.";
                         return;
                     }
                     else
                     {
-                        convoText.text = "I'm missing both solar panels and the engine.";
+                        //convoText.text = "I'm missing both solar panels and the engine.";
                     }
                     return;
                 }
@@ -180,13 +180,13 @@ public class SpaceShipControl : MonoBehaviour
                 gmScript.spaceshipBrokenUpEnabled = true;
                 spaceshipBrokenUp.gameObject.SetActive(true);
                 shipCockpit.gameObject.SetActive(true);
-                convoText.text = "I've installed the cockpit, but I need the square, gold heat panels next.";
+                //convoText.text = "I've installed the cockpit, but I need the square, gold heat panels next.";
                 return;
             }
         }
         else if(gmScript.shipcockpitEnabled == false)
         {
-            convoText.text = "I need to get the cockpit.";
+            //convoText.text = "I need to get the cockpit.";
             return;
         }
     }

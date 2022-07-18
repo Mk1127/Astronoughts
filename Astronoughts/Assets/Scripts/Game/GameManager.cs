@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     // Ensure gm survives scenes changes
-    void Awake()
+    public void Awake()
     {
 
         if(gameManager == null)
