@@ -50,6 +50,8 @@ TagManager:
   - GrassTag
   - PartTag
   - ViewTag
+  - HealthText
+  - ssController
   layers:
   - Default
   - TransparentFX

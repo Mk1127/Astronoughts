@@ -120,6 +120,14 @@ public class GameManager : MonoBehaviour
         GetParts();
     }
 
+    public void Update()
+    {
+        if(gotCockpit == true)
+        {
+            cockpitButton.interactable = true;
+        }
+    }
+
     private void Prepare()
     {
         player = GameObject.FindGameObjectWithTag("Player");
