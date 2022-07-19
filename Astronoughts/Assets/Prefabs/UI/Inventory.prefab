@@ -113,6 +113,7 @@ MonoBehaviour:
   invSolar2: {fileID: 1305592376377095742}
   invEngine: {fileID: 1305592375233007817}
   invCockpit: {fileID: 0}
+  inventoryButtons: []
   fadeTime: 2
   iA: 0
   allSlots: []
@@ -349,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040751592604642385, guid: d26903573f193a94d9f8881937c236ab, type: 3}
       propertyPath: m_Name
-      value: Solar2
+      value: Right Solar Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26903573f193a94d9f8881937c236ab, type: 3}
@@ -685,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4550614040288127020, guid: 42188a0688bf46447bc07fddec3060b6, type: 3}
       propertyPath: m_Name
-      value: Solar1
+      value: Left Solar Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42188a0688bf46447bc07fddec3060b6, type: 3}
