@@ -44,10 +44,10 @@ public class Player:MonoBehaviour
     [SerializeField] private AudioClip[] grassClips;
     [SerializeField] private AudioSource grassSource;
 
-    public Button inventoryButton;
-    private GameObject inventory;
-    private Inventory invScript;
-    private SpaceShipControl spaceshipControlScript;
+    [SerializeField] public Button inventoryButton;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private Inventory invScript;
+    [SerializeField] private SpaceShipControl spaceshipControlScript;
 
     public List<Item> items = new List<Item>();
 
