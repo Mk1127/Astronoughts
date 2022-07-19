@@ -60,7 +60,7 @@ public class Player_Animations : MonoBehaviour
                     {
                         if(playerMovement.isSprinting)
                         {
-                            SetAnimatorSpeed(3f);
+                            SetAnimatorSpeed(2.25f);
                         }
                         else
                         {

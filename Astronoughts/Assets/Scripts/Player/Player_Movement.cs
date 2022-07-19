@@ -172,7 +172,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if(!isGrounded)
+        if(!playerAS.isGrounded)
         {
             speed = startSpeed * .75f;
         }
