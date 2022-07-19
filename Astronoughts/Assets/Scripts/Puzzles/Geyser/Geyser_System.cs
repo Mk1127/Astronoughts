@@ -22,18 +22,15 @@ public class Geyser_System : MonoBehaviour
 
         for (int i = 0; i < geysers.Count; i++)
         {
-            if(activeGeysers == 1)
+            geysers[i].geyserForce = geysers[i].startGeyserForce / activeGeysers;
+
+            if (activeGeysers == 1)
             {
-                if(lowerFinalForce)
+                if (lowerFinalForce)
                 {
                     geysers[i].geyserForce = (geysers[i].startGeyserForce / activeGeysers) - 7;
                 }
             }
-            else
-            {
-                geysers[i].geyserForce = geysers[i].startGeyserForce / activeGeysers;
-            }
-            
 
             if (i == 0)
             {
@@ -47,5 +44,7 @@ public class Geyser_System : MonoBehaviour
 
             geysers[i].geyserVFX.transform.localScale = new Vector3(0.2f + addZ, 0.2f + addZ, 0.2f + addZ);
         }
+
+
     }
 }
