@@ -17,12 +17,15 @@ public class tempTopTrigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player")
+        if(toggled)
         {
-            toggled = false;
-            GetComponent<MeshRenderer>().enabled = false;
+            if (other.tag == "Player")
+            {
+                toggled = false;
+                GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 
