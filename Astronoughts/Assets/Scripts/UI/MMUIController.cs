@@ -157,10 +157,11 @@ public class MMUIController:MonoBehaviour
             Debug.Log("You clicked the back button");
             if(panelIndex == 0)
             {
-                panelIndex = creditsPanels.Length;
+                creditsButton.interactable = false;
             }
             else
             {
+                creditsButton.interactable = true;
                 panelIndex--;
                 SwitchPanel();
             }
@@ -183,12 +184,13 @@ public class MMUIController:MonoBehaviour
         {
             Debug.Log("You clicked the next button");
 
-            if(panelIndex == creditsPanels.Length)
+            if(panelIndex == creditsPanels.Length - 1)
             {
-                panelIndex = 0;
+                helpButton.interactable = false;
             }
             else
             {
+                helpButton.interactable = true;
                 panelIndex++;
                 SwitchPanel();
             }

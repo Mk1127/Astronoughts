@@ -24,9 +24,7 @@ public class Player:MonoBehaviour
     private GameObject UIController;
     private UIControllerScript UIScript;
     private GameObject gm;
-    private GameObject ssController;
     private GameManager gmScript;
-    private SpaceShipControl sscScript;
 
     public GameObject convoPanel;
     private Rigidbody rb;
@@ -77,13 +75,11 @@ public class Player:MonoBehaviour
         currentFuel = maxFuel;
     }
 
-    public void GetReady()
+    private void GetReady()
     {
         UIController = GameObject.FindGameObjectWithTag("UIController");
         UIScript = UIController.GetComponent<UIControllerScript>();
-        ssController = GameObject.FindGameObjectWithTag("ssController");
         gm = GameObject.FindGameObjectWithTag("GameController");
-        //sscScript = ssController.GetComponent<SpaceShipControl>();
         gmScript = gm.GetComponent<GameManager>();
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         invScript = inventory.GetComponent<Inventory>();
@@ -100,7 +96,6 @@ public class Player:MonoBehaviour
     {
         CheckFuel();
         GetReady();
-
     }
 
     #region Functions
@@ -264,15 +259,15 @@ public class Player:MonoBehaviour
                 gmScript.panelEnabled = true;
                 invScript.invPanel.interactable = true;
                 other.gameObject.SetActive(false);
-                convoText.text = "The crew will install this when the rest of the ship is ready.";
             }
             if(other.gameObject.name == "Left Solar Panel")
             {
                 gmScript.solar1Button.interactable = true;
                 gmScript.solar1Enabled = true;
                 invScript.invSolar1.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipsolar1Enabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Right Solar Panel")
@@ -280,8 +275,9 @@ public class Player:MonoBehaviour
                 gmScript.solar2Button.interactable = true;
                 gmScript.solar2Enabled = true;
                 invScript.invSolar2.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipsolar2Enabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Engine")
@@ -289,8 +285,9 @@ public class Player:MonoBehaviour
                 gmScript.engineButton.interactable = true;
                 gmScript.engineEnabled = true;
                 invScript.invEngine.interactable = true;
-                gmScript.spaceshipBrokenDownEnabled = false;
-                gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.spaceshipBrokenDownEnabled = false;
+                //gmScript.spaceshipBrokenUpEnabled = true;
+                //gmScript.shipengineEnabled = true;
                 other.gameObject.SetActive(false);
             }
             if(other.gameObject.name == "Cockpit")
@@ -303,6 +300,7 @@ public class Player:MonoBehaviour
                 gmScript.shipcockpitEnabled = true; //model
                 gmScript.gotCockpit = true;
                 other.gameObject.SetActive(false);
+
             }
             StartCoroutine(Wait());
         }

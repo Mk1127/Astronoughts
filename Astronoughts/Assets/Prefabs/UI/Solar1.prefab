@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7019958306660170619}
   - component: {fileID: 3843727343541284012}
   m_Layer: 5
-  m_Name: Left Solar Panel
+  m_Name: Solar1
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

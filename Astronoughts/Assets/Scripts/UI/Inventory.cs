@@ -265,7 +265,7 @@ public class Inventory : MonoBehaviour
         }
         if(gmScript.cockpitEnabled == false)
         {
-            //invCockpit.interactable = false;
+            invCockpit.interactable = false;
         }
     }
 
