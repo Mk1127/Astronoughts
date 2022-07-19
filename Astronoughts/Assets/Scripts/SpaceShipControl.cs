@@ -12,10 +12,7 @@ public class SpaceShipControl : MonoBehaviour
     public GameObject spaceshipWholeUp;
     public GameObject solar1;
     public GameObject solar2;
-    public GameObject solar3;
-    public GameObject solar4;
     public GameObject engine;
-    public GameObject engine2;
     public GameObject cockpit; // part on ground
     public GameObject shipCockpit; // model on broken up ship
     public GameObject spaceshipWhole;
@@ -32,12 +29,12 @@ public class SpaceShipControl : MonoBehaviour
     public Text convoText;
 
     //sources
-    private GameObject player;
-    private GameObject UIController;
-    private GameObject gm;
-    private Player playerScript;
-    private UIControllerScript UIScript;
-    private GameManager gmScript;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject UIController;
+    [SerializeField] private GameObject gm;
+    [SerializeField] private Player playerScript;
+    [SerializeField] private UIControllerScript UIScript;
+    [SerializeField] private GameManager gmScript;
 
     // Start is called before the first frame update
     void Start()
@@ -64,10 +61,7 @@ public class SpaceShipControl : MonoBehaviour
         shipCockpit.gameObject.SetActive(false);
         solar1.gameObject.SetActive(false);
         solar2.gameObject.SetActive(false);
-        solar3.gameObject.SetActive(false);
-        solar4.gameObject.SetActive(false);
         engine.gameObject.SetActive(false);
-        engine2.gameObject.SetActive(false);
         cockpit.gameObject.SetActive(true);
         spaceshipWhole.gameObject.SetActive(false);
     }
@@ -78,117 +72,74 @@ public class SpaceShipControl : MonoBehaviour
         if(gmScript.spaceshipBrokenDownEnabled == true)
         {
             spaceshipBrokenDown.gameObject.SetActive(true);
+            spaceshipWhole.gameObject.SetActive(false);
         }
 
         //Cockpit is generally picked up first, but whatever is first collected disables the down body
         //cockpit enabled
         if(gmScript.shipcockpitEnabled == true)
         {
+            //disable down spaceship and note it's disabled in gm
             gmScript.spaceshipBrokenDownEnabled = false;
             spaceshipBrokenDown.gameObject.SetActive(false);
+
+            //enable up spaceship and note it's enabled in gm
             gmScript.spaceshipBrokenUpEnabled = true;
             spaceshipBrokenUp.gameObject.SetActive(true);
             shipCockpit.gameObject.SetActive(true);
+        }
+        if(gmScript.engineEnabled == true)
+        {
+            //disable down spaceship and note it's disabled in gm
+            gmScript.spaceshipBrokenDownEnabled = false;
+            spaceshipBrokenDown.gameObject.SetActive(false);
 
-            if(gmScript.shipPanelEnabled == true)
+            //enable up spaceship and note it's enabled in gm
+            gmScript.spaceshipBrokenUpEnabled = true;
+            spaceshipBrokenUp.gameObject.SetActive(true);
+            engine.gameObject.SetActive(true);
+        }
+        if(gmScript.solar1Enabled == true)
+        {
+            //disable down spaceship and note it's disabled in gm
+            gmScript.spaceshipBrokenDownEnabled = false;
+            spaceshipBrokenDown.gameObject.SetActive(false);
+
+            //enable up spaceship and note it's enabled in gm
+            gmScript.spaceshipBrokenUpEnabled = true;
+            spaceshipBrokenUp.gameObject.SetActive(true);
+            solar1.gameObject.SetActive(true); // solar1 on the broken one
+        }
+        if(gmScript.solar2Enabled == true)
+        {
+            //disable down spaceship and note it's disabled in gm
+            gmScript.spaceshipBrokenDownEnabled = false;
+            spaceshipBrokenDown.gameObject.SetActive(false);
+
+            //enable up spaceship and note it's enabled in gm
+            gmScript.spaceshipBrokenUpEnabled = true;
+            spaceshipBrokenUp.gameObject.SetActive(true);
+            solar2.gameObject.SetActive(true); // solar2 on the broken one
+        }
+        if(gmScript.cockpitEnabled == true && gmScript.solar1Enabled == true && gmScript.solar2Enabled == true && gmScript.engineEnabled == true)
+        {
+            if(gmScript.panelEnabled == true)
             {
                 escapePod1.gameObject.SetActive(false);
                 escapePod2.gameObject.SetActive(false);
                 escapePod3.gameObject.SetActive(false);
                 escapePod4.gameObject.SetActive(false);
+                shipCockpit.gameObject.SetActive(false);
                 gmScript.spaceshipBrokenDownEnabled = false;
                 spaceshipBrokenDown.gameObject.SetActive(false);
                 gmScript.spaceshipBrokenUpEnabled = false;
                 spaceshipBrokenUp.gameObject.SetActive(false);
-                shipCockpit.gameObject.SetActive(false);
                 gmScript.spaceshipWholeEnabled = true;
                 spaceshipWhole.gameObject.SetActive(true);
 
-                if(gmScript.shipengineEnabled == true)
-                {
-                    if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == true)
-                    {
-                        // player has all the pieces, so the ship needs tp have the correct components
-                        gmScript.spaceshipBrokenDownEnabled = false;
-                        spaceshipBrokenDown.gameObject.SetActive(false);
-                        gmScript.spaceshipBrokenUpEnabled = false;
-                        spaceshipBrokenUp.gameObject.SetActive(false);
-                        shipCockpit.gameObject.SetActive(false);
-                        gmScript.spaceshipWholeEnabled = true;
-                        spaceshipWhole.gameObject.SetActive(true);
-                        solar3.gameObject.SetActive(true); // solar3 on the whole one
-                        solar4.gameObject.SetActive(true); // solar4 on the whole one
-                        engine2.gameObject.SetActive(true); // engine on the whole one
-                        return;
-                    }
-                    else if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == false)
-                    {
-                        //convoText.text = "I need to find the other solar panel.";
-                        return;
-                    }
-                    else if(gmScript.solar1Enabled == false && gmScript.solar2Enabled == true)
-                    {
-                        //convoText.text = "I need to find the other solar panel.";
-                        return;
-                    }
-                    else
-                    {
-                        engine2.gameObject.SetActive(true); // engine on the whole one
-                        //convoText.text = "I'd better go find the solar panels.";
-                    }
-                    return;
-                }
-
-                if(gmScript.shipengineEnabled == false)
-                {
-                    if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == true)
-                    {
-                        // player is only missing the engine
-                        gmScript.spaceshipBrokenDownEnabled = false;
-                        spaceshipBrokenDown.gameObject.SetActive(false);
-                        gmScript.spaceshipBrokenUpEnabled = false;
-                        spaceshipBrokenUp.gameObject.SetActive(false);
-                        shipCockpit.gameObject.SetActive(false);
-                        gmScript.spaceshipWholeEnabled = true;
-                        spaceshipWhole.gameObject.SetActive(true);
-                        solar3.gameObject.SetActive(true); // solar3 on the whole one
-                        solar4.gameObject.SetActive(true); // solar4 on the whole one
-                        //convoText.text = "I need to find the engine.";
-                    }
-                    else if(gmScript.solar1Enabled == true && gmScript.solar2Enabled == false)
-                    {
-                        //convoText.text = "I need to find the other solar panel and the engine.";
-                        return;
-                    }
-                    else if(gmScript.solar1Enabled == false && gmScript.solar2Enabled == true)
-                    {
-                        //convoText.text = "I need to find the other solar panel and the engine.";
-                        return;
-                    }
-                    else
-                    {
-                        //convoText.text = "I'm missing both solar panels and the engine.";
-                    }
-                    return;
-                }
-            }
-
-            else if(gmScript.shipPanelEnabled == false)
-            {
-                gmScript.spaceshipBrokenDownEnabled = false;
-                spaceshipBrokenDown.gameObject.SetActive(false);
-                gmScript.spaceshipBrokenUpEnabled = true;
-                spaceshipBrokenUp.gameObject.SetActive(true);
-                shipCockpit.gameObject.SetActive(true);
-                //convoText.text = "I've installed the cockpit, but I need the square, gold heat panels next.";
-                return;
             }
         }
-        else if(gmScript.shipcockpitEnabled == false)
-        {
-            //convoText.text = "I need to get the cockpit.";
-            return;
-        }
+
     }
 
     public void CheckingPanels()
